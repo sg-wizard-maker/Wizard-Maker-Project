@@ -315,6 +315,32 @@ namespace WizardMakerTestbed.Models
             AllCommonAbilities.AddRange( new List<ArchAbility>() { OrgLoreChurch, OrgLoreOrderOfHermes, OrgLoreVeryBasic, OrgLoreSomeKnightOrder, OrgLoreSomeNobleCourt, OrgLoreSomeCraftGuild } );
         }
 
+        // TODO: cache this into a more intelligent lookup.  Ths is a brute force loop.
+        public static ArchAbility lookupCommonAbilities(string ability)
+        {
+            foreach (var a in ArchAbility.AllCommonAbilities)
+            {
+                if (a.Name == ability) { 
+                    return a; 
+                }
+            }
+            throw new AbilityNotFoundException(ability + " not supported.");
+        }
+
+        public static string[] getCommonAbilities()
+        {
+            List<string> abilities = new List<string>();
+            foreach (var a in ArchAbility.AllCommonAbilities)
+            {
+                abilities.Add(a.Name);
+            }
+
+            // Sort the abililties
+            abilities.Sort();
+
+            return abilities.ToArray();
+        }
+
     }
 
     public class AbilityInstance
@@ -345,7 +371,7 @@ namespace WizardMakerTestbed.Models
 
         public string Name       { get { return this.Ability.Name;              } }
         public int    XP         { get; set; }
-        public int    Score      { get; set; }
+        public int    Score      { get => AbilityXpCosts.ScoreForXP(XP, determineXpCost(Ability)); set => throw new NotImplementedException(); }
 
         [DisplayName(" ")]
         public string AddToScore { get { return this.HasPuissance ? this.PuissantBonus.ToString() : null; } }
@@ -365,6 +391,12 @@ namespace WizardMakerTestbed.Models
 
         [Browsable(false)]
         public int  PuissantBonus  { get; private set; } = 2;
+
+        public decimal determineXpCost(ArchAbility archAbility)
+        {
+            return HasAffinity? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
+        }
+
         // TODO:
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
@@ -372,11 +404,10 @@ namespace WizardMakerTestbed.Models
         public AbilityInstance ( ArchAbility ability, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
-            decimal xpCost = hasAffinity ? AbilityXpCosts.BaseXpCostWithAffinity(ability.BaseXpCost) : ability.BaseXpCost;
+            decimal xpCost = determineXpCost(ability);
 
             this.Ability = ability;
             this.XP      = xp;
-            this.Score   = AbilityXpCosts.ScoreForXP( xp, xpCost );
             this.Specialty     = specialty ?? "";
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
