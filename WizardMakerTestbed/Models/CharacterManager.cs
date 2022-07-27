@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
 using WizardMakerTestbed.Models;
 
@@ -87,6 +88,29 @@ namespace WizardMakerPrototype.Models
         {
             AbilityInstance abilityInstance =  retrieveAbilityInstance(ability);
             return abilityInstance.CommonSpecializations;
+        }
+
+        private CharacterData convertCharacterToCharacterData()
+        {
+            List<AbilityInstanceData> abilities = new List<AbilityInstanceData>();
+            foreach (AbilityInstance abilityInstance in character.abilities)
+            {
+                abilities.Add(convertAbilityInstanceData(abilityInstance));
+            }
+
+            return new CharacterData(character.Name, character.Description, abilities);
+        }
+
+        private AbilityInstanceData convertAbilityInstanceData(AbilityInstance abilityInstance)
+        {
+            return new AbilityInstanceData(abilityInstance.Category,
+                abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
+                abilityInstance.Specialty);
+        }
+
+        public CharacterData renderCharacterAsCharacterData()
+        {
+            return convertCharacterToCharacterData();
         }
     }
 }

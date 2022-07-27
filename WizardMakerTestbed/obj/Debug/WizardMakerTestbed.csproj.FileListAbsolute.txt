@@ -31,4 +31,4 @@ C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\obj\Debug\WizardMakerPrototype.ex
 C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\obj\Debug\WizardMakerPrototype.pdb
 C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\bin\Debug\Newtonsoft.Json.dll
 C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\bin\Debug\Newtonsoft.Json.xml
-C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\obj\Debug\WizardMakerPrototype.AbilityPopUp.resources
+C:\Lee\Wizard-Maker-Project\WizardMakerTestbed\obj\Debug\WizardMakerPrototype.AbilityDialog.resources

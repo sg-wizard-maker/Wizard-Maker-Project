@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WizardMakerTestbed.Models;
 using WizardMakerPrototype.Models;
+using Newtonsoft.Json;
 
 namespace WizardMakerPrototype
 {
@@ -26,17 +27,26 @@ namespace WizardMakerPrototype
         {
             this.characterManager = new CharacterManager();
             this.Text = characterManager.getCharacterName();
-
-            // Load the list of Abilities
-            abilityListBox.Items.AddRange(ArchAbility.getCommonAbilities());
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            characterManager.addAbility(abilityListBox.SelectedItem.ToString(), 5, "");
-            updateCharacterDisplay();
-        }
+            AbilityDialog abilityDialog = new AbilityDialog();
+
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (abilityDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+                // TODO: Make the abilityDialog attributes non-public
+                characterManager.addAbility(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(), 
+                    ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
+                updateCharacterDisplay();
+
+            }
+
+            abilityDialog.Dispose();
+            
+            }
 
         /**
          * General update method for updating the display of the character.
@@ -45,11 +55,16 @@ namespace WizardMakerPrototype
         {
 
             dataGridView1.Rows.Clear();
-            foreach (var a in characterManager.getCharacterAbilitiesAsList())
+
+            CharacterData c = characterManager.renderCharacterAsCharacterData();
+
+            foreach (var a in c.abilities)
             {
-                dataGridView1.Rows.Add(a);
-                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[2].Value = characterManager.retrieveAbilityInstance(a).XP.ToString();
-                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1].Value = characterManager.retrieveAbilityInstance(a).Score.ToString();
+                //TODO: Make constants from the magic numbers
+                dataGridView1.Rows.Add(a.Name);
+                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[2].Value = a.XP.ToString();
+                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1].Value = a.Score.ToString();
+                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = a.Specialty;
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
@@ -63,17 +78,6 @@ namespace WizardMakerPrototype
             if (dataGridView1.Columns[colIndex].HeaderText == "Delete")
             {
                 characterManager.deleteAbility(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
-                updateCharacterDisplay();
-            }
-
-            // Handle a deletion
-            if (dataGridView1.Columns[colIndex].HeaderText == "Specialty")
-            {
-                // TODO: Populate the combobox possibilities
-                string ability = getDataGridAbility(rowIndex);
-                List<string> specializations = characterManager.retrieveCommonSpecializations(ability);
-                dataSpecialty.Items.Clear();
-                dataSpecialty.Items.AddRange(specializations);
                 updateCharacterDisplay();
             }
         }
@@ -110,6 +114,16 @@ namespace WizardMakerPrototype
         private string getDataGridAbility(int rowIndex)
         {
             return dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void abilityListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
