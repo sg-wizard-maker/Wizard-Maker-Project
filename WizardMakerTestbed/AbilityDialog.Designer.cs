@@ -73,7 +73,7 @@
             0,
             0,
             0});
-            this.xpUpdown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            
             // 
             // button2
             // 
@@ -83,6 +83,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 

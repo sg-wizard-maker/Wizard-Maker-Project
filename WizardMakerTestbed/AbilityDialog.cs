@@ -34,19 +34,15 @@ namespace WizardMakerPrototype
             abilityListBoxDialog.Items.AddRange(ArchAbility.getCommonAbilities());
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void specialtyComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

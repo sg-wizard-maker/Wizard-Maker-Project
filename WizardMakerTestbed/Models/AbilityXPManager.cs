@@ -7,6 +7,7 @@ using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
 {
+    //TODO: Delete this class unless it shows usefulness.
     public class ValidationResult
     {
         readonly Boolean isValidated;
@@ -32,7 +33,6 @@ namespace WizardMakerPrototype.Models
             // TODO: Throw validation exception instead?  YES
             return new ValidationResult();
         }
-
 
         public AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty)
         {

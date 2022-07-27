@@ -38,10 +38,12 @@ namespace WizardMakerPrototype
             {
                 // Read the contents of testDialog's TextBox.
                 // TODO: Make the abilityDialog attributes non-public
-                characterManager.addAbility(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(), 
-                    ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
-                updateCharacterDisplay();
-
+                if (abilityDialog.abilityListBoxDialog.SelectedItem != null)
+                {
+                    characterManager.addAbility(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
+                        ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
+                    updateCharacterDisplay();
+                }
             }
 
             abilityDialog.Dispose();
@@ -114,16 +116,6 @@ namespace WizardMakerPrototype
         private string getDataGridAbility(int rowIndex)
         {
             return dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-        }
-
-        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-
-        }
-
-        private void abilityListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
