@@ -3,8 +3,12 @@
 ################################################################################
 
 /WizardMakerTestbed/.vs/WizardMakerTestbed/FileContentIndex
-/WizardMakerTestbed/obj/Debug/*.cache
+/WizardMakerTestbed/obj/
+/WizardMakerTestbed/obj/Debug/
 /WizardMakerTestbed/.vs/WizardMakerTestbed/v17/.suo
 /WizardMakerTestbed/Form2.resx
 /WizardMakerTestbed/Form2.Designer.cs
 /WizardMakerTestbed/Form2.cs
+/WizardMakerTestbed/.vs/
+/WizardMakerTests/bin/Debug/net6.0
+/WizardMakerTests/obj
