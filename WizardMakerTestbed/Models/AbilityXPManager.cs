@@ -27,20 +27,54 @@ namespace WizardMakerPrototype.Models
     }
     public class AbilityXPManager
     {
-        private ValidationResult validateSpendXPOnAbility(ArchAbility archAbility, int xp)
+        private static ValidationResult validateSpendXPOnAbility(ArchAbility archAbility, int xp)
         {
             // TODO: Insert validation check here
             // TODO: Throw validation exception instead?  YES
             return new ValidationResult();
         }
 
-        public AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty)
+        public static AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty)
         {
             // Create the ability instance
             ArchAbility archAbility = ArchAbility.lookupCommonAbilities(ability);
             validateSpendXPOnAbility(archAbility, xp);
 
             return new AbilityInstance(archAbility, xp, specialty);
+        }
+
+        public static void debitXPPoolsForAbility(AbilityInstance a, int xp, SortedSet<XPPool> XPPoolList)
+        {
+            int remainingXPToAllocate = xp;
+
+            // Allocate the XP cost to the remaining pools.
+            foreach (XPPool p in XPPoolList)
+            {
+                if (p.CanSpendOnAbility(a.Ability))
+                {
+                    int allocatedXP = Math.Min(p.remainingXP, remainingXPToAllocate);
+
+                    // Adjust the pool
+                    p.remainingXP -= allocatedXP;
+
+                    // Track whether we have allocated all of the necessary XP.
+                    remainingXPToAllocate -= allocatedXP;
+
+                    if (remainingXPToAllocate == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            if (remainingXPToAllocate > 0)
+            {
+                throw new ShouldNotBeAbleToGetHereException("Could not allocate XP for the ability " + a.Name + ".  Please send this error to a developer.");
+            }
+        }
+        public static void debitXPPoolsForAbility(AbilityInstance a, SortedSet<XPPool> XPPoolList)
+        {
+            debitXPPoolsForAbility(a, a.XP, XPPoolList);
         }
     }
 }

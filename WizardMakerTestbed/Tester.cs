@@ -69,6 +69,9 @@ namespace WizardMakerPrototype
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = a.Specialty;
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+
+            // Update the XPPools json
+            XPPoolsJson.Text = characterManager.renderXPPoolsAsJson();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -13,6 +13,8 @@ namespace WizardMakerPrototype.Models
 
         public List<AbilityInstance> abilities { get; set; }
 
+        public int startingAge { get; set; }
+
         List<Journalable> journalEntries { get; set; }
 
         public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries)
@@ -22,6 +24,8 @@ namespace WizardMakerPrototype.Models
             this.abilities = abilities;
             this.journalEntries = journalEntries;
 
+            //TODO: Allow this to be set by caller
+            this.startingAge = 25;
         }
     }
 }

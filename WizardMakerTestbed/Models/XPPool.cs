@@ -96,11 +96,33 @@ namespace WizardMakerPrototype.Models
             return 10;
         }
     }
+    /** This will be spent before ability categories
+     */
+    public class SpecificAbilitiesXpPool : XPPool
+    {
+        private List<ArchAbility> allowedAbilities;
+
+        public SpecificAbilitiesXpPool(string name, string description, int initialXP, List<ArchAbility> allowedAbilityTypes) : base(name, description, initialXP)
+        {
+            this.allowedAbilities = allowedAbilityTypes;
+        }
+
+        public override bool CanSpendOnAbility(ArchAbility archAbility)
+        {
+            if (this.allowedAbilities.Contains(archAbility)) { return true; }
+            else { return false; }
+        }
+
+        public override int sortOrder()
+        {
+            return 9;
+        }
+    }
 
     public class AllowOverdrawnXpPool : XPPool
     {
         const string OVERDRAWN_NAME = "Overdraw";
-        const string OVERDRAWN_DESCRIPTION = "Overdraw experience pool that allows negative remaining XP.";
+        const string OVERDRAWN_DESCRIPTION = "Overdraw experience pool that allows negative remaining XP.  Each character can only have one.";
 
         //TODO: This should just be a method that shows that it always has enough XP.  Rather than making this a ridiculously high number.
         const int OVERDRAWN_AMOUNT = int.MaxValue-1;

@@ -45,5 +45,10 @@ namespace WizardMakerPrototype
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void xpUpdown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

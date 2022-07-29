@@ -6,6 +6,18 @@ namespace WizardMakerTests
     [TestClass]
     public class XPPoolTest
     {
+        private const string CHILDHOOD_LANGUAGE_POOL_NAME = "Childhood language XP Pool";
+        private const string CHILDHOOD_LANGUAGE_DESCRIPTION = "XP granted to starting characters that can be spent on one language";
+        private const int CHILDHOOD_LANGUAGE_XP = 75;
+
+        private const string CHILDHOOD_POOL_NAME = "Childhood XP Pool";
+        private const string CHILDHOOD_DESCRIPTION = "XP granted to starting characters that can be spent on childhood skills";
+        private const int CHILDHOOD_XP = 45;
+
+        private const string LATER_LIFE_POOL_NAME = "Later life XP Pool";
+        private const string LATER_LIFE_DESCRIPTION = "XP granted to starting characters that can be spent on anything the character can learn.  After age 5.";
+
+
         [TestMethod]
         public void TestBasicXPPool()
         {
@@ -81,6 +93,34 @@ namespace WizardMakerTests
             Assert.IsTrue(xPPools.ElementAt(1).name == "Warrior Virtue");
             Assert.IsTrue(xPPools.ElementAt(2).name == "Name");
             Assert.IsTrue(xPPools.ElementAt(3).remainingXP > 1000000);
+        }
+        [TestMethod]
+        public void TestXPPoolStartingAbilities()
+        {
+            SortedSet <XPPool>  pools = new SortedSet<XPPool>(new XPPoolComparer()) {
+                new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION, CHILDHOOD_LANGUAGE_XP, 
+                    new List<ArchAbility>() {ArchAbility.LangEnglish}),
+                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, CharacterManager.determineChildhoodAbilities()),
+                new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, 75),
+                new AllowOverdrawnXpPool()
+            };
+
+            AbilityInstance english = new AbilityInstance(ArchAbility.LangEnglish, 75);
+            
+
+            AbilityInstance charm = new AbilityInstance(ArchAbility.Charm, 75);
+
+            AbilityXPManager.debitXPPoolsForAbility(english, pools);
+            AbilityXPManager.debitXPPoolsForAbility(charm, pools);
+
+            // Childhood language should be 0
+            Assert.IsTrue(pools.ElementAt(0).remainingXP == 0);
+
+            // Childhood skills should be 0 (spent on charm)
+            Assert.IsTrue(pools.ElementAt(1).remainingXP == 0);
+
+            // Later life should be reduced by 30
+            Assert.IsTrue(pools.ElementAt(2).remainingXP == (75-30));
         }
     }
 }
