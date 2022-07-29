@@ -102,6 +102,7 @@
     <Compile Include="Models\CharacterManager.cs" />
     <Compile Include="Models\ExtremelyPrimitiveAbilityModel.cs" />
     <Compile Include="Models\CharacterData.cs" />
+    <Compile Include="Models\ShouldNotBeAbleToGetHereException.cs" />
     <Compile Include="Models\SingleJournalEntry.cs" />
     <Compile Include="Models\XPPool.cs" />
     <Compile Include="Models\XPPoolOverdrawnException.cs" />

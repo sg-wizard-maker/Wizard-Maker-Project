@@ -27,7 +27,7 @@ namespace WizardMakerPrototype.Models
     }
     public class AbilityXPManager
     {
-        public ValidationResult validateSpendXPOnAbility(ArchAbility archAbility, int xp)
+        private ValidationResult validateSpendXPOnAbility(ArchAbility archAbility, int xp)
         {
             // TODO: Insert validation check here
             // TODO: Throw validation exception instead?  YES

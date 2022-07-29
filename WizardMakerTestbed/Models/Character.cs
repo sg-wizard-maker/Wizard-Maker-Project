@@ -21,6 +21,7 @@ namespace WizardMakerPrototype.Models
             Description = description;
             this.abilities = abilities;
             this.journalEntries = journalEntries;
+
         }
     }
 }
