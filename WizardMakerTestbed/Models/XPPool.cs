@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WizardMakerTestbed.Models;
 
+
+//TODO: Move XP Pools and Journals to their own package.
 [assembly: InternalsVisibleTo("WizardMakerTests")]
 namespace WizardMakerPrototype.Models
 {
@@ -39,6 +41,8 @@ namespace WizardMakerPrototype.Models
             this.initialXP = initialXP;
             this.remainingXP = initialXP;
         }
+
+        public virtual void reset() { remainingXP = initialXP; }
 
         public virtual void spendXP(int xp)
         {

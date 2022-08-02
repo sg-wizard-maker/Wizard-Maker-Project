@@ -25,7 +25,8 @@ namespace WizardMakerPrototype
 
         private void Tester_Load(object sender, EventArgs e)
         {
-            this.characterManager = new CharacterManager();
+            //TODO: Magic number 25.  Make this specifiable by user
+            this.characterManager = new CharacterManager(25);
             this.Text = characterManager.getCharacterName();
         }
 

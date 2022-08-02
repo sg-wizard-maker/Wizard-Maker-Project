@@ -95,12 +95,12 @@ namespace WizardMakerTests
             Assert.IsTrue(xPPools.ElementAt(3).remainingXP > 1000000);
         }
         [TestMethod]
-        public void TestXPPoolStartingAbilities()
+        public void TestMultipleXPPoolsAbilities()
         {
             SortedSet <XPPool>  pools = new SortedSet<XPPool>(new XPPoolComparer()) {
                 new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION, CHILDHOOD_LANGUAGE_XP, 
                     new List<ArchAbility>() {ArchAbility.LangEnglish}),
-                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, CharacterManager.determineChildhoodAbilities()),
+                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, NewCharacterInitJournalEntry.determineChildhoodAbilities()),
                 new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, 75),
                 new AllowOverdrawnXpPool()
             };

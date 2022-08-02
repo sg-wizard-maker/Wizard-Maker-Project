@@ -15,17 +15,25 @@ namespace WizardMakerPrototype.Models
 
         public int startingAge { get; set; }
 
-        List<Journalable> journalEntries { get; set; }
+        private IJournalableManager journalableManager { get; set; }
 
-        public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries)
+        private SortedSet<Journalable> journalEntries { get { return journalableManager.getJournalables(); } }
+
+        public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries, int startingAge)
         {
             Name = name;
             Description = description;
             this.abilities = abilities;
-            this.journalEntries = journalEntries;
-
-            //TODO: Allow this to be set by caller
-            this.startingAge = 25;
+            this.journalableManager = new BasicJournalableManager();
+            foreach(Journalable journalable in journalEntries)
+            {
+                this.journalableManager.addJournalable(journalable);
+            }
+            this.startingAge = startingAge;
         }
+
+        public void addJournalable(Journalable journalable) { journalableManager.addJournalable(journalable); }
+
+        public SortedSet<Journalable> GetJournal() { return journalableManager.getJournalables(); }
     }
 }
