@@ -98,7 +98,7 @@
     <Compile Include="Models\AbilityModels.cs" />
     <Compile Include="Models\AbilityNotFoundException.cs" />
     <Compile Include="Models\AbilityXPManager.cs" />
-    <Compile Include="Models\BasicJournableManager.cs" />
+    <Compile Include="Models\BasicJournalableManager.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharacterManager.cs" />
     <Compile Include="Models\ExtremelyPrimitiveAbilityModel.cs" />

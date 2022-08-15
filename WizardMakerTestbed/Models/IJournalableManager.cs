@@ -20,6 +20,8 @@ namespace WizardMakerPrototype.Models
         SortedSet<Journalable> getJournalables();
 
         void addJournalable(Journalable journalable);
+
+        void removeJournalEntry(String text);
     }
 
     public class JournableComparator: IComparer<Journalable>

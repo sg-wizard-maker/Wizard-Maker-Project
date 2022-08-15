@@ -39,5 +39,25 @@ namespace WizardMakerPrototype.Models.Tests
                 Assert.AreEqual(seasonYears[index], journalables.ElementAt(i).getDate());
             }
         }
+
+        [TestMethod()]
+        public void removeJournalableTest()
+        {
+            IJournalableManager journalableManager = new BasicJournalableManager();
+            String TEST_STRING = "ENTRY_";
+            for (int i = 0; i < 4; i++)
+            {
+                journalableManager.addJournalable(new SingleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING)));
+            }
+
+            journalableManager.removeJournalEntry(TEST_STRING+"2");
+
+            Assert.AreEqual(3, journalableManager.getJournalables().Count);
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreNotEqual(TEST_STRING + "2", journalableManager.getJournalables().ElementAt(i).getText());
+            }
+
+        }
     }
 }

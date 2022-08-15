@@ -107,7 +107,6 @@ namespace WizardMakerTests
 
             AbilityInstance english = new AbilityInstance(ArchAbility.LangEnglish, 75);
             
-
             AbilityInstance charm = new AbilityInstance(ArchAbility.Charm, 75);
 
             AbilityXPManager.debitXPPoolsForAbility(english, pools);

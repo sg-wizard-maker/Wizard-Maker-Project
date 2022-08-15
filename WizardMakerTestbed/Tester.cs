@@ -41,8 +41,9 @@ namespace WizardMakerPrototype
                 // TODO: Make the abilityDialog attributes non-public
                 if (abilityDialog.abilityListBoxDialog.SelectedItem != null)
                 {
-                    characterManager.addAbility(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
+                    characterManager.updateAbilityDuringCreation(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
                         ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
+                    
                     updateCharacterDisplay();
                 }
             }
