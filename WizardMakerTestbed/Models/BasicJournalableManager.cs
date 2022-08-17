@@ -10,7 +10,7 @@ namespace WizardMakerPrototype.Models
     public class BasicJournalableManager : IJournalableManager
     {
         private bool isIsInCharacterGenerationMode = true;
-        // TODO: need comparator
+        
         private SortedSet<Journalable> journalables = new SortedSet<Journalable>(new JournableComparator());
 
         public void addJournalable(Journalable journalable)
