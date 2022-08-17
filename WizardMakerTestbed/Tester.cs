@@ -25,8 +25,10 @@ namespace WizardMakerPrototype
 
         private void Tester_Load(object sender, EventArgs e)
         {
-            this.characterManager = new CharacterManager();
+            //TODO: Magic number 25.  Make this specifiable by user
+            this.characterManager = new CharacterManager(25);
             this.Text = characterManager.getCharacterName();
+            updateCharacterDisplay();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,8 +42,9 @@ namespace WizardMakerPrototype
                 // TODO: Make the abilityDialog attributes non-public
                 if (abilityDialog.abilityListBoxDialog.SelectedItem != null)
                 {
-                    characterManager.addAbility(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
+                    characterManager.updateAbilityDuringCreation(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
                         ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
+                    
                     updateCharacterDisplay();
                 }
             }
@@ -69,6 +72,9 @@ namespace WizardMakerPrototype
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[3].Value = a.Specialty;
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+
+            // Update the XPPools json
+            XPPoolsJson.Text = characterManager.renderXPPoolsAsJson();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -79,9 +85,30 @@ namespace WizardMakerPrototype
             // Handle a deletion
             if (dataGridView1.Columns[colIndex].HeaderText == "Delete")
             {
-                characterManager.deleteAbility(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
+                
+                string deletedAbility = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                string abilityId = retrieveAbilityIdFromAbilityName(deletedAbility);
+                if (abilityId == null)
+                {
+                    throw new ShouldNotBeAbleToGetHereException("Could not find ID for " + deletedAbility);
+                }
+                characterManager.deleteAbility(abilityId);
                 updateCharacterDisplay();
             }
+        }
+
+        private string retrieveAbilityIdFromAbilityName(string name)
+        {
+            CharacterData c = characterManager.renderCharacterAsCharacterData();
+            foreach (var a in c.abilities)
+            {
+                if (a.Name == name)
+                {
+                    return a.Id;
+                }
+            }
+
+            return null;
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -92,7 +119,7 @@ namespace WizardMakerPrototype
             string ability = getDataGridAbility(rowIndex);
             if (isDataGridXPCell(colIndex))
             {
-                characterManager.setAbilityXp(ability, int.Parse(getCellValueAsString(rowIndex, colIndex)), getCellValueAsString(rowIndex, 3));
+                characterManager.updateAbilityDuringCreation(ability, int.Parse(getCellValueAsString(rowIndex, colIndex)), getCellValueAsString(rowIndex, 3));
                 updateCharacterDisplay();
             }
         }

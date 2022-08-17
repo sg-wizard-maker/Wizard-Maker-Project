@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29025.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardMakerTestbed", "WizardMakerTestbed.csproj", "{DAD28F0A-35C1-4760-A008-8DA67F3C8D6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMakerTests", "..\WizardMakerTests\WizardMakerTests.csproj", "{61301103-3209-489B-8F36-DE68204BE88E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DAD28F0A-35C1-4760-A008-8DA67F3C8D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD28F0A-35C1-4760-A008-8DA67F3C8D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD28F0A-35C1-4760-A008-8DA67F3C8D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

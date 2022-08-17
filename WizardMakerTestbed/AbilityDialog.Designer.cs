@@ -69,11 +69,11 @@
             this.xpUpdown1.Size = new System.Drawing.Size(137, 20);
             this.xpUpdown1.TabIndex = 5;
             this.xpUpdown1.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
-            
+            this.xpUpdown1.ValueChanged += new System.EventHandler(this.xpUpdown1_ValueChanged);
             // 
             // button2
             // 

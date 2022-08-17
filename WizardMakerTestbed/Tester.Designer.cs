@@ -36,6 +36,7 @@
             this.dataXP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSpecialty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDeleteRow = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.XPPoolsJson = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -106,11 +107,21 @@
             this.dataDeleteRow.Name = "dataDeleteRow";
             this.dataDeleteRow.ReadOnly = true;
             // 
+            // XPPoolsJson
+            // 
+            this.XPPoolsJson.AutoSize = true;
+            this.XPPoolsJson.Location = new System.Drawing.Point(682, 154);
+            this.XPPoolsJson.Name = "XPPoolsJson";
+            this.XPPoolsJson.Size = new System.Drawing.Size(47, 13);
+            this.XPPoolsJson.TabIndex = 7;
+            this.XPPoolsJson.Text = "XPPools";
+            // 
             // Tester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 628);
+            this.ClientSize = new System.Drawing.Size(1250, 628);
+            this.Controls.Add(this.XPPoolsJson);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "Tester";
@@ -120,6 +131,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,5 +145,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataXP;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataSpecialty;
         private System.Windows.Forms.DataGridViewButtonColumn dataDeleteRow;
+        private System.Windows.Forms.Label XPPoolsJson;
     }
 }

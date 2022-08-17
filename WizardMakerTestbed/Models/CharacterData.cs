@@ -39,7 +39,9 @@ namespace WizardMakerPrototype.Models
         public int Score { get; }
         public string Specialty { get; }
 
-        public AbilityInstanceData(string category, string type, string typeAbbrev, string name, int xP, int score, string specialty)
+        public string Id { get; }
+
+        public AbilityInstanceData(string category, string type, string typeAbbrev, string name, int xP, int score, string specialty, string id)
         {
             Category = category;
             Type = type;
@@ -48,6 +50,7 @@ namespace WizardMakerPrototype.Models
             XP = xP;
             Score = score;
             Specialty = specialty;
+            Id = id;
         }   
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -10,22 +9,34 @@ namespace WizardMakerTestbed.Models
 
     public class SeasonYear
     {
-        public int Year { get; set; }
-        public Season season { get; set; }
+        public int Year { get;  }
+        public Season season { get; }
+
+        public SeasonYear(int year, Season season)
+        {
+            this.Year = year;
+            this.season = season;
+        }
     }
 
-    public interface Journalable
-    {
-        string getText();
-
-        // TODO: We should have a class for season.
-        SeasonYear getDate();
-    }
-
+    /** Just a note with a season and year attached to it.
+    * Does not actually do anything.
+    */
     public class SingleJournalEntry : Journalable
     {
         public string JournalEntryText { get; set; }
         public SeasonYear SeasonYear { get; set; }
+        public String Id { get; }
+
+        public SingleJournalEntry(string journalEntryText, SeasonYear seasonYear)
+        {
+            JournalEntryText = journalEntryText;
+            SeasonYear = seasonYear;
+
+            Guid myuuid = Guid.NewGuid();
+            Id = myuuid.ToString();
+
+        }
 
         public string getText()
         {
@@ -34,24 +45,22 @@ namespace WizardMakerTestbed.Models
 
         public SeasonYear getDate()
         {
-            throw new NotImplementedException();
+            return SeasonYear;
+        }
+
+        public void Execute()
+        {
+            //no-op
+        }
+
+        public void Undo()
+        {
+            //no-op
+        }
+
+        public string getId()
+        {
+            return Id;
         }
     }
-
-    public class XpAbilitySpendJournalEntry : Journalable
-    {
-
-        public SingleJournalEntry text;
-
-        public string getText()
-        {
-            return text.JournalEntryText;
-        }
-
-        public SeasonYear getDate()
-        {
-            return text.getDate();
-        }
-    }
-
 }
