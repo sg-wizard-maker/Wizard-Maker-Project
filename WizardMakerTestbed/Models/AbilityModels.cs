@@ -392,6 +392,10 @@ namespace WizardMakerTestbed.Models
         [Browsable(false)]
         public int  PuissantBonus  { get; private set; } = 2;
 
+        // Used to tie this abillity to the journal entry associated with it.
+        // TODO: This is a bit complicated, could we simplify the design?  This is necessary to support deletion from a GUI.  
+        public string id;
+
         public decimal determineXpCost(ArchAbility archAbility)
         {
             return HasAffinity? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
@@ -401,7 +405,7 @@ namespace WizardMakerTestbed.Models
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
 
-        public AbilityInstance ( ArchAbility ability, int xp = 0, string specialty = "", 
+        public AbilityInstance ( ArchAbility ability, string id, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
             decimal xpCost = determineXpCost(ability);
@@ -412,6 +416,7 @@ namespace WizardMakerTestbed.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
+            this.id = id;
         }
 
         public override string ToString ()

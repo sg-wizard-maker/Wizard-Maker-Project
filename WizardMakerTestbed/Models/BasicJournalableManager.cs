@@ -51,12 +51,12 @@ namespace WizardMakerPrototype.Models
             isIsInCharacterGenerationMode = isCharacterGenerationMode;
         }
 
-        public void removeJournalEntry(String text) 
+        public void removeJournalEntry(String id) 
         {
             SortedSet<Journalable> result = new SortedSet<Journalable>(new JournableComparator());
             foreach (Journalable journalable in this.journalables)
             {
-                if (!journalable.getText().Equals(text))
+                if (!journalable.getId().Equals(id))
                 {
                      result.Add(journalable);
                 }

@@ -27,6 +27,8 @@ namespace WizardMakerTestbed.Models
         
         private const int CHILDHOOD_END_AGE = 5;
 
+        SingleJournalEntry singleJournalEntry;
+
         CharacterManager characterManager;
         ArchAbility childhoodLanguage;
         int startingAge;
@@ -36,6 +38,9 @@ namespace WizardMakerTestbed.Models
             this.characterManager = characterManager;
             this.childhoodLanguage = childhoodLanguage;
             this.startingAge = startingAge;
+
+            // TODO: Make this have to do with starting Age and user-specified year.
+            singleJournalEntry = new SingleJournalEntry("Character initialized at age " + startingAge, new SeasonYear(1219, Season.SPRING));
         }
     
         public void Execute()
@@ -75,18 +80,22 @@ namespace WizardMakerTestbed.Models
 
         public SeasonYear getDate()
         {
-            // TODO: Make this have to do with starting Age and user-specified year.
-            return new SeasonYear(1219, Season.SPRING);
+            return singleJournalEntry.getDate();
         }
 
         public string getText()
         {
-            return "Character initialized at age " + startingAge;
+            return singleJournalEntry.getText();
         }
 
         public void Undo()
         {
             throw new ShouldNotBeAbleToGetHereException("Attempting to undo initial character journl entry.");
+        }
+
+        public string getId()
+        {
+            return singleJournalEntry.getId();
         }
     }
 

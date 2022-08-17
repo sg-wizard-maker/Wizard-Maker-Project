@@ -14,7 +14,6 @@ namespace WizardMakerTestbed.Models
         private string ability;
         private int xp;
         private string specialty; 
-        private bool isAbsoluteXp;
 
         public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, CharacterManager characterManager, string ability, 
             int xp, string specialty)
@@ -39,12 +38,17 @@ namespace WizardMakerTestbed.Models
 
         public void Execute()
         {
-            characterManager.addAbility(ability, xp, specialty);
+            characterManager.addAbility(ability, xp, specialty, this.text.Id);
         }
 
         public void Undo()
         {
             throw new NotImplementedException();
+        }
+
+        public string getId()
+        {
+            return text.getId();
         }
     }
 }

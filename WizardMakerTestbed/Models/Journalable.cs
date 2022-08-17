@@ -8,5 +8,7 @@ namespace WizardMakerTestbed.Models
         string getText();
 
         SeasonYear getDate();
+
+        string getId();
     }
 }

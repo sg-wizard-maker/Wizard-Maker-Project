@@ -26,11 +26,16 @@ namespace WizardMakerTestbed.Models
     {
         public string JournalEntryText { get; set; }
         public SeasonYear SeasonYear { get; set; }
+        public String Id { get; }
 
         public SingleJournalEntry(string journalEntryText, SeasonYear seasonYear)
         {
             JournalEntryText = journalEntryText;
             SeasonYear = seasonYear;
+
+            Guid myuuid = Guid.NewGuid();
+            Id = myuuid.ToString();
+
         }
 
         public string getText()
@@ -51,6 +56,11 @@ namespace WizardMakerTestbed.Models
         public void Undo()
         {
             //no-op
+        }
+
+        public string getId()
+        {
+            return Id;
         }
     }
 }

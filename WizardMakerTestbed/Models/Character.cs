@@ -33,6 +33,9 @@ namespace WizardMakerPrototype.Models
         }
 
         public void addJournalable(Journalable journalable) { journalableManager.addJournalable(journalable); }
+        public void removeJournalable(string text) { journalableManager.removeJournalEntry(text); }
+
+        public void resetAbilities() { abilities = new List<AbilityInstance>(); }
 
         public SortedSet<Journalable> GetJournal() { return journalableManager.getJournalables(); }
     }

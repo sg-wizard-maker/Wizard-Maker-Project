@@ -31,7 +31,6 @@ namespace WizardMakerPrototype.Models
             }, startingAge);
 
             // Characters will always need an overdrawn XP pool at the end.
-            // TODO: Need to initialize a character with the journal entries that simply create these XP Pools.
             // TODO: Replace with mechanism of journal entries in a refactoring.  This will be a pretty large refactoring.
             // TODO: Need code that will take all journal spending entries and redo all of the XPPool allocations.
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
@@ -61,6 +60,9 @@ namespace WizardMakerPrototype.Models
             // Reset the experience pools
             foreach(XPPool xPPool in this.XPPoolList) { xPPool.reset(); }   
 
+            // Reset the abilities
+            character.resetAbilities();
+
             foreach(Journalable journalable in character.GetJournal())
             {
                 journalable.Execute();
@@ -83,12 +85,13 @@ namespace WizardMakerPrototype.Models
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
          * XP is always absolute XP.  
          */
-        public void addAbility(string ability, int xp, string specialty)
+        public void addAbility(string ability, int xp, string specialty, string id)
         {
             if (!doesCharacterHaveAbility(ability))
             {
+
                 // add the ability to the character
-                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty));
+                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, id));
             }
             else
             {
@@ -134,18 +137,13 @@ namespace WizardMakerPrototype.Models
             return getCharacterAbilitiesAsList().Contains(ability);
         }
 
-        public void deleteAbility(string ability)
+        public void deleteAbility(string id)
         {
+            character.removeJournalable(id);
+
             // TODO: Return XP to the appropriate pools.
 
-            // Delete the ability
-            AbilityInstance abilityInstance = retrieveAbilityInstance(ability);
-            character.abilities.Remove(abilityInstance);
-        }
-
-        public void setAbilityXp(string ability, int xp, string specialty)
-        {
-            addAbility(ability, xp, specialty);
+            renderAllJournalEntries();
         }
 
         public List<string> retrieveCommonSpecializations(string ability)
@@ -156,7 +154,9 @@ namespace WizardMakerPrototype.Models
 
         private CharacterData convertCharacterToCharacterData()
         {
+            
             List<AbilityInstanceData> abilities = new List<AbilityInstanceData>();
+            
             foreach (AbilityInstance abilityInstance in character.abilities)
             {
                 abilities.Add(convertAbilityInstanceData(abilityInstance));
@@ -167,9 +167,10 @@ namespace WizardMakerPrototype.Models
 
         private AbilityInstanceData convertAbilityInstanceData(AbilityInstance abilityInstance)
         {
+            // Note that for the front end the ID of the ability is also the name.  This may need to be cahnged in the future.
             return new AbilityInstanceData(abilityInstance.Category,
                 abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
-                abilityInstance.Specialty);
+                abilityInstance.Specialty, abilityInstance.id);
         }
 
         public CharacterData renderCharacterAsCharacterData()

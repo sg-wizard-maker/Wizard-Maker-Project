@@ -21,7 +21,7 @@ namespace WizardMakerPrototype.Models
 
         void addJournalable(Journalable journalable);
 
-        void removeJournalEntry(String text);
+        void removeJournalEntry(String id);
     }
 
     public class JournableComparator: IComparer<Journalable>
