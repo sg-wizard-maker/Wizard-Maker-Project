@@ -13,9 +13,7 @@ namespace WizardMakerPrototype.Models
     {
         private Character character;
 
-        private SortedSet<XPPool> XPPoolList;
-
-        private Dictionary<string, Journalable> abilityNameToJournalEntry;
+        private Dictionary<string, IJournalable> abilityNameToJournalEntry;
 
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
 
@@ -24,19 +22,19 @@ namespace WizardMakerPrototype.Models
             //TODO: This needs to be an input, not hardcoded
             ArchAbility childhoodLanguage = ArchAbility.LangEnglish;
 
-            this.character = new Character("New Character", "", new List<AbilityInstance>(), new List<Journalable>()
-            {
-                //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-                new NewCharacterInitJournalEntry(this, startingAge, childhoodLanguage)
-            }, startingAge);
+            this.character = new Character("New Character", "", new List<AbilityInstance>(), new List<IJournalable>(), startingAge);
+            
+            //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
+            this.character.addJournalable(new NewCharacterInitJournalEntry(character, startingAge, childhoodLanguage, 15));
+            
 
             // Characters will always need an overdrawn XP pool at the end.
             // TODO: Replace with mechanism of journal entries in a refactoring.  This will be a pretty large refactoring.
             // TODO: Need code that will take all journal spending entries and redo all of the XPPool allocations.
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
-            this.XPPoolList = new SortedSet<XPPool>(new XPPoolComparer());
 
-            this.abilityNameToJournalEntry = new Dictionary<string, Journalable>();
+
+            this.abilityNameToJournalEntry = new Dictionary<string, IJournalable>();
 
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
@@ -53,17 +51,17 @@ namespace WizardMakerPrototype.Models
             throw new NotImplementedException();
         }
 
-        public void addXPPool(XPPool xPPool) { this.XPPoolList.Add(xPPool); }
+        public void addXPPool(XPPool xPPool) { character.XPPoolList.Add(xPPool); }
 
         public void renderAllJournalEntries()
         {
             // Reset the experience pools
-            foreach(XPPool xPPool in this.XPPoolList) { xPPool.reset(); }   
+            foreach(XPPool xPPool in character.XPPoolList) { xPPool.reset(); }   
 
             // Reset the abilities
             character.resetAbilities();
 
-            foreach(Journalable journalable in character.GetJournal())
+            foreach(IJournalable journalable in character.GetJournal())
             {
                 journalable.Execute();
             }
@@ -85,13 +83,13 @@ namespace WizardMakerPrototype.Models
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
          * XP is always absolute XP.  
          */
-        public void addAbility(string ability, int xp, string specialty, string id)
+        public void addAbility(string ability, int xp, string specialty)
         {
             if (!doesCharacterHaveAbility(ability))
             {
 
                 // add the ability to the character
-                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, id));
+                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty));
             }
             else
             {
@@ -99,7 +97,7 @@ namespace WizardMakerPrototype.Models
              
             }
 
-            AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(ability), xp, this.XPPoolList);
+            AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(ability), xp, character.XPPoolList);
         }
 
         /**
@@ -180,22 +178,17 @@ namespace WizardMakerPrototype.Models
 
         public string renderXPPoolsAsJson()
         {
-            return JsonConvert.SerializeObject(this.XPPoolList, Formatting.Indented);
+            return JsonConvert.SerializeObject(character.XPPoolList, Formatting.Indented);
         }
 
-        public int getXPPoolCount() { return XPPoolList.Count; }
+        public int getXPPoolCount() { return character.XPPoolList.Count; }
 
         /** This will always return a number >= 0.  This will not include overdrawn
          * Assumes that the overdrawn pool is the last one on the list.
          */
         public int totalRemainingXPWithoutOverdrawn()
         {
-            int result = 0;
-            for (int i = 0; i < XPPoolList.Count - 1; i ++)
-            {
-                result += XPPoolList.ElementAt(i).remainingXP;
-            }
-            return result;
+            return character.totalRemainingXPWithoutOverdrawn();
         }
 
         public int getJournalSize() { return character.GetJournal().Count; }

@@ -3,7 +3,7 @@
 namespace WizardMakerTestbed.Models
 {
     // TODO: Give it an ID field.  This way we can support searching and easier deletion.
-    public interface Journalable: ICommand
+    public interface IJournalable: ICommand
     {
         string getText();
 

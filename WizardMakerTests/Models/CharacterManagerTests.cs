@@ -15,7 +15,7 @@ namespace WizardMakerPrototype.Models.Tests
         [DataTestMethod()]
         [DataRow("Bows", 75, "Short Bow", 5)]
         [DataRow("Bows", 55, "Short Bow", 4)]
-        public void addAbilityTest(string n, int xp, string s, int expectedScore)
+        public void AddAbilityTest(string n, int xp, string s, int expectedScore)
         {
             
             CharacterManager cm = new CharacterManager(25);
@@ -33,7 +33,11 @@ namespace WizardMakerPrototype.Models.Tests
 
         [DataTestMethod()]
         [DataRow("Bows", 75, 50, "Short Bow", 4)]
-        public void TestUpdateAbilityTwoOnSameSkill(string n, int xp1, int xp2, string s, int expectedScore)
+        [DataRow("Bows", 55, 50, "Short Bow", 4)]
+        [DataRow("Bows", 15, 50, "Short Bow", 4)]
+        [DataRow("Bows", 15, 10, "Short Bow", 1)]
+        [DataRow("Bows", 15, 0, "Short Bow", 0)]
+        public void UpdateAbilityTwiceWithAbsoluteXpTest(string n, int xp1, int xp2, string s, int expectedScore)
         {
             CharacterManager cm = new CharacterManager(25);
 
@@ -53,10 +57,10 @@ namespace WizardMakerPrototype.Models.Tests
             CharacterData cd = cm.renderCharacterAsCharacterData();
             Assert.IsNotNull(cd);
             Assert.AreEqual(2, cd.abilities.Count);
-            Assert.AreEqual(n, cd.abilities[1].Name);
-            Assert.AreEqual(xp2, cd.abilities[1].XP);
-            Assert.AreEqual(s, cd.abilities[1].Specialty);
-            Assert.AreEqual(expectedScore, cd.abilities[1].Score);
+            Assert.AreEqual(n, cd.abilities[0].Name);
+            Assert.AreEqual(xp2, cd.abilities[0].XP);
+            Assert.AreEqual(s, cd.abilities[0].Specialty);
+            Assert.AreEqual(expectedScore, cd.abilities[0].Score);
             
             // We should only have one Bow ability listed.
             Assert.AreEqual(1, cd.abilities.Count(a => a.Name == n));

@@ -15,7 +15,7 @@ namespace WizardMakerPrototype.Models.Tests
         // TODO: Convert to using DataRow
         [TestMethod()]
         
-        public void addJournalableTest()
+        public void AddJournalableTest()
         {
             IJournalableManager journalableManager = new BasicJournalableManager();
 
@@ -29,7 +29,7 @@ namespace WizardMakerPrototype.Models.Tests
             for (int i = 0; i < seasonYears.Length; i++) {
                 journalableManager.addJournalable(new SingleJournalEntry("Random entry " + i, seasonYears[i]));
             }
-            SortedSet<Journalable> journalables = journalableManager.getJournalables();
+            SortedSet<IJournalable> journalables = journalableManager.getJournalables();
             Assert.AreEqual(seasonYears.Length, journalables.Count);
 
             int[] sortedIndexes = { 0, 4, 1, 3, 2 };
@@ -41,16 +41,22 @@ namespace WizardMakerPrototype.Models.Tests
         }
 
         [TestMethod()]
-        public void removeJournalableTest()
+        public void RemoveJournalableTest()
         {
             IJournalableManager journalableManager = new BasicJournalableManager();
             String TEST_STRING = "ENTRY_";
+            String idToRemove = "THIS IS DEFINITELY WRONG";
             for (int i = 0; i < 4; i++)
             {
-                journalableManager.addJournalable(new SingleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING)));
+                SingleJournalEntry journalable = new SingleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING));
+                journalableManager.addJournalable(journalable);
+                if (i == 2)
+                {
+                    idToRemove = journalable.Id;
+                }
             }
 
-            journalableManager.removeJournalEntry(TEST_STRING+"2");
+            journalableManager.removeJournalEntry(idToRemove);
 
             Assert.AreEqual(3, journalableManager.getJournalables().Count);
             for (int i = 0; i < 3; i++)

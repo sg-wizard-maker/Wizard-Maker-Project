@@ -17,16 +17,16 @@ namespace WizardMakerPrototype.Models
 
         void setCharacterGenerationMode(bool isCharacterGenerationMode);
 
-        SortedSet<Journalable> getJournalables();
+        SortedSet<IJournalable> getJournalables();
 
-        void addJournalable(Journalable journalable);
+        void addJournalable(IJournalable journalable);
 
         void removeJournalEntry(String id);
     }
 
-    public class JournableComparator: IComparer<Journalable>
+    public class JournableComparator: IComparer<IJournalable>
     {
-        public int Compare(Journalable x, Journalable y)
+        public int Compare(IJournalable x, IJournalable y)
         {
 
             if (x.getDate().Year == y.getDate().Year)

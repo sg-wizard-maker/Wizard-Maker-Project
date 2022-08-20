@@ -405,7 +405,7 @@ namespace WizardMakerTestbed.Models
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
 
-        public AbilityInstance ( ArchAbility ability, string id, int xp = 0, string specialty = "", 
+        public AbilityInstance ( ArchAbility ability, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
             decimal xpCost = determineXpCost(ability);
@@ -416,7 +416,7 @@ namespace WizardMakerTestbed.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.id = id;
+            this.id = createID();
         }
 
         public override string ToString ()
@@ -426,6 +426,11 @@ namespace WizardMakerTestbed.Models
             return str;
         }
 
+        public static string createID()
+        {
+            Guid myuuid = Guid.NewGuid();
+            return myuuid.ToString();
+        }
 
     }
 
