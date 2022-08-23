@@ -63,7 +63,7 @@ namespace WizardMakerPrototype
 
             CharacterData c = characterManager.renderCharacterAsCharacterData();
 
-            foreach (var a in c.abilities)
+            foreach (var a in c.Abilities)
             {
                 //TODO: Make constants from the magic numbers
                 dataGridView1.Rows.Add(a.Name);
@@ -100,7 +100,7 @@ namespace WizardMakerPrototype
         private string retrieveAbilityIdFromAbilityName(string name)
         {
             CharacterData c = characterManager.renderCharacterAsCharacterData();
-            foreach (var a in c.abilities)
+            foreach (var a in c.Abilities)
             {
                 if (a.Name == name)
                 {

@@ -22,6 +22,9 @@ namespace WizardMakerPrototype.Models
 
         private SortedSet<IJournalable> journalEntries { get { return journalableManager.getJournalables(); } }
 
+        public Character(string name, string description, int startingAge) : this(name, description, new List<AbilityInstance>(), new List<IJournalable>(), startingAge) { }
+        
+
         public Character(string name, string description, List<AbilityInstance> abilities, List<IJournalable> journalEntries, int startingAge)
         {
             Name = name;

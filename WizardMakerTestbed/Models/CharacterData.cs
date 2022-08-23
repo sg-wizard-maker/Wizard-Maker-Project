@@ -16,13 +16,13 @@ namespace WizardMakerPrototype.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public List<AbilityInstanceData> abilities { get; set; }
+        public List<AbilityInstanceData> Abilities { get; set; }
 
         public CharacterData(string name, string description, List<AbilityInstanceData> abilities)
         {
             Name = name;
             Description = description;
-            this.abilities = abilities;
+            this.Abilities = abilities;
         }
     }
 

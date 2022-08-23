@@ -73,30 +73,9 @@ namespace WizardMakerPrototype.Models
             CharacterRenderer.renderAllJournalEntries(character);
         }
 
-        private CharacterData convertCharacterToCharacterData()
-        {
-            
-            List<AbilityInstanceData> abilities = new List<AbilityInstanceData>();
-            
-            foreach (AbilityInstance abilityInstance in character.abilities)
-            {
-                abilities.Add(convertAbilityInstanceData(abilityInstance));
-            }
-
-            return new CharacterData(character.Name, character.Description, abilities);
-        }
-
-        private AbilityInstanceData convertAbilityInstanceData(AbilityInstance abilityInstance)
-        {
-            // Note that for the front end the ID of the ability is also the name.  This may need to be cahnged in the future.
-            return new AbilityInstanceData(abilityInstance.Category,
-                abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
-                abilityInstance.Specialty, abilityInstance.id);
-        }
-
         public CharacterData renderCharacterAsCharacterData()
         {
-            return convertCharacterToCharacterData();
+            return CharacterRenderer.renderCharacterAsCharacterData(character);
         }
 
         public string renderXPPoolsAsJson()

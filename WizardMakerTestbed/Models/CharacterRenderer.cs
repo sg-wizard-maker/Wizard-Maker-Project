@@ -11,6 +11,8 @@ namespace WizardMakerPrototype.Models
     //  updates that arise from journal entries.
     //  for example, the CharacterManager would add journal entries and then invoke the character renderer to populate the character internals
     //  based on those journal entries.
+    //
+    // This class also renders the CharacterData.
     internal class CharacterRenderer
     {
 
@@ -65,5 +67,31 @@ namespace WizardMakerPrototype.Models
         private static List<AbilityInstance> getCharacterAbilityInstancesAsList(Character character) { return character.abilities.ToList(); }
 
         public static List<string> getCharacterAbilitiesAsList(Character character) { return character.abilities.Select<AbilityInstance, string>(a => a.Name).ToList(); }
+
+        private static CharacterData convertCharacterToCharacterData(Character character)
+        {
+
+            List<AbilityInstanceData> abilities = new List<AbilityInstanceData>();
+
+            foreach (AbilityInstance abilityInstance in character.abilities)
+            {
+                abilities.Add(convertAbilityInstanceData(abilityInstance));
+            }
+
+            return new CharacterData(character.Name, character.Description, abilities);
+        }
+
+        private static AbilityInstanceData convertAbilityInstanceData(AbilityInstance abilityInstance)
+        {
+            // Note that for the front end the ID of the ability is also the name.  This may need to be cahnged in the future.
+            return new AbilityInstanceData(abilityInstance.Category,
+                abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
+                abilityInstance.Specialty, abilityInstance.id);
+        }
+
+        public static CharacterData renderCharacterAsCharacterData(Character character)
+        {
+            return convertCharacterToCharacterData(character);
+        }
     }
 }
