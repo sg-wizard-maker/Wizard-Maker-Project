@@ -7,6 +7,9 @@ using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
 {
+    // This class handles cases where we need intelligence around adding journal entires.  
+    //  For example, we may want to overwrite journal entries during character creation, which would be necessary to support changes 
+    //  when a user selects a virtue or flaw (eg, wealthy)
     public class BasicJournalableManager : IJournalableManager
     {
         private bool isIsInCharacterGenerationMode = true;

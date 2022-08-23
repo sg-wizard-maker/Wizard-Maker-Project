@@ -101,6 +101,7 @@
     <Compile Include="Models\BasicJournalableManager.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharacterManager.cs" />
+    <Compile Include="Models\CharacterRenderer.cs" />
     <Compile Include="Models\ExtremelyPrimitiveAbilityModel.cs" />
     <Compile Include="Models\CharacterData.cs" />
     <Compile Include="Models\ICommand.cs" />

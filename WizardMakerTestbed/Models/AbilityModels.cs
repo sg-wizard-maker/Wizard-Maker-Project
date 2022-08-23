@@ -78,7 +78,8 @@ namespace WizardMakerTestbed.Models
         // Need some additional properties defining the relations to
         // requirements/associations with certain Virtues/Flaws, age categories, etc...
 
-        private AbilityType(string abbrev, string name)
+        // This is only public so that it can be available for serialization
+        public AbilityType(string abbrev, string name)
         {
             this.Abbreviation = abbrev;
             this.Name = name;

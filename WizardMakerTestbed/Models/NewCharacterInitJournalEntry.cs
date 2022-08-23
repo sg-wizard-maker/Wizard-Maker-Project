@@ -57,6 +57,7 @@ namespace WizardMakerTestbed.Models
 
             // Total for a starting age of 25 is:
             //  75 + 45 + 20*15
+            // Characters will always need an overdrawn XP pool at the end.
             List<XPPool> tmp = new List<XPPool>() {
                 new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION + " (" + childhoodLanguage.Name + ")", 
                                             CHILDHOOD_LANGUAGE_XP, new List<ArchAbility>() { childhoodLanguage }),

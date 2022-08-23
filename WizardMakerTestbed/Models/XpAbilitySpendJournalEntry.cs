@@ -10,17 +10,17 @@ namespace WizardMakerTestbed.Models
     {
 
         public SingleJournalEntry text;
-        private CharacterManager characterManager;
+        private Character character;
         private string ability;
         private int xp;
         private string specialty; 
 
-        public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, CharacterManager characterManager, string ability, 
+        public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, Character character, string ability, 
             int xp, string specialty)
         {
             this.text = new SingleJournalEntry(entry, sy);
         
-            this.characterManager = characterManager;
+            this.character = character;
             this.ability = ability;
             this.xp = xp;
             this.specialty = specialty; 
@@ -38,7 +38,7 @@ namespace WizardMakerTestbed.Models
 
         public void Execute()
         {
-            characterManager.addAbility(ability, xp, specialty);
+            CharacterRenderer.addAbility(character, ability, xp, specialty);
         }
 
         public void Undo()

@@ -92,7 +92,7 @@ namespace WizardMakerPrototype
                 {
                     throw new ShouldNotBeAbleToGetHereException("Could not find ID for " + deletedAbility);
                 }
-                characterManager.deleteAbility(abilityId);
+                characterManager.deleteAbilityInstance(abilityId);
                 updateCharacterDisplay();
             }
         }

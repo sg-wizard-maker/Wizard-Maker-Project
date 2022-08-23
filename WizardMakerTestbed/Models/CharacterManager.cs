@@ -9,11 +9,13 @@ using WizardMakerTestbed.Models;
 [assembly: InternalsVisibleTo("WizardMakerTests.Models")]
 namespace WizardMakerPrototype.Models
 {
+    /**
+     * This class is meant to interface witha front end, be it API calls or a GUI.
+     * This happens by adding journal entries and then rendering the Character from the assembled list of journal entries.
+     * */
     public class CharacterManager
     {
         private Character character;
-
-        private Dictionary<string, IJournalable> abilityNameToJournalEntry;
 
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
 
@@ -28,18 +30,11 @@ namespace WizardMakerPrototype.Models
             this.character.addJournalable(new NewCharacterInitJournalEntry(character, startingAge, childhoodLanguage, 15));
             
 
-            // Characters will always need an overdrawn XP pool at the end.
-            // TODO: Replace with mechanism of journal entries in a refactoring.  This will be a pretty large refactoring.
-            // TODO: Need code that will take all journal spending entries and redo all of the XPPool allocations.
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
-
-
-            this.abilityNameToJournalEntry = new Dictionary<string, IJournalable>();
-
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
             // Last step:  Render the character with all journal entries.
-            renderAllJournalEntries();
+            CharacterRenderer.renderAllJournalEntries(character);
         }
 
         //TODO: Make class to wrap character pools.  This way we can just obtain the pool for childhood, etc, through that interface.  And look at aggregate information.
@@ -51,53 +46,9 @@ namespace WizardMakerPrototype.Models
             throw new NotImplementedException();
         }
 
-        public void addXPPool(XPPool xPPool) { character.XPPoolList.Add(xPPool); }
-
-        public void renderAllJournalEntries()
-        {
-            // Reset the experience pools
-            foreach(XPPool xPPool in character.XPPoolList) { xPPool.reset(); }   
-
-            // Reset the abilities
-            character.resetAbilities();
-
-            foreach(IJournalable journalable in character.GetJournal())
-            {
-                journalable.Execute();
-            }
-        }
-        // TODO: Implement this if we need it
-        public void renderAllJournalEntriesThroughSeasonYear(SeasonYear seasonYear)
-        {
-            throw new NotImplementedException();
-        }
-
         public string getCharacterName()
         {
             return character.Name;
-        }
-
-        //TODO: Need to create a way to modify/remove journal entries
-        //  This will include rerendering the character in its entirety
-        /** 
-         * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
-         * XP is always absolute XP.  
-         */
-        public void addAbility(string ability, int xp, string specialty)
-        {
-            if (!doesCharacterHaveAbility(ability))
-            {
-
-                // add the ability to the character
-                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty));
-            }
-            else
-            {
-                retrieveAbilityInstance(ability).XP = xp;
-             
-            }
-
-            AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(ability), xp, character.XPPoolList);
         }
 
         /**
@@ -108,46 +59,18 @@ namespace WizardMakerPrototype.Models
         public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
             XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = new XpAbilitySpendJournalEntry(ABILITY_CREATION_NAME_PREFIX + ability,
-                new SeasonYear(1219, Season.SPRING), this, ability, absoluteXp, specialty);
+                new SeasonYear(1219, Season.SPRING), character, ability, absoluteXp, specialty);
 
             character.addJournalable(xpAbilitySpendJournalEntry);
-            renderAllJournalEntries();
+            CharacterRenderer.renderAllJournalEntries(character);
         }
 
-        public AbilityInstance retrieveAbilityInstance(string ability)
-        {
-            // TODO: Test to see what happens if there are multiple instances of the same ability
-            return getCharacterAbilityInstancesAsList().Find(a => a.Name == ability);
-        }
-
-        public List<string> getCharacterAbilitiesAsList() { return character.abilities.Select<AbilityInstance, string>(a => a.Name).ToList(); }
-
-        private List<AbilityInstance> getCharacterAbilityInstancesAsList() { return character.abilities.ToList(); }
-
-        public string[] getCharacterAbilities()
-        {
-            return getCharacterAbilitiesAsList().ToArray();
-        }
-
-        // TODO: Test Area Lore skills.
-        private bool doesCharacterHaveAbility(string ability)
-        {
-            return getCharacterAbilitiesAsList().Contains(ability);
-        }
-
-        public void deleteAbility(string id)
+        public void deleteAbilityInstance(string id)
         {
             character.removeJournalable(id);
 
-            // TODO: Return XP to the appropriate pools.
-
-            renderAllJournalEntries();
-        }
-
-        public List<string> retrieveCommonSpecializations(string ability)
-        {
-            AbilityInstance abilityInstance =  retrieveAbilityInstance(ability);
-            return abilityInstance.CommonSpecializations;
+            // Render, which will handle the resetting of XP Pools.
+            CharacterRenderer.renderAllJournalEntries(character);
         }
 
         private CharacterData convertCharacterToCharacterData()
