@@ -20,15 +20,15 @@ namespace WizardMakerTests.Models
             Character c = new ("Foo", "Looks like a foo", 25);
             c.XPPoolList.Add(new BasicXPPool("dummy", "dummy XP Pool", 500));
             CharacterRenderer.addAbility(c, n, xp, s);
-            CharacterData cd = CharacterRenderer.renderCharacterAsCharacterData(c);
+            CharacterData characterData = CharacterRenderer.renderCharacterAsCharacterData(c);
 
             // Language abillity is added automatically.
-            Assert.IsNotNull(cd);
-            Assert.AreEqual(1, cd.Abilities.Count);
-            Assert.AreEqual(n, cd.Abilities[0].Name);
-            Assert.AreEqual(xp, cd.Abilities[0].XP);
-            Assert.AreEqual(s, cd.Abilities[0].Specialty);
-            Assert.AreEqual(expectedScore, cd.Abilities[0].Score);
+            Assert.IsNotNull(characterData);
+            Assert.AreEqual(1, characterData.Abilities.Count);
+            Assert.AreEqual(n, characterData.Abilities[0].Name);
+            Assert.AreEqual(xp, characterData.Abilities[0].XP);
+            Assert.AreEqual(s, characterData.Abilities[0].Specialty);
+            Assert.AreEqual(expectedScore, characterData.Abilities[0].Score);
         }
     }
 }

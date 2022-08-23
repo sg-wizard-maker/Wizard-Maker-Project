@@ -15,7 +15,7 @@ namespace WizardMakerPrototype.Models
      * */
     public class CharacterManager
     {
-        private Character character;
+        private Character Character;
 
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
 
@@ -24,17 +24,17 @@ namespace WizardMakerPrototype.Models
             //TODO: This needs to be an input, not hardcoded
             ArchAbility childhoodLanguage = ArchAbility.LangEnglish;
 
-            this.character = new Character("New Character", "", new List<AbilityInstance>(), new List<IJournalable>(), startingAge);
+            this.Character = new Character("New Character", "", new List<AbilityInstance>(), new List<IJournalable>(), startingAge);
             
             //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-            this.character.addJournalable(new NewCharacterInitJournalEntry(character, startingAge, childhoodLanguage, 15));
+            this.Character.addJournalable(new NewCharacterInitJournalEntry(Character, startingAge, childhoodLanguage, 15));
             
 
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
             // Last step:  Render the character with all journal entries.
-            CharacterRenderer.renderAllJournalEntries(character);
+            CharacterRenderer.renderAllJournalEntries(Character);
         }
 
         //TODO: Make class to wrap character pools.  This way we can just obtain the pool for childhood, etc, through that interface.  And look at aggregate information.
@@ -48,7 +48,7 @@ namespace WizardMakerPrototype.Models
 
         public string getCharacterName()
         {
-            return character.Name;
+            return Character.Name;
         }
 
         /**
@@ -59,40 +59,40 @@ namespace WizardMakerPrototype.Models
         public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
             XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = new XpAbilitySpendJournalEntry(ABILITY_CREATION_NAME_PREFIX + ability,
-                new SeasonYear(1219, Season.SPRING), character, ability, absoluteXp, specialty);
+                new SeasonYear(1219, Season.SPRING), Character, ability, absoluteXp, specialty);
 
-            character.addJournalable(xpAbilitySpendJournalEntry);
-            CharacterRenderer.renderAllJournalEntries(character);
+            Character.addJournalable(xpAbilitySpendJournalEntry);
+            CharacterRenderer.renderAllJournalEntries(Character);
         }
 
         public void deleteAbilityInstance(string id)
         {
-            character.removeJournalable(id);
+            Character.removeJournalable(id);
 
             // Render, which will handle the resetting of XP Pools.
-            CharacterRenderer.renderAllJournalEntries(character);
+            CharacterRenderer.renderAllJournalEntries(Character);
         }
 
         public CharacterData renderCharacterAsCharacterData()
         {
-            return CharacterRenderer.renderCharacterAsCharacterData(character);
+            return CharacterRenderer.renderCharacterAsCharacterData(Character);
         }
 
         public string renderXPPoolsAsJson()
         {
-            return JsonConvert.SerializeObject(character.XPPoolList, Formatting.Indented);
+            return JsonConvert.SerializeObject(Character.XPPoolList, Formatting.Indented);
         }
 
-        public int getXPPoolCount() { return character.XPPoolList.Count; }
+        public int getXPPoolCount() { return Character.XPPoolList.Count; }
 
         /** This will always return a number >= 0.  This will not include overdrawn
          * Assumes that the overdrawn pool is the last one on the list.
          */
         public int totalRemainingXPWithoutOverdrawn()
         {
-            return character.totalRemainingXPWithoutOverdrawn();
+            return Character.totalRemainingXPWithoutOverdrawn();
         }
 
-        public int getJournalSize() { return character.GetJournal().Count; }
+        public int getJournalSize() { return Character.GetJournal().Count; }
     }
 }
