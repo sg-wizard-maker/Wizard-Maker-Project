@@ -78,7 +78,8 @@ namespace WizardMakerTestbed.Models
         // Need some additional properties defining the relations to
         // requirements/associations with certain Virtues/Flaws, age categories, etc...
 
-        private AbilityType(string abbrev, string name)
+        // This is only public so that it can be available for serialization
+        public AbilityType(string abbrev, string name)
         {
             this.Abbreviation = abbrev;
             this.Name = name;
@@ -405,7 +406,7 @@ namespace WizardMakerTestbed.Models
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
 
-        public AbilityInstance ( ArchAbility ability, string id, int xp = 0, string specialty = "", 
+        public AbilityInstance ( ArchAbility ability, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
             decimal xpCost = determineXpCost(ability);
@@ -416,7 +417,7 @@ namespace WizardMakerTestbed.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.id = id;
+            this.id = createID();
         }
 
         public override string ToString ()
@@ -426,6 +427,11 @@ namespace WizardMakerTestbed.Models
             return str;
         }
 
+        public static string createID()
+        {
+            Guid myuuid = Guid.NewGuid();
+            return myuuid.ToString();
+        }
 
     }
 

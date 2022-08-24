@@ -75,17 +75,17 @@ namespace WizardMakerTestbed
             this.TheButton.Click += new EventHandler( OnTheButtonClicked );
 
             #region GridForAbilities
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Brawl, createID(), 30, "Dodging"          ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Awareness, createID(), 15, "At night",         NO_AFF, PUI, 2 ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Charm, createID(), 4, "First impressions"                ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.FolkKen, createID(), 50, "Motivations",      AFF, NO_PUI    ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Guile, createID(), 6, "Not lying"        ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Brawl,  30, "Dodging"          ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Awareness,  15, "At night",         NO_AFF, PUI, 2 ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Charm,  4, "First impressions"                ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.FolkKen,  50, "Motivations",      AFF, NO_PUI    ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Guile,  6, "Not lying"        ) );
 
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.LangHighGerman, createID(), 75, "(dialect)"     ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.LangLatin, createID(), 50, "Hermetic usage") );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.ArtesLiberales, createID(), 15, "Astronomy"     ) );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.HermeticMagicTheory, createID(), 5, "Spell research") );
-            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Concentration, createID(), 140, "Duration",      AFF, PUI, 2 ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.LangHighGerman,  75, "(dialect)"     ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.LangLatin,  50, "Hermetic usage") );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.ArtesLiberales,  15, "Astronomy"     ) );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.HermeticMagicTheory,  5, "Spell research") );
+            bindingListOfAbilityInstances.Add( new AbilityInstance( ArchAbility.Concentration,  140, "Duration",      AFF, PUI, 2 ) );
 
             this.GridForAbilities.DataSource = bindingListOfAbilityInstances;
 
@@ -104,12 +104,6 @@ namespace WizardMakerTestbed
         {
             // This method emits text to a particular TextBox, to demo a text stream output
             TheTextBox.AppendText( text + "\r\n" );
-        }
-
-        public static string createID()
-        {
-            Guid myuuid = Guid.NewGuid();
-            return myuuid.ToString();
         }
     }
 }

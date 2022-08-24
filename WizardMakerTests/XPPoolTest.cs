@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using WizardMakerPrototype.Models;
 using WizardMakerTestbed.Models;
 
@@ -120,6 +121,51 @@ namespace WizardMakerTests
 
             // Later life should be reduced by 30
             Assert.IsTrue(pools.ElementAt(2).remainingXP == (75-30));
+        }
+
+
+        private static IEnumerable<object[]> ProduceTestXPPools()
+        {
+            yield return new object[]
+            {
+                new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION, CHILDHOOD_LANGUAGE_XP,
+                    new List<ArchAbility>() {ArchAbility.LangEnglish}),
+            };
+            yield return new object[]
+            {
+                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, 
+                    new List<ArchAbility>() {ArchAbility.AnimalHandling, ArchAbility.Charm}),
+            };
+            yield return new object[]
+            {
+                new CategoryAbilityXpPool("foo", "test", 100, new List<AbilityType>(){AbilityType.Arcane }),
+            };
+            yield return new object[]
+            {
+                new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, 75),
+            }; 
+            yield return new object[]
+            {
+                new AllowOverdrawnXpPool()
+            };
+        } 
+        // TODO: Add broken serialization attempts.  Particularly when trying to deserialize into the wrong derived class
+        /*[TestMethod]
+        [DynamicData(nameof(ProduceTestXPPools), DynamicDataSourceType.Method)]
+        */
+        // This test has been disabled, since XPPools being serializable is not necessarily a requirement.
+        public void SerializableTest(XPPool pool)
+        {
+            string tmp = pool.serializeJson();
+
+            XPPool deserialized = XPPool.deserializeJson(tmp);
+
+            Assert.IsNotNull(deserialized);
+            Assert.IsNotNull(pool);
+
+            // Note that if this is not calling the derived class IsSameSpecs, you will get erroneous passing of this test.  But
+            //  this should not happen due to usage of GetType
+            Assert.IsTrue(pool.IsSameSpecs(deserialized));
         }
     }
 }

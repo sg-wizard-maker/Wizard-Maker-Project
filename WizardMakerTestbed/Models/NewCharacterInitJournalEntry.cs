@@ -11,7 +11,7 @@ namespace WizardMakerTestbed.Models
      * 
      * First journal entry for most characters.
      */
-    public class NewCharacterInitJournalEntry : Journalable
+    public class NewCharacterInitJournalEntry : IJournalable
     {
 
         private const string CHILDHOOD_LANGUAGE_POOL_NAME = "Childhood language XP Pool";
@@ -20,35 +20,47 @@ namespace WizardMakerTestbed.Models
 
         private const string CHILDHOOD_POOL_NAME = "Childhood XP Pool";
         private const string CHILDHOOD_DESCRIPTION = "XP granted to starting characters that can be spent on childhood skills";
-        private const int CHILDHOOD_XP = 45;
+        public const int CHILDHOOD_XP = 45;
 
         private const string LATER_LIFE_POOL_NAME = "Later life XP Pool";
         private const string LATER_LIFE_DESCRIPTION = "XP granted to starting characters that can be spent on anything the character can learn.  After age 5.";
         
-        private const int CHILDHOOD_END_AGE = 5;
+        public static int CHILDHOOD_END_AGE = 5;
 
         SingleJournalEntry singleJournalEntry;
 
-        CharacterManager characterManager;
+        Character character;
         ArchAbility childhoodLanguage;
         int startingAge;
 
-        public NewCharacterInitJournalEntry(CharacterManager characterManager, int startingAge, ArchAbility childhoodLanguage)
+        // XP per year.  Eg, 20 for Wealthy.  Default is 15
+        int xpPerYear;
+
+        public NewCharacterInitJournalEntry(Character character, int startingAge, ArchAbility childhoodLanguage, int xpPerYear)
         {
-            this.characterManager = characterManager;
+            this.character = character;
             this.childhoodLanguage = childhoodLanguage;
             this.startingAge = startingAge;
 
             // TODO: Make this have to do with starting Age and user-specified year.
             singleJournalEntry = new SingleJournalEntry("Character initialized at age " + startingAge, new SeasonYear(1219, Season.SPRING));
+            this.xpPerYear = xpPerYear;
         }
-    
+
         public void Execute()
         {
+            // Validation
+            if (startingAge < CHILDHOOD_END_AGE)
+            {
+                throw new InvalidCharacterInitializationException("Starting age (" + startingAge + ") is less than childhood age (" + CHILDHOOD_END_AGE + ").  We cannot support creation for characters that young.");
+            }
+
             // Total for a starting age of 25 is:
             //  75 + 45 + 20*15
+            // Characters will always need an overdrawn XP pool at the end.
             List<XPPool> tmp = new List<XPPool>() {
-                new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION + " (" + childhoodLanguage.Name + ")", CHILDHOOD_LANGUAGE_XP, new List<ArchAbility>() { childhoodLanguage }),
+                new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION + " (" + childhoodLanguage.Name + ")", 
+                                            CHILDHOOD_LANGUAGE_XP, new List<ArchAbility>() { childhoodLanguage }),
                 new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, determineChildhoodAbilities()),
                 new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, determineLaterLifeXp(this.startingAge)),
                 new AllowOverdrawnXpPool()
@@ -56,14 +68,13 @@ namespace WizardMakerTestbed.Models
 
             foreach (XPPool item in tmp)
             {
-                characterManager.addXPPool(item);
+                character.XPPoolList.Add(item);
             }
         }
 
         private int determineLaterLifeXp(int startingAge)
         {
-            //TODO: This will not necessarily still be a constant once we build virtues and flaws (wealthy and poor change the "15").
-            return Math.Max(0, (startingAge - CHILDHOOD_END_AGE) * 15);
+            return Math.Max(0, (startingAge - CHILDHOOD_END_AGE) * xpPerYear);
         }
         public static List<ArchAbility> determineChildhoodAbilities()
         {

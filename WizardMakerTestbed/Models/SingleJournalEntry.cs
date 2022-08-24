@@ -22,7 +22,7 @@ namespace WizardMakerTestbed.Models
     /** Just a note with a season and year attached to it.
     * Does not actually do anything.
     */
-    public class SingleJournalEntry : Journalable
+    public class SingleJournalEntry : IJournalable
     {
         public string JournalEntryText { get; set; }
         public SeasonYear SeasonYear { get; set; }

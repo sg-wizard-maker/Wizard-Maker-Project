@@ -34,13 +34,13 @@ namespace WizardMakerPrototype.Models
             return new ValidationResult();
         }
 
-        public static AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty, string id)
+        public static AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty)
         {
             // Create the ability instance
             ArchAbility archAbility = ArchAbility.lookupCommonAbilities(ability);
             validateSpendXPOnAbility(archAbility, xp);
 
-            return new AbilityInstance(archAbility, id, xp, specialty);
+            return new AbilityInstance(archAbility, xp, specialty);
         }
 
         public static void debitXPPoolsForAbility(AbilityInstance a, int xp, SortedSet<XPPool> XPPoolList)

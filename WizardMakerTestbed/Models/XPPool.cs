@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerTestbed.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 
 //TODO: Move XP Pools and Journals to their own package.
@@ -31,7 +33,7 @@ namespace WizardMakerPrototype.Models
     {
         public string name { get; }
         public string description { get; }
-        private int initialXP;
+        public int initialXP;
         public int remainingXP { get; set; }
 
         public XPPool(string name, string description, int initialXP)
@@ -53,9 +55,45 @@ namespace WizardMakerPrototype.Models
             this.remainingXP -= xp;
         }
 
+        // TODO: Do we need to be able to serialize and deserialize XP Pools?
+        public static XPPool deserializeJson(string json)
+        {
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.All,
+                MaxDepth = 128
+            };
+
+            return (XPPool) JsonConvert.DeserializeObject(json, settings);
+        }
+
+        public virtual string serializeJson()
+        {
+            var settings = new JsonSerializerSettings();
+            settings.TypeNameHandling = TypeNameHandling.All;
+
+            return JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+        }
+
         abstract public bool CanSpendOnAbility(ArchAbility archAbility);
 
         abstract public int sortOrder();
+
+        //TODO: This seems more difficult than it should be.
+        // TODO: If we do not need to serialize and deserialize XPPools, do we need this method?  It was meant for testing.
+        // This method is only used for testing.  We do not want to override the Equals behavior, becuase we typically do not want two XPPools with the 
+        //  same stats to be considered equal.  
+        public virtual Boolean IsSameSpecs(XPPool other)
+        {
+            if (other == null) return false;
+            if (this.GetType() != other.GetType()) return false;
+            if (this.name != other.name) return false;
+            if (this.description != other.description) return false;
+            if (!this.remainingXP.Equals(other.remainingXP)) return false;
+            if (this.initialXP != other.initialXP) return false;
+            
+            return true;
+        }
     }
 
     /**
@@ -83,7 +121,7 @@ namespace WizardMakerPrototype.Models
      */
     public class CategoryAbilityXpPool : XPPool
     {
-        private List<AbilityType> allowedAbilityTypes;
+        public List<AbilityType> allowedAbilityTypes { get; set; } 
 
         public CategoryAbilityXpPool(string name, string description, int initialXP, List<AbilityType> allowedAbilityTypes) : base(name, description, initialXP) { 
             this.allowedAbilityTypes = allowedAbilityTypes;
@@ -99,16 +137,30 @@ namespace WizardMakerPrototype.Models
         {
             return 10;
         }
+
+        public override Boolean IsSameSpecs(XPPool other)
+        {
+
+            if (!base.IsSameSpecs(other)) return false;
+            CategoryAbilityXpPool o2 = (CategoryAbilityXpPool)other;
+            if (this.allowedAbilityTypes.Count != o2.allowedAbilityTypes.Count) return false;
+            foreach (AbilityType type in allowedAbilityTypes)
+            {
+                if (!o2.allowedAbilityTypes.Contains(type)) { return false; }
+            }
+            return true;
+        }
+
     }
     /** This will be spent before ability categories
      */
     public class SpecificAbilitiesXpPool : XPPool
     {
-        private List<ArchAbility> allowedAbilities;
+        public List<ArchAbility> allowedAbilities { get; }
 
-        public SpecificAbilitiesXpPool(string name, string description, int initialXP, List<ArchAbility> allowedAbilityTypes) : base(name, description, initialXP)
+        public SpecificAbilitiesXpPool(string name, string description, int initialXP, List<ArchAbility> allowedAbilities) : base(name, description, initialXP)
         {
-            this.allowedAbilities = allowedAbilityTypes;
+            this.allowedAbilities = allowedAbilities;
         }
 
         public override bool CanSpendOnAbility(ArchAbility archAbility)
@@ -120,6 +172,18 @@ namespace WizardMakerPrototype.Models
         public override int sortOrder()
         {
             return 9;
+        }
+
+        public override Boolean IsSameSpecs(XPPool other)
+        {
+            if (!base.IsSameSpecs(other)) return false;
+            SpecificAbilitiesXpPool o2 = (SpecificAbilitiesXpPool)other;
+            if (this.allowedAbilities.Count != o2.allowedAbilities.Count) return false;
+            foreach (ArchAbility a in allowedAbilities)
+            {
+                if (!o2.allowedAbilities.Contains(a)) { return false; }
+            }
+            return true;
         }
     }
 

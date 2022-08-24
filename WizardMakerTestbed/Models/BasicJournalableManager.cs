@@ -7,21 +7,24 @@ using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
 {
+    // This class handles cases where we need intelligence around adding journal entires.  
+    //  For example, we may want to overwrite journal entries during character creation, which would be necessary to support changes 
+    //  when a user selects a virtue or flaw (eg, wealthy)
     public class BasicJournalableManager : IJournalableManager
     {
         private bool isIsInCharacterGenerationMode = true;
         
-        private SortedSet<Journalable> journalables = new SortedSet<Journalable>(new JournableComparator());
+        private SortedSet<IJournalable> journalables = new SortedSet<IJournalable>(new JournableComparator());
 
-        public void addJournalable(Journalable journalable)
+        public void addJournalable(IJournalable journalable)
         {
             // If we are in character creation mode, then overwrite this with any existing journal entry.
             if (this.isIsInCharacterGenerationMode)
             {
 
-                List<Journalable> journalEntriesToRemove = new List<Journalable>();
+                List<IJournalable> journalEntriesToRemove = new List<IJournalable>();
                 // Check if this is in our existing list (matching by text).  If so, remove it (it will get replaced next)
-                foreach (Journalable journalable2 in this.journalables)
+                foreach (IJournalable journalable2 in this.journalables)
                 {
                     if (journalable2.getText() == journalable.getText())
                     {
@@ -29,14 +32,14 @@ namespace WizardMakerPrototype.Models
                     }
                 }
 
-                foreach (Journalable journalableToRemove in journalEntriesToRemove) { journalables.Remove(journalableToRemove); }
+                foreach (IJournalable journalableToRemove in journalEntriesToRemove) { journalables.Remove(journalableToRemove); }
             }
             // Add a new one.
             journalables.Add(journalable);
         }
             
 
-        public SortedSet<Journalable> getJournalables()
+        public SortedSet<IJournalable> getJournalables()
         {
             return journalables;
         }
@@ -53,8 +56,8 @@ namespace WizardMakerPrototype.Models
 
         public void removeJournalEntry(String id) 
         {
-            SortedSet<Journalable> result = new SortedSet<Journalable>(new JournableComparator());
-            foreach (Journalable journalable in this.journalables)
+            SortedSet<IJournalable> result = new SortedSet<IJournalable>(new JournableComparator());
+            foreach (IJournalable journalable in this.journalables)
             {
                 if (!journalable.getId().Equals(id))
                 {
