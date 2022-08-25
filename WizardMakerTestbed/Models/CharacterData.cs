@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace WizardMakerPrototype.Models
             Name = name;
             Description = description;
             this.Abilities = abilities;
+        }
+
+        public bool IsSameSpec(CharacterData other)
+        {
+            if (other == null) return false;
+            if (this.GetType() != other.GetType()) return false;
+            if (this.Name != other.Name) return false;
+            if (this.Description != other.Description) return false;
+            if (this.Abilities.Count != other.Abilities.Count) return false;
+            for (int i = 0; i < this.Abilities.Count; i++)
+            {
+                if (!this.Abilities[i].IsSameSpec(other.Abilities[i])) return false;
+            }
+
+            return true;
         }
     }
 
@@ -51,6 +67,24 @@ namespace WizardMakerPrototype.Models
             Score = score;
             Specialty = specialty;
             Id = id;
-        }   
+        }
+
+        // Note: This includes a check on ID
+        public bool IsSameSpec(AbilityInstanceData other)
+        {
+            if (other == null) return false;
+            if (this.GetType() != other.GetType()) return false;
+            if (this.Name != other.Name) return false;
+            if (this.Category != other.Category) return false;
+            if (this.Type != other.Type) return false;
+            if (this.TypeAbbrev != other.TypeAbbrev) return false;
+            if (this.Score != other.Score) return false;
+            if (this.Specialty != other.Specialty) return false;
+            if (this.XP != other.XP) return false;
+            if (this.Id != other.Id) return false;
+
+            return true;
+
+        }
     }
 }

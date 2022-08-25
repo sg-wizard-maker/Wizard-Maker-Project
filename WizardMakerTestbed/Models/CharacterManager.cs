@@ -24,7 +24,7 @@ namespace WizardMakerPrototype.Models
             //TODO: This needs to be an input, not hardcoded
             ArchAbility childhoodLanguage = ArchAbility.LangEnglish;
 
-            this.Character = new Character("New Character", "", new List<AbilityInstance>(), new List<IJournalable>(), startingAge);
+            this.Character = new Character("New Character", "", startingAge);
             
             //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
             this.Character.addJournalable(new NewCharacterInitJournalEntry(Character, startingAge, childhoodLanguage, 15));

@@ -146,7 +146,10 @@ namespace WizardMakerPrototype.Models
             if (this.allowedAbilityTypes.Count != o2.allowedAbilityTypes.Count) return false;
             foreach (AbilityType type in allowedAbilityTypes)
             {
-                if (!o2.allowedAbilityTypes.Contains(type)) { return false; }
+                if (o2.allowedAbilityTypes.Where<AbilityType>(archAbilityType => archAbilityType.Name == type.Name).Count() == 0)
+                {
+                    return false;
+                }
             }
             return true;
         }
@@ -181,7 +184,11 @@ namespace WizardMakerPrototype.Models
             if (this.allowedAbilities.Count != o2.allowedAbilities.Count) return false;
             foreach (ArchAbility a in allowedAbilities)
             {
-                if (!o2.allowedAbilities.Contains(a)) { return false; }
+                
+                if (o2.allowedAbilities.Where<ArchAbility>(archAbility => archAbility.Name == a.Name).Count() == 0 )
+                {
+                    return false;
+                }
             }
             return true;
         }

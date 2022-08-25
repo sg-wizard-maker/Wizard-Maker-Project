@@ -11,3 +11,7 @@ WizardMakerTestbed/packages/**
 /WizardMakerTestbed/Form2.resx
 /WizardMakerTestbed/Form2.Designer.cs
 /WizardMakerTestbed/Form2.cs
+/WizardMakerTestbed/.vs
+/WizardMakerTestbed/TestResults
+/WizardMakerTests/bin/**
+/WizardMakerTests/obj/**
