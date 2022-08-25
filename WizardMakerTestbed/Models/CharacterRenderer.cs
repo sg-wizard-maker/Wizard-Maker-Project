@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,9 @@ namespace WizardMakerPrototype.Models
 
         public static void renderAllJournalEntries(Character character)
         {
-            // Reset the experience pools
-            foreach (XPPool xPPool in character.XPPoolList) { xPPool.reset(); }
-
-            // Reset the abilities
+            //Reset the Character
             character.resetAbilities();
+            foreach (XPPool xPPool in character.XPPoolList) { xPPool.reset(); }
 
             foreach (IJournalable journalable in character.GetJournal())
             {
@@ -66,7 +65,7 @@ namespace WizardMakerPrototype.Models
 
         private static List<AbilityInstance> getCharacterAbilityInstancesAsList(Character character) { return character.abilities.ToList(); }
 
-        public static List<string> getCharacterAbilitiesAsList(Character character) { return character.abilities.Select<AbilityInstance, string>(a => a.Name).ToList(); }
+        private static List<string> getCharacterAbilitiesAsList(Character character) { return character.abilities.Select<AbilityInstance, string>(a => a.Name).ToList(); }
 
         private static CharacterData convertCharacterToCharacterData(Character character)
         {
@@ -93,5 +92,17 @@ namespace WizardMakerPrototype.Models
         {
             return convertCharacterToCharacterData(character);
         }
+
+        public static string serializeCharacterData(CharacterData cd)
+        {
+            return JsonConvert.SerializeObject(cd, Formatting.Indented);
+        }
+
+        public static CharacterData deserializeCharacterData(string json)
+        {
+            return JsonConvert.DeserializeObject<CharacterData>(json);
+        }
+
+
     }
 }

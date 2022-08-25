@@ -7,14 +7,15 @@ using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
 {
+    //TODO:  We could separate out a character as a set of journal entries (and name, startingAge, and description) from a rendered character (with ability instances and XP Pools).  This might simplify the design -- we could probably get rid of CharacterData and only need to serialize the Character.
     public class Character
     {
         public string Name { get; set; }
         public string Description { get; set; }
 
         public List<AbilityInstance> abilities { get; set; }
+        public SortedSet<XPPool> XPPoolList { get; }
 
-        public SortedSet<XPPool> XPPoolList { get;  }
 
         public int startingAge { get; set; }
 
@@ -30,6 +31,7 @@ namespace WizardMakerPrototype.Models
             Name = name;
             Description = description;
             this.abilities = abilities;
+            
             this.journalableManager = new BasicJournalableManager();
             foreach(IJournalable journalable in journalEntries)
             {
@@ -42,10 +44,8 @@ namespace WizardMakerPrototype.Models
         public void addJournalable(IJournalable journalable) { journalableManager.addJournalable(journalable); }
         public void removeJournalable(string text) { journalableManager.removeJournalEntry(text); }
 
-        public void resetAbilities() { abilities = new List<AbilityInstance>(); }
-
         public SortedSet<IJournalable> GetJournal() { return journalableManager.getJournalables(); }
-        
+
         // Assumes that the last element in the XP Pool list is the overdrawn pool.
         public int totalRemainingXPWithoutOverdrawn()
         {
@@ -56,5 +56,7 @@ namespace WizardMakerPrototype.Models
             }
             return result;
         }
+
+        public void resetAbilities() { abilities = new List<AbilityInstance>(); }
     }
 }

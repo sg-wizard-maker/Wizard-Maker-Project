@@ -11,8 +11,6 @@ namespace WizardMakerPrototype.Models.Tests
     [TestClass()]
     public class CharacterManagerTests
     {
-       
-
         [DataTestMethod()]
         [DataRow("Bows", 75, 50, "Short Bow", 4)]
         [DataRow("Bows", 55, 50, "Short Bow", 4)]

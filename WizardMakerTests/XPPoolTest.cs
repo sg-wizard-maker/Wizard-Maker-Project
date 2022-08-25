@@ -150,9 +150,9 @@ namespace WizardMakerTests
             };
         } 
         // TODO: Add broken serialization attempts.  Particularly when trying to deserialize into the wrong derived class
-        /*[TestMethod]
+        [TestMethod]
         [DynamicData(nameof(ProduceTestXPPools), DynamicDataSourceType.Method)]
-        */
+        
         // This test has been disabled, since XPPools being serializable is not necessarily a requirement.
         public void SerializableTest(XPPool pool)
         {
