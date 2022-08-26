@@ -6,47 +6,45 @@ namespace WizardMakerTestbed.Models
     //TODO: If a user edits an XP Value *during character creation*,
     //   should we optimize the journal entries by removing the original (or combining into one)?
     // That would break an undo command....
-    public class XpAbilitySpendJournalEntry : IJournalable
+    public class XpAbilitySpendJournalEntry : Journalable
     {
 
         public SingleJournalEntry text;
-        private Character character;
         private string ability;
         private int xp;
         private string specialty; 
 
-        public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, Character character, string ability, 
+        public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, string ability, 
             int xp, string specialty)
         {
             this.text = new SingleJournalEntry(entry, sy);
-        
-            this.character = character;
+
             this.ability = ability;
             this.xp = xp;
             this.specialty = specialty; 
         }
 
-        public string getText()
+        public override string getText()
         {
             return text.JournalEntryText;
         }
 
-        public SeasonYear getDate()
+        public override SeasonYear getDate()
         {
             return text.getDate();
         }
 
-        public void Execute()
+        public override void Execute(Character character)
         {
             CharacterRenderer.addAbility(character, ability, xp, specialty);
         }
 
-        public void Undo()
+        public override void Undo()
         {
             throw new NotImplementedException();
         }
 
-        public string getId()
+        public override string getId()
         {
             return text.getId();
         }

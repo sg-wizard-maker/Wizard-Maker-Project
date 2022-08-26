@@ -216,7 +216,7 @@ namespace WizardMakerPrototype.Models
             return 1000;
         }
 
-        public void spendXP(int xp)
+        public override void spendXP(int xp)
         {
             // XP can go negative.
             this.remainingXP -= xp;

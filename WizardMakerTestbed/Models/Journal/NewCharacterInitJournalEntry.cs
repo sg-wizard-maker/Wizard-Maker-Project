@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using WizardMakerPrototype.Models;
@@ -11,7 +12,7 @@ namespace WizardMakerTestbed.Models
      * 
      * First journal entry for most characters.
      */
-    public class NewCharacterInitJournalEntry : IJournalable
+    public class NewCharacterInitJournalEntry : Journalable
     {
 
         private const string CHILDHOOD_LANGUAGE_POOL_NAME = "Childhood language XP Pool";
@@ -29,16 +30,14 @@ namespace WizardMakerTestbed.Models
 
         SingleJournalEntry singleJournalEntry;
 
-        Character character;
         ArchAbility childhoodLanguage;
         int startingAge;
 
         // XP per year.  Eg, 20 for Wealthy.  Default is 15
         int xpPerYear;
 
-        public NewCharacterInitJournalEntry(Character character, int startingAge, ArchAbility childhoodLanguage, int xpPerYear)
+        public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int xpPerYear)
         {
-            this.character = character;
             this.childhoodLanguage = childhoodLanguage;
             this.startingAge = startingAge;
 
@@ -47,7 +46,7 @@ namespace WizardMakerTestbed.Models
             this.xpPerYear = xpPerYear;
         }
 
-        public void Execute()
+        public override void Execute(Character character)
         {
             // Validation
             if (startingAge < CHILDHOOD_END_AGE)
@@ -89,26 +88,33 @@ namespace WizardMakerTestbed.Models
             return result;
         }
 
-        public SeasonYear getDate()
+        public override SeasonYear getDate()
         {
             return singleJournalEntry.getDate();
         }
 
-        public string getText()
+        public override string getText()
         {
             return singleJournalEntry.getText();
         }
 
-        public void Undo()
+        public override void Undo()
         {
             throw new ShouldNotBeAbleToGetHereException("Attempting to undo initial character journl entry.");
         }
 
-        public string getId()
+        public override string getId()
         {
             return singleJournalEntry.getId();
         }
+        public override Boolean IsSameSpecs(Journalable other)
+        {
+            if (!base.IsSameSpecs(other)) return false;
+            NewCharacterInitJournalEntry o2 = (NewCharacterInitJournalEntry) other;
+            if (o2.childhoodLanguage.Name != childhoodLanguage.Name) return false;
+            if (o2.startingAge != startingAge) return false;
+            if (!o2.singleJournalEntry.IsSameSpecs(singleJournalEntry)) return false;
+            return true;
+        }
     }
-
-
 }

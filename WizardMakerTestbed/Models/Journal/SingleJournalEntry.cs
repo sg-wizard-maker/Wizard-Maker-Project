@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using WizardMakerPrototype.Models;
 
 namespace WizardMakerTestbed.Models
 {
@@ -22,7 +24,7 @@ namespace WizardMakerTestbed.Models
     /** Just a note with a season and year attached to it.
     * Does not actually do anything.
     */
-    public class SingleJournalEntry : IJournalable
+    public class SingleJournalEntry : Journalable
     {
         public string JournalEntryText { get; set; }
         public SeasonYear SeasonYear { get; set; }
@@ -38,27 +40,27 @@ namespace WizardMakerTestbed.Models
 
         }
 
-        public string getText()
+        public override string getText()
         {
             return JournalEntryText;
         }
 
-        public SeasonYear getDate()
+        public override SeasonYear getDate()
         {
             return SeasonYear;
         }
 
-        public void Execute()
+        public override void Execute(Character character)
         {
             //no-op
         }
 
-        public void Undo()
+        public override void Undo()
         {
             //no-op
         }
 
-        public string getId()
+        public override string getId()
         {
             return Id;
         }
