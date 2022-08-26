@@ -57,6 +57,7 @@ namespace WizardMakerTests.Models.Journal
             string tmp = entry.SerializeJson();
             Journalable deserialized = Journalable.DeserializeJson(tmp);
 
+
             Assert.IsNotNull(deserialized);
             Assert.IsNotNull(tmp);
 
@@ -64,5 +65,8 @@ namespace WizardMakerTests.Models.Journal
             //  this should not happen due to usage of GetType
             Assert.IsTrue(entry.IsSameSpecs(deserialized));
         }
+
+
+
     }
 }
