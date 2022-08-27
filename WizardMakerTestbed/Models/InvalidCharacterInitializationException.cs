@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     [Serializable]
     internal class InvalidCharacterInitializationException : Exception

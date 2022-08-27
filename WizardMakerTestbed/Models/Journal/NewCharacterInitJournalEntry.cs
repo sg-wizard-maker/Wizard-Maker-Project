@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using WizardMakerPrototype.Models;
+using WizardMakerTestbed.Models;
 
 [assembly: InternalsVisibleTo("WizardMakerTests")]
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     /**
      * TODO: Keep an eye that this class may better serve as a list of command instances to execute.
@@ -28,13 +28,13 @@ namespace WizardMakerTestbed.Models
         
         public static int CHILDHOOD_END_AGE = 5;
 
-        SingleJournalEntry singleJournalEntry;
+        public SingleJournalEntry singleJournalEntry { get; set; }
 
-        ArchAbility childhoodLanguage;
-        int startingAge;
+        public ArchAbility childhoodLanguage { get; set; }
+        public int startingAge { get; set; } = 25;
 
         // XP per year.  Eg, 20 for Wealthy.  Default is 15
-        int xpPerYear;
+        public int xpPerYear { get; set; } = 15;
 
         public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int xpPerYear)
         {

@@ -45,27 +45,24 @@ namespace WizardMakerTests.Models.Journal
             Assert.AreEqual(NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP + NewCharacterInitJournalEntry.CHILDHOOD_XP +
                 (startingAge - NewCharacterInitJournalEntry.CHILDHOOD_END_AGE) * xpPerSeason, c.totalRemainingXPWithoutOverdrawn());
         }
+
         [TestMethod()]
         public void SerializableTest()
         {
             const int startingAge = 25;
             const int xpPerSeason = 10;
 
+            Journalable entry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish, xpPerSeason);
 
-            NewCharacterInitJournalEntry NewCharacterInitJournalEntry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish, xpPerSeason);
-
-            string tmp = NewCharacterInitJournalEntry.SerializeJson();
-            Journalable deserialized = NewCharacterInitJournalEntry.DeserializeJson(tmp);
+            string tmp = entry.SerializeJson();
+            Journalable deserialized = Journalable.DeserializeJson(tmp);
 
             Assert.IsNotNull(deserialized);
             Assert.IsNotNull(tmp);
 
             // Note that if this is not calling the derived class IsSameSpecs, you will get erroneous passing of this test.  But
             //  this should not happen due to usage of GetType
-            /*Assert.IsTrue(pool.IsSameSpecs(deserialized));*/
+            Assert.IsTrue(entry.IsSameSpecs(deserialized));
         }
-
-
-
     }
 }

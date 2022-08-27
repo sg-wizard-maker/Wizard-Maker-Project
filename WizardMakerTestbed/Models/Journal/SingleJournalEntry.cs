@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using WizardMakerPrototype.Models;
 
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     public enum Season { SPRING, SUMMER, AUTUMN, WINTER }
 
@@ -18,6 +18,13 @@ namespace WizardMakerTestbed.Models
         {
             this.Year = year;
             this.season = season;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            SeasonYear other = obj as SeasonYear;
+            return this.Year == other.Year && this.season == other.season; 
         }
     }
 

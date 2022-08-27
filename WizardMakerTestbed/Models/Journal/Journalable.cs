@@ -2,7 +2,7 @@
 using System;
 using WizardMakerPrototype.Models;
 
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     // TODO: Give it an ID field.  This way we can support searching and easier deletion.
     public abstract class Journalable: ICharacterCommand
@@ -45,8 +45,10 @@ namespace WizardMakerTestbed.Models
             if (other == null) return false;
             if (this.GetType() != other.GetType()) return false;
             if (this.getText() != other.getText()) return false;
-            if (this.getDate() != other.getDate()) return false;
-            if (!this.getId().Equals(other.getId())) return false;
+            if (!this.getDate().Equals(other.getDate())) return false;
+
+            //Note that we do not check ID, since this is just comparing equality across instances
+            //  and each instance should have its own ID
 
             return true;
         }

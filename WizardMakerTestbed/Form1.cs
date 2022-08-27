@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using WizardMakerTestbed.Models;
 using WizardMakerTestbed.Controls;
+using WizardMakerPrototype.Models;
 
 namespace WizardMakerTestbed
 {

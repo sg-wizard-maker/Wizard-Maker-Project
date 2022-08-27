@@ -1,7 +1,6 @@
 ﻿using System;
-using WizardMakerPrototype.Models;
 
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     //TODO: If a user edits an XP Value *during character creation*,
     //   should we optimize the journal entries by removing the original (or combining into one)?
