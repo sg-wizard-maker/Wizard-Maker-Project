@@ -9,9 +9,9 @@ namespace WizardMakerPrototype.Models
     {
 
         public SingleJournalEntry text;
-        private string ability;
-        private int xp;
-        private string specialty; 
+        public string ability;
+        public int xp;
+        public string specialty; 
 
         public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, string ability, 
             int xp, string specialty)
@@ -46,6 +46,17 @@ namespace WizardMakerPrototype.Models
         public override string getId()
         {
             return text.getId();
+        }
+
+        public override Boolean IsSameSpecs(Journalable other)
+        {
+            if (!base.IsSameSpecs(other)) return false;
+            XpAbilitySpendJournalEntry o2 = (XpAbilitySpendJournalEntry)other;
+            if (!o2.ability.Equals(ability)) return false;
+            if (!o2.specialty.Equals(specialty)) return false;
+            if (o2.xp != xp) return false;
+            if (!o2.text.IsSameSpecs(text)) return false;
+            return true;
         }
     }
 }
