@@ -65,8 +65,5 @@ namespace WizardMakerTests.Models.Journal
             //  this should not happen due to usage of GetType
             Assert.IsTrue(entry.IsSameSpecs(deserialized));
         }
-
-
-
     }
 }
