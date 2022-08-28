@@ -35,7 +35,7 @@ namespace WizardMakerPrototype.Models
 
         public override void Execute(Character character)
         {
-            CharacterRenderer.addAbility(character, ability, xp, specialty, character.IsInitialCharacterFinished());
+            CharacterRenderer.addAbility(character, ability, xp, specialty);
         }
 
         public override void Undo()
