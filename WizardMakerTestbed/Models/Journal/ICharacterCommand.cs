@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WizardMakerPrototype.Models
 {
-    public interface ICommand
+    public interface ICharacterCommand
     {
-        void Execute();
+        void Execute(Character cb);
         void Undo();
     }
 }

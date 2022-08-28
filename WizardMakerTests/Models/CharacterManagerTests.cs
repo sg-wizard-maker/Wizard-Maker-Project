@@ -46,6 +46,4 @@ namespace WizardMakerPrototype.Models.Tests
             Assert.AreEqual(initialXP - xp2, cm.totalRemainingXPWithoutOverdrawn());
         }
     }
-
-
 }

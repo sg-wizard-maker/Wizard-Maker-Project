@@ -27,7 +27,7 @@ namespace WizardMakerPrototype.Models
             this.Character = new Character("New Character", "", startingAge);
             
             //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-            this.Character.addJournalable(new NewCharacterInitJournalEntry(Character, startingAge, childhoodLanguage, 15));
+            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, 15));
             
 
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
@@ -39,13 +39,7 @@ namespace WizardMakerPrototype.Models
 
         //TODO: Make class to wrap character pools.  This way we can just obtain the pool for childhood, etc, through that interface.  And look at aggregate information.
       
-
-        //TODO: Implement:  Make sure to disallow removal of the overdrawn and some basic pools, eg childhood.
-        public void removeXPPool(string xpPoolName)
-        {
-            throw new NotImplementedException();
-        }
-
+        //TODO: Delete this method.  Caller should render the CharacterData and get the name there.
         public string getCharacterName()
         {
             return Character.Name;
@@ -59,7 +53,7 @@ namespace WizardMakerPrototype.Models
         public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
             XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = new XpAbilitySpendJournalEntry(ABILITY_CREATION_NAME_PREFIX + ability,
-                new SeasonYear(1219, Season.SPRING), Character, ability, absoluteXp, specialty);
+                new SeasonYear(1219, Season.SPRING), ability, absoluteXp, specialty);
 
             Character.addJournalable(xpAbilitySpendJournalEntry);
             CharacterRenderer.renderAllJournalEntries(Character);

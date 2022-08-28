@@ -23,9 +23,9 @@ namespace WizardMakerPrototype.Models
             character.resetAbilities();
             foreach (XPPool xPPool in character.XPPoolList) { xPPool.reset(); }
 
-            foreach (IJournalable journalable in character.GetJournal())
+            foreach (Journalable journalable in character.GetJournal())
             {
-                journalable.Execute();
+                journalable.Execute(character);
             }
         }
 

@@ -7,7 +7,7 @@ using System.Text.Json;
 //using System.Text.Json.Serialization;  // JsonConverterAttribute
 using System.Xml.Serialization;
 
-namespace WizardMakerTestbed.Models
+namespace WizardMakerPrototype.Models
 {
     /// <summary>
     /// These are groupings of related Abilities for display, such as:
