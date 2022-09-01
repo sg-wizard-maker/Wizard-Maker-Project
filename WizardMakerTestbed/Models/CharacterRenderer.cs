@@ -29,13 +29,11 @@ namespace WizardMakerPrototype.Models
             }
         }
 
-        //TODO: Need to create a way to modify/remove journal entries
-        //  This will include rerendering the character in its entirety
         /** 
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
-         * XP is always absolute XP.  
+         * XP is always absolute XP, unless it is flagged as incremental.  Then it will be added.
          */
-        public static void addAbility(Character character, string ability, int xp, string specialty)
+        public static void addAbility(Character character, string ability, int xp, string specialty, bool isIncrementalXP)
         {
             if (!doesCharacterHaveAbility(character, ability))
             {
@@ -45,8 +43,8 @@ namespace WizardMakerPrototype.Models
             }
             else
             {
-                retrieveAbilityInstance(character, ability).XP = xp;
-
+                if (isIncrementalXP) { retrieveAbilityInstance(character, ability).XP += xp; }
+                else { retrieveAbilityInstance(character, ability).XP = xp; }
             }
 
             AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(character, ability), xp, character.XPPoolList);

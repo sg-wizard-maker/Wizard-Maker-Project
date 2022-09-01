@@ -40,6 +40,16 @@ namespace WizardMakerPrototype.Models
             this.startingAge = startingAge;
             this.XPPoolList = new SortedSet<XPPool>(new XPPoolComparer());
         }
+        
+        public void EndCharacterCreation()
+        {
+            journalableManager.setCharacterGenerationMode(false);
+        }
+
+        public bool IsInitialCharacterFinished()
+        {
+            return !journalableManager.isInCharacterGenerationMode();
+        }
 
         public void addJournalable(Journalable journalable) { journalableManager.addJournalable(journalable); }
         public void removeJournalable(string text) { journalableManager.removeJournalEntry(text); }
