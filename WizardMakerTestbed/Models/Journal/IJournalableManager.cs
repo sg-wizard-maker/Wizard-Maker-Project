@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace WizardMakerPrototype.Models
 {
+    // TODO: We can probably get rid of this interface.  It adds a layer of abstraction that we likely do not need.
     internal interface IJournalableManager
     {
         /**
