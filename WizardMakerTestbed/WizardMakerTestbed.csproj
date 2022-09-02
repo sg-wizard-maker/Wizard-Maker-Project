@@ -108,6 +108,7 @@
     <Compile Include="Models\Journal\IJournalableManager.cs" />
     <Compile Include="Models\InvalidCharacterInitializationException.cs" />
     <Compile Include="Models\Journal\Journalable.cs" />
+    <Compile Include="Models\CharacterPersist\RawCharacter.cs" />
     <Compile Include="Models\ShouldNotBeAbleToGetHereException.cs" />
     <Compile Include="Models\Journal\SingleJournalEntry.cs" />
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />

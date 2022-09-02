@@ -1,12 +1,15 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using WizardMakerTestbed.Models;
+using WizardMakerPrototype.Models.CharacterPersist;
 
 [assembly: InternalsVisibleTo("WizardMakerTests")]
 [assembly: InternalsVisibleTo("WizardMakerTests.Models")]
+[assembly: InternalsVisibleTo("WizardMakerTests.Models.Tests")]
 namespace WizardMakerPrototype.Models
 {
     /**
@@ -89,5 +92,30 @@ namespace WizardMakerPrototype.Models
         }
 
         public int getJournalSize() { return Character.GetJournal().Count; }
+
+        // TODO: A lot more error checking needs to take place here
+        // TODO: How would this work for API front end? 
+        // Note: This will overwrite any file
+        public static void WriteToFile(Character c, string absoluteFilename)
+        {
+            FileStream fs = new FileStream(absoluteFilename, FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            RawCharacter rc = new RawCharacter(c);
+            sw.Write(rc.serializeJson());
+            sw.Flush();
+            sw.Close();
+            fs.Close();
+        }
+
+        public static Character ReadFromFile(string absoluteFilename)
+        {
+            FileStream fs = new FileStream(absoluteFilename, FileMode.Open, FileAccess.Read);
+            StreamReader sw = new StreamReader(fs);
+            RawCharacter rc = RawCharacter.deserializeJson(sw.ReadToEnd());
+            sw.Close();
+            fs.Close();
+
+            return new Character(rc);
+        }
     }
 }
