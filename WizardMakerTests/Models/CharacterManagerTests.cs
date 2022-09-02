@@ -34,10 +34,13 @@ namespace WizardMakerPrototype.Models.Tests
             CharacterData cd = cm.renderCharacterAsCharacterData();
             Assert.IsNotNull(cd);
             Assert.AreEqual(2, cd.Abilities.Count);
-            Assert.AreEqual(n, cd.Abilities[0].Name);
-            Assert.AreEqual(xp2, cd.Abilities[0].XP);
-            Assert.AreEqual(s, cd.Abilities[0].Specialty);
-            Assert.AreEqual(expectedScore, cd.Abilities[0].Score);
+
+            AbilityInstanceData testedAbility = cd.Abilities.Where(a => a.Name == n).First();
+
+            Assert.IsTrue(cd.Abilities.Select(a => a.Name.Equals(n)).ToList().Count > 0);
+            Assert.AreEqual(xp2, testedAbility.XP);
+            Assert.AreEqual(s, testedAbility.Specialty);
+            Assert.AreEqual(expectedScore, testedAbility.Score);
             
             // We should only have one Bow ability listed.
             Assert.AreEqual(1, cd.Abilities.Count(a => a.Name == n));

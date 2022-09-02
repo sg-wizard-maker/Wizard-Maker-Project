@@ -37,8 +37,9 @@ namespace WizardMakerTests.Models
             Random rnd = new Random(1212);
             const int STARTING_AGE = 25;
             const int XP_PER_SEASON = 20;
+
             // Look at the timing for rendering an entire character.
-            Character c = new("Foo", "Looks like a foo", STARTING_AGE);
+            Character c = new("Foo", "Best mage ever.  They really know a lot.", STARTING_AGE);
 
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(STARTING_AGE, ArchAbility.LangEnglish, XP_PER_SEASON);
             c.addJournalable(initEntry);
@@ -58,7 +59,16 @@ namespace WizardMakerTests.Models
                     XpAbilitySpendJournalEntry xpAbilitySpend = new XpAbilitySpendJournalEntry("Spend on " + archAbility.Name, new SeasonYear(1220, Season.SPRING),
                         archAbility.Name, XP_PER_ENTRY + jitter, "Dummy specialty");
                     c.addJournalable(xpAbilitySpend);
-                    xpSpentMap.Add(archAbility.Name, xpSpentMap.GetValueOrDefault(archAbility.Name, 0) + XP_PER_ENTRY + jitter);
+
+                    // Track the XP spending as we go.
+                    if (xpSpentMap.ContainsKey(archAbility.Name))
+                    {
+                        xpSpentMap[archAbility.Name] = xpSpentMap[archAbility.Name] + XP_PER_ENTRY + jitter;
+                    }
+                    else
+                    {
+                        xpSpentMap.Add(archAbility.Name, XP_PER_ENTRY + jitter);
+                    }
                 }
                 if (i == 0)
                 {
@@ -66,21 +76,33 @@ namespace WizardMakerTests.Models
                 }
             }
 
+            // Start a timer
             DateTime timeStart = DateTime.Now;
+
+            // Render the character as a CharacterData
             CharacterRenderer.renderAllJournalEntries(c);
             CharacterData cd = CharacterRenderer.renderCharacterAsCharacterData(c);
-            
+
+            // Serialize the CharacterData
+            string foo = CharacterRenderer.serializeCharacterData(cd);
+
+            // Stop the timer
             DateTime timeEnd = DateTime.Now;
+
+            // Output some useful information to the console.
             long elapsedTicks = timeEnd.Ticks - timeStart.Ticks;
             TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
             Console.WriteLine("   {0:N0} nanoseconds", elapsedTicks * 100);
             Console.WriteLine("   {0:N0}", cd.Abilities.Count);
 
+            // Do some basic testing that the XP spends are as expected.
             Assert.AreEqual(ArchAbility.AllCommonAbilities.Count, cd.Abilities.Count);
             for (int i = 0; i < cd.Abilities.Count; i++)
             {
                 Assert.AreEqual(xpSpentMap.GetValueOrDefault(cd.Abilities[i].Name, -1), cd.Abilities[i].XP);
             }
+
+            Console.WriteLine(foo);
         }
     }
 

@@ -52,8 +52,9 @@ namespace WizardMakerPrototype.Models
          */
         public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
+            //TODO: Fix the ordering because the SeasonYear must always be later than the NewCharacterJournalInit
             XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = new XpAbilitySpendJournalEntry(ABILITY_CREATION_NAME_PREFIX + ability,
-                new SeasonYear(1219, Season.SPRING), ability, absoluteXp, specialty);
+                new SeasonYear(1219, Season.SUMMER), ability, absoluteXp, specialty);
 
             Character.addJournalable(xpAbilitySpendJournalEntry);
             CharacterRenderer.renderAllJournalEntries(Character);
