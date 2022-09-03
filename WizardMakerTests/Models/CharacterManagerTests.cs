@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WizardMakerPrototype.Models;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,13 @@ namespace WizardMakerPrototype.Models.Tests
         [DataRow("Bows", 15, 0, "Short Bow", 0)]
         public void UpdateAbilityTwiceWithAbsoluteXpTest(string n, int xp1, int xp2, string s, int expectedScore)
         {
-            CharacterManager cm = new (25);
+            CharacterManager cm = new(25);
 
             int initialXP = cm.totalRemainingXPWithoutOverdrawn();
-            
+
             cm.updateAbilityDuringCreation(n, xp1, s);
             cm.updateAbilityDuringCreation(n, xp2, s);
-            
+
             // We expect that one of the first entry has been overwritten by the second.
             // And since there is two there by default (starting character + starting language), we expect 3.
             Assert.AreEqual(3, cm.getJournalSize());
@@ -34,16 +35,46 @@ namespace WizardMakerPrototype.Models.Tests
             CharacterData cd = cm.renderCharacterAsCharacterData();
             Assert.IsNotNull(cd);
             Assert.AreEqual(2, cd.Abilities.Count);
-            Assert.AreEqual(n, cd.Abilities[0].Name);
-            Assert.AreEqual(xp2, cd.Abilities[0].XP);
-            Assert.AreEqual(s, cd.Abilities[0].Specialty);
-            Assert.AreEqual(expectedScore, cd.Abilities[0].Score);
-            
+
+            AbilityInstanceData testedAbility = cd.Abilities.Where(a => a.Name == n).First();
+
+            Assert.IsTrue(cd.Abilities.Select(a => a.Name.Equals(n)).ToList().Count > 0);
+            Assert.AreEqual(xp2, testedAbility.XP);
+            Assert.AreEqual(s, testedAbility.Specialty);
+            Assert.AreEqual(expectedScore, testedAbility.Score);
+
             // We should only have one Bow ability listed.
             Assert.AreEqual(1, cd.Abilities.Count(a => a.Name == n));
 
             // Test correct amount of XP was spent.
             Assert.AreEqual(initialXP - xp2, cm.totalRemainingXPWithoutOverdrawn());
+        }
+
+        [TestMethod()]
+        public void SimpleRoundTripFileTest()
+        {
+            Character c = new("Foo", "Looks like a foo", 25);
+            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish, 15);
+            c.addJournalable(initEntry);
+
+            string tempPath = Path.GetTempFileName();
+            CharacterManager.WriteToFile(c, tempPath);
+
+            Character c2 = CharacterManager.ReadFromFile(tempPath);
+
+
+            CharacterRenderer.renderAllJournalEntries(c);
+            CharacterRenderer.renderAllJournalEntries(c2);
+
+            Assert.AreEqual(c.Name, c2.Name);
+            Assert.AreEqual(c.Description, c2.Description);
+            Assert.AreEqual(c.abilities.Count, c2.abilities.Count);
+            Assert.AreEqual(c.GetJournal().Count, c2.GetJournal().Count);
+            Assert.IsTrue(c.GetJournal().Count > 0);
+            for (int i=0; i<c2.GetJournal().Count; i++)
+            {
+                Assert.IsTrue(c2.GetJournal().ElementAt(i).IsSameSpecs(c.GetJournal().ElementAt(i)));
+            }
         }
     }
 }

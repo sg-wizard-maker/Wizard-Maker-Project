@@ -57,6 +57,7 @@ namespace WizardMakerTests.Models.Journal
             string tmp = entry.SerializeJson();
             Journalable deserialized = Journalable.DeserializeJson(tmp);
 
+
             Assert.IsNotNull(deserialized);
             Assert.IsNotNull(tmp);
 

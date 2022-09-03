@@ -106,9 +106,9 @@ namespace WizardMakerTests
                 new AllowOverdrawnXpPool()
             };
 
-            AbilityInstance english = new AbilityInstance(ArchAbility.LangEnglish, 75);
+            AbilityInstance english = new AbilityInstance(ArchAbility.LangEnglish, "testID1", 75);
             
-            AbilityInstance charm = new AbilityInstance(ArchAbility.Charm, 75);
+            AbilityInstance charm = new AbilityInstance(ArchAbility.Charm, "testID2", 75);
 
             AbilityXPManager.debitXPPoolsForAbility(english, pools);
             AbilityXPManager.debitXPPoolsForAbility(charm, pools);

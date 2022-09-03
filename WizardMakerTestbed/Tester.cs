@@ -85,30 +85,33 @@ namespace WizardMakerPrototype
             // Handle a deletion
             if (dataGridView1.Columns[colIndex].HeaderText == "Delete")
             {
-                
+
                 string deletedAbility = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                string abilityId = retrieveAbilityIdFromAbilityName(deletedAbility);
-                if (abilityId == null)
+                List<string> abilityIds = retrieveAbilityIdsFromAbilityName(deletedAbility);
+                if (abilityIds == null)
                 {
                     throw new ShouldNotBeAbleToGetHereException("Could not find ID for " + deletedAbility);
                 }
-                characterManager.deleteAbilityInstance(abilityId);
+                foreach (string abilityId in abilityIds) { 
+                    characterManager.deleteJournalEntry(abilityId);
+                }
                 updateCharacterDisplay();
             }
         }
 
-        private string retrieveAbilityIdFromAbilityName(string name)
+        private List<string> retrieveAbilityIdsFromAbilityName(string name)
         {
             CharacterData c = characterManager.renderCharacterAsCharacterData();
+            List<string> result = new List<string>();
             foreach (var a in c.Abilities)
             {
                 if (a.Name == name)
                 {
-                    return a.Id;
+                    result.AddRange(a.Id);
                 }
             }
 
-            return null;
+            return result;
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

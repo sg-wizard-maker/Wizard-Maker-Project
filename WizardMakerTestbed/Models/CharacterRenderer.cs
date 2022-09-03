@@ -29,24 +29,22 @@ namespace WizardMakerPrototype.Models
             }
         }
 
-        //TODO: Need to create a way to modify/remove journal entries
-        //  This will include rerendering the character in its entirety
         /** 
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
-         * XP is always absolute XP.  
+         * XP is always absolute XP, unless it is flagged as incremental.  Then it will be added.
          */
-        public static void addAbility(Character character, string ability, int xp, string specialty)
+        public static void addAbility(Character character, string ability, int xp, string specialty, bool isIncrementalXP, string journalID)
         {
             if (!doesCharacterHaveAbility(character, ability))
             {
 
                 // add the ability to the character
-                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty));
+                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID));
             }
             else
             {
-                retrieveAbilityInstance(character, ability).XP = xp;
-
+                if (isIncrementalXP) { retrieveAbilityInstance(character, ability).XP += xp; }
+                else { retrieveAbilityInstance(character, ability).XP = xp; }
             }
 
             AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(character, ability), xp, character.XPPoolList);
@@ -85,7 +83,7 @@ namespace WizardMakerPrototype.Models
             // Note that for the front end the ID of the ability is also the name.  This may need to be cahnged in the future.
             return new AbilityInstanceData(abilityInstance.Category,
                 abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
-                abilityInstance.Specialty, abilityInstance.id);
+                abilityInstance.Specialty, abilityInstance.journalIDs);
         }
 
         public static CharacterData renderCharacterAsCharacterData(Character character)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace WizardMakerPrototype.Models
 {
+    // TODO: We can probably get rid of this interface.  It adds a layer of abstraction that we likely do not need.
     internal interface IJournalableManager
     {
         /**
@@ -29,7 +30,13 @@ namespace WizardMakerPrototype.Models
             {
                 if (x.getDate().season == y.getDate().season)
                 {
-                    return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
+                    if (x.getId() == y.getId())
+                    {
+                        return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
+                    } else
+                    {
+                        return new CaseInsensitiveComparer().Compare(x.getId(), y.getId());
+                    }
                 } else
                 {
                     return x.getDate().season.CompareTo(y.getDate().season);

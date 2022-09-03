@@ -5,6 +5,8 @@ namespace WizardMakerPrototype.Models
     //TODO: If a user edits an XP Value *during character creation*,
     //   should we optimize the journal entries by removing the original (or combining into one)?
     // That would break an undo command....
+    // Dev note:  Deletion of abilities are assumed to link to multiple journal entries.  No XpAbilitySpendJournalEntry can grant XP to more than one ability.  If this
+    //  capability is needed, then a more complex mechanism will be needed for implementation.
     public class XpAbilitySpendJournalEntry : Journalable
     {
 
@@ -35,7 +37,7 @@ namespace WizardMakerPrototype.Models
 
         public override void Execute(Character character)
         {
-            CharacterRenderer.addAbility(character, ability, xp, specialty);
+            CharacterRenderer.addAbility(character, ability, xp, specialty, character.IsInitialCharacterFinished(), this.getId());
         }
 
         public override void Undo()

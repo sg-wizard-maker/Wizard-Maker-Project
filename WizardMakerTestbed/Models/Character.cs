@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Models.CharacterPersist;
 using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
@@ -16,13 +17,14 @@ namespace WizardMakerPrototype.Models
         public List<AbilityInstance> abilities { get; set; }
         public SortedSet<XPPool> XPPoolList { get; }
 
-
         public int startingAge { get; set; }
 
         private IJournalableManager journalableManager { get; set; }
 
         private SortedSet<Journalable> journalEntries { get { return journalableManager.getJournalables(); } }
 
+        public Character(RawCharacter rc) : this(rc.Name, rc.Description, new List<AbilityInstance>(), rc.journalEntries, rc.startingAge) { }
+            
         public Character(string name, string description, int startingAge) : this(name, description, new List<AbilityInstance>(), new List<Journalable>(), startingAge) { }
         
 
@@ -39,6 +41,16 @@ namespace WizardMakerPrototype.Models
             }
             this.startingAge = startingAge;
             this.XPPoolList = new SortedSet<XPPool>(new XPPoolComparer());
+        }
+        
+        public void EndCharacterCreation()
+        {
+            journalableManager.setCharacterGenerationMode(false);
+        }
+
+        public bool IsInitialCharacterFinished()
+        {
+            return !journalableManager.isInCharacterGenerationMode();
         }
 
         public void addJournalable(Journalable journalable) { journalableManager.addJournalable(journalable); }
