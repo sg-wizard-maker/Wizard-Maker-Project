@@ -393,7 +393,8 @@ namespace WizardMakerPrototype.Models
         [Browsable(false)]
         public int  PuissantBonus  { get; private set; } = 2;
 
-        public string journalID { get; private set; }
+        // Assumption:  Each of these journal entries are ones that spend XP and that no single XP-spending journal entry will involve more than this ability instance (ie, only one ability instance).
+        public List<string> journalIDs { get; private set; }
 
         public decimal determineXpCost(ArchAbility archAbility)
         {
@@ -415,7 +416,7 @@ namespace WizardMakerPrototype.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.journalID = journalID;
+            this.journalIDs = new List<string>() { journalID};
         }
 
         public override string ToString ()
@@ -423,6 +424,11 @@ namespace WizardMakerPrototype.Models
             string str = string.Format("{0} '{1}' XP={2} / S={3} ({4}) A={5}, P={6}",
                 this.TypeAbbrev, this.Name, this.XP, this.Score, this.Specialty, HasAffinity, HasPuissance);
             return str;
+        }
+
+        public void addJournalID(string journalID)
+        {
+            this.journalIDs.Add(journalID);
         }
 
         // This is used mostly for testing.  In cases where we do not have an ID from the Jounral Entry.

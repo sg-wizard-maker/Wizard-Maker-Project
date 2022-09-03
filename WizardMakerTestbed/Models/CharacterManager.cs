@@ -63,7 +63,7 @@ namespace WizardMakerPrototype.Models
             CharacterRenderer.renderAllJournalEntries(Character);
         }
 
-        public void deleteAbilityInstance(string id)
+        public void deleteJournalEntry(string id)
         {
             Character.removeJournalable(id);
 

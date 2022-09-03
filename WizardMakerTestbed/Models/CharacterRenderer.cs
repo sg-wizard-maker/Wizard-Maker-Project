@@ -83,7 +83,7 @@ namespace WizardMakerPrototype.Models
             // Note that for the front end the ID of the ability is also the name.  This may need to be cahnged in the future.
             return new AbilityInstanceData(abilityInstance.Category,
                 abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
-                abilityInstance.Specialty, abilityInstance.journalID);
+                abilityInstance.Specialty, abilityInstance.journalIDs);
         }
 
         public static CharacterData renderCharacterAsCharacterData(Character character)
