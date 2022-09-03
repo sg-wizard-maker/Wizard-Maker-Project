@@ -75,7 +75,14 @@ namespace WizardMakerPrototype.Models
                 abilities.Add(convertAbilityInstanceData(abilityInstance));
             }
 
-            return new CharacterData(character.Name, character.Description, abilities);
+            List<XPPoolData> xpPools = new List<XPPoolData>();
+
+            foreach (XPPool xPPool in character.XPPoolList)
+            {
+                xpPools.Add(convertXPPoolData(xPPool));
+            }
+
+            return new CharacterData(character.Name, character.Description, abilities, xpPools);
         }
 
         private static AbilityInstanceData convertAbilityInstanceData(AbilityInstance abilityInstance)
@@ -84,6 +91,11 @@ namespace WizardMakerPrototype.Models
             return new AbilityInstanceData(abilityInstance.Category,
                 abilityInstance.Type, abilityInstance.TypeAbbrev.ToString(), abilityInstance.Name, abilityInstance.XP, abilityInstance.Score,
                 abilityInstance.Specialty, abilityInstance.journalIDs);
+        }
+
+        private static XPPoolData convertXPPoolData(XPPool xPPool)
+        {
+            return new XPPoolData(xPPool.name, xPPool.description, xPPool.initialXP, xPPool.remainingXP);
         }
 
         public static CharacterData renderCharacterAsCharacterData(Character character)

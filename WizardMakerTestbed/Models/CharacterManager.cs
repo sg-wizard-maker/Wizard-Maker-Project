@@ -76,11 +76,6 @@ namespace WizardMakerPrototype.Models
             return CharacterRenderer.renderCharacterAsCharacterData(Character);
         }
 
-        public string renderXPPoolsAsJson()
-        {
-            return JsonConvert.SerializeObject(Character.XPPoolList, Formatting.Indented);
-        }
-
         public int getXPPoolCount() { return Character.XPPoolList.Count; }
 
         /** This will always return a number >= 0.  This will not include overdrawn
