@@ -393,9 +393,7 @@ namespace WizardMakerPrototype.Models
         [Browsable(false)]
         public int  PuissantBonus  { get; private set; } = 2;
 
-        // Used to tie this abillity to the journal entry associated with it.
-        // TODO: This is a bit complicated, could we simplify the design?  This is necessary to support deletion from a GUI.  
-        public string id;
+        public string journalID { get; private set; }
 
         public decimal determineXpCost(ArchAbility archAbility)
         {
@@ -406,7 +404,7 @@ namespace WizardMakerPrototype.Models
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
 
-        public AbilityInstance ( ArchAbility ability, int xp = 0, string specialty = "", 
+        public AbilityInstance ( ArchAbility ability, string journalID, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
             decimal xpCost = determineXpCost(ability);
@@ -417,7 +415,7 @@ namespace WizardMakerPrototype.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.id = createID();
+            this.journalID = journalID;
         }
 
         public override string ToString ()
@@ -427,6 +425,7 @@ namespace WizardMakerPrototype.Models
             return str;
         }
 
+        // This is used mostly for testing.  In cases where we do not have an ID from the Jounral Entry.
         public static string createID()
         {
             Guid myuuid = Guid.NewGuid();

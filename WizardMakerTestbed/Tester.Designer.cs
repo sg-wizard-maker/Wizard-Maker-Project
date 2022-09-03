@@ -110,7 +110,7 @@
             // XPPoolsJson
             // 
             this.XPPoolsJson.AutoSize = true;
-            this.XPPoolsJson.Location = new System.Drawing.Point(682, 154);
+            this.XPPoolsJson.Location = new System.Drawing.Point(676, 9);
             this.XPPoolsJson.Name = "XPPoolsJson";
             this.XPPoolsJson.Size = new System.Drawing.Size(47, 13);
             this.XPPoolsJson.TabIndex = 7;
