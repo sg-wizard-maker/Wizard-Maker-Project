@@ -26,7 +26,6 @@ namespace WizardMakerPrototype.Models
         public Character(RawCharacter rc) : this(rc.Name, rc.Description, new List<AbilityInstance>(), rc.journalEntries, rc.startingAge) { }
             
         public Character(string name, string description, int startingAge) : this(name, description, new List<AbilityInstance>(), new List<Journalable>(), startingAge) { }
-        
 
         public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries, int startingAge)
         {
