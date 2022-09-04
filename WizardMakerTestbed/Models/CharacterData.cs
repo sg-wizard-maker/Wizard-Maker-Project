@@ -100,8 +100,10 @@ namespace WizardMakerPrototype.Models
             if (this.Score != other.Score) return false;
             if (this.Specialty != other.Specialty) return false;
             if (this.XP != other.XP) return false;
-            if (this.Id != other.Id) return false;
-
+            for (int i = 0; i < Id.Count; i++)
+            {
+                if (!this.Id[i].Equals(other.Id[i])) return false;
+            }
             return true;
 
         }
