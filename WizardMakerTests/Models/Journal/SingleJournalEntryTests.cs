@@ -14,7 +14,7 @@ namespace WizardMakerPrototype.Models.Tests
         [TestMethod()]
         public void SingleJournalEntryTest()
         {
-            Journalable entry = new SingleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
+            Journalable entry = new SimpleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
             Assert.IsNotNull(entry);
         }
 
@@ -22,7 +22,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void getTextTest()
         {
             const string TITLE = "New Entry";
-            Journalable entry = new SingleJournalEntry(TITLE, new SeasonYear(1222, Season.SPRING));
+            Journalable entry = new SimpleJournalEntry(TITLE, new SeasonYear(1222, Season.SPRING));
             Assert.IsNotNull(entry);
             Assert.AreEqual(TITLE, entry.getText());
         }
@@ -32,7 +32,7 @@ namespace WizardMakerPrototype.Models.Tests
         {
             const string TITLE = "New Entry";
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
-            Journalable entry = new SingleJournalEntry(TITLE, sy);
+            Journalable entry = new SimpleJournalEntry(TITLE, sy);
             Assert.IsNotNull(entry);
             Assert.AreEqual(sy, entry.getDate());
         }
@@ -44,7 +44,7 @@ namespace WizardMakerPrototype.Models.Tests
             const string TITLE = "New Entry";
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Character dummy = new Character("My name", "My desription", 30);
-            Journalable entry = new SingleJournalEntry(TITLE, sy);
+            Journalable entry = new SimpleJournalEntry(TITLE, sy);
             entry.Execute(dummy);
         }
 
@@ -52,7 +52,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void getIdTest()
         {
             // Test that the IDs actually change when you deserialize a SingleJournalEntry
-            Journalable entry = new SingleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
+            Journalable entry = new SimpleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
 
             string tmp = entry.SerializeJson();
             Journalable deserialized = Journalable.DeserializeJson(tmp);
@@ -71,7 +71,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void SerializableTest()
         {
 
-            Journalable entry = new SingleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
+            Journalable entry = new SimpleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
 
             string tmp = entry.SerializeJson();
             Journalable deserialized = Journalable.DeserializeJson(tmp);

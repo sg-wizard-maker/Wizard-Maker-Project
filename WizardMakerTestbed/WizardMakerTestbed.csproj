@@ -98,6 +98,7 @@
     <Compile Include="Models\AbilityModels.cs" />
     <Compile Include="Models\AbilityNotFoundException.cs" />
     <Compile Include="Models\AbilityXPManager.cs" />
+    <Compile Include="Models\Journal\AddVirtueJournalEntry.cs" />
     <Compile Include="Models\Journal\BasicJournalableManager.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharacterManager.cs" />
@@ -110,8 +111,10 @@
     <Compile Include="Models\Journal\Journalable.cs" />
     <Compile Include="Models\CharacterPersist\RawCharacter.cs" />
     <Compile Include="Models\ShouldNotBeAbleToGetHereException.cs" />
-    <Compile Include="Models\Journal\SingleJournalEntry.cs" />
+    <Compile Include="Models\Journal\SimpleJournalEntry.cs" />
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
+    <Compile Include="Models\Virtues\ArchVirtue.cs" />
+    <Compile Include="Models\Virtues\VirtueInstance.cs" />
     <Compile Include="Models\XPPool.cs" />
     <Compile Include="Models\Journal\NewCharacterInitJournalEntry.cs" />
     <Compile Include="Models\XPPoolOverdrawnException.cs" />

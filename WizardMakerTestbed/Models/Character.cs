@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerPrototype.Models.CharacterPersist;
+using WizardMakerPrototype.Models.Virtues;
 using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
@@ -16,6 +17,10 @@ namespace WizardMakerPrototype.Models
 
         public List<AbilityInstance> abilities { get; set; }
         public SortedSet<XPPool> XPPoolList { get; }
+
+        public int XpPerSeasonForInitialCreation { get; set; } = 15;
+
+        public List<VirtueInstance> virtues { get; private set; }
 
         public int startingAge { get; set; }
 

@@ -28,7 +28,10 @@ namespace WizardMakerPrototype.Models
         
         public static int CHILDHOOD_END_AGE = 5;
 
-        public SingleJournalEntry singleJournalEntry { get; set; }
+        // Sort before the SeasonYear
+        public const int NEW_CHARACTER_INIT_SORT_ORDER = 50;
+
+        public SimpleJournalEntry singleJournalEntry { get; set; }
 
         public ArchAbility childhoodLanguage { get; set; }
         public int startingAge { get; set; } = 25;
@@ -42,7 +45,7 @@ namespace WizardMakerPrototype.Models
             this.startingAge = startingAge;
 
             // TODO: Make this have to do with starting Age and user-specified year.
-            singleJournalEntry = new SingleJournalEntry("Character initialized at age " + startingAge, new SeasonYear(1219, Season.SPRING));
+            singleJournalEntry = new SimpleJournalEntry("Character initialized at age " + startingAge, new SeasonYear(1220-startingAge, Season.SPRING));
             this.xpPerYear = xpPerYear;
         }
 

@@ -10,7 +10,7 @@ namespace WizardMakerPrototype.Models
     public class XpAbilitySpendJournalEntry : Journalable
     {
 
-        public SingleJournalEntry text;
+        public SimpleJournalEntry text;
         public string ability;
         public int xp;
         public string specialty; 
@@ -18,7 +18,7 @@ namespace WizardMakerPrototype.Models
         public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, string ability, 
             int xp, string specialty)
         {
-            this.text = new SingleJournalEntry(entry, sy);
+            this.text = new SimpleJournalEntry(entry, sy);
 
             this.ability = ability;
             this.xp = xp;

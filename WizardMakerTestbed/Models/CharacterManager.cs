@@ -30,8 +30,7 @@ namespace WizardMakerPrototype.Models
             this.Character = new Character("New Character", "", startingAge);
             
             //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, 15));
-            
+            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, Character.XpPerSeasonForInitialCreation));
 
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");

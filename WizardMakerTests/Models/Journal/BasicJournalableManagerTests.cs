@@ -28,7 +28,7 @@ namespace WizardMakerTests.Models.Journal
             };
             for (int i = 0; i < seasonYears.Length; i++)
             {
-                journalableManager.addJournalable(new SingleJournalEntry("Random entry " + i, seasonYears[i]));
+                journalableManager.addJournalable(new SimpleJournalEntry("Random entry " + i, seasonYears[i]));
             }
             SortedSet<Journalable> journalables = journalableManager.getJournalables();
             Assert.AreEqual(seasonYears.Length, journalables.Count);
@@ -49,7 +49,7 @@ namespace WizardMakerTests.Models.Journal
             string idToRemove = "THIS IS DEFINITELY WRONG";
             for (int i = 0; i < 4; i++)
             {
-                SingleJournalEntry journalable = new SingleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING));
+                SimpleJournalEntry journalable = new SimpleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING));
                 journalableManager.addJournalable(journalable);
                 if (i == 2)
                 {
