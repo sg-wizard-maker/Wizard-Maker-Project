@@ -73,8 +73,9 @@ namespace WizardMakerPrototype
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
 
-            // Update the XPPools json
-            XPPoolsJson.Text = characterManager.renderXPPoolsAsJson();
+            // Update the XPPools text
+            string xpPoolText = String.Join("\n", c.XPPools.Select(x => x.name + " (Remaining: " + x.remainingXP + ")").ToList());
+            XPPoolsJson.Text = xpPoolText;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,7 +94,7 @@ namespace WizardMakerPrototype
                     throw new ShouldNotBeAbleToGetHereException("Could not find ID for " + deletedAbility);
                 }
                 foreach (string abilityId in abilityIds) { 
-                    characterManager.deleteJournalEntry(abilityId);
+                    characterManager.DeleteJournalEntry(abilityId);
                 }
                 updateCharacterDisplay();
             }

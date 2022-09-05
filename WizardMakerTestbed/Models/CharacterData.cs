@@ -19,11 +19,14 @@ namespace WizardMakerPrototype.Models
 
         public List<AbilityInstanceData> Abilities { get; set; }
 
-        public CharacterData(string name, string description, List<AbilityInstanceData> abilities)
+        public List<XPPoolData> XPPools { get; set; }
+
+        public CharacterData(string name, string description, List<AbilityInstanceData> abilities, List<XPPoolData> xPPools)
         {
             Name = name;
             Description = description;
-            this.Abilities = abilities;
+            Abilities = abilities;
+            XPPools = xPPools;
         }
 
         public bool IsSameSpec(CharacterData other)
@@ -39,6 +42,22 @@ namespace WizardMakerPrototype.Models
             }
 
             return true;
+        }
+    }
+
+    public class XPPoolData
+    {
+        public string name { get; }
+        public string description { get; }
+        public int initialXP { get; }
+        public int remainingXP { get; }
+
+        public XPPoolData(string name, string description, int initialXP, int remainingXP)
+        {
+            this.name = name;
+            this.description = description;
+            this.initialXP = initialXP;
+            this.remainingXP = remainingXP;
         }
     }
 
@@ -81,8 +100,10 @@ namespace WizardMakerPrototype.Models
             if (this.Score != other.Score) return false;
             if (this.Specialty != other.Specialty) return false;
             if (this.XP != other.XP) return false;
-            if (this.Id != other.Id) return false;
-
+            for (int i = 0; i < Id.Count; i++)
+            {
+                if (!this.Id[i].Equals(other.Id[i])) return false;
+            }
             return true;
 
         }

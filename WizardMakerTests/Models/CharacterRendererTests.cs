@@ -10,6 +10,10 @@ namespace WizardMakerTests.Models
     [TestClass]
     public class CharacterRendererTests
     {
+        private const string XP_POOL_NAME = "dummy";
+        private const string XP_POOL_DESCRIPTION = "dummy XP Pool";
+        private const int XP_POOL_INITIAL_XP = 500;
+
         // We expect the results going in to be the same as coming out.
         [DataTestMethod()]
         [DataRow("Bows", 75, "Short Bow", 5)]
@@ -18,17 +22,26 @@ namespace WizardMakerTests.Models
         public void AddAbilityTest(string n, int xp, string s, int expectedScore)
         {
             Character c = new ("Foo", "Looks like a foo", 25);
-            c.XPPoolList.Add(new BasicXPPool("dummy", "dummy XP Pool", 500));
+            c.XPPoolList.Add(new BasicXPPool(XP_POOL_NAME, XP_POOL_DESCRIPTION, XP_POOL_INITIAL_XP));
             CharacterRenderer.addAbility(c, n, xp, s, c.IsInitialCharacterFinished(), "dummyID");
             CharacterData characterData = CharacterRenderer.renderCharacterAsCharacterData(c);
 
             // Language abillity is added automatically.
             Assert.IsNotNull(characterData);
             Assert.AreEqual(1, characterData.Abilities.Count);
+            Assert.AreEqual(1, characterData.XPPools.Count);
             Assert.AreEqual(n, characterData.Abilities[0].Name);
             Assert.AreEqual(xp, characterData.Abilities[0].XP);
             Assert.AreEqual(s, characterData.Abilities[0].Specialty);
             Assert.AreEqual(expectedScore, characterData.Abilities[0].Score);
+
+            foreach (XPPoolData xppool in characterData.XPPools)
+            {
+                Assert.AreEqual(XP_POOL_NAME, xppool.name);
+                Assert.AreEqual(XP_POOL_DESCRIPTION, xppool.description);
+                Assert.AreEqual(XP_POOL_INITIAL_XP, xppool.initialXP);
+                Assert.AreEqual(XP_POOL_INITIAL_XP - xp, xppool.remainingXP);
+            }
         }
 
         [TestMethod]
