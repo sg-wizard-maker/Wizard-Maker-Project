@@ -17,12 +17,12 @@ namespace WizardMakerTests
 
         private const string LATER_LIFE_POOL_NAME = "Later life XP Pool";
         private const string LATER_LIFE_DESCRIPTION = "XP granted to starting characters that can be spent on anything the character can learn.  After age 5.";
-
+        private const string XP_POOL_NAME = "Test XP Pool";
 
         [TestMethod]
         public void TestBasicXPPool()
         {
-            XPPool xpPool = new BasicXPPool("XP_POOL_NAME", "description", 100);
+            XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
 
             Assert.IsNotNull(xpPool);
         }
@@ -30,7 +30,7 @@ namespace WizardMakerTests
         [TestMethod]
         public void TestBasicXPPoolSimpleSpend()
         {
-            XPPool xpPool = new BasicXPPool("XP_POOL_NAME", "description", 100);
+            XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
             xpPool.spendXP(50);
             Assert.IsTrue(xpPool.remainingXP == 50);
         }
@@ -38,14 +38,14 @@ namespace WizardMakerTests
         [TestMethod]
         public void TestBasicXPPoolSimpleFailure()
         {
-            XPPool xpPool = new BasicXPPool("XP_POOL_NAME", "description", 100);
+            XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
             Assert.ThrowsException<XPPoolOverdrawnException>(() => xpPool.spendXP(150));
         }
 
         [TestMethod]
         public void TestBasicXpPoolAllowsAllAbilities()
         {
-            XPPool xpPool = new BasicXPPool("XP_POOL_NAME", "description", 100);
+            XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
 
             List<string> errorMessages = new List<string>();
             foreach (ArchAbility archAbility in ArchAbility.AllCommonAbilities)
@@ -76,7 +76,7 @@ namespace WizardMakerTests
         [TestMethod]
         public void TestXPPoolSort()
         {
-            XPPool xpPool1 = new BasicXPPool("XP_POOL_NAME", "description", 100);
+            XPPool xpPool1 = new BasicXPPool(XP_POOL_NAME, "description", 100);
             XPPool xpPool2 = new CategoryAbilityXpPool("Warrior Virtue", "XP Pool from having the warrior virtue.", 50, new List<AbilityType> { AbilityType.Martial });
             XPPool xpPool3 = new CategoryAbilityXpPool("Educated Virtue", "XP Pool from having the educated virtue.", 50, new List<AbilityType> { AbilityType.Academic });
 
@@ -92,7 +92,7 @@ namespace WizardMakerTests
 
             Assert.IsTrue(xPPools.ElementAt(0).name == "Educated Virtue");
             Assert.IsTrue(xPPools.ElementAt(1).name == "Warrior Virtue");
-            Assert.IsTrue(xPPools.ElementAt(2).name == "XP_POOL_NAME");
+            Assert.IsTrue(xPPools.ElementAt(2).name == XP_POOL_NAME);
             Assert.IsTrue(xPPools.ElementAt(3).remainingXP > 1000000);
         }
         [TestMethod]
