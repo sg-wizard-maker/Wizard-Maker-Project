@@ -11,6 +11,13 @@ namespace WizardMakerPrototype.Models.Journal
     {
         public SimpleJournalEntry text;
         public ArchVirtue archVirtue;
+        public const string PREFIX = "Added virtue: ";
+
+        public AddVirtueJournalEntry(SeasonYear sy, ArchVirtue archVirtue)
+        {
+            this.text = new SimpleJournalEntry(PREFIX + archVirtue.Name, sy);
+            this.archVirtue = archVirtue;
+        }
 
         public override void Execute(Character character)
         {
@@ -30,6 +37,11 @@ namespace WizardMakerPrototype.Models.Journal
         public override string getText()
         {
             return text.getText();
+        }
+
+        public bool isMatch(string virtueName)
+        {
+            return (PREFIX + archVirtue.Name) == (PREFIX + virtueName);
         }
     }
 }
