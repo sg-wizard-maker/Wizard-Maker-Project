@@ -111,5 +111,11 @@ namespace WizardMakerPrototype.Models
 
             return new Character(rc);
         }
+
+        //TODO:  Do we need this anymore?
+        public static void RemoveLaterLifeXPPool(Character c)
+        {
+            c.XPPoolList.Remove(c.XPPoolList.Where(xppool => xppool.name == NewCharacterInitJournalEntry.LATER_LIFE_POOL_NAME).First());
+        }
     }
 }

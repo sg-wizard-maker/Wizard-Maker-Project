@@ -110,10 +110,12 @@
     <Compile Include="Models\InvalidCharacterInitializationException.cs" />
     <Compile Include="Models\Journal\Journalable.cs" />
     <Compile Include="Models\CharacterPersist\RawCharacter.cs" />
+    <Compile Include="Models\Journal\JournalSortingConstants.cs" />
     <Compile Include="Models\ShouldNotBeAbleToGetHereException.cs" />
     <Compile Include="Models\Journal\SimpleJournalEntry.cs" />
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
     <Compile Include="Models\Virtues\ArchVirtue.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\WealthyCommand.cs" />
     <Compile Include="Models\Virtues\VirtueInstance.cs" />
     <Compile Include="Models\XPPool.cs" />
     <Compile Include="Models\Journal\NewCharacterInitJournalEntry.cs" />

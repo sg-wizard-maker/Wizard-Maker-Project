@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace WizardMakerPrototype.Models
 {
@@ -62,6 +62,24 @@ namespace WizardMakerPrototype.Models
                 }
             }
             journalables = result;
+        }
+
+        //TODO: Do we need this?  Delete if not.
+        public NewCharacterInitJournalEntry RetrieveCharacterInitJournalEntry()
+        {
+            try
+            {
+                NewCharacterInitJournalEntry result = (NewCharacterInitJournalEntry)journalables.ElementAt(0);
+                if (result == null)
+                {
+                    throw new InvalidCharacterInitializationException("Attempting to retrieve the character initialization journal entry when it does not exist.");
+                }
+                return result;
+            } catch (InvalidCastException ice)
+            {
+                throw new InvalidCharacterInitializationException("Attempting to retrieve the character initialization journal entry, but found another type instead: " 
+                    + journalables.ElementAt(0).GetType().Name + "(" + ice.Message +")");
+            }
         }
     }
 }

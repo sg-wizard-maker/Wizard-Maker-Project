@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using WizardMakerPrototype.Models.Journal;
 using WizardMakerTestbed.Models;
 
 [assembly: InternalsVisibleTo("WizardMakerTests")]
@@ -11,6 +12,7 @@ namespace WizardMakerPrototype.Models
      * TODO: Keep an eye that this class may better serve as a list of command instances to execute.
      * 
      * First journal entry for most characters.
+     * The order (ie, that this journal entry is first) must be maintained in code.
      */
     public class NewCharacterInitJournalEntry : Journalable
     {
@@ -23,7 +25,7 @@ namespace WizardMakerPrototype.Models
         private const string CHILDHOOD_DESCRIPTION = "XP granted to starting characters that can be spent on childhood skills";
         public const int CHILDHOOD_XP = 45;
 
-        private const string LATER_LIFE_POOL_NAME = "Later life XP Pool";
+        public static string LATER_LIFE_POOL_NAME = "Later life XP Pool";
         private const string LATER_LIFE_DESCRIPTION = "XP granted to starting characters that can be spent on anything the character can learn.  After age 5.";
         
         public static int CHILDHOOD_END_AGE = 5;
@@ -39,13 +41,14 @@ namespace WizardMakerPrototype.Models
         // XP per year.  Eg, 20 for Wealthy.  Default is 15
         public int xpPerYear { get; set; } = 15;
 
-        public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int xpPerYear)
+        public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int xpPerYear, int sagaYearStart = 1220)
         {
+            // TODO: Check that the starting language is a language.
             this.childhoodLanguage = childhoodLanguage;
             this.startingAge = startingAge;
 
             // TODO: Make this have to do with starting Age and user-specified year.
-            singleJournalEntry = new SimpleJournalEntry("Character initialized at age " + startingAge, new SeasonYear(1220-startingAge, Season.SPRING));
+            singleJournalEntry = new SimpleJournalEntry("Character initialized at age " + startingAge + " in " + (sagaYearStart - startingAge), new SeasonYear(sagaYearStart - startingAge, Season.SPRING));
             this.xpPerYear = xpPerYear;
         }
 
@@ -118,6 +121,11 @@ namespace WizardMakerPrototype.Models
             if (o2.startingAge != startingAge) return false;
             if (!o2.singleJournalEntry.IsSameSpecs(singleJournalEntry)) return false;
             return true;
+        }
+
+        public override int sortOrder()
+        {
+            return JournalSortingConstants.NEW_CHARACTER_INIT_SORT_ORDER;
         }
     }
 }

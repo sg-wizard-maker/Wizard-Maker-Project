@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Models.Virtues.VirtueCommands;
 
 namespace WizardMakerPrototype.Models.Virtues
 {
@@ -43,13 +44,20 @@ namespace WizardMakerPrototype.Models.Virtues
         public string Description;
         public VirtueType Type;
         public VirtueMajorMinor MajorMinor;
+        public ICharacterCommand characterCommand { get; private set; }
 
-        public ArchVirtue(string name, string description, VirtueType type, VirtueMajorMinor majorMinor)
+        public static Dictionary<string, ArchVirtue> NameToArchVirtue = new Dictionary<string, ArchVirtue>();
+        public const string PUISSANT_PREFIX = "Puissant ";
+
+        public ArchVirtue(string name, string description, VirtueType type, VirtueMajorMinor majorMinor) : this(name, description, type, majorMinor, null) { }
+
+        public ArchVirtue(string name, string description, VirtueType type, VirtueMajorMinor majorMinor, ICharacterCommand characterCommand)
         {
             Name = name;
             Type = type;
             Description = description;
             MajorMinor = majorMinor;
+            this.characterCommand = characterCommand;
         }
 
         // TODO: In future, rather than a hard-coded list,
@@ -57,7 +65,14 @@ namespace WizardMakerPrototype.Models.Virtues
         // 
         // This will be especially needful, when considering "wildcard" Virtues which describe a list of many virtues, such as:
         //  Way of the (Land)
-
+        static ArchVirtue ()
+        {
+            // Implement puissant abilities as a dictionary to an arch virtue
+            foreach (ArchAbility a in ArchAbility.AllCommonAbilities)
+            {
+                NameToArchVirtue[PUISSANT_PREFIX + a.Name] = new ArchVirtue(PUISSANT_PREFIX + a.Name, "Puissant in the ability " + a.Name, VirtueType.General, VirtueMajorMinor.MINOR);
+            }
+        }
         public static ArchVirtue TheGift = new ArchVirtue("TheGift", "TheGift", VirtueType.Hermetic, VirtueMajorMinor.FREE);
         
         // Hermetic Major
@@ -91,7 +106,7 @@ namespace WizardMakerPrototype.Models.Virtues
         public static ArchVirtue GuardianAngel = new ArchVirtue("GuardianAngel", "GuardianAngel", VirtueType.General, VirtueMajorMinor.MAJOR);
         public static ArchVirtue TrueFaith = new ArchVirtue("TrueFaith", "TrueFaith", VirtueType.General, VirtueMajorMinor.MAJOR);
         public static ArchVirtue WaysoftheLand = new ArchVirtue("Waysofthe(Land)", "Waysofthe(Land)", VirtueType.General, VirtueMajorMinor.MAJOR);
-        public static ArchVirtue Wealthy = new ArchVirtue("Wealthy", "Wealthy", VirtueType.General, VirtueMajorMinor.MAJOR);
+        public static ArchVirtue Wealthy = new ArchVirtue("Wealthy", "Wealthy", VirtueType.General, VirtueMajorMinor.MAJOR, new WealthyCommand());
         
         // Hermetic Minor
         public static ArchVirtue AdeptLaboratoryStudent = new ArchVirtue("AdeptLaboratoryStudent", "AdeptLaboratoryStudent", VirtueType.Hermetic, VirtueMajorMinor.MINOR);

@@ -21,7 +21,10 @@ namespace WizardMakerPrototype.Models.Journal
 
         public override void Execute(Character character)
         {
-            character.virtues.Add(new VirtueInstance(archVirtue));
+            VirtueInstance virtue = new VirtueInstance(archVirtue);
+            character.virtues.Add(virtue);
+            virtue.Virtue.characterCommand.Execute(character);
+
         }
 
         public override SeasonYear getDate()
@@ -42,6 +45,11 @@ namespace WizardMakerPrototype.Models.Journal
         public bool isMatch(string virtueName)
         {
             return (PREFIX + archVirtue.Name) == (PREFIX + virtueName);
+        }
+
+        public override int sortOrder()
+        {
+            return JournalSortingConstants.ADD_VIRTUE_SORT_ORDER;
         }
     }
 }

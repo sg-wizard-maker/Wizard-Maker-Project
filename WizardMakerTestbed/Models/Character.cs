@@ -45,6 +45,7 @@ namespace WizardMakerPrototype.Models
             }
             this.startingAge = startingAge;
             this.XPPoolList = new SortedSet<XPPool>(new XPPoolComparer());
+            this.virtues = new List<VirtueInstance>();
         }
         
         public void EndCharacterCreation()

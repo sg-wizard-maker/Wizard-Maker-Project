@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using WizardMakerPrototype.Models;
+using WizardMakerPrototype.Models.Journal;
 
 namespace WizardMakerPrototype.Models
 {
@@ -9,8 +10,8 @@ namespace WizardMakerPrototype.Models
     {
         // This indicates that the sorting should be by the SeasonYear
         //  For now, this is all journal entries.  Note that this also determines the 
-        //   order of rendering.
-        public const int SEASON_YEAR_SORT_ORDER = 100;
+        //   order of rendering within the season.
+        
 
         public abstract string getText();
 
@@ -60,7 +61,7 @@ namespace WizardMakerPrototype.Models
 
         public virtual int sortOrder()
         {
-            return SEASON_YEAR_SORT_ORDER;
+            return JournalSortingConstants.SEASON_YEAR_SORT_ORDER;
         }
     }
 }
