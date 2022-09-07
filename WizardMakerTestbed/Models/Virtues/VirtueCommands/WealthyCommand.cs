@@ -8,12 +8,12 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
 {
     public class WealthyCommand : ICharacterCommand
     {
+        public static int WEALTHY_XP = 20;
         public void Execute(Character cb)
         {
-            cb.XpPerSeasonForInitialCreation = 20;
-
-            // TODO: Increase the BasicXPPool
-            
+            // Since this is executed before the XP Pool initialization, the wealthy will carry over for initial characters.
+            //  And this will also work for characters that acquire wealthy later on, due to the SeasonYear attached to the virtue.
+            cb.XpPerYear = WEALTHY_XP;
         }
 
         public void Undo()

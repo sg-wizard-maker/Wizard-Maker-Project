@@ -21,6 +21,7 @@ namespace WizardMakerPrototype.Models
         private Character Character;
 
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
+        public const int SAGA_START_YEAR = 1220;
 
         public CharacterManager(int startingAge)
         {
@@ -30,7 +31,7 @@ namespace WizardMakerPrototype.Models
             this.Character = new Character("New Character", "", startingAge);
             
             //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, Character.XpPerSeasonForInitialCreation));
+            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, SAGA_START_YEAR));
 
             // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");

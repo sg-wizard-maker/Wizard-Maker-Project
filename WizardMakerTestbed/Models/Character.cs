@@ -18,7 +18,7 @@ namespace WizardMakerPrototype.Models
         public List<AbilityInstance> abilities { get; set; }
         public SortedSet<XPPool> XPPoolList { get; }
 
-        public int XpPerSeasonForInitialCreation { get; set; } = 15;
+        public int XpPerYear { get; set; } = 15;
 
         public List<VirtueInstance> virtues { get; private set; }
 

@@ -38,10 +38,7 @@ namespace WizardMakerPrototype.Models
         public ArchAbility childhoodLanguage { get; set; }
         public int startingAge { get; set; } = 25;
 
-        // XP per year.  Eg, 20 for Wealthy.  Default is 15
-        public int xpPerYear { get; set; } = 15;
-
-        public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int xpPerYear, int sagaYearStart = 1220)
+        public NewCharacterInitJournalEntry(int startingAge, ArchAbility childhoodLanguage, int sagaYearStart = 1220)
         {
             // TODO: Check that the starting language is a language.
             this.childhoodLanguage = childhoodLanguage;
@@ -49,7 +46,6 @@ namespace WizardMakerPrototype.Models
 
             // TODO: Make this have to do with starting Age and user-specified year.
             singleJournalEntry = new SimpleJournalEntry("Character initialized at age " + startingAge + " in " + (sagaYearStart - startingAge), new SeasonYear(sagaYearStart - startingAge, Season.SPRING));
-            this.xpPerYear = xpPerYear;
         }
 
         public override void Execute(Character character)
@@ -67,7 +63,7 @@ namespace WizardMakerPrototype.Models
                 new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION + " (" + childhoodLanguage.Name + ")", 
                                             CHILDHOOD_LANGUAGE_XP, new List<ArchAbility>() { childhoodLanguage }),
                 new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, determineChildhoodAbilities()),
-                new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, determineLaterLifeXp(this.startingAge)),
+                new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, determineLaterLifeXp(character.startingAge, character.XpPerYear)),
                 new AllowOverdrawnXpPool()
                 };
 
@@ -77,7 +73,7 @@ namespace WizardMakerPrototype.Models
             }
         }
 
-        private int determineLaterLifeXp(int startingAge)
+        private int determineLaterLifeXp(int startingAge, int xpPerYear)
         {
             return Math.Max(0, (startingAge - CHILDHOOD_END_AGE) * xpPerYear);
         }

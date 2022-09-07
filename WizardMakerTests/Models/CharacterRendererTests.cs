@@ -49,12 +49,11 @@ namespace WizardMakerTests.Models
         {
             Random rnd = new Random(1212);
             const int STARTING_AGE = 25;
-            const int XP_PER_SEASON = 20;
 
             // Look at the timing for rendering an entire character.
             Character c = new("Foo", "Best mage ever.  They really know a lot.", STARTING_AGE);
 
-            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(STARTING_AGE, ArchAbility.LangEnglish, XP_PER_SEASON);
+            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(STARTING_AGE, ArchAbility.LangEnglish);
             c.addJournalable(initEntry);
 
             Dictionary<string, int> xpSpentMap = new Dictionary<string, int>();

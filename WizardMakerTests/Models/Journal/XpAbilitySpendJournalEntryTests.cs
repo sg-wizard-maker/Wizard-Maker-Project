@@ -49,7 +49,7 @@ namespace WizardMakerPrototype.Models.Tests
             Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
 
             // Initialize the character before attempting to buy an ability
-            Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish, 20);
+            Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
             initEntry.Execute(dummy);
 
             // Now actually test the XP spend
