@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerPrototype.Models;
+using WizardMakerPrototype.Models.Journal;
+using WizardMakerPrototype.Models.Virtues;
 
 namespace WizardMakerTests.Models
 {
@@ -13,6 +15,32 @@ namespace WizardMakerTests.Models
         private const string XP_POOL_NAME = "dummy";
         private const string XP_POOL_DESCRIPTION = "dummy XP Pool";
         private const int XP_POOL_INITIAL_XP = 500;
+
+        [TestMethod]
+        public void RenderTwiceTest()
+        {
+            int STARTING_AGE = 25;
+            int SAGA_START = 1220;
+            SeasonYear initSeasonYear = new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING);
+            // Create a wealthy character
+            Character c = new("Foo", "Looks like a wealthy foo", STARTING_AGE);
+            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
+            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(initSeasonYear, ArchVirtue.Wealthy);
+            c.addJournalable(initEntry);
+            c.addJournalable(addVirtueJournalEntry);
+            c.addJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
+            CharacterRenderer.renderAllJournalEntries(c);
+            int initialXPPoolCount = c.XPPoolList.Count;
+            int initialXPSpend = c.totalRemainingXPWithoutOverdrawn();
+            Assert.AreEqual(1, c.abilities.Count);
+            Assert.AreEqual(1, c.virtues.Count);
+
+            // Render again and see that counts do not change
+            Assert.AreEqual(1, c.abilities.Count);
+            Assert.AreEqual(1, c.virtues.Count);
+            Assert.AreEqual(initialXPPoolCount, c.XPPoolList.Count);
+            Assert.AreEqual(initialXPSpend, c.totalRemainingXPWithoutOverdrawn());
+        }
 
         // We expect the results going in to be the same as coming out.
         [DataTestMethod()]

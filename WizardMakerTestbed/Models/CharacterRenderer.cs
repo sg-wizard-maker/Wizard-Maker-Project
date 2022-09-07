@@ -21,6 +21,7 @@ namespace WizardMakerPrototype.Models
         {
             //Reset the Character
             character.resetAbilities();
+            // Perhaps we should be deleting the XP Pools rather than resetting?
             foreach (XPPool xPPool in character.XPPoolList) { xPPool.reset(); }
 
             foreach (Journalable journalable in character.GetJournal())
