@@ -74,7 +74,8 @@ namespace WizardMakerPrototype.Models.Virtues
             {
                 NameToArchVirtue[PUISSANT_PREFIX + a.Name] = new ArchVirtue(PUISSANT_PREFIX + a.Name, "Puissant in the ability " + a.Name, VirtueType.General, 
                     VirtueMajorMinor.MINOR, new PuissantAbilityCommand(a));
-                NameToArchVirtue[AFFINITY_PREFIX + a.Name] = new ArchVirtue(AFFINITY_PREFIX + a.Name, "Affinity with the ability " + a.Name, VirtueType.Hermetic, VirtueMajorMinor.MINOR);
+                NameToArchVirtue[AFFINITY_PREFIX + a.Name] = new ArchVirtue(AFFINITY_PREFIX + a.Name, "Affinity with the ability " + a.Name, VirtueType.Hermetic, 
+                    VirtueMajorMinor.MINOR, new AffinityAbilityCommand(a));
             }
             PopulateVirtueDictionary();
 

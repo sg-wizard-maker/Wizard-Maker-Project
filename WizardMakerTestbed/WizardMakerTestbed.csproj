@@ -115,6 +115,7 @@
     <Compile Include="Models\Journal\SimpleJournalEntry.cs" />
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
     <Compile Include="Models\Virtues\ArchVirtue.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\AffinityAbilityCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\PuissantAbilityCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\WealthyCommand.cs" />
     <Compile Include="Models\Virtues\VirtueInstance.cs" />
