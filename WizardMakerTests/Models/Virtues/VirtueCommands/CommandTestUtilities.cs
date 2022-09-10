@@ -14,7 +14,7 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
         public static Character GenerateBasicTestCharacter(int startingAge, int sagaStart=1220)
         {
             // Create a basic character
-            Character c = new("Foo", "Looks like a wealthy foo", startingAge);
+            Character c = new("Foo", "Looks like a foo", startingAge);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
             c.addJournalable(initEntry);
             return c;

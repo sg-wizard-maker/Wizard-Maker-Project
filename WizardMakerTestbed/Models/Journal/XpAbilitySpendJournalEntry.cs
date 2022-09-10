@@ -34,7 +34,6 @@ namespace WizardMakerPrototype.Models
         {
             return text.getDate();
         }
-
         public override void Execute(Character character)
         {
             CharacterRenderer.addAbility(character, ability, xp, specialty, character.IsInitialCharacterFinished(), this.getId());

@@ -63,8 +63,8 @@ namespace WizardMakerPrototype.Models.Tests
             Character c2 = CharacterManager.ReadFromFile(tempPath);
 
 
-            CharacterRenderer.renderAllJournalEntries(c);
-            CharacterRenderer.renderAllJournalEntries(c2);
+            CharacterRenderer.RenderAllJournalEntries(c);
+            CharacterRenderer.RenderAllJournalEntries(c2);
 
             Assert.AreEqual(c.Name, c2.Name);
             Assert.AreEqual(c.Description, c2.Description);

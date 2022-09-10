@@ -5,35 +5,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WizardMakerPrototype.Models.Journal;
 using WizardMakerTests.Models.Virtues.VirtueCommands;
+using WizardMakerPrototype.Models.Journal;
 
 namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
 {
     [TestClass()]
-    public class PuissantAbilityCommandTests
+    public class WarriorCommandTests
     {
         [TestMethod()]
         public void ExecuteSimpleTest()
         {
             int STARTING_AGE = 25;
-            string ABILITY = "Brawl";
             int SAGA_START = 1220;
-            // Create a  character
+            
+            // Create a Warrior character
             Character c = CommandTestUtilities.GenerateBasicTestCharacter(STARTING_AGE);
             AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
-                ArchVirtue.NameToArchVirtue[ArchVirtue.PUISSANT_PREFIX + ABILITY]);
-            XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 15, "Fist");
-            c.addJournalable(xpSpend);
+                ArchVirtue.NameToArchVirtue["Warrior"]);
             c.addJournalable(virtueJournalEntry);
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            Assert.IsTrue(c.abilities.Where(a => a.Name == ABILITY).First().HasPuissance);
+            // TODO: Assert that the Warrior pool is there.
+            // TODO: Assert that the Warrior pool has 50XP.
+            // TODO: Assert that the AbilityType.Martial is allowed
+            // TODO: Assert that there were no validation errors
 
-            // Please note that we still treat the score as if it was 2, not 4.  This is because we need to render it later as "2+2", not "4".
-            Assert.AreEqual(2, c.abilities.Where(a => a.Name == ABILITY).First().Score);
+            // TODO: Add a martial ability and rerender the character.
+            // TODO: Assert that the Warrior XP Pool has been debited appropriately
+            // TODO: Assert that there were no validation errors
         }
-
-        // TODO: Add test where no XP has been spent
     }
 }

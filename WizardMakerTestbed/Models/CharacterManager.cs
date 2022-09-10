@@ -37,7 +37,7 @@ namespace WizardMakerPrototype.Models
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
             // Last step:  Render the character with all journal entries.
-            CharacterRenderer.renderAllJournalEntries(Character);
+            CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
         //TODO: Make class to wrap character pools.  This way we can just obtain the pool for childhood, etc, through that interface.  And look at aggregate information.
@@ -60,7 +60,7 @@ namespace WizardMakerPrototype.Models
                 new SeasonYear(1219, Season.SUMMER), ability, absoluteXp, specialty);
 
             Character.addJournalable(xpAbilitySpendJournalEntry);
-            CharacterRenderer.renderAllJournalEntries(Character);
+            CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
         public void DeleteJournalEntry(string id)
@@ -68,7 +68,7 @@ namespace WizardMakerPrototype.Models
             Character.removeJournalable(id);
 
             // Render, which will handle the resetting of XP Pools.
-            CharacterRenderer.renderAllJournalEntries(Character);
+            CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
         public CharacterData renderCharacterAsCharacterData()

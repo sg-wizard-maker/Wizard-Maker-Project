@@ -8,7 +8,7 @@ namespace WizardMakerPrototype.Models
 {
     public interface ICharacterCommand
     {
-        void Execute(Character cb);
+        void Execute(Character c);
         void Undo();
     }
 }

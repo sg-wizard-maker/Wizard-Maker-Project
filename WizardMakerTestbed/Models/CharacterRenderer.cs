@@ -17,7 +17,8 @@ namespace WizardMakerPrototype.Models
     internal class CharacterRenderer
     {
 
-        public static void renderAllJournalEntries(Character character)
+        // This method assumes that the journal entries in a Character class are sorted by SeasonYear.
+        public static void RenderAllJournalEntries(Character character)
         {
             //Reset the Character
             character.resetAbilities();

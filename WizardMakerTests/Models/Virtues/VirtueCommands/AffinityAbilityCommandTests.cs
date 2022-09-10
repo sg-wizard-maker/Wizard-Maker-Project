@@ -27,7 +27,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
                 20, "Fist");
             c.addJournalable(xpSpend);
             c.addJournalable(virtueJournalEntry);
-            CharacterRenderer.renderAllJournalEntries(c);
+            CharacterRenderer.RenderAllJournalEntries(c);
 
             Assert.IsTrue(c.abilities.Where(a => a.Name == ABILITY).First().HasAffinity);
 
