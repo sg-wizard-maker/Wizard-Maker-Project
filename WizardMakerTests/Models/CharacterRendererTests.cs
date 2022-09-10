@@ -25,7 +25,7 @@ namespace WizardMakerTests.Models
             // Create a wealthy character
             Character c = new("Foo", "Looks like a wealthy foo", STARTING_AGE);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
-            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(initSeasonYear, ArchVirtue.Wealthy);
+            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(initSeasonYear, ArchVirtue.NameToArchVirtue["Wealthy"]);
             c.addJournalable(initEntry);
             c.addJournalable(addVirtueJournalEntry);
             c.addJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));

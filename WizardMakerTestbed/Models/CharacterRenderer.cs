@@ -36,11 +36,14 @@ namespace WizardMakerPrototype.Models
          */
         public static void addAbility(Character character, string ability, int xp, string specialty, bool isIncrementalXP, string journalID)
         {
+            bool isPuissant = false;
+            if (character.puissantAbilities.Contains(ability)) { isPuissant = true; }
+
             if (!doesCharacterHaveAbility(character, ability))
             {
 
                 // add the ability to the character
-                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID));
+                character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID, isPuissant));
             }
             else
             {

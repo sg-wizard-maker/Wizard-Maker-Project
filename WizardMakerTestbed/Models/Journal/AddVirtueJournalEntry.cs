@@ -13,6 +13,8 @@ namespace WizardMakerPrototype.Models.Journal
         public ArchVirtue archVirtue;
         public const string PREFIX = "Added virtue: ";
 
+        // secondary info is for cases where we have multiple virtues, such as Puissant Ability can actually be 
+        //  "Puissant Brawl" or "Puissant Area Lore: England"
         public AddVirtueJournalEntry(SeasonYear sy, ArchVirtue archVirtue)
         {
             this.text = new SimpleJournalEntry(PREFIX + archVirtue.Name, sy);

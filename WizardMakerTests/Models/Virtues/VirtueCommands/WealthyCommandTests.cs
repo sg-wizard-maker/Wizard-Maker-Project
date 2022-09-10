@@ -21,7 +21,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             // Create a wealthy character
             Character c = new("Foo", "Looks like a wealthy foo", STARTING_AGE);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
-            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START-STARTING_AGE, Season.SPRING), ArchVirtue.Wealthy);
+            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START-STARTING_AGE, Season.SPRING), ArchVirtue.NameToArchVirtue["Wealthy"]);
             c.addJournalable(initEntry);
             c.addJournalable(addVirtueJournalEntry);
             CharacterRenderer.renderAllJournalEntries(c);

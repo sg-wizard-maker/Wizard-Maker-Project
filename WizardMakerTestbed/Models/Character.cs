@@ -16,6 +16,9 @@ namespace WizardMakerPrototype.Models
         public string Description { get; set; }
 
         public List<AbilityInstance> abilities { get; set; }
+
+        public List<string> puissantAbilities { get; set; } = new List<string>();
+        public List<string> affinityAbilities { get; set; } = new List<string>();
         public SortedSet<XPPool> XPPoolList { get; }
 
         public int XpPerYear { get; set; } = 15;
