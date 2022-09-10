@@ -54,7 +54,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void SimpleRoundTripFileTest()
         {
             Character c = new("Foo", "Looks like a foo", 25);
-            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish, 15);
+            NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
             c.addJournalable(initEntry);
 
             string tempPath = Path.GetTempFileName();

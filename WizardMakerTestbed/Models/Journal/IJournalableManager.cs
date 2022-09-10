@@ -25,25 +25,30 @@ namespace WizardMakerPrototype.Models
     {
         public int Compare(Journalable x, Journalable y)
         {
+            if (x.sortOrder() == y.sortOrder()) { 
 
-            if (x.getDate().Year == y.getDate().Year)
-            {
-                if (x.getDate().season == y.getDate().season)
+                if (x.getDate().Year == y.getDate().Year)
                 {
-                    if (x.getId() == y.getId())
+                    if (x.getDate().season == y.getDate().season)
                     {
-                        return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
-                    } else
-                    {
-                        return new CaseInsensitiveComparer().Compare(x.getId(), y.getId());
+                        if (x.getId() == y.getId())
+                        {
+                            return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
+                        }
+                        else
+                        {
+                            return new CaseInsensitiveComparer().Compare(x.getId(), y.getId());
+                        }
                     }
-                } else
-                {
-                    return x.getDate().season.CompareTo(y.getDate().season);
-                }
+                    else
+                    {
+                        return x.getDate().season.CompareTo(y.getDate().season);
+                    }
 
+                }
+                return x.getDate().Year.CompareTo(y.getDate().Year);
             }
-            return x.getDate().Year.CompareTo(y.getDate().Year);
+            return x.sortOrder().CompareTo(y.sortOrder());
         }
     }
 

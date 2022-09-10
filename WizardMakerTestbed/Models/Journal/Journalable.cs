@@ -1,12 +1,18 @@
 ﻿using Newtonsoft.Json;
 using System;
 using WizardMakerPrototype.Models;
+using WizardMakerPrototype.Models.Journal;
 
 namespace WizardMakerPrototype.Models
 {
     // TODO: Give it an ID field.  This way we can support searching and easier deletion.
     public abstract class Journalable: ICharacterCommand
     {
+        // This indicates that the sorting should be by the SeasonYear
+        //  For now, this is all journal entries.  Note that this also determines the 
+        //   order of rendering within the season.
+        
+
         public abstract string getText();
 
         public abstract SeasonYear getDate();
@@ -51,6 +57,11 @@ namespace WizardMakerPrototype.Models
             //  and each instance should have its own ID
 
             return true;
+        }
+
+        public virtual int sortOrder()
+        {
+            return JournalSortingConstants.SEASON_YEAR_SORT_ORDER;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerPrototype.Models.CharacterPersist;
+using WizardMakerPrototype.Models.Virtues;
 using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
@@ -15,7 +16,14 @@ namespace WizardMakerPrototype.Models
         public string Description { get; set; }
 
         public List<AbilityInstance> abilities { get; set; }
+
+        public List<string> puissantAbilities { get; set; } = new List<string>();
+        public List<string> affinityAbilities { get; set; } = new List<string>();
         public SortedSet<XPPool> XPPoolList { get; }
+
+        public int XpPerYear { get; set; } = 15;
+
+        public List<VirtueInstance> virtues { get; private set; }
 
         public int startingAge { get; set; }
 
@@ -40,6 +48,7 @@ namespace WizardMakerPrototype.Models
             }
             this.startingAge = startingAge;
             this.XPPoolList = new SortedSet<XPPool>(new XPPoolComparer());
+            this.virtues = new List<VirtueInstance>();
         }
         
         public void EndCharacterCreation()

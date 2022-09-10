@@ -31,13 +31,13 @@ namespace WizardMakerPrototype.Models
     /** Just a note with a season and year attached to it.
     * Does not actually do anything.
     */
-    public class SingleJournalEntry : Journalable
+    public class SimpleJournalEntry : Journalable
     {
         public string JournalEntryText { get; set; }
         public SeasonYear SeasonYear { get; set; }
         public String Id { get; }
 
-        public SingleJournalEntry(string journalEntryText, SeasonYear seasonYear)
+        public SimpleJournalEntry(string journalEntryText, SeasonYear seasonYear)
         {
             JournalEntryText = journalEntryText;
             SeasonYear = seasonYear;

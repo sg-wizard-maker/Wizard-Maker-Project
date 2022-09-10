@@ -16,7 +16,7 @@ namespace WizardMakerTests.Models.Journal
         public void SimpleInitTest()
         {
             Character c = new Character("New Character", "Test new character", new List<AbilityInstance>(), new List<Journalable>(), 25);
-            NewCharacterInitJournalEntry NewCharacterInitJournalEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish, 15);
+            NewCharacterInitJournalEntry NewCharacterInitJournalEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
 
             // Normally, call cm.renderAllJournalEntries(), rather than executing the journal entry directly.
             NewCharacterInitJournalEntry.Execute(c);
@@ -34,8 +34,9 @@ namespace WizardMakerTests.Models.Journal
         public void XpPerSeasonTest(int xpPerSeason, int startingAge)
         {
             Character c = new Character("New Character", "Test new character", new List<AbilityInstance>(), new List<Journalable>(), startingAge);
+            c.XpPerYear = xpPerSeason;
 
-            NewCharacterInitJournalEntry NewCharacterInitJournalEntry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish, xpPerSeason);
+            NewCharacterInitJournalEntry NewCharacterInitJournalEntry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish);
 
             // Normally, call cm.renderAllJournalEntries(), rather than executing the journal entry directly.
             NewCharacterInitJournalEntry.Execute(c);
@@ -50,9 +51,8 @@ namespace WizardMakerTests.Models.Journal
         public void SerializableTest()
         {
             const int startingAge = 25;
-            const int xpPerSeason = 10;
 
-            Journalable entry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish, xpPerSeason);
+            Journalable entry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish);
 
             string tmp = entry.SerializeJson();
             Journalable deserialized = Journalable.DeserializeJson(tmp);
