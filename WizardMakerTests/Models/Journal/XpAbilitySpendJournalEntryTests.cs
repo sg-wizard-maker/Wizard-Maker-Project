@@ -62,6 +62,10 @@ namespace WizardMakerPrototype.Models.Tests
         [TestMethod()]
         public void ExecuteValidationTest()
         {
+            // If we are going to test Validation, we must reset the ValidationLog.
+            //  Otherwise, it will get polluted with validation messages from other tests.
+            ValidationLog.reset();
+
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Character dummy = new Character("My name", "My desription", 30);
 

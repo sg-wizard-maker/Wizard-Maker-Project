@@ -19,7 +19,11 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
         {
             int STARTING_AGE = 25;
             int SAGA_START = 1220;
-            
+
+            // If we are going to test Validation, we must reset the ValidationLog.
+            //  Otherwise, it will get polluted with validation messages from other tests.
+            ValidationLog.reset();
+
             // Create a Warrior character
             Character c = CommandTestUtilities.GenerateBasicTestCharacter(STARTING_AGE);
             AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),

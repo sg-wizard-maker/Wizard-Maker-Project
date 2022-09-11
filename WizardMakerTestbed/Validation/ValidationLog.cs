@@ -8,6 +8,8 @@ namespace WizardMakerPrototype.Validation
 {
     public class ValidationLog
     {
+        //TODO: For testing, we always have to reset the ValidationLog manually.  We need to put some automation so that it is reset before every test.  Also, this has implications for running tests in parallel.
+
         static List<ValidationMessage> messages = new List<ValidationMessage>();
 
         public static void AddValidationMessage(ValidationMessage msg)
@@ -21,5 +23,7 @@ namespace WizardMakerPrototype.Validation
         }
 
         public static List<ValidationMessage> GetMessages() { return messages; }
+
+        public static void reset() { messages = new List<ValidationMessage>(); }
     }
 }
