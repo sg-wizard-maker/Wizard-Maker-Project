@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Validation;
 
 namespace WizardMakerPrototype.Models.Tests
 {
@@ -56,7 +57,27 @@ namespace WizardMakerPrototype.Models.Tests
             entry.Execute(dummy);
             Assert.AreEqual(1, dummy.abilities.Count, "Dummy character should only have one abililty.  Found " + dummy.abilities.Count);
             Assert.AreEqual(ArchAbility.Brawl.Name, dummy.abilities[0].Name);
+        }
 
+        [TestMethod()]
+        public void ExecuteValidationTest()
+        {
+            SeasonYear sy = new SeasonYear(1222, Season.SPRING);
+            Character dummy = new Character("My name", "My desription", 30);
+
+            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Bows", 5, "Short bow");
+
+            // Initialize the character before attempting to buy an ability
+            Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
+            initEntry.Execute(dummy);
+
+            // Now actually test the XP spend
+            entry.Execute(dummy);
+
+            // This should have a validation error, since the character does not have Warrior Virtue and Bows is a Martial Ability.
+            Assert.AreEqual(1, ValidationLog.GetMessages().Count);
+
+            Assert.IsTrue(ValidationLog.GetMessages().First().message.StartsWith("Adding an ability to the character that is not available"));
         }
 
         [TestMethod]

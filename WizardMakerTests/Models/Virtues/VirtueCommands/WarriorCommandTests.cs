@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WizardMakerTests.Models.Virtues.VirtueCommands;
 using WizardMakerPrototype.Models.Journal;
+using WizardMakerPrototype.Validation;
 
 namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
 {
@@ -34,7 +35,8 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             // Assert that the AbilityType.Martial is allowed
             Assert.IsTrue(c.AllowedAbilityTypes.Where(a => a == AbilityType.Martial).Any());
 
-            // TODO: Assert that there were no validation errors
+            // Assert that there were no validation errors
+            Assert.AreEqual(0, ValidationLog.GetMessages().Count);
 
             // Add a martial ability and rerender the character.
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
@@ -46,7 +48,8 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP-25, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().remainingXP);
             Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().initialXP);
 
-            // TODO: Assert that there were no validation errors
+            // Assert that there were no validation errors
+            Assert.AreEqual(0, ValidationLog.GetMessages().Count);
         }
     }
 }

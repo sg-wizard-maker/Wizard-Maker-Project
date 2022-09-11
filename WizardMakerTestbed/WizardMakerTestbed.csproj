@@ -131,6 +131,8 @@
     <Compile Include="Tester.Designer.cs">
       <DependentUpon>Tester.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation\ValidationLog.cs" />
+    <Compile Include="Validation\ValidationMessage.cs" />
     <EmbeddedResource Include="AbilityDialog.resx">
       <DependentUpon>AbilityDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,5 +165,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
