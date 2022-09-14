@@ -41,15 +41,26 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
 
-            // Add a martial ability and rerender the character.
+            // Add an arcane ability and rerender the character.
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
                 "Magic Lore", 25, "Beasts");
             c.addJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            // Assert that the Warrior XP Pool has been debited appropriately
+            // Assert that the Arcane XP Pool has been debited appropriately
             Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().remainingXP);
             Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().initialXP);
+
+            // Add a non arcane ability and rerender the character.
+            XpAbilitySpendJournalEntry xpSpend2 = new XpAbilitySpendJournalEntry("Test XP Spend on non-arcane", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
+                "Brawl", 25, "Fists");
+            c.addJournalable(xpSpend2);
+            CharacterRenderer.RenderAllJournalEntries(c);
+
+            // Assert that the Arcane XP Pool was not debited on this second skill spend.
+            Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().remainingXP);
+            Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().initialXP);
+
 
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
