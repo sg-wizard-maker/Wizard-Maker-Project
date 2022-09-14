@@ -21,6 +21,9 @@ namespace WizardMakerPrototype.Models
         // This method assumes that the journal entries in a Character class are sorted by SeasonYear.
         public static void RenderAllJournalEntries(Character character)
         {
+            // Reset the validation log
+            ValidationLog.reset();
+
             //Reset the Character
             character.resetAbilities();
             // Perhaps we should be deleting the XP Pools rather than resetting?

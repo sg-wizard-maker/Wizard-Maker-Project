@@ -62,6 +62,12 @@ namespace WizardMakerPrototype.Models.Virtues
             this.characterCommand = characterCommand;
         }
 
+        // Helps the front end decide if the Virtue has been implemented in the backend.  This will help while functionality is still incomplete.
+        public bool IsImplemented()
+        {
+            return (characterCommand != null);
+        }
+
         // TODO: In future, rather than a hard-coded list,
         // the program will offer the means to declare a new Virtue at runtime.
         // 

@@ -19,5 +19,27 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
             c.addJournalable(initEntry);
             return c;
         }
+
+        /**
+         * The starting virtue string must be a key in the ArchVirtue.NameToArchVirtue dictionary
+         */
+        public static Character GenerateBasicTestCharacterWithStartingVirtue(int startingAge, string staringVirtue, int sagaStart = 1220)
+        {
+            Character c = GenerateBasicTestCharacter(startingAge, sagaStart);
+            ArchVirtue archVirtue = ArchVirtue.NameToArchVirtue[staringVirtue];
+
+            // Note that this is only generating a virtue that is in the same season as the NewCharacterInit journal entry.
+            AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(sagaStart - startingAge, Season.SPRING),
+                archVirtue);
+            c.addJournalable(virtueJournalEntry);
+
+            Assert.IsTrue(archVirtue.IsImplemented());
+
+            // Assert that the virtue appears before the new character init, since these were put in the same season.
+            Assert.IsInstanceOfType(c.GetJournal().ElementAt(0), typeof(AddVirtueJournalEntry));
+            Assert.IsInstanceOfType(c.GetJournal().ElementAt(1), typeof(NewCharacterInitJournalEntry));
+
+            return c;
+        }
     }
 }
