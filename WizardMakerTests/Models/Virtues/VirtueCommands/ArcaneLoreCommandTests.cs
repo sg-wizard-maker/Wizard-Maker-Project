@@ -61,7 +61,6 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().remainingXP);
             Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().initialXP);
 
-
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
         }

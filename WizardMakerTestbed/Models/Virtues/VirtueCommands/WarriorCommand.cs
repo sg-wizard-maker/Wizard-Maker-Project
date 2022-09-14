@@ -11,11 +11,11 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
         public static string WARRIOR_POOL_NAME = "Warrior XP Pool";
         public static string WARRIOR_POOL_DESCRIPTION = "XP Pool for Virtue Warrior";
         public static int WARRIOR_POOL_INITIAL_XP = 50;
-        private GenericAllowAbilityTypeCommand command;
+        private GenericAllowAbilityTypeAndXPPoolCommand command;
 
         public WarriorCommand()
         {
-            command = new GenericAllowAbilityTypeCommand(AbilityType.Martial, WARRIOR_POOL_NAME, WARRIOR_POOL_DESCRIPTION, WARRIOR_POOL_INITIAL_XP);
+            command = new GenericAllowAbilityTypeAndXPPoolCommand(AbilityType.Martial, WARRIOR_POOL_NAME, WARRIOR_POOL_DESCRIPTION, WARRIOR_POOL_INITIAL_XP);
         }
 
         public void Execute(Character c)

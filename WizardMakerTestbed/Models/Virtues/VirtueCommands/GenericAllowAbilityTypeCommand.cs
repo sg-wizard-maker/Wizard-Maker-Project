@@ -10,14 +10,14 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
      * this class is a utility class for virtues that grant access to an Ability Type AND an XP pool to spend on abilities
      *  of that type.  If the virtue is not doing both of those things, then developers should not use this class.
      */
-    internal class GenericAllowAbilityTypeCommand : ICharacterCommand
+    internal class GenericAllowAbilityTypeAndXPPoolCommand : ICharacterCommand
     {
         AbilityType allowedType;
         string name;
         string description;
         int initialXP;
 
-        public GenericAllowAbilityTypeCommand(AbilityType allowedType, string name, string description, int initialXP)
+        public GenericAllowAbilityTypeAndXPPoolCommand(AbilityType allowedType, string name, string description, int initialXP)
         {
             this.allowedType = allowedType;
             this.name = name;

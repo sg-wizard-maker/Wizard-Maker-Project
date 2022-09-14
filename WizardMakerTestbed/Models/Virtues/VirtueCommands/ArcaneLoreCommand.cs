@@ -11,11 +11,11 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
         public static string ARCANE_LORE_POOL_NAME = "Arcane Lore XP Pool";
         public static string ARCANE_LORE_POOL_DESCRIPTION = "XP Pool for Virtue Arcane Lore";
         public static int ARCANE_LORE_INITIAL_XP = 50;
-        private GenericAllowAbilityTypeCommand command;
+        private GenericAllowAbilityTypeAndXPPoolCommand command;
 
         public ArcaneLoreCommand()
         {
-            command = new GenericAllowAbilityTypeCommand(AbilityType.Arcane, ARCANE_LORE_POOL_NAME, ARCANE_LORE_POOL_DESCRIPTION, ARCANE_LORE_INITIAL_XP);
+            command = new GenericAllowAbilityTypeAndXPPoolCommand(AbilityType.Arcane, ARCANE_LORE_POOL_NAME, ARCANE_LORE_POOL_DESCRIPTION, ARCANE_LORE_INITIAL_XP);
         }
 
         public void Execute(Character c)
