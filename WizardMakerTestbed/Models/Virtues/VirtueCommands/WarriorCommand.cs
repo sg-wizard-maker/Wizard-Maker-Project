@@ -8,17 +8,19 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
 {
     public class WarriorCommand : ICharacterCommand
     {
-        public static string WARRIOR_POOL_NAME = ArchVirtue.NameToArchVirtue["Warrior"].Name;
+        public static string WARRIOR_POOL_NAME = "Warrior XP Pool";
         public static string WARRIOR_POOL_DESCRIPTION = "XP Pool for Virtue Warrior";
         public static int WARRIOR_POOL_INITIAL_XP = 50;
+        private GenericAllowAbilityTypeCommand command;
+
+        public WarriorCommand()
+        {
+            command = new GenericAllowAbilityTypeCommand(AbilityType.Martial, WARRIOR_POOL_NAME, WARRIOR_POOL_DESCRIPTION, WARRIOR_POOL_INITIAL_XP);
+        }
+
         public void Execute(Character c)
         {
-            // Allow access to Martial skills
-            c.AllowedAbilityTypes.Add(AbilityType.Martial);
-
-            // Create a martial 50XP pool
-            c.XPPoolList.Add(new CategoryAbilityXpPool(WARRIOR_POOL_NAME, WARRIOR_POOL_DESCRIPTION, WARRIOR_POOL_INITIAL_XP,
-                new List<AbilityType>() { AbilityType.Martial }));
+            command.Execute(c);
         }
 
         public void Undo()

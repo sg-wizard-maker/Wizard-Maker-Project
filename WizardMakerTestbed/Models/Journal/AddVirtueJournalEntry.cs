@@ -25,7 +25,7 @@ namespace WizardMakerPrototype.Models.Journal
         {
             VirtueInstance virtue = new VirtueInstance(archVirtue);
             character.virtues.Add(virtue);
-            virtue.Virtue.characterCommand.Execute(character);
+            virtue.Virtue.CharacterCommand.Execute(character);
 
         }
 

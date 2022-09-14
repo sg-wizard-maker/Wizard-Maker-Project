@@ -44,10 +44,12 @@ namespace WizardMakerPrototype.Models.Virtues
         public string Description;
         public VirtueType Type;
         public VirtueCost MajorMinor;
-        public ICharacterCommand characterCommand { get; private set; }
+        public ICharacterCommand CharacterCommand { get; private set; }
 
-        // Access ArchVirtue instances with this dictionary
+        // Access ArchVirtue instances with this dictionary.
+        //   Dev note:  Do not use this dictionary in the instantiation of the VirtueCommands
         public static Dictionary<string, ArchVirtue> NameToArchVirtue = new Dictionary<string, ArchVirtue>();
+
         public const string PUISSANT_PREFIX = "Puissant ";
         public const string AFFINITY_PREFIX = "Affinity with ";
 
@@ -59,13 +61,13 @@ namespace WizardMakerPrototype.Models.Virtues
             Type = type;
             Description = description;
             MajorMinor = majorMinor;
-            this.characterCommand = characterCommand;
+            this.CharacterCommand = characterCommand;
         }
 
         // Helps the front end decide if the Virtue has been implemented in the backend.  This will help while functionality is still incomplete.
         public bool IsImplemented()
         {
-            return (characterCommand != null);
+            return (CharacterCommand != null);
         }
 
         // TODO: In future, rather than a hard-coded list,
@@ -84,7 +86,6 @@ namespace WizardMakerPrototype.Models.Virtues
                     VirtueCost.MINOR, new AffinityAbilityCommand(a));
             }
             PopulateVirtueDictionary();
-
         }
 
         // TODO: Define the keys as constants
@@ -183,7 +184,7 @@ namespace WizardMakerPrototype.Models.Virtues
         // General Minor
         private static ArchVirtue AffinitywithAbility = new ArchVirtue("AffinitywithAbility", "AffinitywithAbility", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue AptStudent = new ArchVirtue("AptStudent", "AptStudent", VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue ArcaneLore = new ArchVirtue("ArcaneLore", "ArcaneLore", VirtueType.General, VirtueCost.MINOR);
+        private static ArchVirtue ArcaneLore = new ArchVirtue("ArcaneLore", "ArcaneLore", VirtueType.General, VirtueCost.MINOR, new ArcaneLoreCommand());
         private static ArchVirtue Berserk = new ArchVirtue("Berserk", "Berserk", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue BookLearner = new ArchVirtue("BookLearner", "BookLearner", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue CautiouswithAbility = new ArchVirtue("CautiouswithAbility", "CautiouswithAbility", VirtueType.General, VirtueCost.MINOR);

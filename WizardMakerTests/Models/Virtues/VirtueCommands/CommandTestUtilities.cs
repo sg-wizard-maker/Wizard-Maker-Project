@@ -23,10 +23,10 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
         /**
          * The starting virtue string must be a key in the ArchVirtue.NameToArchVirtue dictionary
          */
-        public static Character GenerateBasicTestCharacterWithStartingVirtue(int startingAge, string staringVirtue, int sagaStart = 1220)
+        public static Character GenerateBasicTestCharacterWithStartingVirtue(int startingAge, string startingVirtue, int sagaStart = 1220)
         {
             Character c = GenerateBasicTestCharacter(startingAge, sagaStart);
-            ArchVirtue archVirtue = ArchVirtue.NameToArchVirtue[staringVirtue];
+            ArchVirtue archVirtue = ArchVirtue.NameToArchVirtue[startingVirtue];
 
             // Note that this is only generating a virtue that is in the same season as the NewCharacterInit journal entry.
             AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(sagaStart - startingAge, Season.SPRING),

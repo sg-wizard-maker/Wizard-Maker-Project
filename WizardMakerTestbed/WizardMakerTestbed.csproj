@@ -116,7 +116,9 @@
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
     <Compile Include="Models\Virtues\ArchVirtue.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\AffinityAbilityCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\GenericAllowAbilityTypeCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\PuissantAbilityCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\ArcaneLoreCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\WarriorCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\WealthyCommand.cs" />
     <Compile Include="Models\Virtues\VirtueInstance.cs" />
