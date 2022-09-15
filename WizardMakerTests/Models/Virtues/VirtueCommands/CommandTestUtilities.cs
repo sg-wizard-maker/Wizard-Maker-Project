@@ -41,5 +41,13 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
 
             return c;
         }
+
+        public static void AssertXPPoolInitialization(Character c, string xpPoolName, string xpPoolDescription, int initialXP)
+        {
+            // Assert that the XP Pool was created and has the correct amount of XP (initial and remaining)
+            Assert.IsTrue(c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).Any());
+            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).First().remainingXP);
+            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).First().initialXP);   
+        }
     }
 }

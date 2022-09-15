@@ -211,7 +211,7 @@ namespace WizardMakerPrototype.Models.Virtues
         private static ArchVirtue RapidConvalescence = new ArchVirtue("RapidConvalescence", "RapidConvalescence", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue PerfectBalance = new ArchVirtue("PerfectBalance", "PerfectBalance", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue PiercingGaze = new ArchVirtue("PiercingGaze", "PiercingGaze", VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue PrivilegedUpbringing = new ArchVirtue("PrivilegedUpbringing", "PrivilegedUpbringing", VirtueType.General, VirtueCost.MINOR);
+        private static ArchVirtue PrivilegedUpbringing = new ArchVirtue("PrivilegedUpbringing", "PrivilegedUpbringing", VirtueType.General, VirtueCost.MINOR, new PrivilegedUpbringingCommand());
         private static ArchVirtue Protection = new ArchVirtue("Protection", "Protection", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue PuissantAbility = new ArchVirtue("PuissantAbility", "PuissantAbility", VirtueType.General, VirtueCost.MINOR);
         private static ArchVirtue Relic = new ArchVirtue("Relic", "Relic", VirtueType.General, VirtueCost.MINOR);

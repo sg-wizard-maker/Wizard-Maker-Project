@@ -25,15 +25,12 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             //  Otherwise, it will get polluted with validation messages from other tests.
             ValidationLog.reset();
 
-            // Create a Warrior character
+           
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
-
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            // Assert that the XP Pool was created and has the correct amount of XP (initial and remaining)
-            Assert.IsTrue(c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).Any());
-            Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().remainingXP);
-            Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().initialXP);
+            CommandTestUtilities.AssertXPPoolInitialization(c, ArcaneLoreCommand.ARCANE_LORE_POOL_NAME, 
+                ArcaneLoreCommand.ARCANE_LORE_POOL_DESCRIPTION, ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP);
 
             // Assert that the AbilityType.Martial is allowed
             Assert.IsTrue(c.AllowedAbilityTypes.Where(a => a == AbilityType.Arcane).Any());

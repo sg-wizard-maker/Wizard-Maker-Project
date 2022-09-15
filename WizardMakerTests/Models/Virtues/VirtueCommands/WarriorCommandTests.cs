@@ -30,10 +30,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
 
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            // Assert that the XP Pool was created and has the correct amount of XP (initial and remaining)
-            Assert.IsTrue(c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).Any());
-            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().remainingXP);
-            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().initialXP);
+            CommandTestUtilities.AssertXPPoolInitialization(c, WarriorCommand.WARRIOR_POOL_NAME, WarriorCommand.WARRIOR_POOL_DESCRIPTION, WarriorCommand.WARRIOR_POOL_INITIAL_XP);
 
             // Assert that the AbilityType.Martial is allowed
             Assert.IsTrue(c.AllowedAbilityTypes.Where(a => a == AbilityType.Martial).Any());
@@ -48,11 +45,13 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             CharacterRenderer.RenderAllJournalEntries(c);
 
             // Assert that the Warrior XP Pool has been debited appropriately
-            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP-25, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().remainingXP);
+            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().remainingXP);
             Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().initialXP);
 
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
         }
+
+
     }
 }
