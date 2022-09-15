@@ -29,7 +29,7 @@ namespace WizardMakerTests.Models
             c.addJournalable(initEntry);
             c.addJournalable(addVirtueJournalEntry);
             c.addJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
-            CharacterRenderer.renderAllJournalEntries(c);
+            CharacterRenderer.RenderAllJournalEntries(c);
             int initialXPPoolCount = c.XPPoolList.Count;
             int initialXPSpend = c.totalRemainingXPWithoutOverdrawn();
             Assert.AreEqual(1, c.abilities.Count);
@@ -120,7 +120,7 @@ namespace WizardMakerTests.Models
             DateTime timeStart = DateTime.Now;
 
             // Render the character as a CharacterData
-            CharacterRenderer.renderAllJournalEntries(c);
+            CharacterRenderer.RenderAllJournalEntries(c);
             CharacterData cd = CharacterRenderer.renderCharacterAsCharacterData(c);
 
             // Serialize the CharacterData

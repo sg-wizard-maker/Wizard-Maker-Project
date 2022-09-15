@@ -15,6 +15,8 @@ namespace WizardMakerPrototype.Models
         public int xp;
         public string specialty; 
 
+        // Note, when initializing make sure to include the ability name in the input entry string.
+        //  We do some matching on the XP Ability journal entries when in the same season for consolidation.
         public XpAbilitySpendJournalEntry(string entry, SeasonYear sy, string ability, 
             int xp, string specialty)
         {
@@ -34,7 +36,6 @@ namespace WizardMakerPrototype.Models
         {
             return text.getDate();
         }
-
         public override void Execute(Character character)
         {
             CharacterRenderer.addAbility(character, ability, xp, specialty, character.IsInitialCharacterFinished(), this.getId());

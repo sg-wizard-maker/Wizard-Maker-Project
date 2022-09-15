@@ -116,7 +116,11 @@
     <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
     <Compile Include="Models\Virtues\ArchVirtue.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\AffinityAbilityCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\GenericAllowAbilityTypeAndXPPoolCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\PrivilegedUpbringingCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\PuissantAbilityCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\ArcaneLoreCommand.cs" />
+    <Compile Include="Models\Virtues\VirtueCommands\WarriorCommand.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\WealthyCommand.cs" />
     <Compile Include="Models\Virtues\VirtueInstance.cs" />
     <Compile Include="Models\XPPool.cs" />
@@ -130,6 +134,8 @@
     <Compile Include="Tester.Designer.cs">
       <DependentUpon>Tester.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation\ValidationLog.cs" />
+    <Compile Include="Validation\ValidationMessage.cs" />
     <EmbeddedResource Include="AbilityDialog.resx">
       <DependentUpon>AbilityDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,5 +168,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

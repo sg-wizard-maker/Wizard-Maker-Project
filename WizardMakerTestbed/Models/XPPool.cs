@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WizardMakerTestbed.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using WizardMakerPrototype.Validation;
 
 
 //TODO: Move XP Pools and Journals to their own package.
@@ -220,6 +221,8 @@ namespace WizardMakerPrototype.Models
         {
             // XP can go negative.
             this.remainingXP -= xp;
+
+            ValidationLog.AddValidationMessage("Overdrawn by " + xp + " XP.");
         }
     }
 }

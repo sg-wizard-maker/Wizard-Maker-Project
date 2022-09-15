@@ -16,10 +16,20 @@ namespace WizardMakerPrototype.Models
         public string Description { get; set; }
 
         public List<AbilityInstance> abilities { get; set; }
-
         public List<string> puissantAbilities { get; set; } = new List<string>();
+
+        // TODO: We may want to make this a dictionary of ability names to a list of XP cost modifiers.
         public List<string> affinityAbilities { get; set; } = new List<string>();
         public SortedSet<XPPool> XPPoolList { get; }
+
+        // TODO: Refactor and do the whole allowed ability logic in a separate stateful instance.
+        // The default list here are what all characters can have w/o additional virtues.
+        public HashSet<AbilityType> AllowedAbilityTypes { get; private set; } = new HashSet<AbilityType>() { 
+            AbilityType.General, AbilityType.GenChild
+        };
+
+        // This list is in addition (OR'ed) with the ability type list.  Anything on this list is allowed to be selected by the character without a validation error.
+        public HashSet<ArchAbility> AllowedAbilities { get; private set; } = new HashSet<ArchAbility>();
 
         public int XpPerYear { get; set; } = 15;
 
@@ -78,5 +88,12 @@ namespace WizardMakerPrototype.Models
         }
 
         public void resetAbilities() { abilities = new List<AbilityInstance>(); }
+
+        public bool IsAbilityAllowedToBePurchased(ArchAbility a)
+        {
+            if (this.AllowedAbilityTypes.Contains(a.Type)) return true;
+            if (this.AllowedAbilities.Contains(a)) return true;
+            return false;
+        }
     }
 }

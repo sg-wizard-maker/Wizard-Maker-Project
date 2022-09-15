@@ -19,15 +19,15 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             int STARTING_AGE = 25;
             string ABILITY = "Brawl";
             int SAGA_START = 1220;
-            // Create a  character
-            Character c = CommandTestUtilities.GenerateBasicTestCharacter(STARTING_AGE);
-            AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
-                ArchVirtue.NameToArchVirtue[ArchVirtue.AFFINITY_PREFIX + ABILITY]);
+            string virtueName = ArchVirtue.AFFINITY_PREFIX + ABILITY;
+
+            Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
+
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 
                 20, "Fist");
             c.addJournalable(xpSpend);
-            c.addJournalable(virtueJournalEntry);
-            CharacterRenderer.renderAllJournalEntries(c);
+     
+            CharacterRenderer.RenderAllJournalEntries(c);
 
             Assert.IsTrue(c.abilities.Where(a => a.Name == ABILITY).First().HasAffinity);
 

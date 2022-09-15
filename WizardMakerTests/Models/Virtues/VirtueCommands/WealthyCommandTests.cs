@@ -18,10 +18,11 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
         {
             int STARTING_AGE = 25;
             int SAGA_START = 1220;
-            Character c = CommandTestUtilities.GenerateBasicTestCharacter(STARTING_AGE, SAGA_START);
-            AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ArchVirtue.NameToArchVirtue["Wealthy"]);
-            c.addJournalable(addVirtueJournalEntry);
-            CharacterRenderer.renderAllJournalEntries(c);
+            string virtueName = "Wealthy";
+            // Create a wealthy character
+            Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
+            
+            CharacterRenderer.RenderAllJournalEntries(c);
 
             // Assert that the character has 20 XP and that the Later Life XP is updated accordingly.
             Assert.AreEqual(WealthyCommand.WEALTHY_XP, c.XpPerYear);

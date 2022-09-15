@@ -27,11 +27,9 @@ namespace WizardMakerPrototype.Models
     }
     public class AbilityXPManager
     {
-        private static ValidationResult validateSpendXPOnAbility(ArchAbility archAbility, int xp)
+        private static void validateSpendXPOnAbility(ArchAbility archAbility, int xp)
         {
-            // TODO: Insert validation check here
-            // TODO: Throw validation exception instead?  YES
-            return new ValidationResult();
+            
         }
 
         public static AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty, string journalID, bool isPuissant, bool isAffinity)

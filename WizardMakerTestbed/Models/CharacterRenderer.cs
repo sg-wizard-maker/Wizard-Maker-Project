@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Validation;
 using WizardMakerTestbed.Models;
 
 namespace WizardMakerPrototype.Models
@@ -17,8 +18,12 @@ namespace WizardMakerPrototype.Models
     internal class CharacterRenderer
     {
 
-        public static void renderAllJournalEntries(Character character)
+        // This method assumes that the journal entries in a Character class are sorted by SeasonYear.
+        public static void RenderAllJournalEntries(Character character)
         {
+            // Reset the validation log
+            ValidationLog.reset();
+
             //Reset the Character
             character.resetAbilities();
             // Perhaps we should be deleting the XP Pools rather than resetting?
@@ -43,6 +48,8 @@ namespace WizardMakerPrototype.Models
 
             if (!doesCharacterHaveAbility(character, ability))
             {
+                ArchAbility a = ArchAbility.lookupCommonAbilities(ability);
+                if (!character.IsAbilityAllowedToBePurchased(a)) ValidationLog.AddValidationMessage("Adding an ability to the character that is not available: " + ability);
                 // add the ability to the character
                 character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID, isPuissant, isAffinity));
             }
