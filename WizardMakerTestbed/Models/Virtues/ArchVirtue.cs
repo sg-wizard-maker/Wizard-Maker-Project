@@ -158,7 +158,7 @@ namespace WizardMakerPrototype.Models.Virtues
         private static ArchVirtue VerditiusMagic = new ArchVirtue("VerditiusMagic", "VerditiusMagic", VirtueType.Hermetic, VirtueCost.MINOR);
         
         // Supernatural Minor
-        private static ArchVirtue AnimalKen = new ArchVirtue("AnimalKen", "AnimalKen", VirtueType.Supernatural, VirtueCost.MINOR);
+        private static ArchVirtue AnimalKen = new ArchVirtue("AnimalKen", "AnimalKen", VirtueType.Supernatural, VirtueCost.MINOR, new AnimalKenCommand());
         private static ArchVirtue Dowsing = new ArchVirtue("Dowsing", "Dowsing", VirtueType.Supernatural, VirtueCost.MINOR);
         private static ArchVirtue EnchantingMusic = new ArchVirtue("EnchantingMusic", "EnchantingMusic", VirtueType.Supernatural, VirtueCost.MINOR);
         private static ArchVirtue LesserImmunity = new ArchVirtue("LesserImmunity", "LesserImmunity", VirtueType.Supernatural, VirtueCost.MINOR);
