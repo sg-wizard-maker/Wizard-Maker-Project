@@ -23,7 +23,7 @@ namespace WizardMakerPrototype.Models.Journal
 
         public override void Execute(Character character)
         {
-            VirtueInstance virtue = new VirtueInstance(archVirtue);
+            VirtueInstance virtue = new VirtueInstance(archVirtue, this.getId());
             character.virtues.Add(virtue);
             virtue.Virtue.CharacterCommand.Execute(character);
 

@@ -55,6 +55,7 @@ namespace WizardMakerPrototype.Models
             }
             else
             {
+                // TODO: Do we need to handle the journalID?  Yes, because if we want to support deletion of an ability, we want to delete all associated journal entries.
                 if (isIncrementalXP) { retrieveAbilityInstance(character, ability).XP += xp; }
                 else { retrieveAbilityInstance(character, ability).XP = xp; }
             }
@@ -69,7 +70,7 @@ namespace WizardMakerPrototype.Models
         }
         private static AbilityInstance retrieveAbilityInstance(Character character, string ability)
         {
-            // TODO: Test to see what happens if there are multiple instances of the same ability
+            // TODO: Test to see what happens if there are multiple instances of the same ability.  That should never happen and exception should be thrown.
             return getCharacterAbilityInstancesAsList(character).Find(a => a.Name == ability);
         }
 
