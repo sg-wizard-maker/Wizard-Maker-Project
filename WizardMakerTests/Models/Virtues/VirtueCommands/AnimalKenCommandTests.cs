@@ -31,7 +31,9 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
 
-            CommandTestUtilities.AssertXPPoolInitialization(c, ArchAbility.AnimalKen + GenericGrantAbilityCommand.XPPOOL_NAME_SUFFIX, "", 5);
+            // Assert that the XP Pool was created and has the correct amount of XP (initial and remaining)
+            Assert.IsTrue(c.XPPoolList.Where(x => x.name.Equals(ArchAbility.AnimalKen.Name + GenericGrantAbilityCommand.XPPOOL_NAME_SUFFIX)).Any());
+            Assert.AreEqual(0, c.XPPoolList.Where(x => x.name.Equals(ArchAbility.AnimalKen.Name + GenericGrantAbilityCommand.XPPOOL_NAME_SUFFIX)).First().remainingXP);
 
         }
     }
