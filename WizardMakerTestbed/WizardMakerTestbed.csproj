@@ -98,6 +98,8 @@
     <Compile Include="Models\AbilityModels.cs" />
     <Compile Include="Models\AbilityNotFoundException.cs" />
     <Compile Include="Models\AbilityXPManager.cs" />
+    <Compile Include="Models\HermeticArts\ArchHermeticArt.cs" />
+    <Compile Include="Models\HermeticArts\HermeticArtInstance.cs" />
     <Compile Include="Models\Journal\AddVirtueJournalEntry.cs" />
     <Compile Include="Models\Journal\BasicJournalableManager.cs" />
     <Compile Include="Models\Character.cs" />
