@@ -50,7 +50,7 @@ namespace WizardMakerPrototype.Models.HermeticArts
         public static ArchHermeticArt Imaginem = new ArchHermeticArt("Imaginem", HermeticArtType.Form);
         public static ArchHermeticArt Mentem = new ArchHermeticArt("Mentem", HermeticArtType.Form);
         public static ArchHermeticArt Terram = new ArchHermeticArt("Terram", HermeticArtType.Form);
-        public static ArchHermeticArt Vis = new ArchHermeticArt("Vis", HermeticArtType.Form);
+        public static ArchHermeticArt Vim = new ArchHermeticArt("Vim", HermeticArtType.Form);
         #endregion
     }
 }
