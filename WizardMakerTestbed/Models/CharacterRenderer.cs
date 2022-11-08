@@ -49,7 +49,7 @@ namespace WizardMakerPrototype.Models
             if (!doesCharacterHaveAbility(character, ability))
             {
                 ArchAbility a = ArchAbility.lookupCommonAbilities(ability);
-                if (!character.IsAbilityAllowedToBePurchased(a)) ValidationLog.AddValidationMessage("Adding an ability to the character that is not available: " + ability);
+                if (!character.IsSkillAllowedToBePurchased(a)) ValidationLog.AddValidationMessage("Adding an ability to the character that is not available: " + ability);
                 // add the ability to the character
                 character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID, isPuissant, isAffinity));
             }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerPrototype.Models.CharacterPersist;
+using WizardMakerPrototype.Models.HermeticArts;
 using WizardMakerPrototype.Models.Virtues;
 using WizardMakerTestbed.Models;
 
@@ -89,10 +90,21 @@ namespace WizardMakerPrototype.Models
 
         public void resetAbilities() { abilities = new List<AbilityInstance>(); }
 
-        public bool IsAbilityAllowedToBePurchased(ArchAbility a)
+        public bool IsSkillAllowedToBePurchased(ArchAbility a)
         {
             if (this.AllowedAbilityTypes.Contains(a.Type)) return true;
             if (this.AllowedAbilities.Contains(a)) return true;
+            return false;
+        }
+
+        public bool IsSkillAllowedToBePurchased(ArchHermeticArt a)
+        {
+            // If the character has the gift and is a Hermetic Magus then the answer is "true"
+            if (this.virtues.Select(v => v.Virtue).ToList().Contains(ArchVirtue.NameToArchVirtue[ArchVirtue.THE_GIFT]) &
+                this.virtues.Select(v => v.Virtue).ToList().Contains(ArchVirtue.NameToArchVirtue[ArchVirtue.HERMETIC_MAGUS]))
+            {
+                return true;
+            }
             return false;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Models.Skills;
 
 namespace WizardMakerPrototype.Models.HermeticArts
 {
@@ -23,16 +24,22 @@ namespace WizardMakerPrototype.Models.HermeticArts
         public static HermeticArtType Technique = new HermeticArtType("Technique", "Te");
         public static HermeticArtType Form = new HermeticArtType("Form", "Fo");
     }
-    internal class ArchHermeticArt
+    public class ArchHermeticArt
     {
+        private ArchSkill Skill;
+
+        //TODO: This seems odd that I need to repeat this for the aggregation.  Yet getting code reuse from inheritance seems messy.
+        public decimal BaseXpCost { get { return Skill.BaseXpCost; } }
+        public string Abbreviation { get { return Skill.Abbreviation; } }
+        public string Name { get { return Skill.Name; } }
+
         public HermeticArtType Type { get; private set; }
-        public string Name { get; private set; }
-        public decimal BaseXpCost { get; private set; } = 1;
 
         public ArchHermeticArt(string name, HermeticArtType type)
         {
+            Skill = new ArchSkill(name.Substring(0,2), name, 1);
             Type = type;
-            Name = name;
+
         }
 
         #region Arch Hermetic Arts static instances

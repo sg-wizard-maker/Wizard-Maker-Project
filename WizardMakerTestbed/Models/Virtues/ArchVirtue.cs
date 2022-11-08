@@ -91,7 +91,8 @@ namespace WizardMakerPrototype.Models.Virtues
         // TODO: Define the keys as constants
 
         #region Individual ArchVirtue Instances
-        private static ArchVirtue TheGift = new ArchVirtue("TheGift", "TheGift", VirtueType.Hermetic, VirtueCost.FREE);
+        
+        private static ArchVirtue TheGift = new ArchVirtue(THE_GIFT, "TheGift", VirtueType.Hermetic, VirtueCost.FREE);
         
         // Hermetic Major
         private static ArchVirtue DiedneMagic = new ArchVirtue("DiedneMagic", "DiedneMagic", VirtueType.Hermetic, VirtueCost.MAJOR);
@@ -233,16 +234,22 @@ namespace WizardMakerPrototype.Models.Virtues
         // Social Free
         private static ArchVirtue Covenfolk = new ArchVirtue("Covenfolk", "Covenfolk", VirtueType.Social, VirtueCost.FREE);
         private static ArchVirtue Craftsman = new ArchVirtue("Craftsman", "Craftsman", VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue HermeticMagus = new ArchVirtue("HermeticMagus", "HermeticMagus", VirtueType.Social, VirtueCost.FREE);
+        private static ArchVirtue HermeticMagus = new ArchVirtue(HERMETIC_MAGUS, "HermeticMagus", VirtueType.Social, VirtueCost.FREE);
         private static ArchVirtue Merchant = new ArchVirtue("Merchant", "Merchant", VirtueType.Social, VirtueCost.FREE);
         private static ArchVirtue Peasant = new ArchVirtue("Peasant", "Peasant", VirtueType.Social, VirtueCost.FREE);
         private static ArchVirtue Wanderer = new ArchVirtue("Wanderer", "Wanderer", VirtueType.Social, VirtueCost.FREE);
         #endregion
 
+        #region Virtue Names
+        // TODO: Populate the rest
+        public static string THE_GIFT = "TheGift";
+        public static string HERMETIC_MAGUS = "HermeticMagus";
+        #endregion
+
         #region Populating the NameToArchVirtue Dictionary
         private static void PopulateVirtueDictionary()
         {
-            NameToArchVirtue.Add("TheGift", TheGift);
+            NameToArchVirtue.Add(THE_GIFT, TheGift);
 
             // Hermetic Major
             NameToArchVirtue.Add("DiedneMagic", DiedneMagic);
@@ -384,12 +391,13 @@ namespace WizardMakerPrototype.Models.Virtues
             // Social Free
             NameToArchVirtue.Add("Covenfolk", Covenfolk);
             NameToArchVirtue.Add("Craftsman", Craftsman);
-            NameToArchVirtue.Add("HermeticMagus", HermeticMagus);
+            NameToArchVirtue.Add(HERMETIC_MAGUS, HermeticMagus);
             NameToArchVirtue.Add("Merchant", Merchant);
             NameToArchVirtue.Add("Peasant", Peasant);
             NameToArchVirtue.Add("Wanderer", Wanderer);
         }
 
         #endregion
+
     }
 }
