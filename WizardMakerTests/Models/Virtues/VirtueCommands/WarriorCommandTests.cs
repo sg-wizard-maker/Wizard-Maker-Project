@@ -39,7 +39,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
 
             // Add a martial ability and rerender the character.
-            XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
+            XpSkillSpendJournalEntry xpSpend = new XpSkillSpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
                 "Great Weapon", 25, "Poleaxe");
             c.addJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);

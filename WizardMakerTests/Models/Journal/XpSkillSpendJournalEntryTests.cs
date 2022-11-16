@@ -10,7 +10,7 @@ using WizardMakerPrototype.Validation;
 namespace WizardMakerPrototype.Models.Tests
 {
     [TestClass()]
-    public class XpAbilitySpendJournalEntryTests
+    public class XpSkillSpendJournalEntryTests
     {
         private const string Expected = "Test Entry";
 
@@ -19,14 +19,14 @@ namespace WizardMakerPrototype.Models.Tests
         {
             // Just a simple test that we can create an instance and have it not be junk
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
             Assert.IsNotNull(entry);
         }
 
         [TestMethod()]
         public void getTextTest()
         {
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
     "Brawl", 5, "Fists");
 
             Assert.AreEqual(Expected, entry.getText());  
@@ -36,7 +36,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void getDateTest()
         {
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
             Assert.IsNotNull(entry);
             Assert.AreEqual(sy, entry.getDate());
         }
@@ -47,7 +47,7 @@ namespace WizardMakerPrototype.Models.Tests
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Character dummy = new Character("My name", "My desription", 30);
 
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
 
             // Initialize the character before attempting to buy an ability
             Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
@@ -69,7 +69,7 @@ namespace WizardMakerPrototype.Models.Tests
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Character dummy = new Character("My name", "My desription", 30);
 
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Bows", 5, "Short bow");
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Bows", 5, "Short bow");
 
             // Initialize the character before attempting to buy an ability
             Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
@@ -81,7 +81,7 @@ namespace WizardMakerPrototype.Models.Tests
             // This should have a validation error, since the character does not have Warrior Virtue and Bows is a Martial Ability.
             Assert.AreEqual(1, ValidationLog.GetMessages().Count);
 
-            Assert.IsTrue(ValidationLog.GetMessages().First().message.StartsWith("Adding an ability to the character that is not available"));
+            Assert.IsTrue(ValidationLog.GetMessages().First().message.StartsWith("Adding an skill to the character that is not available"));
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace WizardMakerPrototype.Models.Tests
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Character dummy = new Character("My name", "My desription", 30);
 
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
 
             // No XP pools given to the character
             try
@@ -106,7 +106,7 @@ namespace WizardMakerPrototype.Models.Tests
         [TestMethod()]
         public void getIdTest()
         {
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
     "Brawl", 5, "Fists");
 
             string tmp = entry.SerializeJson();
@@ -127,7 +127,7 @@ namespace WizardMakerPrototype.Models.Tests
         public void SerializableTest()
         {
 
-            Journalable entry = new XpAbilitySpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING), 
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING), 
                 "Brawl", 5, "Fists");
 
             string tmp = entry.SerializeJson();

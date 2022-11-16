@@ -39,7 +39,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);
 
             // Add an arcane ability and rerender the character.
-            XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
+            XpSkillSpendJournalEntry xpSpend = new XpSkillSpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
                 "Magic Lore", 25, "Beasts");
             c.addJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);
@@ -49,7 +49,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(ArcaneLoreCommand.ARCANE_LORE_POOL_NAME)).First().initialXP);
 
             // Add a non arcane ability and rerender the character.
-            XpAbilitySpendJournalEntry xpSpend2 = new XpAbilitySpendJournalEntry("Test XP Spend on non-arcane", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
+            XpSkillSpendJournalEntry xpSpend2 = new XpSkillSpendJournalEntry("Test XP Spend on non-arcane", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
                 "Brawl", 25, "Fists");
             c.addJournalable(xpSpend2);
             CharacterRenderer.RenderAllJournalEntries(c);

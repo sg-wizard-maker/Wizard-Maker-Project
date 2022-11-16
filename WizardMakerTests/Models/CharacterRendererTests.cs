@@ -28,7 +28,7 @@ namespace WizardMakerTests.Models
             AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(initSeasonYear, ArchVirtue.NameToArchVirtue["Wealthy"]);
             c.addJournalable(initEntry);
             c.addJournalable(addVirtueJournalEntry);
-            c.addJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
+            c.addJournalable(new XpSkillSpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
             CharacterRenderer.RenderAllJournalEntries(c);
             int initialXPPoolCount = c.XPPoolList.Count;
             int initialXPSpend = c.totalRemainingXPWithoutOverdrawn();
@@ -96,7 +96,7 @@ namespace WizardMakerTests.Models
                 {
                     int jitter = rnd.Next(0, 5);
 
-                    XpAbilitySpendJournalEntry xpAbilitySpend = new XpAbilitySpendJournalEntry("Spend on " + archAbility.Name, new SeasonYear(1220, Season.SPRING),
+                    XpSkillSpendJournalEntry xpAbilitySpend = new XpSkillSpendJournalEntry("Spend on " + archAbility.Name, new SeasonYear(1220, Season.SPRING),
                         archAbility.Name, XP_PER_ENTRY + jitter, "Dummy specialty");
                     c.addJournalable(xpAbilitySpend);
 

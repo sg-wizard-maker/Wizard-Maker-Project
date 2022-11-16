@@ -80,9 +80,9 @@ namespace WizardMakerPrototype.Models.Virtues
             // Implement puissant abilities as a dictionary to an arch virtue
             foreach (ArchAbility a in ArchAbility.AllCommonAbilities)
             {
-                NameToArchVirtue[PUISSANT_PREFIX + a.Name] = new ArchVirtue(PUISSANT_PREFIX + a.Name, "Puissant in the ability " + a.Name, VirtueType.General, 
+                NameToArchVirtue[PUISSANT_PREFIX + a.Name] = new ArchVirtue(PUISSANT_PREFIX + a.Name, "Puissant in the skill " + a.Name, VirtueType.General, 
                     VirtueCost.MINOR, new PuissantAbilityCommand(a));
-                NameToArchVirtue[AFFINITY_PREFIX + a.Name] = new ArchVirtue(AFFINITY_PREFIX + a.Name, "Affinity with the ability " + a.Name, VirtueType.Hermetic, 
+                NameToArchVirtue[AFFINITY_PREFIX + a.Name] = new ArchVirtue(AFFINITY_PREFIX + a.Name, "Affinity with the skill " + a.Name, VirtueType.Hermetic, 
                     VirtueCost.MINOR, new AffinityAbilityCommand(a));
             }
             PopulateVirtueDictionary();

@@ -58,6 +58,25 @@ namespace WizardMakerPrototype.Models.HermeticArts
         public static ArchHermeticArt Mentem = new ArchHermeticArt("Mentem", HermeticArtType.Form);
         public static ArchHermeticArt Terram = new ArchHermeticArt("Terram", HermeticArtType.Form);
         public static ArchHermeticArt Vim = new ArchHermeticArt("Vim", HermeticArtType.Form);
+
+        public static List<ArchHermeticArt> HermeticArts = new List<ArchHermeticArt>()
+        {
+            Creo, Intellego, Muto, Perdo, Rego, Animal, Aquam, Auram, Corpus, Herbam, Ignem, Imaginem, Mentem, Terram, Vim
+        };
         #endregion
+
+        public static ArchHermeticArt lookupArt(string art)
+        {
+            foreach (var a in ArchHermeticArt.HermeticArts)
+            {
+                if (a.Name == art)
+                {
+                    return a;
+                }
+            }
+            // TODO: Make this match lookupCommonAbility (or vice versa) by throwing an exception or returning null
+            return null;
+        }
+
     }
 }

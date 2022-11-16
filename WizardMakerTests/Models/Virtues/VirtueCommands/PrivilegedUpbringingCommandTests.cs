@@ -31,7 +31,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.IsTrue(!c.AllowedAbilityTypes.Where(a => a == AbilityType.Academic).Any());
 
             // Add a martial ability and rerender the character.
-            XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend Great Weapon", new SeasonYear(1220 - 25, Season.SPRING),
+            XpSkillSpendJournalEntry xpSpend = new XpSkillSpendJournalEntry("Test XP Spend Great Weapon", new SeasonYear(1220 - 25, Season.SPRING),
                 "Great Weapon", 25, "Poleaxe");
             c.addJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);
@@ -41,7 +41,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP, c.XPPoolList.Where(x => x.name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().initialXP);
 
             // Now add an academic ability and make sure the XP Pool was debited (make sure to include previous martial ability in test)
-            XpAbilitySpendJournalEntry xpSpend2 = new XpAbilitySpendJournalEntry("Test XP Spend Artes Liberales", new SeasonYear(1220 - 25, Season.SPRING),
+            XpSkillSpendJournalEntry xpSpend2 = new XpSkillSpendJournalEntry("Test XP Spend Artes Liberales", new SeasonYear(1220 - 25, Season.SPRING),
     "Artes Liberales", 10, "Genomics");
             c.addJournalable(xpSpend2);
             CharacterRenderer.RenderAllJournalEntries(c);

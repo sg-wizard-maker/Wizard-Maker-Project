@@ -24,7 +24,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
             // Create a  character
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
 
-            XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 15, "Fist");
+            XpSkillSpendJournalEntry xpSpend = new XpSkillSpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 15, "Fist");
             c.addJournalable(xpSpend);
             
             CharacterRenderer.RenderAllJournalEntries(c);

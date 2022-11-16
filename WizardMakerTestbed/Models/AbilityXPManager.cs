@@ -67,7 +67,7 @@ namespace WizardMakerPrototype.Models
 
             if (remainingXPToAllocate > 0)
             {
-                throw new ShouldNotBeAbleToGetHereException("Could not allocate XP for the ability " + a.Name + ".  Please send this error to a developer.");
+                throw new ShouldNotBeAbleToGetHereException("Could not allocate XP for the skill " + a.Name + ".  Please send this error to a developer.");
             }
         }
         public static void debitXPPoolsForAbility(AbilityInstance a, SortedSet<XPPool> XPPoolList)

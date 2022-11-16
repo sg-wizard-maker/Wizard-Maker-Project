@@ -49,7 +49,7 @@ namespace WizardMakerPrototype.Models
             if (!doesCharacterHaveAbility(character, ability))
             {
                 ArchAbility a = ArchAbility.lookupCommonAbilities(ability);
-                if (!character.IsSkillAllowedToBePurchased(a)) ValidationLog.AddValidationMessage("Adding an ability to the character that is not available: " + ability);
+                if (!character.IsSkillAllowedToBePurchased(a)) ValidationLog.AddValidationMessage("Adding an skill to the character that is not available: " + ability);
                 // add the ability to the character
                 character.abilities.Add(AbilityXPManager.createNewAbilityInstance(ability, xp, specialty, journalID, isPuissant, isAffinity));
             }
@@ -126,6 +126,9 @@ namespace WizardMakerPrototype.Models
             return JsonConvert.DeserializeObject<CharacterData>(json);
         }
 
-
+        internal static void addHermeticArt(Character character, string skill, int xp, string specialty, bool isIncrementalXP, string journalID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

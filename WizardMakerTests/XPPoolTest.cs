@@ -52,7 +52,7 @@ namespace WizardMakerTests
             {
                 if (!xpPool.CanSpendOnAbility(archAbility))
                 {
-                    errorMessages.Add("BasicXP Pool should allow spending on any ability.  Could not spend on " + archAbility.Name);
+                    errorMessages.Add("BasicXP Pool should allow spending on any skill.  Could not spend on " + archAbility.Name);
                 }
             }
             string errorString = String.Join(", ", errorMessages);
