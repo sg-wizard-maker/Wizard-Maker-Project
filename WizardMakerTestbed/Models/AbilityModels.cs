@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 //using System.Text.Json.Serialization;  // JsonConverterAttribute
 using System.Xml.Serialization;
+using WizardMakerPrototype.Models.Skills;
 
 namespace WizardMakerPrototype.Models
 {
@@ -104,7 +105,7 @@ namespace WizardMakerPrototype.Models
         }
     }
 
-    public class ArchAbility
+    public class ArchAbility: ArchSkill
     {
         public string       Category              { get; private set; }
         public AbilityType  Type                  { get; private set; }

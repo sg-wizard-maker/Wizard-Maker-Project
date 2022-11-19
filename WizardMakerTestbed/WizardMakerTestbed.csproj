@@ -115,7 +115,7 @@
     <Compile Include="Models\Journal\JournalSortingConstants.cs" />
     <Compile Include="Models\ShouldNotBeAbleToGetHereException.cs" />
     <Compile Include="Models\Journal\SimpleJournalEntry.cs" />
-    <Compile Include="Models\Journal\XpAbilitySpendJournalEntry.cs" />
+    <Compile Include="Models\Journal\XpSkillSpendJournalEntry.cs" />
     <Compile Include="Models\Skills\ArchSkill.cs" />
     <Compile Include="Models\Virtues\ArchVirtue.cs" />
     <Compile Include="Models\Virtues\VirtueCommands\AffinityAbilityCommand.cs" />

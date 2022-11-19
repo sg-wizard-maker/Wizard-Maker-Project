@@ -24,22 +24,22 @@ namespace WizardMakerPrototype.Models.HermeticArts
         public static HermeticArtType Technique = new HermeticArtType("Technique", "Te");
         public static HermeticArtType Form = new HermeticArtType("Form", "Fo");
     }
-    public class ArchHermeticArt
+    public class ArchHermeticArt : ArchSkill
     {
-        private ArchSkill Skill;
-
         //TODO: This seems odd that I need to repeat this for the aggregation.  Yet getting code reuse from inheritance seems messy.
-        public decimal BaseXpCost { get { return Skill.BaseXpCost; } }
-        public string Abbreviation { get { return Skill.Abbreviation; } }
-        public string Name { get { return Skill.Name; } }
+        public decimal BaseXpCost { get; private set; } 
+        public string Abbreviation { get; private set; }
+        public string Name { get; private set; }
 
         public HermeticArtType Type { get; private set; }
 
-        public ArchHermeticArt(string name, HermeticArtType type)
-        {
-            Skill = new ArchSkill(name.Substring(0,2), name, 1);
-            Type = type;
+        public ArchHermeticArt(string name, HermeticArtType type): this(name, type, 1) { }
 
+        public ArchHermeticArt(string name, HermeticArtType type, decimal baseXpCost)
+        {
+            Name = name;
+            Abbreviation = name.Substring(0, 2);
+            Type = type;
         }
 
         #region Arch Hermetic Arts static instances

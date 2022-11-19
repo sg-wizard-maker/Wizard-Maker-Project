@@ -29,7 +29,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
                 new List<ArchAbility>() { grantedAbility }));
 
             // Create a dummy ID.  If you delete a virtue, there is a 1:1 correspondence b/w virtues and journal entries (unlike abilities and arts).
-            CharacterRenderer.addAbility(c, grantedAbility.Name, initialXP, "", c.IsInitialCharacterFinished(), AbilityInstance.createID());
+            CharacterRenderer.AddAbility(c, grantedAbility.Name, initialXP, "", c.IsInitialCharacterFinished(), AbilityInstance.createID());
         }
 
         public void Undo()

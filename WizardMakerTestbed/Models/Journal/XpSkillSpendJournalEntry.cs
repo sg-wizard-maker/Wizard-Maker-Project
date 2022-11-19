@@ -41,13 +41,13 @@ namespace WizardMakerPrototype.Models
         {
             // Determine if this is an abillity or Art.  
             ArchHermeticArt archHermeticArt = ArchHermeticArt.lookupArt(skill);
-            if (archHermeticArt == null)
+            if (archHermeticArt != null)
             {
                 CharacterRenderer.addHermeticArt(character, skill, xp, specialty, character.IsInitialCharacterFinished(), this.getId());
             }
             else
             {
-                CharacterRenderer.addAbility(character, skill, xp, specialty, character.IsInitialCharacterFinished(), this.getId());
+                CharacterRenderer.AddAbility(character, skill, xp, specialty, character.IsInitialCharacterFinished(), this.getId());
             }
         }
 

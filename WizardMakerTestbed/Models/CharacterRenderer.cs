@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardMakerPrototype.Models.Skills;
 using WizardMakerPrototype.Validation;
 using WizardMakerTestbed.Models;
 
@@ -39,7 +40,7 @@ namespace WizardMakerPrototype.Models
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
          * XP is always absolute XP, unless it is flagged as incremental.  Then it will be added.
          */
-        public static void addAbility(Character character, string ability, int xp, string specialty, bool isIncrementalXP, string journalID)
+        public static void AddAbility(Character character, string ability, int xp, string specialty, bool isIncrementalXP, string journalID)
         {
             bool isPuissant = false;
             bool isAffinity = false;
@@ -61,6 +62,10 @@ namespace WizardMakerPrototype.Models
             }
 
             AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(character, ability), xp, character.XPPoolList);
+        }
+
+        public static void AddAbility<T>() where T: ArchSkill {
+
         }
 
         // TODO: Test Area Lore skills.

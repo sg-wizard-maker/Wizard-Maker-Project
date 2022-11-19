@@ -51,7 +51,7 @@ namespace WizardMakerTests.Models
         {
             Character c = new ("Foo", "Looks like a foo", 25);
             c.XPPoolList.Add(new BasicXPPool(XP_POOL_NAME, XP_POOL_DESCRIPTION, XP_POOL_INITIAL_XP));
-            CharacterRenderer.addAbility(c, n, xp, s, c.IsInitialCharacterFinished(), "dummyID");
+            CharacterRenderer.AddAbility(c, n, xp, s, c.IsInitialCharacterFinished(), "dummyID");
             CharacterData characterData = CharacterRenderer.renderCharacterAsCharacterData(c);
 
             // Language abillity is added automatically.
