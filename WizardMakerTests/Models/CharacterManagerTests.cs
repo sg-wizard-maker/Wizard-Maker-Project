@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMakerPrototype.Models;
+using WizardMaker.DataDomain.Models;
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WizardMakerPrototype.Models.Tests
+namespace WizardMaker.DataDomain.Models.Tests
 {
     [TestClass()]
     public class CharacterManagerTests
