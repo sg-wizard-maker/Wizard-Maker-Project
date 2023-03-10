@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WizardMakerPrototype.Models;
-using WizardMakerPrototype.Models.Journal;
-using WizardMakerPrototype.Models.Virtues;
+using WizardMaker.DataDomain.Models;
+using WizardMaker.DataDomain.Models.Journal;
+using WizardMaker.DataDomain.Models.Virtues;
+using WizardMaker.DataDomain.Models.Virtues;
 
 namespace WizardMakerTests.Models
 {

@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
-using WizardMakerPrototype.Models;
-using WizardMakerTestbed.Models;
+using WizardMaker.DataDomain.Models;
+using WizardMaker.DataDomain.Models;
 
 namespace WizardMakerTests
 {

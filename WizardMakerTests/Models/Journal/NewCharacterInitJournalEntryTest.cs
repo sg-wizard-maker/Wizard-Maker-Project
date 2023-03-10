@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WizardMakerPrototype.Models;
-using WizardMakerTestbed.Models;
+using WizardMaker.DataDomain.Models;
+using WizardMaker.DataDomain.Models;
 using Newtonsoft.Json;
 
 namespace WizardMakerTests.Models.Journal

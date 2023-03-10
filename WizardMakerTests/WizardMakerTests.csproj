@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WizardMakerTestbed\WizardMakerTestbed.csproj" />
+    <ProjectReference Include="..\WizardMaker.DataDomain\WizardMaker.DataDomain.csproj" />
   </ItemGroup>
 
 </Project>

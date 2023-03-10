@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMakerTests", ".\WizardMakerTests\WizardMakerTests.csproj", "{61301103-3209-489B-8F36-DE68204BE88E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{B6C7F9C8-87EC-4B1B-9136-ED26D775CE83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Tests", "3 - Tests", "{35933F95-EBC6-46BC-990D-1207142B8724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Data", "2 - Data", "{16092FAD-171D-4234-BA08-76510173DEF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker.DataDomain", ".\WizardMaker.DataDomain\WizardMaker.DataDomain.csproj", "{F8EB36FB-C3B0-4034-A0DA-5446D631359F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker", ".\WizardMakerApp\WizardMaker.csproj", "{C63E494D-86F3-4B85-AC17-35E620BC2A24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61301103-3209-489B-8F36-DE68204BE88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61301103-3209-489B-8F36-DE68204BE88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EB36FB-C3B0-4034-A0DA-5446D631359F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EB36FB-C3B0-4034-A0DA-5446D631359F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EB36FB-C3B0-4034-A0DA-5446D631359F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EB36FB-C3B0-4034-A0DA-5446D631359F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63E494D-86F3-4B85-AC17-35E620BC2A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63E494D-86F3-4B85-AC17-35E620BC2A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63E494D-86F3-4B85-AC17-35E620BC2A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63E494D-86F3-4B85-AC17-35E620BC2A24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61301103-3209-489B-8F36-DE68204BE88E} = {35933F95-EBC6-46BC-990D-1207142B8724}
+		{F8EB36FB-C3B0-4034-A0DA-5446D631359F} = {16092FAD-171D-4234-BA08-76510173DEF1}
+		{C63E494D-86F3-4B85-AC17-35E620BC2A24} = {B6C7F9C8-87EC-4B1B-9136-ED26D775CE83}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D743BA30-0B47-46CD-9BE5-D09984FD5895}
+	EndGlobalSection
+EndGlobal

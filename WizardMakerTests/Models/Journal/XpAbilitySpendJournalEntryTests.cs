@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMakerPrototype.Models;
+using WizardMaker.DataDomain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WizardMakerPrototype.Validation;
+using WizardMaker.DataDomain.Validation;
 
-namespace WizardMakerPrototype.Models.Tests
+namespace WizardMaker.DataDomain.Models.Tests
 {
     [TestClass()]
     public class XpAbilitySpendJournalEntryTests

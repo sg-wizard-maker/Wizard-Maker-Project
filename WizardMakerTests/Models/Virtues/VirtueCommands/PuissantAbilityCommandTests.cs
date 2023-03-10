@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMakerPrototype.Models.Virtues.VirtueCommands;
+using WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WizardMakerPrototype.Models.Journal;
+using WizardMaker.DataDomain.Models.Journal;
 using WizardMakerTests.Models.Virtues.VirtueCommands;
 
-namespace WizardMakerPrototype.Models.Virtues.VirtueCommands.Tests
+namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
 {
     [TestClass()]
     public class PuissantAbilityCommandTests
