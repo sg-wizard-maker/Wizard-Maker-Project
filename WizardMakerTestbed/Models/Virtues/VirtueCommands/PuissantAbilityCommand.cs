@@ -17,7 +17,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
 
         public void Execute(Character c)
         {
-            c.puissantAbilities.Add(ability.Name);
+            c.puissantSkills.Add(ability.Name);
         }
 
         public void Undo()

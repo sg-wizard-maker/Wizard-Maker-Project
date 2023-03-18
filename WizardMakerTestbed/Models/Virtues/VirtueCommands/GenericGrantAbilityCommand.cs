@@ -23,7 +23,7 @@ namespace WizardMakerPrototype.Models.Virtues.VirtueCommands
         {
             c.AllowedAbilities.Add(grantedAbility);
 
-            int initialXP = (c.affinityAbilities.Contains(grantedAbility.Name) ? 4 : 5);
+            int initialXP = (c.affinitySkills.Contains(grantedAbility.Name) ? 4 : 5);
 
             c.XPPoolList.Add(new SpecificAbilitiesXpPool(grantedAbility.Name + XPPOOL_NAME_SUFFIX, "", initialXP,
                 new List<ArchAbility>() { grantedAbility }));

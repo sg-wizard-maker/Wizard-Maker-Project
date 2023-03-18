@@ -17,10 +17,10 @@ namespace WizardMakerPrototype.Models
         public string Description { get; set; }
 
         public List<AbilityInstance> abilities { get; set; }
-        public List<string> puissantAbilities { get; set; } = new List<string>();
+        public List<string> puissantSkills { get; set; } = new List<string>();
 
         // TODO: We may want to make this a dictionary of ability names to a list of XP cost modifiers.
-        public List<string> affinityAbilities { get; set; } = new List<string>();
+        public List<string> affinitySkills { get; set; } = new List<string>();
         public SortedSet<XPPool> XPPoolList { get; }
 
         // TODO: Refactor and do the whole allowed ability logic in a separate stateful instance.

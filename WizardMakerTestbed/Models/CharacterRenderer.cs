@@ -36,6 +36,15 @@ namespace WizardMakerPrototype.Models
             }
         }
 
+        public static void AddSkill(Character character, string skill, int xp, string specialty, bool isIncrementalXP, string journalID)
+        {
+            bool isPuissant = false;
+            bool isAffinity = false;
+            if (character.puissantSkills.Contains(skill)) { isPuissant = true; }
+            if (character.affinitySkills.Contains(skill)) { isAffinity = true; }
+
+        }
+
         /** 
          * Ignores the specialty if the ability already exists.  Note this assumes only one specialty per ability.
          * XP is always absolute XP, unless it is flagged as incremental.  Then it will be added.
@@ -44,8 +53,8 @@ namespace WizardMakerPrototype.Models
         {
             bool isPuissant = false;
             bool isAffinity = false;
-            if (character.puissantAbilities.Contains(ability)) { isPuissant = true; }
-            if (character.affinityAbilities.Contains(ability)) { isAffinity = true; }
+            if (character.puissantSkills.Contains(ability)) { isPuissant = true; }
+            if (character.affinitySkills.Contains(ability)) { isAffinity = true; }
 
             if (!doesCharacterHaveAbility(character, ability))
             {
@@ -64,7 +73,17 @@ namespace WizardMakerPrototype.Models
             AbilityXPManager.debitXPPoolsForAbility(retrieveAbilityInstance(character, ability), xp, character.XPPoolList);
         }
 
-        public static void AddAbility<T>() where T: ArchSkill {
+        //TODO: Clean up the code duplication
+        public static void AddSkill<T>(Character character, string skill, int xp, string specialty, bool isIncrementalXP, string journalID) where T: ArchSkill {
+            bool isPuissant = false;
+            bool isAffinity = false;
+            if (character.puissantSkills.Contains(skill)) { isPuissant = true; }
+            if (character.affinitySkills.Contains(skill)) { isAffinity = true; }
+
+            if (!doesCharacterHaveSkill(character, skill))
+            {
+
+            }
 
         }
 
@@ -72,6 +91,11 @@ namespace WizardMakerPrototype.Models
         private static bool doesCharacterHaveAbility(Character character, string ability)
         {
             return getCharacterAbilitiesAsList(character).Contains(ability);
+        }
+
+        private static bool doesCharacterHaveSkill(Character character, string skill)
+        {
+            return getCharacterAbilitiesAsList(character).Contains(skill);
         }
         private static AbilityInstance retrieveAbilityInstance(Character character, string ability)
         {

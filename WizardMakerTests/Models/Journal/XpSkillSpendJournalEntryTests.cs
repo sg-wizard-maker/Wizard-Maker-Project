@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WizardMakerPrototype.Validation;
+using WizardMakerPrototype.Models.HermeticArts;
 
 namespace WizardMakerPrototype.Models.Tests
 {
@@ -139,6 +140,24 @@ namespace WizardMakerPrototype.Models.Tests
             // Note that if this is not calling the derived class IsSameSpecs, you will get erroneous passing of this test.  But
             //  this should not happen due to usage of GetType
             Assert.IsTrue(entry.IsSameSpecs(deserialized));
+        }
+
+        [TestMethod()]
+        public void ExecuteHermeticArtTest()
+        {
+            SeasonYear sy = new SeasonYear(1222, Season.SPRING);
+            Character dummy = new Character("My name", "My desription", 30);
+
+            Journalable entry = new XpSkillSpendJournalEntry(Expected, sy, "Creo", 5, "");
+
+            // Initialize the character before attempting to buy an ability
+            Journalable initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
+            initEntry.Execute(dummy);
+
+            // Now actually test the XP spend
+            entry.Execute(dummy);
+            Assert.AreEqual(1, dummy.abilities.Count, "Dummy character should only have one abililty.  Found " + dummy.abilities.Count);
+            Assert.AreEqual(ArchHermeticArt.Creo.Name, dummy.abilities[0].Name);
         }
     }
 }

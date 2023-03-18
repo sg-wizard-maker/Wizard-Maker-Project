@@ -8,6 +8,14 @@ namespace WizardMakerPrototype.Models.Skills
 {
     public class ArchSkill
     {
-       
+        public int baseXPCost { get; private set; }
+        public string name { get; private set; }
+
+        public static T lookupCommonAbilities<T>(string skill) where T:ArchSkill
+        {
+            return null;
+        }
+        
+
     }
 }
