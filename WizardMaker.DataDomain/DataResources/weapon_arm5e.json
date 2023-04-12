@@ -1,0 +1,206 @@
+{
+  "96b48749-b893-4278-906f-67a50effa4d8": {
+    "Name": "Dagger",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Inexp",
+      "Quantity": 1,
+      "Weight": 1,
+      "Init": 0,
+      "Atk": 2,
+      "Def": 0,
+      "Dmg": 3,
+      "Load": 1,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6ff4a662-c5f3-4c2e-8f84-3d1448eba14e": {
+    "Name": "Dodge",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "None",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 0,
+      "Def": 0,
+      "Dmg": 0,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "905e73e9-0f58-4396-9273-4fe37d003a2c": {
+    "Name": "Fist",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "None",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 0,
+      "Def": 0,
+      "Dmg": 0,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "52c12864-0f46-4e77-8cf0-7d54b83fcaf3": {
+    "Name": "Grappling",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "None",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 0,
+      "Def": 0,
+      "Dmg": 0,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0bf56495-cf08-45d1-b0c6-7ebc9d02ffcb": {
+    "Name": "Horse",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Std",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 0,
+      "Def": 0,
+      "Dmg": 0,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "044b5f25-3cc7-4ac5-84a2-a6554bcf8a23": {
+    "Name": "Kick",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "None",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": -1,
+      "Atk": 0,
+      "Def": -1,
+      "Dmg": 3,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "97551c58-daf9-4295-a5f5-b66134be647b": {
+    "Name": "Knife",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Inexp",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 1,
+      "Def": 0,
+      "Dmg": 2,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6174750b-1868-4ab3-923a-4f8680582c52": {
+    "Name": "Knife, Throwing",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Inexp",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 0,
+      "Atk": 1,
+      "Def": 0,
+      "Dmg": 2,
+      "Load": 0,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "06e8389b-d041-4f04-90db-71c79cf05167": {
+    "Name": "Mace",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Std",
+      "Quantity": 1,
+      "Weight": 2,
+      "Init": 1,
+      "Atk": 3,
+      "Def": 0,
+      "Dmg": 8,
+      "Load": 2,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a50250d1-aedf-4e96-91e4-dc900f0b76f9": {
+    "Name": "Shield, Heater",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Std",
+      "Quantity": 1,
+      "Weight": 2,
+      "Init": 0,
+      "Atk": 0,
+      "Def": 3,
+      "Dmg": 0,
+      "Load": 2,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "fe734fec-017e-4e2b-9dc2-c245b522eb89": {
+    "Name": "Sword, Great",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Exp",
+      "Quantity": 1,
+      "Weight": 0,
+      "Init": 2,
+      "Atk": 5,
+      "Def": 2,
+      "Dmg": 9,
+      "Load": 2,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f1ad9904-c369-409e-a772-004188cd839d": {
+    "Name": "Sword, Long",
+    "Type": "Weapon",
+    "Data": {
+      "Cost": "Std",
+      "Quantity": 1,
+      "Weight": 1,
+      "Init": 2,
+      "Atk": 4,
+      "Def": 1,
+      "Dmg": 6,
+      "Load": 1,
+      "Description": "",
+      "Source": "custom",
+      "Page": 0
+    }
+  }
+}

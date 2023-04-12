@@ -1,0 +1,2015 @@
+{
+  "b5dd71fc-8084-48fd-8668-ee0c08ffe6e8": {
+    "Name": "Fragile Constitution",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are sickly and weak. You suffer a -3 penalty on all rolls to recover from wounds and diseases.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2f862575-0b92-4150-b259-362cbe461aea": {
+    "Name": "Ability Block",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are completely unable to learn a certain class of Abilities, for some reason. This may be Martial Abilities, or a more limited set of the others. A profound inability to master logic would rule out Artes Liberales, Philosophiae, any Law, Medicine, and Theology. Alternatively, you might be unable to learn any languages other than your native tongue. It must be possible for your character to learn the abilities in question, but she need have no intention of doing so. You may only take this Flaw once.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3f0f8d9e-1159-4219-8f46-d1fcf4a2729a": {
+    "Name": "Afflicted Tongue",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a speech impediment, such as a lisp, stutter, or missing teeth. You suffer a -2 to all rolls involving the voice. If you are a magus, you must also roll an extra botch die when casting a spell using words.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e00c56bf-728a-47cd-8ed1-1d3a0e43f473": {
+    "Name": "Arthritis",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Your joints are stiff and often painful, making almost any prolonged movement difficult. You are at -3 to rolls involving repetitive movement, sustained over time. Occasionally, the pain is so great that you are seriously disabled. On any movement or combat botch, one of your joints may -lock up,- making the limb effectively useless (-6 to all rolls involving it) until you have a chance to rest it for a day or two.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d06ce3d8-b1a8-4874-8ae8-6495ccc640f9": {
+    "Name": "Blind",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have little or no sight. Using missile weapons is futile, reading is impossible, and navigation in unknown territory is difficult to say the least. Blind magi can detect targets by other senses, and thus are less limited than people trying to use missile weapons. However, blind magi cannot aim spells without magical aid.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d3e3f241-eb6c-4087-8278-ab9ddf873cdc": {
+    "Name": "Clumsy",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are not very graceful and tend to drop things - you are at -3 in all related rolls. Furthermore, roll an extra botch die when taking actions related to Dexterity. Roleplay your clumsiness.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "978e383e-c011-47d2-b494-406642171db8": {
+    "Name": "Crippled",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You either have no legs, or your legs are completely useless. You may have lost them in an accident or as a punishment. You cannot walk, although you may drag yourself along the ground, or push a trolley around with a stick.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d5243bef-8d20-4ec1-92f3-b28b19745bb4": {
+    "Name": "Deaf",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You cannot hear at all. You may be able to speak, but you cannot understand spoken language, which makes communication difficult. Magi with this flaw must roll an extra two botch dice when casting spells with a spoken component, as they cannot hear what they are saying.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ada24006-234d-49db-90cc-33a5787aac9c": {
+    "Name": "Disfigured",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "A visible disfigurement makes you ugly and easy to recognize. Presence rolls that involve good looks and gaining respect from most people are at -3. You probably have a cruel nickname that refers to your unfortunate appearance. You might have a large, visible burn scar, or an enlarged and deformed eye (an -evil eye-), or even be albino.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "47c69fef-f1cf-4533-a410-08ce9276e616": {
+    "Name": "Dwarf",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You are the size of a child. Your comfortable walking speed is two-thirds that of a normal person. Your Size is -2, so the severity of wounds you take increases in three point increments rather than five point increments (see page 171). You take a -1 penalty to each of Strength and Stamina, which may reduce each Characteristic as low as -6. You cannot take this Flaw and Giant Blood, Large, or Small Frame.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9b15eefc-d940-4ac8-bf22-f4f7ddedac96": {
+    "Name": "Enfeebled",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You cannot exert yourself for longer than a few seconds. Any need for rapid movement, such as combat or a chase, leaves you helpless. Long hikes are likewise beyond your capability. You are unable to learn Martial Abilities or any other skills involving physical exertion, since you cannot train in them. If you are a magus, you lose double the normal number of Fatigue levels from casting spells, but you may carry out laboratory activities as normal.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b0dbfa24-733f-4814-84a3-b3167bc7d39b": {
+    "Name": "Feral Upbringing",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You grew up in the wilderness, either raised by wild animals or surviving on your own. For much of your life you could not speak, and knew nothing of human ways. Now that you have joined human society (or the covenant), you have learned to understand some basic spoken phrases, but civilized life is still a mystery you want little part of. You may only choose beginning Abilities that you could have learned in the wilds. In particular, you may not start with a score in a Language. In your first five years you gain 120 experience points, which must be split between (Area) Lore, Animal Handling, Athletics, Awareness, Brawl, Hunt, Stealth, Survival, and Swim.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f878637f-5728-43a8-92c6-89570c1020c6": {
+    "Name": "Hunchback",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a deformed body that gives you a grotesque appearance and hinders your movements. You are at -3 to all rolls involving agility and balance. Communication rolls that involve good looks are at -3.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5aa321ca-78b5-4d76-a9eb-42dd948080ce": {
+    "Name": "Incomprehensible",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are almost completely unable to convey the knowledge and understanding that you have. Anyone trying to learn from you or from a book you have written must halve their Study Total (or Lab Total, if you are a magus and have written Lab Texts on some spells or enchanted items). If you are a magus teaching spells, halve all applicable Lab Totals, both yours and the student-s.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b4770445-ed1d-4399-b116-dc8e1b8c09c1": {
+    "Name": "Infamous",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "People know you well and curse you in their prayers. You have a level 4 bad Reputation, specifying the horrible deeds that earned you such ill will.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "01dd4b34-2d15-4eca-8d84-d986427499a9": {
+    "Name": "Lame",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "One of your legs is weakened, whether since birth or through some accident. You move slowly and clumsily. Your base speed is a mere one mile per hour, and anyone can outrun you. You suffer a -6 penalty on rolls involving moving quickly or with agility, -3 on Dodge, and -1 on other combat scores.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c0791771-da97-4039-bed0-09dc2e543f52": {
+    "Name": "Low Self-esteem",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have a deflated opinion of your own selfworth. You begin the game with no Confidence Score, and never have any Confidence Points.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0600412e-2a12-4c76-ba55-26e6c311bb85": {
+    "Name": "Magical Air",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "People and animals react to you as if you had The Gift, but, at least as far as you know, you have no magical abilities. You may not take this Flaw if you actually do have The Gift; see The Blatant Gift (page 51) instead.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f3c12fdb-6398-47f7-a6c7-526ee80614da": {
+    "Name": "Missing Ear",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You cannot accurately locate the direction of sounds, and suffer a penalty of -3 to hearing rolls.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9ed86be9-e47a-4be3-8179-0c62f7e15493": {
+    "Name": "Missing Eye",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You cannot judge close distances easily and get -3 on Attack rolls for missiles and targeting rolls for spells. In melee combat you suffer -1 on Attack rolls because your field of vision is limited. You also have a blind side from which people can approach unseen. This Flaw can be combined with Poor Eyesight (below), but the penalties are cumulative.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f0a044f8-f4e2-4554-9f4c-f70a56188a5c": {
+    "Name": "Missing Hand",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Perhaps it was an accident or a punishment in your past that cost you one of your hands. Climbing, combat, and other activities normally requiring both hands are at a penalty of -3 or greater.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "987313d9-776f-4670-94da-68f00fb4acea": {
+    "Name": "Motion Sickness",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Riding a horse, in a cart, or sailing on a ship makes you violently ill. When not traveling on foot, you suffer double the fatigue loss on long journeys specified on page 185, with a minimum loss of two Fatigue levels. Violent jostling over a period of a few hours could conceivably lead to unconsciousness.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9aaa907e-34ed-494e-9f03-0001d88297a5": {
+    "Name": "Mute",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You cannot speak; perhaps your tongue was cut out. You probably use rudimentary hand gestures and grunts to communicate your needs. You can still understand languages perfectly well, and may learn to read and write if you have an appropriate Virtue. Note that magi with this Flaw get a -10 penalty to all spellcasting, although this may be offset by taking the Quiet Magic Virtue (page 48). A magus with this Flaw can be assumed to be able to make sounds, which are sufficient to allow normal use of the Voice Range.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1e0e98ee-838f-4759-baa1-02e1eb990b0c": {
+    "Name": "No Hands",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have no hands. Any activity requiring hands is impossible, and magi with this flaw take a -5 penalty to all spellcasting. This may be offset by taking the Subtle Magic Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ef4a72d8-aadb-490a-a45d-d3d12873adb8": {
+    "Name": "No Sense Of Direction",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are completely unable to follow directions. North, south, east, and west have no meaning to you, and you often confuse right and left. You frequently get lost while traveling unfamiliar paths by yourself, or with others following your lead, and often have to reason your way home or to your destination from first principles. This Flaw is incompatible with the Well-Traveled Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "aecfd58e-b844-4f1a-8d4f-cfa95cf711b5": {
+    "Name": "Obese",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are large because of fat, not muscle. You are at -1 to all rolls that involve moving quickly or gracefully and at -3 to all Fatigue rolls. You are not so large that your Size is increased, and you may take this Flaw along with the Virtues and Flaws that change your Size.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f70cf432-a747-40fe-8e84-99086c0921af": {
+    "Name": "Palsied Hands",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Your hands shake uncontrollably, which makes casting spells or holding objects difficult. All rolls involving holding or wielding an object are made at -2, including weapon skills. Magi and others who rely on hand gestures to work magic must roll an extra botch die when casting a spell.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "952c9c2f-9ad3-423a-a7fe-055da1e5fe92": {
+    "Name": "Poor",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You are a poor member of your social class. You must work three seasons per year in order to make ends meet, and can afford only the necessities of life, as measured by your status. This also means that you have one fewer season available for any form of advancement other than exposure, which is a major hindrance. You cannot take this Flaw if you are supported by the covenant. In particular, this Flaw is not available to magi.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "39876bc6-00e7-48ca-9c8d-fe877ea965bb": {
+    "Name": "Poor (characteristic)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have an exceedingly bad Characteristic - lower one which is already -3 or lower by one point. Describe what it is about you that makes this obvious, such as a feeble stature, hideous visage, or slack-jawed stupidity. You may take this Flaw twice for a single Characteristic, lowering it to -5, and multiple times for different Characteristics.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b1bab1dc-a89a-4a0b-ace5-12f6c339105c": {
+    "Name": "Poor Eyesight",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Bleary vision impedes your performance. Rolls involving sight, including rolls to attack and defend, are at -3. New environments are disorienting and perhaps frightening for you. This Flaw can be combined with Missing Eye (above), but the penalties are cumulative.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2a908d5b-c76c-4931-8509-a400df6cf0ba": {
+    "Name": "Poor Hearing",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Subtract 3 from rolls involving hearing. Speech that is hard for others to understand because of language, dialect, or accent is almost impossible for you to follow. You often pretend to be listening to people when in fact you are not.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ce3a2441-2141-46d7-881e-4638f2c72378": {
+    "Name": "Poor Student",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are bad at learning new things. Subtract three from all Advancement Totals derived from teaching and books (that is, you have no penalty to adventure experience, exposure, practice, or training), but do not reduce a total below one. If you could learn something without this Flaw, you still learn a bit.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d3ecbaeb-3749-48b2-b6a9-406394b7e698": {
+    "Name": "Small Frame",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are of a lighter-than-average build. Your Size is reduced to -1. This means that the severity of wounds you take increases in four point increments, rather than five point. (See page 171). You cannot take this Flaw and Giant Blood, Large, or Dwarf.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7281c83d-2df5-4c13-89f8-315e04e619c0": {
+    "Name": "Social Handicap",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have some trait that keeps you from interacting easily with other people. This impairs your dealings with most of society, causing penalties of -3 on appropriate rolls. Examples include morose temperament, unworldliness, an unpleasant odor, or outspoken atheism.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b3cf1f8f-4861-4041-8417-c67a6f813d13": {
+    "Name": "Tainted With Evil",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "An air of corruption surrounds you as a result of something you, your parens, or your ancestors did. Others naturally feel very ill at ease around you, and can easily grow to hate you. Gaining a positive Reputation is impossible. Magi do not react as strongly to this attribute as normal people.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d7a8adee-4327-454f-be22-704b93aed3b0": {
+    "Name": "Weak Characteristics",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have three fewer points to spend buying Characteristics than most characters. You may take this Flaw twice, leaving you with only one point to spend.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "cbb2f741-057f-4cde-9d1a-ddf71a219cc8": {
+    "Name": "Weak-willed",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You look to others for guidance rather than to yourself. Those who try to fool, intimidate, or manipulate you gain +3 to their rolls. What you need more than anything else is to find someone you can trust.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "bea150bf-e087-47c1-856d-d52c80f99f4d": {
+    "Name": "Blatant Gift",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "People immediately realize that there is something strange about you, even if they do not know you are a magus. Animals are extremely disturbed, frightened, and possibly enraged by your presence. You suffer a -6 penalty on all interaction rolls with normal people and animals, and should see page 75 for further discussion of this Flaw-s effects.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "136c482c-69f6-453f-a754-69aeeca32599": {
+    "Name": "Careless Sorcerer",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are slapdash in your use of magical power, and must roll two more botch dice more than normal when casting spells. Note that if you would normally roll no botch dice, you still roll none.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f3fb0145-570e-4ea3-8d4b-1d25075a6298": {
+    "Name": "Chaotic Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Your magic is very wild. When you cast a spontaneous spell, you must specify a desired level of effect. If you fall short of or exceed that target by more than one level, the spell still works, but its effects are beyond your control - the storyguide decides the results. The level of effect includes any levels you assign to Penetration.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d7efb388-8498-4bcc-a07b-cb92d0c37ea5": {
+    "Name": "Clumsy Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have trouble aiming your spells accurately. Any aiming roll (see page 86) is subject to disastrous failure: an aiming roll of 0 is automatically a botch. (Aiming rolls do not count as mystical rolls for the purposes of gaining Warping Points.) You receive a -3 penalty to any rolls involving Finesse.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d562a216-5a5b-4730-a70a-cb03dedf8cf9": {
+    "Name": "Creative Block",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have problems creating new things in the lab. You receive -3 on Lab Totals when you invent new spells, craft magic items, and make potions, unless you are working from a lab text. If you experiment, roll twice as many dice on the experimentation table.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "44619fd3-2d5a-4e19-9f4b-b5008c49b210": {
+    "Name": "Cyclic Magic (negative)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "As with the Hermetic Virtue, your magic is attuned to some cycle of nature and is less potent at specific times. You have a -3 penalty to all Lab Totals and Casting Totals during that time. The length of time during which you are at a disadvantage must be equal to the time when there is no penalty.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "787fc908-75d4-4c2c-a1cf-2a3670ffe02a": {
+    "Name": "Deficient Form",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Almost all totals (including Casting Totals and Lab Totals, but excluding Magic Resistance) to which a particular Form is added are halved. The Form has its full value for the purposes of studying it, and study totals are not halved.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ecd5fb90-7eb3-4c92-8b5e-84d520e82bbb": {
+    "Name": "Deficient Technique",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "All totals, including Lab and Casting totals, including a particular Technique are halved. Study totals are not halved. Experience points required are based on the actual value of the Technique, before halving.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "afb88fe6-4031-48ca-8379-f5260b91b18a": {
+    "Name": "Deleterious Circumstances",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "All your magic totals are halved under certain uncommon circumstances. This can be your state, such as sitting or wet, the target of the magic, such as wild animals or iron, or the place where you are casting the magic, such as a city or high up a mountain.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0ecff4db-b39d-47bd-97b4-61c77a128dd0": {
+    "Name": "Difficult Longevity Ritual",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Something in your magical nature makes it difficult to create an effective Longevity Ritual for you. Anyone (including yourself) creating a Longevity Ritual for you must halve their Lab Total. You may create Longevity Rituals for others without penalty.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7301ca00-00ab-4002-ad0f-8e4ba7f85b14": {
+    "Name": "Difficult Spontaneous Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Spontaneous magic is always an effort for you. You cannot cast spontaneous spells without exerting yourself. However, when you do exert yourself, you cast spells as any other magus. This flaw may be combined with Weak Spontaneous Magic to create a magus who cannot use spontaneous magic at all.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b10cbea8-2775-4541-80dc-ddd60290017e": {
+    "Name": "Disjointed Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You cannot use previous knowledge to help you with magic. You gain no benefit from knowing a spell that is similar to one you are learning or inventing, and you gain no enchantment bonuses from Techniques and Forms already invested in an item.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8be4eadc-a0d3-46a0-b87f-53e52c8e78c3": {
+    "Name": "Disorientating Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "After casting a spell, you must spend a round doing nothing but recovering your mental faculties.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e4df4b96-d48c-4bbd-8117-b71b2a46466f": {
+    "Name": "Flawed Parma Magica",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your Parma Magica is defective and provides only half the normal Magic Resistance against a certain Form. You may purchase this Flaw more than once for different Forms.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4ae3a6c7-bb5c-4905-be80-504a90fe656e": {
+    "Name": "Hedge Wizard",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Because of your esoteric magic, other magi distrust you, and more importantly, grant you no respect. You start with a negative Reputation within the Order of Hermes at level 3 as a hedge wizard, even though you are a member of the Order.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "56aefa77-d00a-422c-b97a-9b2fe9e957c6": {
+    "Name": "Incompatible Arts",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "For some reason you are completely unable to use two combinations of Techniques and Forms, except for Vim and Corpus. For example, you may be unable to use Intellego Herbam and Intellego Animal. This Flaw may be taken repeatedly with different combinations, but may not be combined with a Deficiency.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3cd8142f-87fa-479a-8754-9895d8fcbcc9": {
+    "Name": "Infamous Master",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your master was a diabolist, bumbler, fool, widely despised, or held in contempt for some other reason. Most magi expect little better from you. Even if you-ve done nothing wrong, you are treated as though you don-t deserve to be a member of the Order. You have a bad Reputation of the appropriate type at level 3 among magi.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "eef2e5b1-de1a-48a0-8649-a5874bc5d675": {
+    "Name": "Limited Magic Resistance",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are less able to resist magic than other magi. You gain no bonus from one of your Form scores to Magic Resistance rolls, though if you are caught without your Parma Magica, you retain a Magic Resistance of 0. You may take this Flaw multiple times, for multiple Forms.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "beb92e8a-6106-443c-b24f-56aeccec8034": {
+    "Name": "Loose Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your Study Total is halved whenever you try to master spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "164bf816-3b16-401f-b916-666ed16d4b96": {
+    "Name": "Magic Addiction",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You crave the rush of casting and holding power over magic. Whenever you cast a spell, you have a difficult time stopping yourself from casting again and again until you drop from exhaustion. Whenever you use a stress die in spellcasting, you must, whether or not the spell succeeds, make an Intelligence + Concentration stress roll, against an Ease Factor of half the level of the spell (or, if you botched, the level you were attempting). If you fail, as your next action you must either cast a Formulaic spell of at least the same level as the previous spell, or cast any spontaneous spell, expending Fatigue and not reserving levels for Penetration. You must roll again to control your addiction, based on the level of the spell you just cast, but you get a +3 bonus to the roll for every spell you cast after the first. If you botch, you continue casting spells until you fall unconscious.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f42c326d-3224-40e5-ae6e-0578dee40362": {
+    "Name": "Necessary Condition",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "In order for your magic to work, you must perform a specific action while casting any spell. This should be something simple, such as singing or spinning around three times. If you cannot perform the action, you cannot cast spells at all.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "de46f8ac-289d-46b9-824b-305083b59439": {
+    "Name": "Painful Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Casting spells causes you to suffer the equivalent of one Fatigue level in pain for each spell you cast. This reduces all your actions by the appropriate Fatigue penalty, which is cumulative with any from actual fatigue or injuries (though you do not suffer any physical damage from pain). You recover these -pain levels- just like Fatigue levels.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c3417e46-b0cb-4195-b5e6-5f643491135e": {
+    "Name": "Poor Formulaic Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are simply not very good at formulaic magic. Subtract five from every roll that you make to cast formulaic spells. This does not apply to Ritual spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a0266d6c-a29e-411f-8608-9063929a9b18": {
+    "Name": "Restriction",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You cannot cast spells at all under certain uncommon conditions. These might refer to your state, such as touching the earth directly or having no beard, or to the target, such as birds or glass, or to your location when you use the magic, such as on a small boat or in a storm. The Restriction also applies to effects generated by any enchanted items you create. Spells cast remain in effect even if the Restriction comes into play. Thus, if your Restriction is that you must not have a beard, you cast a spell with Year duration, and then grow a beard, the spell does not fail.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d666cd99-b2ef-4417-8f02-4415b663360e": {
+    "Name": "Rigid Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You cannot use vis when you cast spells. Thus, you cannot increase your spell rolls or cast Ritual magic. You can use vis in the laboratory.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4874bf35-60f0-4211-be21-fceb274e9f96": {
+    "Name": "Short-lived Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your spells do not last as long as they should. Spells that should last a year, last a moon; those of a moon, only to the next sunrise or sundown; and those of a sun, merely Diameter. Diameter, Concentration, Ring, and Momentary spells are not affected.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6d12583a-bc98-4aae-9d7d-6e9ef1ad4acb": {
+    "Name": "Short-ranged Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Halve your Casting Totals whenever you are not touching the target of the spell. Halve your Lab Total when designing an effect or spell that has a range greater than Touch.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f4d2a5e4-9905-4184-a764-354e1891e3a7": {
+    "Name": "Slow Caster",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic requires more time to prepare and execute than that of other magi. Your formulaic spells take two rounds to cast; spontaneous spells also take two rounds unless you fast-cast, in which case they take one round casting time. Fast-cast mastered spells also take the normal one-round time. Ritual spells are performed as normal, since all magi must cast them slowly and carefully.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1c5dbbef-009f-4b69-9535-5e6f89128496": {
+    "Name": "Study Requirement",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You are unable to study magic from books or vis alone. You must study in the presence of the appropriate Art. For example, you need to sit next to a brook or pond to study Aquam, or a large fire to study Ignem. Growing things are good for Creo, decaying ones good for Perdo. As your knowledge grows, you need to work with larger and larger quantities. See -Study Bonus Virtue- on page 49 for a list of examples. You may take Study Bonus and Study Requirement.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "cff2dab4-c013-4c40-b3d0-12bd9e864190": {
+    "Name": "Susceptibility To Divine Power",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are especially sensitive to the Dominion and suffer twice the normal penalties (such as spellcasting modifiers and botch rolls) to your magic when in a divine aura.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "dc63b231-e88f-4c03-b3d5-f858cb5ef02d": {
+    "Name": "Susceptibility To Faerie Power",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are especially susceptible to the fay and their magic. Whenever you enter a faerie area, you must make a Stamina roll equal to or greater than its aura rating to avoid becoming disoriented. In addition, your Magic Resistance score, including Parma Magica, against faerie magic is halved. If someone else uses their Parma Magica to protect you, their resistance is not affected and you benefit normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b84602d8-179e-42ec-a3d2-24fd21e20021": {
+    "Name": "Susceptibility To Infernal Power",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are especially vulnerable to the dark powers. Whenever you enter an area of infernal influence, you must make a Stamina roll equal to or greater than the aura rating or become ill (-1 on all rolls). You get only half your normal Magic Resistance score against infernal magic, though if someone else-s Parma Magica is protecting you, it counts normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "dec8aaaa-9d18-4890-ad12-95d8a1814317": {
+    "Name": "Twilight Prone",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You either enjoy or cannot help running excessive amounts of magic through you when you cast spells. You must roll to resist Twilight on a single magical botch, rather than on a double botch like most magi.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0a69f539-60af-4ba9-b1f6-87e5676e7688": {
+    "Name": "Unimaginative Learner",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have trouble figuring things out for yourself. Subtract three from rolls when you study from raw vis.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b0b197b4-17f7-4f84-8efa-5a7f4abe7b49": {
+    "Name": "Unpredictable Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You always roll a stress die when using magic, even if completely relaxed. If you choose to cast a spontaneous spell without expending fatigue, you must still roll to check for a botch, although the roll does not add to your Casting Total. Even if you have mastered a spell, you must always roll at least one botch die.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "04ef542c-492f-42c6-ba98-1f47b0d32ca9": {
+    "Name": "Unstructured Caster",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have never quite mastered the intricacies of spellcasting, and are unable to perform formulaic magic without extreme effort. You cast all formulaic spells as though they were ritual spells (including the need for vis), and you may not learn ritual spells at all. You cast spontaneous spells normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a8043c78-5511-433b-bd44-fd4d06c171d1": {
+    "Name": "Warped Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic is accompanied by some unpleasant side effect that always manifests itself the same way, but with increasing intensity according to the level of the spell. Examples include nearby items become hot or nearby plant matter becomes shriveled and wilted. This effect may cause trouble from time to time, but is usually just annoying.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "58c8dfd1-f215-4c8f-b279-eb8db3cc8831": {
+    "Name": "Waster Of Vis",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "When you use raw vis you waste one quarter (rounded up) of the pawns you apply. The lost raw vis does not apply to the magical effect being enacted but does count toward the total number of botch dice you must roll if you roll a zero. You must use a third again as many pawns as usual when casting a ritual spell, and if you want to improve an Art score by studying raw vis, you must use a third again as many pawns as usual. This Flaw applies to all occasions on which you use vis, including certamen, laboratory work, and boosting penetration. Wasted pawns count toward the maximum number you can use at one time. For example, if you would normally use 12 pawns, you use 16, and 4, one quarter of those you use, are wasted. If you would normally need 10 pawns, you use 14, because 4 pawns are wasted.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4ba215bd-e9fa-4b14-8480-6ec6f06cda00": {
+    "Name": "Weak Enchanter",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your Gift is ill attuned to creating enchanted devices. Halve your Lab Total whenever you create or investigate an enchanted item. If you have a Deficiency that counts as part of the Lab Total, apply the Deficiency first and then halve the remaining total.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1202b6a5-23ce-428f-94e6-53f135af1f94": {
+    "Name": "Weak Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic is particularly bad at penetrating magic resistance. You halve the normal Penetration Total for all spells, and only get half the normal benefit when instilling Penetration into an item. Note that you halve the Penetration Total, after subtracting the spell level and making any adjustments for the use of Arcane Connections. You do not halve the Casting Total and calculate Penetration from that.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ac965c75-72d1-414e-8e8e-caa33862d8ce": {
+    "Name": "Weak Magic Resistance",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Any form of magic resistance you generate is much weaker under relatively common circumstances which are fairly easy for an opponent to utilize, such as when you are wet or facing away from the caster of the spell. If the conditions are met, do not subtract the level of the effect from the casting total before calculating Penetration. You would be well advised to keep your weakness from being discovered by too many potential enemies.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6d4c6a0d-8d1f-4350-8489-713bf7a7dd2b": {
+    "Name": "Weak Parens",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your parens was less powerful and a worse teacher than normal. You gain 60 fewer experience points and 30 fewer spell levels from apprenticeship, for a total of 180 experience points and 90 levels of spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "902df7f0-540c-421b-9826-9ed3bfaa30b9": {
+    "Name": "Weak Scholar",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You don-t understand what others teach you very well. You get a -6 penalty to Lab Totals when working from the Lab Texts of others, including when re-inventing spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "73433e64-8187-4003-b158-1b653b5fe409": {
+    "Name": "Weak Spontaneous Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You may not exert yourself when casting spontaneous magic, so you always divide your Casting Total by five. In stressful conditions you must still roll a stress die to see if you botch, but the die roll does not add to your casting total. You may still use ceremonial casting. This Flaw may be combined with Difficult Spontaneous Magic to create a magus who cannot cast spontaneous magic at all.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7b19b0a8-7cad-4dd6-9ee1-cb4d36fe25c1": {
+    "Name": "Weird Magic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your control over magic is somewhat loose, perhaps due to Twilight effects or idiosyncratic training. Roll one extra botch die when you roll a zero on stressed spell casting rolls, apart from your other botch dice. Botches from this die should be strange or bizarre rather than dangerous, and if the Weird Magic botch occurs along with a regular botch, the results could be truly spectacular.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f1476580-a556-4e4b-8e8b-0a845a9ee4df": {
+    "Name": "Ambitious (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You want to be the most successful or powerful person in the world in some respect. You will not be distracted into doing things that do not contribute to your ambition, and are very eager to do things that advance it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5b4cb17a-eee6-4c3b-825f-1444af5c6507": {
+    "Name": "Ambitious (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You want to be the most successful or powerful person in the world in some respect. You will not be distracted into doing things that do not contribute to your ambition, and are very eager to do things that advance it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a0f33a62-d626-4b56-b8e2-16221b610d0b": {
+    "Name": "Avaricious (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You want money, lots of money. When you have it, you do not spend it, but hoard it so that you can count it. You can be avaricious about physical things other than money, such as books or raw vis. In this case, you do not use the things you hoard, nor do you allow others to use them.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2abfaba2-9355-4a0e-8a44-7067df5add4a": {
+    "Name": "Avaricious (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You want money, lots of money. When you have it, you do not spend it, but hoard it so that you can count it. You can be avaricious about physical things other than money, such as books or raw vis. In this case, you do not use the things you hoard, nor do you allow others to use them.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "306aa407-de06-4167-982a-30736f3864fc": {
+    "Name": "Busybody",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You usually know everything that is going on among your friends and acquaintances, especially in private matters. You are always interested in rumors and gossip, and are frequently able to extract personal secrets from people. Among magi the language is more dignified, but the idea is the same: you keep tabs on the Hermetic community (your covenant, your House, and nearby covenants - at the least). However, magi probably don-t have much knowledge of what-s going on among the lower class members of their covenant unless they choose to apply this Flaw specifically to such people at character creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "af3bc9d2-7bff-4c65-83cd-a66fe3c9f171": {
+    "Name": "Carefree",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are unshakably cheerful and happy in all circumstances.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4e1ef92a-3e7d-4cbb-90ee-4db3faed3993": {
+    "Name": "Compassionate (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You help anyone who is wounded or in trouble. You cannot bear to see suffering in others, although you happily drive yourself to exhaustion.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a20736bc-1c0e-4362-9988-3d510d4b3965": {
+    "Name": "Compassionate (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You help anyone who is wounded or in trouble. You cannot bear to see suffering in others, although you happily drive yourself to exhaustion.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0fd9b896-82ee-4aee-9bbf-c79916899eb8": {
+    "Name": "Compulsion",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have an unfortunate urge that causes you problems. Examples include drinking, sex, perfection, bragging, or gambling.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "14061ce7-560b-42e0-a732-0bc30bbbdd06": {
+    "Name": "Continence",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You do not engage in sexual activity. This may be due to a vow of celibacy, or simply personal choice.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "16b0e669-f20b-41ee-8e16-8a9f117be3b3": {
+    "Name": "Covenant Upbringing",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You were raised in a large, old covenant that has little contact with the outside world. You might have very strange religious beliefs, and you certainly find medieval social and political structures very odd. You may take Latin and Order of Hermes Lore at character creation. While Latin cannot be your native language, you may speak a language closely related to Latin that is spoken only at your home covenant.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6a227ed1-5a38-4500-8037-87c7a7074df7": {
+    "Name": "Delusion",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You believe wholeheartedly in something that just isn-t so. Examples include that you are a magus (if you aren-t), that you are the Pope-s child, or that your imaginary friend is real. This can cause real problems for you and your associates.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d6c1d779-508d-47f3-b755-635ca0b865bf": {
+    "Name": "Depressed",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have a dark outlook on life, seeing little point in acting and taking no pleasure in anything that happens.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e100769e-935a-46eb-a3c4-d9e5ca4ba2b7": {
+    "Name": "Driven (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You have some goal which you are determined to bring about. This has to be the sort of big goal that could shape an entire life, but if you do accomplish it you will immediately turn to a new project.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9f9c6eb4-e9c6-4ef7-8abe-370c6011161e": {
+    "Name": "Driven (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have some goal which you are determined to bring about. This has to be the sort of big goal that could shape an entire life, but if you do accomplish it you will immediately turn to a new project.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f78057ab-2ab9-4a68-bf5b-da105821e489": {
+    "Name": "Dutybound",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You adhere to a restrictive code of conduct that forbids certain behavior, probably including prohibitions against lying, killing prisoners, stealing, and other occasionally useful actions. You follow this code out of guilt or fear rather than high-flown moral standards, and may spend more time justifying yourself than keeping your conduct pure.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2090da30-d1ec-434f-9cc9-bc33ea9a3fbb": {
+    "Name": "Envious (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You believe that everyone has it better than you do, and that they don-t deserve their good fortune, while you do. Thus, you try to ruin their lives and take their goods for yourself. (This is not a good Flaw for a player character, as it is likely to lead to conflict with the other players.)",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "07f8e002-0d54-4f17-b04b-9d10ee604155": {
+    "Name": "Envious (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You believe that everyone has it better than you do, and that they don-t deserve their good fortune, while you do. Thus, you try to ruin their lives and take their goods for yourself. (This is not a good Flaw for a player character, as it is likely to lead to conflict with the other players.)",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "46f1296c-43a5-4421-ad9c-7234691262ce": {
+    "Name": "Faerie Upbringing",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "Perhaps you were abandoned by your true kin, and the faeries found you. Maybe your family actually lived in a faerie forest, or faeries took you as a babe. Though you are now back in human society, you feel at home with and have an enhanced understanding of faeries, magic, and other strange things. However, you find human society, including religion, bizarre. You may learn Faerie Lore at character generation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "73d7fc3d-8a70-417a-a6e9-6d4b1101342d": {
+    "Name": "Fear",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are scared of something that you are likely to encounter fairly often. Its presence makes you edgy and very uncomfortable.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "093ca245-eb4b-442c-99d3-c07b7dee2d55": {
+    "Name": "Gender Nonconforming (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You do not conform to the expected behaviour for a person of the gender that your society would assign to you in the absence of social cues such as clothes and behaviour. This may mean, for example, that you dress as a member of another gender, or that you structure your life in a way considered appropriate to another gender, or that you are sexually attracted to members of the same gender. It does not necessarily mean that you disagree about what your gender is, although it may. As a Minor Flaw, it does not normally cause you problems, whether because your society accepts your behaviour, or because you can turn people who object into newts, or for some other reason. As a Major Flaw, it does cause you problems.&rdquo;",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "907a3035-bdcf-4d4a-9cec-2ce4326bdadd": {
+    "Name": "Gender Nonconforming (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You do not conform to the expected behaviour for a person of the gender that your society would assign to you in the absence of social cues such as clothes and behaviour. This may mean, for example, that you dress as a member of another gender, or that you structure your life in a way considered appropriate to another gender, or that you are sexually attracted to members of the same gender. It does not necessarily mean that you disagree about what your gender is, although it may. As a Minor Flaw, it does not normally cause you problems, whether because your society accepts your behaviour, or because you can turn people who object into newts, or for some other reason. As a Major Flaw, it does cause you problems.&rdquo;",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "663da5b9-fdeb-442f-b6fe-46e921ddc282": {
+    "Name": "Generous (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You willingly give away your property to anyone who expresses a desire for it, even if they are not particularly deserving. If something is very important, you might not give it to someone, but you will certainly share it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "950c3cfc-0f02-4322-bd6d-7dca09bcd984": {
+    "Name": "Generous (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You willingly give away your property to anyone who expresses a desire for it, even if they are not particularly deserving. If something is very important, you might not give it to someone, but you will certainly share it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7dd1e967-19ca-4818-8ccd-cfa74f98e993": {
+    "Name": "Greedy (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You like to eat and drink, and do so to excess whenever given the chance. You are probably fat, but may not be if you rarely have the chance to indulge.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b2b68859-f670-44e0-bd80-059c83650364": {
+    "Name": "Greedy (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You like to eat and drink, and do so to excess whenever given the chance. You are probably fat, but may not be if you rarely have the chance to indulge.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a2197149-f6c5-436f-b72b-4c8d35ba13bc": {
+    "Name": "Hatred (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You hate someone or some group so much that hurting them dominates your life. The target of your hatred must not be someone you could easily overcome.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "50ecdb9d-36b1-44db-b1e2-97d0f00686da": {
+    "Name": "Hatred (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You hate someone or some group so much that hurting them dominates your life. The target of your hatred must not be someone you could easily overcome.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ce38cb0b-67f1-43ca-95de-43cfc740f674": {
+    "Name": "Higher Purpose",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "Let others concern themselves with petty matters, you have a nobler goal. This purpose should be altruistic, like freeing an oppressed people or bringing peace between the Order of Hermes and society.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "22400741-915c-41ac-8247-48eadc22e40d": {
+    "Name": "Humble",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are humble, always willing to believe that others are more skilled and better than you. You do not necessarily underestimate your own abilities, you just think others are better.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "44aae1e8-4489-490c-9e76-b89f7d6d36ae": {
+    "Name": "Judged Unfairly",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "Somehow you come across the wrong way to people, and they universally distrust and underestimate you. You catch no one-s eye, impress no one, and can get no one to take you seriously. If you ever find an exceptional someone who sees you as you want to be seen, you will cling to that person.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5e38f82f-49eb-43ad-a045-a5bd62d6c5df": {
+    "Name": "Lecherous",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You seek sexual contact with as many people as possible. Note that you need not be any good at seduction; skill here merely changes the kinds of problems you encounter.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ace206e8-25eb-446c-b0d9-16e1e7391f9f": {
+    "Name": "Lost Love",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have lost your true love to death, distance, or marriage. You take little joy in life-s pleasures and give up easily in the face of difficulty, since you-ve already lost the most important struggle. On those occasions when you forget yourself and have a good time, you inevitably feel sorrow afterwards, thinking about how it could have been if your love were with you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7aea153d-f1e2-4066-ba32-9824e64594ae": {
+    "Name": "Meddler (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You want to fix other peoples- lives: arrange matches, teach children to sew -properly,- or tend the sick. You waste a lot of time and energy on such endeavors, and people usually resent it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6f129c6e-d2f8-4e36-abfb-eed3cc77c271": {
+    "Name": "Meddler (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You want to fix other peoples- lives: arrange matches, teach children to sew -properly,- or tend the sick. You waste a lot of time and energy on such endeavors, and people usually resent it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "efbe1ba4-4eeb-43e6-bfe5-e17556a984f5": {
+    "Name": "Nocturnal",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "Your natural body rhythms try to keep you sleeping until noon. You are at -1 on all rolls made between dawn and midday. Conversely, you have little difficulty staying up at night. Though you enjoy no special benefits in the dark, your companions may decide to saddle you with night guard duty on a regular basis to use your attributes to best effect.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5db6754f-7b04-41b7-acdb-d6023159037d": {
+    "Name": "Noncombatant",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have no interest in combat, nor do you have any ability with it. You might be unreasonably afraid of combat, or a complete pacifist, or prone to freezing and doing nothing.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f7ead330-01bd-4393-810f-ebeae0f31262": {
+    "Name": "Obsessed",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are fixated on some prized object, action, or ideal. This interferes with your accomplishment of more immediate tasks. Examples might include obsessive protection of magi to the point that you attack those who insult them, or obsessive neatness where you keep yourself spotless and deride those who do not.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "320d0c63-0c93-4b4f-a660-9b65fd67646d": {
+    "Name": "Offensive To Animals (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Animals react to you as if you had The Gift, although people still do not. You may not take this Flaw and Magical Air. Characters with The Gift may only take this Flaw if they have the Gentle Gift, in which case only humans react to them as if they didn-t have The Gift. Animals with a Might score react in different ways. In general, those that react negatively to The Gift react negatively to you, while those that react positively do not, unless you actually have The Gift.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e7dfa290-cbe3-4b3e-858c-ddab7210f53f": {
+    "Name": "Offensive To Animals (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Animals react to you as if you had The Gift, although people still do not. You may not take this Flaw and Magical Air. Characters with The Gift may only take this Flaw if they have the Gentle Gift, in which case only humans react to them as if they didn-t have The Gift. Animals with a Might score react in different ways. In general, those that react negatively to The Gift react negatively to you, while those that react positively do not, unless you actually have The Gift.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "13399673-5d81-4969-a8c6-63038aad6f04": {
+    "Name": "Optimistic (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are convinced that everything will turn out for the best. This is not overconfidence, as you accept that you might well fail. Even if you do, however, you are sure that circumstances will mean that everything works to your benefit.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "fcadbd77-da7b-478a-a215-595d5dfe61e8": {
+    "Name": "Optmistic (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You are convinced that everything will turn out for the best. This is not overconfidence, as you accept that you might well fail. Even if you do, however, you are sure that circumstances will mean that everything works to your benefit.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7d9c6bdb-550e-42d7-9734-7aecb1050c37": {
+    "Name": "Overconfident (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You have a completely unshakable faith in your own abilities. You believe that you will always perform at, or slightly above, the peak of your abilities, and cannot imagine failure. If you actually botch, you come up with some rationalization as to what -really- happened.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "82db7b31-5de2-4368-bd5c-c1f03b14f2ef": {
+    "Name": "Overconfident (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have a completely unshakable faith in your own abilities. You believe that you will always perform at, or slightly above, the peak of your abilities, and cannot imagine failure. If you actually botch, you come up with some rationalization as to what -really- happened.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "df339aaf-6879-497c-9b57-a12684448bff": {
+    "Name": "Oversensitive",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "Something that others find merely unpleasant you consider intolerable. Examples might include an oversensitivity to disrespect, to slovenliness, or to impiety. If you are the violent type, you may start fights with those who offend you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0adc505a-1000-4da1-952a-71dfce2c4c2e": {
+    "Name": "Pessimistic",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You always expect the worst. You may try to enjoy yourself, but you are sure that anything that can go wrong, will, and will pick on you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "56d28440-abd8-4199-beab-4befce552e6d": {
+    "Name": "Pious (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You are a fervent follower of your religion. You avoid the things it prohibits, and enthusiastically do the things it commands.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "74adcb9b-d69b-458a-951a-905674165cca": {
+    "Name": "Pious (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are a fervent follower of your religion. You avoid the things it prohibits, and enthusiastically do the things it commands.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "691c734d-3242-42c7-a9dc-15792d4e0337": {
+    "Name": "Poor Memory",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have a very hard time recalling one type of thing, such as names, faces, or places.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3ce1f5f2-384c-46e3-a5eb-a0f907d0e3db": {
+    "Name": "Prohibition",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have had a Conditional Curse (also known as a -Geas-) cast upon you and must obey the restrictions of your prohibition or be penalized by the curse. If you fail to adhere to the restrictions, you will suffer the curse in full force. The troupe must agree on both the restriction, and the curse that strikes you if you break it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b193cca4-b27f-4754-af6c-11d2a01167b2": {
+    "Name": "Proud (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You believe that you are more important than just about everybody, and expect the appropriate respect. Magi may admit one or two equals, but do not believe that they have any superiors. Mundanes will admit social superiors, but still believe themselves to be fundamentally better than, say, the king.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4a144591-da34-47eb-9ab4-f0c87032ff6b": {
+    "Name": "Proud (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You believe that you are more important than just about everybody, and expect the appropriate respect. Magi may admit one or two equals, but do not believe that they have any superiors. Mundanes will admit social superiors, but still believe themselves to be fundamentally better than, say, the king.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f0da2591-164f-4a6a-81f7-c27f1c9e8d0a": {
+    "Name": "Reckless",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You tend not to notice that situations are threatening. You start with a Personality Trait of Reckless +3, and can never have a positive Personality Trait reflecting care or patience. Whenever the storyguide deems it necessary for you to check bravery or a similar Personality Trait, make a roll against your Reckless score instead. A success means you do not realize your danger, and can act immediately without further checks.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b9f6b0b7-274a-4ddc-9ca4-6942074ec73a": {
+    "Name": "Reclusive",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You do not like being disturbed or interrupted. You feel that an intrusion by another upon your time is unnecessary at best, and an insult at worst. You are very reluctant to be dragged into public places, or group activities, and generally complain when you must participate. Note that this is often a bad Flaw for a player character, unless there is a good reason why that character needs to stay out of play most of the time (for example, he is played by the alpha storyguide).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a1785ecf-09f1-4995-8456-16b928275a4f": {
+    "Name": "Sheltered Upbringing",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You grew up completely separated from society, knowing only your parents or mentor. Recently you have been introduced to a wondrous new world of strangers, and you are overwhelmed. Depending on your personality, you might react with contempt, fear, or wonder. You are unable to function normally because you cannot understand most human customs. You may not take Bargain, Charm, Etiquette, Folk Ken, Guile, Intrigue, or Leadership as beginning Abilities, but you may learn them in play.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8db8bd3f-ee8c-4a79-b9b1-5f557b933d83": {
+    "Name": "Short Attention Span",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have trouble concentrating. Keeping watch, listening to complex orders, following the plot of a story, or performing other such tasks that require continued attention are usually not within your ability.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "fbbc32b4-1591-4479-88f5-7d46131bc436": {
+    "Name": "Simple-minded",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You can only think about one thing at a time - guarding the bridge, hunting for a missing ring, or hiding in the trees for example. You become easily confused unless others give you very clear instructions. When unexpected circumstances pop up, you find them difficult to deal with.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5a5edcac-0cfa-447a-b76b-e2ca737063b7": {
+    "Name": "Soft-hearted",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You cannot bear to witness suffering, and causing it brings you sleepless nights. Even the deaths of enemies are painful for you. You avoid danger and try to keep your friends out of it as well. Life and health mean so much that you would rather give up important goals than let another person risk combat. You are easily moved by song and story.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "99ce7754-6851-4fc9-a481-dce0b23571f9": {
+    "Name": "Temperate",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You do not over-indulge in any sensual pleasures.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2ea9cef5-afe1-4f8f-b056-0f2c7971c06e": {
+    "Name": "True Love (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You have found the one person meant for you in all of creation, and the bond between the two of you cannot be sundered. Whenever you are suffering, in danger, or dejected, the thought of your love will give you strength to persevere. In dire need, he may even come to rescue you. More often, he will be in trouble and need rescuing. If any enchantment keeps you from your true love-s side, the power of your devotion can probably break it. Your love is higher than mortal magic, and no magic can make you hate your love, or make you truly betray him. Your True Love must be a non-player character. To have another player character as your True Love, see the True Love Virtue on page 50. This Story Hook may be renamed -True Friend- to cover characters with whom you are very closely linked, but not in a romantic way. If the True Love is significantly weaker than the player character, and not able to provide useful assistance in most cases, this is a Major Flaw. If the True Love is competent, equal to or better than the player character, then this is only a Minor Flaw. The True Love may need rescuing occasionally, but more often he will involve the player character in his plans.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e9910cdc-b0f8-4d5f-bb0d-362d1e869a1a": {
+    "Name": "True Love (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You have found the one person meant for you in all of creation, and the bond between the two of you cannot be sundered. Whenever you are suffering, in danger, or dejected, the thought of your love will give you strength to persevere. In dire need, he may even come to rescue you. More often, he will be in trouble and need rescuing. If any enchantment keeps you from your true love-s side, the power of your devotion can probably break it. Your love is higher than mortal magic, and no magic can make you hate your love, or make you truly betray him. Your True Love must be a non-player character. To have another player character as your True Love, see the True Love Virtue on page 50. This Story Hook may be renamed -True Friend- to cover characters with whom you are very closely linked, but not in a romantic way. If the True Love is significantly weaker than the player character, and not able to provide useful assistance in most cases, this is a Major Flaw. If the True Love is competent, equal to or better than the player character, then this is only a Minor Flaw. The True Love may need rescuing occasionally, but more often he will involve the player character in his plans.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "db0d610f-08c2-4f7b-9295-fb09f4018c73": {
+    "Name": "Vow",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have sworn to do something difficult, and breaking your vow is a serious matter. Example vows include never raising a weapon, never speaking, or living in poverty. If you do fail to uphold your vow, you must perform some kind of atonement, whether it be religious penance or coming to terms with your failure in some other way. Furthermore, your Confidence Score drops by one until you atone. Depending on your vow, some people may respect your dedication, giving you a good Reputation of level 1 among those people.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a57a4edd-317e-4527-aa98-589c7e66fa58": {
+    "Name": "Weakness",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You have a soft spot for some sort of object or person. In the face of this, all else is unimportant: promises are forgotten, duties neglected, and common sense cast to the winds. Examples include poets and storytellers, food, flattery, or a pretty face.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "61607352-b7ac-4232-86eb-77040dcfa5fe": {
+    "Name": "Wrathful (Major)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Major",
+      "Description": "You are prone to anger over the smallest issues, and your rage when you are thwarted in something major is terrible to behold.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8e4e6bf0-d65f-4e6a-ba07-4280cb547ebe": {
+    "Name": "Wrathful (Minor)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Personality",
+      "Impact": "Minor",
+      "Description": "You are prone to anger over the smallest issues, and your rage when you are thwarted in something major is terrible to behold.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0d4bd59c-ff09-4415-98c1-e7e112387975": {
+    "Name": "Branded Criminal",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "As punishment for some crime in your past, a mark has been burned into your cheek. This adversely affects your ability to function in society. You may not take the Wealthy Virtue, but you may take Martial Abilities at character creation. You may choose not to take such abilities, if your crime was not violent.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8e79d26d-12a0-4b61-a542-40fba4cdf4e2": {
+    "Name": "Failed Monk",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You were once a member of a cloistered;order, but were cast out for some;great sin or gross incompetence, or perhaps;you ran away and your abbot might;allow you to come back after a suitable;punishment. Because of this, you have a;poor reputation at level 2 in the local area and within the Church. You no longer need to observe your monastic vows of;poverty, chastity, and obedience, though;you may still practice them as they might;be ingrained in your nature. You may;take Academic Abilities during character;creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2be5b9cd-6fa2-4c6f-9cc4-bc432b55f349": {
+    "Name": "Outcast",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You have the rough task of making it on your own - normal society rejects you and you are not attached to a covenant. Perhaps you have a magical nature, a supernatural background, some disfigurement, or a tremendous scandal in your past. You may not take the Wealthy Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "009c39a3-a9bd-4f34-8101-fbae13b21a1a": {
+    "Name": "Outlaw",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "You have been outlawed, and must live by your wits outside society. You may take Martial Abilities at character generation, and have a Reputation at level 2 for whatever got you outlawed.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "221d354a-f7df-40ff-b4c1-85e520f562a0": {
+    "Name": "Outlaw Leader",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You command a small group (three to six persons) of outlaws. Your followers look up to you and do what you tell them - within reason. However, you must occasionally stick up for the group or one of its members, as well as provide for them. You often have to deal with challenges to your leadership in one form or another. You are well known as an outlaw in the local area, with a Reputation level of 3. You are actively sought by the local lord, sheriff, or other such official. You may take Martial Abilities at character generation. Grogs may not take this Flaw. Outlaw followers created as grogs should take the Branded Criminal, Outcast or Wanderer social status.",
+      "Source": "ArM5",
+      "Page": 57
+    }
+  },
+  "46ef4325-559e-4f2e-bf88-8df72a62dff5": {
+    "Name": "Outsider",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "You belong to a group that is both readily identifiable and distrusted or disliked. Examples include Saracens, Jews, and Moors. You are shunned and often persecuted because of this, and your life and freedom may occasionally be in peril. You have a bad Reputation of level 1 to 3 (depending upon how easy it is to identify you) among members of the dominant social group of your area. There is no way for you to ever remove that stain, and you are marked by it wherever you go.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "bc7362a2-4e3d-4e46-94a5-bd64f3dd1458": {
+    "Name": "Animal Companion",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You are accompanied by a loyal, intelligent (but mundane) animal that can obey simple commands. Your relationship with it is very close. If it should die, you would be profoundly upset.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e430eb57-0e32-4dcf-a02c-54fa60a6b59f": {
+    "Name": "Black Sheep",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You come from a prestigious family, but you have somehow estranged yourself from your relatives. They have nothing to do with you, unless they wish to punish you somehow or make use of you. Those who resent your family-s power can take safe revenge by assaulting you. You begin the game with a bad Reputation of your choice at level 2, among those who respect your family.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "341ff71f-0f1d-4734-be94-4346af36acc6": {
+    "Name": "Blackmail",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You have information that some powerful person would prefer kept hidden. You receive payments or services in return for your silence, and you may occasionally demand special favors. Don-t push your luck - your victim may decide it isn-t worth the cost, or silence you permanently. This benefit has a yearly value of about 50 silver pennies, possibly more if you keep the pressure on. You should detail and record the specifics of this arrangement.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "074ac69d-cb1c-471b-ab1d-db44f299c00d": {
+    "Name": "Cabal Legacy",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "TODO",
+      "Source": "TMRE",
+      "Page": 20
+    }
+  },
+  "d5bef01a-167b-4d43-962b-af0c292618b7": {
+    "Name": "Close Family Ties",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "Your family is one of the most important things in your life, and still supports and aids you whenever possible, even at personal risk. Family members do not hesitate to do you any favor that is within their power, and can call on their friends and neighbors to help you. It works both ways, however; your family may require help from you some day.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a1b342c1-1535-4ce4-8f05-9d6fe126e58a": {
+    "Name": "Curse Of Venus",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You are very attractive to people whom you do not wish to attract. People you detest keep getting crushes on you, and will not be dissuaded. Furthermore, you tend to fall in love with inappropriate people, and in inappropriate circumstances. Those people you are interested in tend to think you are vain and shallow.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ec6d2e39-e79f-49a4-a491-9977e950c936": {
+    "Name": "Dark Secret",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You are haunted by something that would lead to shame, rejection, and possibly revenge if discovered. Hints about the secret continually arise, and there might be others who know it and could betray you. This makes you avoid certain places, dislike certain people, or fear certain things.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "284d6967-7e68-4fe0-bd19-045e4a006d12": {
+    "Name": "Dependent",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You feel responsible for someone, and bound to help if he is in trouble. This person may be a relative or friend, but should be relatively weak and a non-player character. If your Dependent passes beyond your ability to help, or becomes too powerful, you should substitute another Story Flaw. Possibilities include taking the children of the old Dependent as new Dependents, taking the killers of the Dependent as Enemies, or taking the Dependent as a True Friend.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3ac81724-1829-4ca2-8b3e-ff4ab97461e1": {
+    "Name": "Diabolic Past",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You were associated with diabolists, and though you have escaped their evil ways, you are still haunted by your upbringing and the memory of acts best left unspoken. Perhaps your parents were diabolists, although you were not, or maybe you joined a cult but soon repented and fled. Your former associates still take an interest in your activities and whereabouts. Unfortunately. You may purchase the Ability Infernal Lore, even if you are normally not permitted to buy Arcane Abilities.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "82e04c49-d47f-4111-aa30-d2b51e98efa3": {
+    "Name": "Difficult Underlings",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You may only take this Story Hook if your character has, and will keep, underlings of some sort or another. No matter how many people you fire, or how carefully you vet new candidates, your underlings always cause problems for you. The nature of the problems may change, but you are repeatedly drawn into dealing with the trouble they have caused. If other people give the same underlings orders, they have no problem. It-s not them, it-s you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "70331dcf-f5c5-43fc-8cbb-bbb725ded225": {
+    "Name": "Enemies",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Someone is causing trouble for you, such as a local baron or bishop, a band of outlaws, or a really nasty innkeeper. The enemy must be powerful enough to endanger you - this is best agreed on with the storyguide and the rest of the troupe.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "edba8526-5568-470e-9575-3ccc1b730c36": {
+    "Name": "Faerie Friend",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You have an ally among the fay. How much assistance you can get depends on the power of the friend - a small faerie with (relatively) minor powers can accompany you on a day to day basis. Powerful faeries have other business, and may only be available to answer questions and provide guidance, not to accompany you around on your adventures. Your ally is fully sentient, has its own powers, and can speak when it chooses. You may want to have another player act the part. While a faerie companion can be a great boon, it can also be a terrible burden. If it is nasty or mischievous, it could cause trouble for you everywhere. Characters with this Flaw can purchase the Arcane Knowledge Faerie Lore, even if they are normally restricted from purchasing it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "744c87eb-3e93-47a4-b96c-b4cec9c0a171": {
+    "Name": "Favors",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You owe a boon to someone (or to a great many people), and may be called upon to return the favor at any time. The consequences of ignoring such a request can range from mild to deadly serious, at the storyguide-s discretion.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "aea92764-6cc9-4941-aac4-0448f6db713d": {
+    "Name": "Feud",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Your family is involved in a feud. The opposing family or families are roughly of equivalent strength to your family and its allies. You are liable to be ambushed or attacked by opposing clansmen, and your family expects you to join raids against your enemies.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6376631d-f0f0-434e-adb7-da93653ea523": {
+    "Name": "Fury",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "A violent temper sometimes overwhelms you, sending you into a destructive, uncontrollable rage. You are likely to be provoked by some sort of specific event, such as being insulted, being hurt, or hearing the Order of Hermes disparaged. Roll 9+ on a stress die to avoid flying into a rage when such an event occurs, with another roll every round to try to calm yourself should you fail the first. On a botch, you try to kill everyone around you. While enraged you get +3 to Damage, but -1 on all other scores and rolls.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1878431c-a567-4cc7-8e45-8e20034b9533": {
+    "Name": "Heir",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You have little power or wealth now, but you stand to inherit land and possibly money. You need do nothing special to remain in your position, but others may occasionally attempt to remove you from the line of succession - one way or another. When you finally win your inheritance you gain its responsibilities as well, so your freedom may be restricted.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "462170fd-c0dc-47b4-a580-7c57b8b6d2f4": {
+    "Name": "Indiscreet",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You are unable to keep a secret. You must tell all to the first interested party you meet in an effort to be helpful or to demonstrate that you are in-the-know, unless you make a 9+ Intelligence-based stress roll. If you botch, you may have to be physically restrained by your companions from answering any questions put to you for the remainder of the encounter.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e4dea821-113e-4d7d-857b-bf2f44e54d0d": {
+    "Name": "Magical Animal Companion",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "You are accompanied by a magical animal that's smart enough to follow your orders or todisobey them on its own initiative. The smallerand more innocuous the creature, the moreintelligent it is. A ferret or crow is as intelligentas a human, a wolf is very cunning, and an animalthe size of a horse is simply more intelligentthan normal. The creature has a MagicMight score of 10 - Size.",
+      "Source": "ArM5",
+      "Page": 56
+    }
+  },
+  "9ec5c048-13bb-4b96-b10b-b9c9bc2d47f0": {
+    "Name": "Mentor",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Minor",
+      "Description": "A person of some importance, wealth, or wisdom has taken an interest in your life, and at times provides you with minor material aid and advice. However, at some point your mentor will have a small favor or two to ask of you. He might not necessarily like your relationship with the covenant - perhaps you must keep it a secret. The Mentor must be an NPC.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3ab5b7a2-7f97-43af-8d5d-612bf727ba36": {
+    "Name": "Mistaken Identity",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Someone, who looks exactly like you and whom you and your companions will most likely never meet, lives near you, and is responsible for an ongoing variety of violent, illegal, obscene, or embarrassing acts. You often have to explain who you are, and sometimes have to deal with the consequences of the other person-s acts.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5e9a8ea0-8295-4642-b397-a813538ac30b": {
+    "Name": "Monastic Vows",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You have taken vows of poverty, chastity, and obedience to a religious superior. This covers the vows taken by mendicant friars, as well as those taken by monks and nuns strictly speaking.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "767ea582-27aa-48ef-a865-ae45c63eba2e": {
+    "Name": "Oath Of Fealty",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "You have sworn an oath of loyalty and support to someone outside the covenant, and sometimes they call on you to uphold your vow. Magi are forbidden from taking Oaths of Fealty by the Hermetic Code. Some don-t let that stop them.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a9dea69f-f159-4d5e-b2a1-547de00cbf67": {
+    "Name": "Plagued By Supernatural Entity",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Some supernatural being interferes in your life on a fairly regular basis. It may even have your best interests at heart, but the result is that you get dragged into stories. Suitable examples would be a demon trying to corrupt you, an angel trying to save you, a faerie playing games with you, or a ghost continuing the agenda she had while alive.",
+      "Source": "ArM5",
+      "Page": 58
+    }
+  },
+  "ec735725-ec53-4ea2-9d1a-acec49339605": {
+    "Name": "Supernatural Nuisance",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Supernatural entities of a certain kind interfere in your life in minor ways whenever you are around them. This differs from Plagued by Supernatural Entity in that the nuisances do not have any long-term plans. This could represent a ghost that haunts you, or general enmity from faeries towards you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3b245ce2-7123-43b7-af18-ce4572045897": {
+    "Name": "Tormenting Master",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Story",
+      "Impact": "Major",
+      "Description": "Your master does not believe you have successfully passed the apprentice's gauntlet (the test of becoming a magus). He periodically troubles you with political moves and indirect attacks. This Flaw is only applicable to magi, although other characters could take an analogous Story Hook.",
+      "Source": "ArM5",
+      "Page": 59
+    }
+  },
+  "7cdf65df-b5ee-4dcf-addc-cc756c4569f5": {
+    "Name": "Age Quickly",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "Probably due to a curse or a magical disaster, you age twice as fast as normal people. Your effective age (which applies as if it were your actual age when creating a Longevity Ritual, and when making rolls on the Aging table) increases two years for every year that passes, and you make two aging rolls each year. There is no way to halt or slow this other than Longevity Rituals.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5689d08d-c01d-4e73-a394-60dd2e5af8a9": {
+    "Name": "Greater Malediction",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You have been cursed by some supernatural power, in a way that greatly hinders you. The effects of the curse should be comparable to those of other Major Flaws. Indeed, almost any greater Flaw could be the result of a curse.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "501cedc9-f2ee-47eb-be03-51fd8e69d4b6": {
+    "Name": "Lesser Malediction",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You have been cursed by some supernatural power. The effects of the curse should be about as bad as other Minor General Flaws.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6e7224c8-021f-4a43-aad2-ab83d57e833a": {
+    "Name": "Lycanthrope",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You have been cursed to change form into a dangerous predator (such as a wolf, lynx, or bear) on nights of the full moon (or similar, monthly astrological events). No items or clothing transform between shapes, and it takes one full round for the full transformation to take effect. You aren-t immune to normal weapons, and the curse does not infect bite victims. The animal may be detected as a cursed human with an InAn or InCo spell. You have the intelligence of an animal while changed, react to all stimuli as an animal, and don-t retain any memory of actions taken in animal form, save occasionally in dreams. You may not even realize that you are under this curse. You still recognize both friends and enemies when changed. Lycanthropes may transform into a non-magical animal between Size -1 (wolf) and Size +2 (bear). You have the normal physical characteristics of the animal, except that +3 is added to your Soak score (in animal form only). Furthermore, you are fully healed of all wounds incurred in animal form upon resuming human form (which happens at dawn).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "657439f5-73c5-49fc-acf9-392915a4fa18": {
+    "Name": "Visions (Supernatural)",
+    "Type": "Flaw",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You often see images related to emotionally or magically laden events. A vision might be of the past, a possible future, or a distant occurrence, and is often symbolic or confusing. Visions usually come to you at quiet times or in places connected with a powerful emotional or magical event, such as the site of a patricide or diabolic sacrifice. Your visions may warn you of dangers to come, or involve you in matters you would otherwise avoid. The visions come purely at the storyguide-s discretion, and reveal only what he wants to reveal.",
+      "Source": "custom",
+      "Page": 0
+    }
+  }
+}

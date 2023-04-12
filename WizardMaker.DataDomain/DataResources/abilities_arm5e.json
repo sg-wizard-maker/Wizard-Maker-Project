@@ -1,0 +1,872 @@
+{
+  "48a79e84-dd6b-4895-9cdf-2086e1ab3f1d": {
+    "Name": "Artes Liberales*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The seven artes liberales, or liberal arts, are the basis of medieval higher education. Everyone learns them at the universities before passing on to study other subjects. It would be very rare for a character to have a score in any other Academic Knowledge without a score of at least one in this.\nThe artes liberales are divided into two groups: the Trivium (grammar, logic, and rhetoric) and the Quadrivium (arithmetic, geometry, astronomy, and music). The emphasis at this period is on the Trivium, but both are taught. (Note that Artes Liberales as a whole is one Skill, not seven separate ones.)\nGrammar concerns theoretical questions of the structure of languages, rather than the ability to use a specific language (that is covered by Speak skills). The authorities are Priscian and Donatus. Logic is the study of the syllogism, and other forms of reasoning discussed by Aristotle. It is the most important of the arts at this period. Aristotle is the authority, in his logica vetus and logica nova. Rhetoric is the study of the theory of rhetorical forms: knowledge of the sort of tricks that an orator can use, rather than the ability to use them. The authority is Cicero, especially his De Inventione.\nArithmetic is the ability to add and subtract, multiply and divide. The authority is Boethius, De arithmetica. Geometry is concerned with study of plane and solid figures, and the authority is Euclid, in his Elementa. It also deals with the study of light, and Euclid's Optica is the authority here. Astronomy is concerned with predicting the positions of the stars and planets, and the authority is Ptolemy, in the Libri Almagesti. Music is purely theoretical, the study of proportions and musical theory, not the ability to sing or play an instrument. The authority is Boethius, in De Musica.\nArtes Liberales also covers the ability to read and write. For every point in the Ability, the character can read and write one writing system, providing that he knows a language which normally uses that system: the Latin alphabet, the Greek alphabet, the Arabic alphabet, and so on.\nSpecialties: grammar, logic, rhetoric, arithmetic, geometry, astronomy, music, Ritual magic, Ceremonial magic. (Academic)",
+      "Source": "ArM5",
+      "Page": 62,
+      "Speciality": []
+    }
+  },
+  "f3bf013c-447e-4497-9434-8f1e8f069390": {
+    "Name": "Civil & Canon Law*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Civil Law is the law of the Roman Empire. Most local legal systems are based upon it (England being the notable exception), and when a law is needed to govern international relations, Civil Law is appealed to. The authority is Justinian's Digest. Canon Law is the law of the Church. It is important to Mythic Europe as it applies in all nations, governing the working of the church and some other areas, such as marriage. It is important to note that members of the clergy are only subject to Canon Law, not customary or Civil Law. Most high churchmen are skilled canonists, not theologians. Canon Law is made by Papal bulls (pronouncements), but the authority is Gratian, in his Decretum. This skill covers the knowledge of both types of law. Other religions, particularly Judaism and Islam, have their own versions of this Ability, which must be learned separately.\nSpecialties: laws and customs of a specific area, papal laws. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "38b5cbc3-95f6-408a-b327-df711fa2c8e6": {
+    "Name": "Common Law*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of the laws of England. There is no authority for this Ability, and it is only taught in England.\nSpecialties: local laws, exchequer laws. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "5f5ad754-0dc2-4b2a-88a0-e60ba1c89241": {
+    "Name": "Medicine*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Medicine is the formal study of the body and its diseases. Medical practice is based on the theory of the four humors: blood, phlegm, yellow bile, and black bile. Diseases are believed to be caused by imbalances among them, hence such practices as bloodletting, to restore the balance. Medicine also deals with treating poisons and the results of starvation and the like, but not with treating wounds (see \"Chirurgy,\" above). The authorities are Galen and Hippocrates, in many works.\nSpecialties: anatomy, apothecary, physician. (Academic)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "36aa54f3-24b5-434a-ac00-afa50e182dc6": {
+    "Name": "Philosophiae*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "There are three philosophies � natural philosophy, moral philosophy, and metaphysics. Aristotle is the authority for all of them, in different books. Most scholars study the philosophies after the Arts but before going on to Law, Theology or Medicine. Natural phi- losophy is the study of the sub-lunar world. It roughly corresponds to today�s science. The main texts are the Physica, De Meteorologia, and De historia animalium. Moral philosophy is the study of the proper way of human life. It covers ethics, politics, and economics � the texts are the Ethica, Politica, and Economica. Metaphysics is the philosophy of the fundamental nature of the world. The main text is Aristotle�s Metaphysica. Specialties: natural philosophy, moral philosophy, metaphysics, Ritual magic, Ceremonial magic. (Academic) Source: Ars Magica Fifth Edition, p.66",
+      "Source": "custom",
+      "Page": 0,
+      "Speciality": []
+    }
+  },
+  "a4c1c898-49c8-4f4a-80c7-0174f96efdde": {
+    "Name": "Theology*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Theology is the study of God and his work in the world. The authorities are the Bible and Peter the Lombard's Sententiae, the Bible having theoretical primacy, being infallible, and the Sentences being most studied. The speculations of theology are very abstruse, and many theologians are accused of heresy. Sometimes those accused recant, and sometimes they convince the Church that they were right after all. Theology can also be purchased (as a separate Ability) for other religions like Islam and Judaism.\nSpecialties: biblical knowledge, heresy, history. (Academic)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "a71b0fb6-b85f-4b43-930a-22136208cec1": {
+    "Name": "Language: Aramaic*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This skill is similar to all other (Language) Abilities, but it is only available to educated characters. It grants the ability to speak a language which is no longer used as a native language. The most important example is Latin. All educated characters in the West know Latin, since without it you cannot learn any Academic Knowledges. It is also the common language of the Church and Order of Hermes. In other areas of the world, Arabic, Greek and Hebrew fill similar functions, although of these only Hebrew is a dead language.\n\nSpecialties: academic usage, Church ceremonies, Hermetic usage. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "13b1bf0e-1f79-40e8-a3f4-378948ca1831": {
+    "Name": "Language: East German*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This skill is similar to all other (Language) Abilities, but it is only available to educated characters. It grants the ability to speak a language which is no longer used as a native language. The most important example is Latin. All educated characters in the West know Latin, since without it you cannot learn any Academic Knowledges. It is also the common language of the Church and Order of Hermes. In other areas of the world, Arabic, Greek and Hebrew fill similar functions, although of these only Hebrew is a dead language.\n\nSpecialties: academic usage, Church ceremonies, Hermetic usage. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "e10ae4b6-2cac-4540-bdff-45e08ad2bd68": {
+    "Name": "Language: Gothic*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This skill is similar to all other (Language) Abilities, but it is only available to educated characters. It grants the ability to speak a language which is no longer used as a native language. The most important example is Latin. All educated characters in the West know Latin, since without it you cannot learn any Academic Knowledges. It is also the common language of the Church and Order of Hermes. In other areas of the world, Arabic, Greek and Hebrew fill similar functions, although of these only Hebrew is a dead language.\n\nSpecialties: academic usage, Church ceremonies, Hermetic usage. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "81fae4c1-b3d1-4f56-a47a-980f37516ad4": {
+    "Name": "Language: Hebrew*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This skill is similar to all other (Language) Abilities, but it is only available to educated characters. It grants the ability to speak a language which is no longer used as a native language. The most important example is Latin. All educated characters in the West know Latin, since without it you cannot learn any Academic Knowledges. It is also the common language of the Church and Order of Hermes. In other areas of the world, Arabic, Greek and Hebrew fill similar functions, although of these only Hebrew is a dead language.\n\nSpecialties: academic usage, Church ceremonies, Hermetic usage. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "37f1bda2-ed63-4a8f-a9be-18f679272af2": {
+    "Name": "Language: Latin*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This skill is similar to all other (Language) Abilities, but it is only available to educated characters. It grants the ability to speak a language which is no longer used as a native language. The most important example is Latin. All educated characters in the West know Latin, since without it you cannot learn any Academic Knowledges. It is also the common language of the Church and Order of Hermes. In other areas of the world, Arabic, Greek and Hebrew fill similar functions, although of these only Hebrew is a dead language.\n\nSpecialties: academic usage, Church ceremonies, Hermetic usage. (Academic)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "90ad6011-0903-40cb-84e1-339c644e638a": {
+    "Name": "Code of Hermes*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Judging events according to the Code of Hermes and the Peripheral Code. In addition to memorizing important precedents, this knowledge includes the practical side of enforcing Hermetic law - for example, knowing when to push for a vote or how to present an argument.\nSpecialties: Wizards' Marches, apprentices, mundane relations, Tribunal procedures, political intrigue. (Arcane)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "52af4822-6a8b-4499-9275-dc8f1510e438": {
+    "Name": "Dominion Lore*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of the manifestations of the power of the Divine. Different from Church Lore (a kind of (Organization) Lore)) because it covers miracles rather than politics, and different from Theology because it is concerned with power rather than doctrine.\nSpecialties: angels, saints, Divine creatures. (Arcane)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "456feda3-c81f-4998-8f81-5a438401e4b0": {
+    "Name": "Faerie Lore*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Familiarity with faerie powers, weaknesses, motivations, and areas.\nSpecialties: faerie forests, faerie mounds, specific types of faeries. (Arcane)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "c14bd2b7-5691-4336-90ea-1bbb9992713d": {
+    "Name": "Finesse",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Manipulating your spells and performing special feats with them. You would use this Ability to position objects delicately or to target spells.\nSpecialties: grace, precision, any one Form. (Arcane)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "38f62b85-d7b8-4b56-ba03-79ff4ebe33ce": {
+    "Name": "Infernal Lore*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "An understanding and familiarity with the sinister side of the world, primarily the Infernal and its agents. Includes knowledge of demons and their habits and weaknesses, undead and their habits and weaknesses, and the power of curses.\nSpecialties: demons, undead, curses. (Arcane)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "6729f194-0983-4449-93cd-967bdcf97d4a": {
+    "Name": "Lore: (Mystery Cult)",
+    "Type": "Ability",
+    "Data": {
+      "Description": "(Mystery Cult) Lore is the (Organization) Lore of a particular cult. It provides knowledge of the legends, history, structure, operation, and goals of the Mystery Cult in question. It includes knowledge of the magics, rites, and secret passwords and symbolism of the cult, how to covertly signal membership, and how to assess another magus&rsquo;s membership or non-membership in the cult. Two magi with this Ability for the same Mystery Cult may well be able to hold a seemingly innocuous conversation without outsiders realizing that a second, secret, conversation is hidden within the innocent phrases. In order to prevent outsiders from learning secrets of the Mystery, many Mystery Cults&rsquo; specialty books require a score in this Ability for a magus to decode their symbolism. (Mystery Cult) Lore also covers the ceremonies of the cult, frequently enacted when the cult members gather formally. It is a key knowledge for a Mystagogue&rsquo;s performance of the Initiation rites, to guide the Initiate through Ordeals, ceremonies, and meditations to gain new Virtues.\nKnowledge of this Ability is passed from Mystagogue to Initiate, from mystae to mystae, in a chain of living secrets. Some cults also write down their secret lore, as this codifies the Mystery and lets others share the same view of the cult. Others prefer the secrecy of an oral tradition. Small cults may fade away from lack of members, especially if they are persecuted, but if they have committed some of their lore to writing, the cults may be restarted by those who discover and understand the texts. Some cults risk the loss of secrecy for this very reason: so that their secrets and magical rites may not be lost forever. Some magi search for lost texts, containing secret lore of the ancients, hoping to re-enact the rites and rituals that led them to power.\nIn game terms, experience points in (Mystery Cult) Lore can be acquired like any other knowledge, including through teaching, books, practice, and exposure. Learning (Mystery Cult) Lore from another ensures that master and pupil share the same rites; learning in isolation may lead to variant (or even deviant) rites and rituals &mdash; from such discrepancies schisms sometimes arise, and cults may break up and fragment.\nA magus may build his (Mystery Cult) Lore from zero, even without instruction, but this means he has devised his own cult, and should treat his Lore as an entirely new (Mystery Cult) Lore.",
+      "Source": "TMRE",
+      "Page": 11,
+      "Speciality": []
+    }
+  },
+  "9d14ffc0-b58a-4335-aa9b-564efab74707": {
+    "Name": "Magic Lore*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of magical creatures, areas, and traditions.\nSpecialties: creatures, magical traditions, regiones. (Arcane)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "2cbf3961-9299-488e-bef4-dbc16c28b427": {
+    "Name": "Magic Theory*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of what magic is and how it works, used primarily in the laboratory. Magic Theory deals with the technical details of Hermetic magic; Magic Lore covers knowledge of magical things in general. Anyone can learn Magic Theory, if they have access to a teacher or book (normally represented by a Virtue), but it is little use to those without The Gift.\nSpecialties: inventing spells, enchanting items, a single Art. (Arcane)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "e0d67bc7-1dd3-48be-aeea-0fd449825e8d": {
+    "Name": "Parma Magica*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Protection from magic. This is a special;ritual (not a ritual spell) that takes about two;minutes to perform. It lets you add 5 times your;Parma Magica score to your magic resistance;until the next sunrise or sunset, whichever;comes first. You may suppress your Parma;Magica temporarily by concentrating; this is;equivalent to sustaining a Concentration duration;spell. (See page 82). Parma Magica does;not require concentration while it is active.\nYou may also protect one other person for;each point in Parma Magica, with their consent.;You must touch each person to start the;protection, and it lasts as long as at least one;character can see the other. The magus may;cancel the protection at will, at any distance.;While a magus is protecting others, his effective;Parma Magica score is reduced by 3 points, both for himself and for the other people he is;protecting. If the magus has a Parma Magica;score of 3 or lower, his Parma Magica provides;each character, including himself, with a Magic Resistance of 0. In the magus&rsquo;s case, this is;added to his Form resistance, and a magus protected;by another magus&rsquo;s Parma Magica may;also add his Form resistance.\nParma Magica can only be learned by;Gifted characters, although they learn it as a normal Arcane Ability, not a Supernatural;Ability. It is only known by Hermetic magi, as;the Order enforces the &ldquo;Join or Die&rdquo; choice rigorously;on anyone who knows it, as well as;declaring a Wizard&rsquo;s March on the magus who;taught it. Parma Magica is the last thing an;apprentice learns, being taught the final key to;the Ability after he swears the Oath.\nSpecialties:;protection from any specific Form. (Arcane)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "f8fd4e03-b116-44f9-9918-e1b01eb24b4f": {
+    "Name": "Penetration",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Getting your spell through the target's Magic Resistance. See page 82 for detailed Penetration rules.\nSpecialties: any one Art. (Arcane)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "b0fdbc19-0144-448f-b4b1-4bab8bd220eb": {
+    "Name": "Animal Handling",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Care and use of animals, including raising, tending, grooming, and healing them.\nSpecialties: falconry, specific animals. (General)",
+      "Source": "ArM5",
+      "Page": 62,
+      "Speciality": []
+    }
+  },
+  "dbdee348-8eb1-4598-a49b-1f171c7fb6cf": {
+    "Name": "Athletics",
+    "Type": "Ability",
+    "Data": {
+      "Description": "General physical prowess. It includes moving smoothly, confidently, and with grace. Use of Athletics improves most large-muscle coordination.\nSpecialties: acrobatics, contortions, grace, jumping, running. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "06c6fe60-bae4-4eb7-b272-0bba413cc795": {
+    "Name": "Awareness",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Noticing things, be they things you are looking for or things that you are not expecting. It is also used to see how alert you are in circumstances that require watchfulness.\nSpecialties: bodyguarding, keeping watch, alertness, searching. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "62c26f4b-f2d1-473a-a999-eb6d81e937a2": {
+    "Name": "Bargain",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The know-how to get the greatest return for a service or product, while paying the least. It involves reading the person with whom you haggle, a general knowledge of the value of goods, and presenting yourself in certain ways. A good haggler can easily overcome resistance in an inexperienced customer and see through attempts to over-value most merchandise.\nSpecialties: specific types of products, hard sell. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "540266a5-d2a3-444e-a114-e7a787da8c1f": {
+    "Name": "Brawl",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Fighting hand-to-hand without weapons, or with the sorts of improvised weapons you just pick up, including knives. Brawl is also the Ability used to dodge attacks if you have no Martial Abilities.\nSpecialties: punches, grapples, knives, dodging. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "5cb7d581-3491-4afd-9db8-00c660a4bfc8": {
+    "Name": "Carouse",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to enjoy oneself without suffering adverse effects. A person with this skill can, for example, consume prodigious amounts of alcohol without passing out. The skill also covers a familiarity with acceptable behavior, balancing enjoyment and moderation. With this Skill, a person is able to have fun and gain friends among the lower classes nearly anywhere, even among those of a different culture.\nSpecialties: power drinking, drinking songs, games of chance, staying sober. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "613d4f77-90a5-4564-adef-5b1052881a16": {
+    "Name": "Charm",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Enticing, fascinating, and endearing others to you, but only on a personal basis. It can be used to win someone over emotionally, especially members of the opposite sex.\nSpecialties: courtly love, first impressions, being witty. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "a2f45d27-33ec-4c4e-8c0f-d8a3698bd382": {
+    "Name": "Chirurgy*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "This is Middle Ages-style surgery, used to help others recover from physical damage. It encompasses tending and binding wounds of all varieties, and the necessary but brutal skill of cauterization. See \"Wounds\" starting on page 178 for rules.\nSpecialties: cauterization, diagnosis, binding wounds, setting bones. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "2302e973-d1e8-41b2-8ba0-cb757048a492": {
+    "Name": "Concentration",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Focusing your mental faculties on one task, particularly for extended periods of time. If you are attempting a feat that demands your extra attention, or if you have just failed an action and are trying again, the storyguide can call for a Concentration roll before you can make the attempt. This Ability is especially important for magi because it helps them maintain concentration on spells despite distractions.\nSpecialties: spell concentration, reading, lab work. (General)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "311bad95-7f38-4dc9-b2cb-928e6b935312": {
+    "Name": "Etiquette",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You know the social graces and how to behave in different situations. Etiquette differs from Charm in that Etiquette covers proper behavior, rather than charming behavior. You cannot seduce someone with Etiquette, but neither can you get through an audience with the bishop on Charm alone.\nSpecialties: nobility, court, peasants, faeries, the Church. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "aa711669-9155-4c5b-a32f-ad9f439cc09d": {
+    "Name": "Folk Ken",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Understanding the background, personality, and motives of another person. Often the storyguide secretly rolls a die when this Ability is used. Thus, you do not know if your character guessed correctly, or even botched.\nSpecialties: peasants, townsfolk, nobles, clergy, magi, the opposite sex. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "592e9d04-37cb-44db-8e27-83476ab73611": {
+    "Name": "Guile",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Telling convincing lies, as well as feigning emotion, belief, or frame of mind. If you understand the person you are attempting to deceive (roll 9+ on Perception + Folk Ken), you gain a bonus of +1 to your Guile roll. This Ability also covers disguising yourself, and pretending to be something you are not. It is often an opposed roll, against the victim's Perception + Folk Ken or, for disguise, Perception + Awareness.\nSpecialties: particular sorts of deception, lying to authority, fast talk, elaborate lies. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "6ed6748f-f868-4fca-8270-873b81cc8b13": {
+    "Name": "Hunt",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Setting snares, choosing appropriate hunting spots, and following and identifying the spoor of creatures of all varieties. This Ability also lets you cover your tracks or not leave any in the first place.\nSpecialties: tracking, covering tracks, hunting a specific animal. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "6334e747-fc02-4bba-ae0e-8838f56fc963": {
+    "Name": "Intrigue",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Dealing and plotting, including subtle use of power in non-confrontational ways to achieve your own ends. Intrigue need not be underhanded or manipulative - it also covers negotiations and knowledge of formal and informal rules of conduct and politeness. In addition, Intrigue also allows a character to pick up important information about those in power, separating fact from useless gossip. Intrigue is a vital talent for those who frequent court or a Hermetic Tribunal.\nSpecialties: gossip, plotting, rumormongering, alliances. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "d154eca9-227d-4599-aa9d-775fd4f0974a": {
+    "Name": "Leadership",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Getting people to obey your orders and to follow you. Can also be used to inspire fear in others, cowing them into submission.\nSpecialties: intimidation, in combat, inspiration. (General)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "26e2d931-e866-4974-99af-2e2b0c5f7c5f": {
+    "Name": "Legerdemain*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Sleight of hand and knowledge of confidence games requiring sleight of hand. It requires a delicate touch and great hand-eye coordination. Legerdemain includes filching things from market stalls, cutting purses, and picking such locks as there are, as well as the �magical� trickery often used to raise money from credulous folk. The target of an attempt rolls Perception + Awareness to detect your actions. If the perceiver has Legerdemain skill, he may substitute that for Awareness if he wishes. On particularly delicate moves such as picking pockets, someone trying to spot the character using Legerdemain receives a +3 bonus. Specialties: filching, picking pockets, �magic� tricks. (General) Source: Ars Magica Fifth Edition, p.65",
+      "Source": "custom",
+      "Page": 0,
+      "Speciality": []
+    }
+  },
+  "4fc9afb1-b23e-4047-9272-03e8f8d7e91b": {
+    "Name": "Lore, (Area)",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of one particular region, covenant, or even a village. It includes knowing where things are in the immediate area, local history and legends, and the centers of power in the region. The smaller the region, the more detailed your knowledge.\nSpecialties: geography, history, legends, politics, personalities. (General)",
+      "Source": "ArM5",
+      "Page": 62,
+      "Speciality": []
+    }
+  },
+  "f046e274-8461-4286-a104-1ee8c40a0292": {
+    "Name": "Lore, (Organisation)",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of the legends, history, structure, operation, and goals of the specified organization. Organizations can be as large as the Church, or as small as a local craft guild. The smaller the organization, the more detailed your knowledge.\nSpecialties: personalities, history, politics. (General)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "0cb92ced-1319-4a2b-b01a-255f61b670db": {
+    "Name": "Lore, Order of Hermes",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Knowledge of the legends, history, structure,;operation, and goals of the specified organization.;Organizations can be as large as the;Church, or as small as a local craft guild. The;smaller the organization, the more detailed;your knowledge.\nSpecialties: personalities, history,;politics. (General)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "ebd92e8d-2111-4483-9ebd-cb64071f4625": {
+    "Name": "Music",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to sing, play musical instruments, and compose new music.\nSpecialties: sing, compose, any one instrument. (General)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "5ac72097-db3b-46e5-9ef9-2c71a874a654": {
+    "Name": "Ride",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Riding and controlling a horse, especially under stress.\nSpecialties: battle, speed, tricks. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "81cf90bf-7c70-43e0-b378-84da3626c5dc": {
+    "Name": "Stealth",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Sneaking about without being seen or heard, also hiding in one place. This includes following people without their noticing, which is rolled against the other person's Perception.\nSpecialties: hide, sneak, shadowing, urban areas, natural areas. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "14ac37c5-4886-4cdb-bd14-4ec6b60f4e3c": {
+    "Name": "Survival",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Finding food, water, shelter, a direct route, and relative safety in the wilderness (a very dangerous place in Mythic Europe). This Ability covers such mundane tasks as building a fire and cooking food without implements.\nSpecialties: specific locales. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "cefe50f1-7f33-4365-9077-f18ceb164934": {
+    "Name": "Swim",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to propel yourself through water quickly and efficiently.\nSpecialties: long distances, diving, underwater maneuvering. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "5fd5371e-9616-4263-8cde-2155dbc928e6": {
+    "Name": "Teaching",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to teach an Ability to someone else.\nSpecialties: a particular Ability, particular kinds of student. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "6fac2539-05db-4b7f-aeef-b8e074667297": {
+    "Name": "Craft: (Type)",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "0d4cec68-28a3-47bd-91b5-43ff21d5a38d": {
+    "Name": "Craft: Architecture",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "0dde8f52-59f7-4fa2-9e5f-d599ad6874ee": {
+    "Name": "Craft: Armorer",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "a52c9e55-e251-4805-9328-59ea3500426c": {
+    "Name": "Craft: Blacksmith",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "6239a732-bfe6-4545-9bad-b3ad87d42e4e": {
+    "Name": "Craft: Bookbinding",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "e678500f-1238-4a73-a808-6559841fb66f": {
+    "Name": "Craft: Bowmaking",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "2d25d693-ee08-46d2-b25c-9797806f3595": {
+    "Name": "Craft: Brewer",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "bd46ca64-b628-4a34-85f1-137358d12499": {
+    "Name": "Craft: Carpentry",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "13f8abf1-2338-4e71-92ea-89cbd08312cf": {
+    "Name": "Craft: Glassworking",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "de7833c1-a101-4a6e-8ad5-0f4c9c89686a": {
+    "Name": "Craft: Illumination",
+    "Type": "Ability",
+    "Data": {
+      "Description": "",
+      "Source": "custom",
+      "Page": 0,
+      "Speciality": []
+    }
+  },
+  "0898cd3f-2ebd-4e68-a0ab-3c11c2de534d": {
+    "Name": "Craft: Jewelworking",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "05c56966-c63c-49c6-8bb9-e693984b56ed": {
+    "Name": "Craft: Leathercraft",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "229bbdab-e369-446b-8c66-4419777d94c6": {
+    "Name": "Craft: Masonry",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "d462d277-6b7a-4e54-b1d3-cfcd054b4de0": {
+    "Name": "Craft: Metalsmith",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "3c5e04d7-aefa-4047-ac5b-73392a799167": {
+    "Name": "Craft: Pottery",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "253ba855-cbaa-4710-b864-1239669f6533": {
+    "Name": "Craft: Weaponry",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "d29728c3-0fa9-46a4-bea7-d94f8f72502c": {
+    "Name": "Craft: Weaver",
+    "Type": "Ability",
+    "Data": {
+      "Description": "A general term for countless Abilities, all dealing with handiwork of some type. In general, Craft Abilities are distinguished by the material they work with, although you may also take a Craft Ability that allows the character to work with several materials in one specific way. You may purchase Craft more than once, choosing a different one each time. Skill in one Craft does not imply skill in any others.\nSpecialties: as appropriate to the craft.",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "1a7a7a2a-813c-45d0-92be-1e5110d70329": {
+    "Name": "Language: (Type)*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Fluency in a particular living language.;Rather than a die roll modifier, your score in;this Knowledge measures your ability to;communicate.\n\nTwo dialects of the same language generally have a &ndash;1 penalty. If your character is not specialized in a dialect, you should specify a dialect without specializing in it, and take the penalty when conversing with people who speak a different dialect. If you speak a \"standard\" version of the language, that is a dialect that differs from all other dialects.\nWhen two people speak to each other,;the lower Ability score determines how well;they communicate. Characters who speak;related languages can communicate at a penalty;to their scores (assigned by the storyguide);depending on how closely related the two languages;are.\nNote that Latin and Hebrew are not living;languages in most of Mythic Europe.;However, characters who live in places where;they are (such as some covenants) may learn;this Ability without any special Virtues.\nCharacters with this Ability are illiterate;unless they also have a score in Artes Liberales;(page 62).\nThis Ability also covers artistic compositions;in the language, and telling existing tales;with verve and passion. Knowledge of stories is;covered by the appropriate Lore Abilities.\nSpecialties: poetry, prose, specific dialects,;expansive vocabulary, specific technical vocabulary,;slang, storytelling. (General)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "398179e6-6da1-4b0b-b16a-2a5d848094e0": {
+    "Name": "Profession: (Type)",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "cfbf71e5-0b52-409e-8644-cb2b83f0d2b9": {
+    "Name": "Profession: Herbalist",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "5443bc6b-37ac-4779-8b3e-9649c08fb63a": {
+    "Name": "Profession: Merchant",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "c79a997a-bf0e-4eae-bf38-67b27de52c84": {
+    "Name": "Profession: Sailor",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "50f5108f-8b27-40af-bd2d-26c27129606c": {
+    "Name": "Profession: Scribe",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties:;depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "6a20e59b-9736-4c08-98f7-8a15dae01394": {
+    "Name": "Profession: Steward",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "1615e541-c754-4dbd-a7d6-b69efce97b9d": {
+    "Name": "Profession: Teamster",
+    "Type": "Ability",
+    "Data": {
+      "Description": "The ability to do a job which does not involve making something. Examples include jongleur, reeve, sailor, steward, teamster, and washerwoman.\nSpecialties: depend on the profession. (General)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "fd8eb7d1-93d8-4935-9905-d9612f2a33a7": {
+    "Name": "Bows",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Using bows and arrows.\nSpecialties: any one weapon. (Martial)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "608f6ab7-9009-4abf-9105-6c9d79688bac": {
+    "Name": "Great Weapon",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Fighting with a weapon which requires two hands to use.\nSpecialties: any one weapon. (Martial)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "c2de295a-9584-4a6c-a6da-3fa8b60e4f22": {
+    "Name": "Single Weapon",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Fighting with a weapon used in one hand, possibly using a shield with the other. This includes lances used as intended from horseback.\nSpecialties: any one weapon or shield, which covers using that weapon with any shield or none, and that shield with any weapon. (Martial)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "4c01fdcb-fdf0-470e-a081-a7343b4687bb": {
+    "Name": "Thrown Weapon",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Fighting at range using weapons which are thrown.\nSpecialties: any one weapon. (Martial)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "b2d1e861-897f-492f-a2f3-46051c2e2db0": {
+    "Name": "Animal Ken*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You can communicate with animals as if they were human beings. Treat your score in Animal Ken as your score in a language that the animal speaks fluently in order to determine how well you can communicate, and you can use Animal Handling as a substitute for any social abilities affecting humans. Beyond this, this virtue has no effect on the attitude of animals to you, or you to animals. Other people cannot understand your communication with the animals.\nSpecialties: a particular type of animal, a particular type of communication. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 62,
+      "Speciality": []
+    }
+  },
+  "08edeb40-747c-4795-beb3-8987b1e4e8bc": {
+    "Name": "Downsing*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You have the ability to find things nearby through the use of a dowsing rod (usually a forked stick) and your own intuitive sense. You concentrate on the thing to be found, hold your dowsing rod out in front of you, and follow its subtle motions to the target. If you're looking for something specific, you must have an appropriate sympathetic connection to the thing sought (such as bottled water from a stream when searching for running water). Before you roll, designate the area in which you are searching - if the item sought is not present in that area, you automatically fail. The time required to search depends on the size of the area, and must be invested whether you succeed or not. It takes about one Diameter (two minutes, or twenty combat rounds) to search for something within 25 paces, and doubling the distance quadruples the time. To find something common, like water, within 25 paces requires a Perception + Dowsing of 9+. Increased distances or dowsing for less common things increases the target number, so that, for example, finding gold within 100 paces would have an Ease Factor of 15.\nSpecialties: searching for a particular kind of thing (water, gold, etc.), searching in a particular kind of place. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 64,
+      "Speciality": []
+    }
+  },
+  "f2527b87-8a7b-4236-8240-c8d3db5c40bf": {
+    "Name": "Enchanting Music*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "When you set your mind to it, you can influence others with your music. For a specific effect, you must sing words that people can understand. You can calm the grieving with tunes alone, but you need lyrics to convince peasants to rise up against the local lord. General effects work on animals, but specific effects only work on creatures that can understand words. When you use Enchanting Music, roll a die (stress or simple, depending on the situation) and add Communication and Enchanting Music. An Ease Factor of 9+will calm the upset, 12 will win someone's love, 15 will incite a riot, and a 24 might win back a soul from the Prince of Darkness. If you botch, you inspire an unwanted emotion. If the target has Magic Resistance, you must penetrate their resistance; see page 184 for rules. You should also roll for the quality of the musical performance, but the magical effect is independent of this, unless you botch. If you do botch the Music roll, you have failed to produce any music for some reason, and so the Supernatural Ability automatically fails.\nSpecialties: a particular emotion, a particular sort of person. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "4d49ab47-fc37-49c9-8bf9-ab67ce8abe05": {
+    "Name": "Enigmatic Wisdom*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "TODO",
+      "Source": "HoH:MC",
+      "Page": 60,
+      "Speciality": []
+    }
+  },
+  "f9dd1f23-aa0f-4928-b769-cd3b8d2b57b5": {
+    "Name": "Entrancement*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You have the power to control another's will. By staring deeply into someone's eyes for several seconds - generally impossible in combat - you can verbally command the person to perform a certain task. Roll Presence + Entrancement against the target's Stamina roll. The person being controlled may get a bonus to resist at the option of the storyguide, according to the table below. Hermetic magi get their normal Mentem Magic Resistance, and get the normal Stamina roll if the effect penetrates. The blind, and people with their eyes closed, are immune; see page 111 for more guidelines on making eye contact. However, it is not possible to look away while being Entranced unless you win the opposed roll.\n\nSpecialties: A specific sort of command, a specific sort of person. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 65,
+      "Speciality": []
+    }
+  },
+  "181d414e-61b3-4807-b5bd-b3113d54b26c": {
+    "Name": "Heartbeast*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "Bjornaer magi can take the form of a single;mundane creature. This is usually an animal;or bird, but it can be a plant. The heartbeast is;always a living thing, and usually a noble creature.;No known magus has had an earthworm;heartbeast, for example. A maga&rsquo;s heartbeast displays a central aspect of her nature, so that her personality, even in human form, will;resemble that of the creature. Initiates of the;Bjornaer mystery gain the Ability Heartbeast.;This Ability cannot be gained by any character;who has not been initiated into the mystery. For initiates of the Outer Mystery, the;Heartbeast Ability is only used when something;tries to stop the magus changing forms.;In that case, a roll of Stamina + Heartbeast;against an Ease Factor set by the storyguide;allows the character to change anyway.\nA Bjornaer maga can only change into;one kind of animal, and that kind cannot be;altered by Hermetic magic. The transformed Bjornaer can be changed, by Muto Animal magic, for example, but the kind of animal that;her heartbeast is cannot be changed. A Bjornaer maga really is her heartbeast, and so remaining in that form does not count as being;under an active mystical effect (see &ldquo;Warping,&ldquo;;page 167). Of course, she is really human as;well, so remaining human does not cause warping;either. Hermetic magic is unable to tell whether an animal is actually a Bjornaer, and;the same applies to most other kinds of magic.;(This assumes that the maga is trying to hide;her nature, of course.) As a result, a Bjornaer in;animal form is affected by Animal spells, not;Corpus or Mentem spells. Spells already in;effect before the transformation remain in;effect, however.\nBjornaer magi can cast spells while in the;form of their heartbeast, but they cannot speak;or make the appropriate gestures, and thus normally;take a &ndash;15 penalty.\nThe transformation takes only a moment,;and affects only the maga. None of her possessions are transformed. A Bjornaer who has been;physically changed by magic may try to assume;her normal form or her heartbeast form. She;must roll Stamina + Heartbeast against an Ease;Factor set by the storyguide. As a rule of;thumb, 3 + the magnitude of the transforming magic is a reasonable number. If she does;resume one of her natural forms, the other;magic is dispelled.\nBjornaer magi do not treat physical transformations;as major magical effects for the purposes;of gaining Warping Points. However, a;magical transformation which is maintained;over time will grant one Warping Point per;year, as it is still a continuing mystical effect.\nFinally, Bjornaer magi cannot bind familiars.;The reasons for this are debated, but the;fact is uncontroversial.",
+      "Source": "ArM5",
+      "Page": 91,
+      "Speciality": []
+    }
+  },
+  "c39708cd-70ac-4f79-9895-1774e52eeb28": {
+    "Name": "Magic Sensitivity*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You are often able to identify a place or object as magical. However, your sensitivity makes you more susceptible to magical effects: subtract your Magic Sensitivity score from all magic resistance rolls you make. When attempting to sense the magic nature of a place or object, the storyguide will assign an Ease Factor - simply roll a simple die + Perception + Magic Sensitivity.\nDetecting a Magic aura would normally have an Ease Factor equal to 12 - aura level, so 9 for a level 3 aura and 6 for a level 6 aura.\nFor spells and enchanted items, an Ease Factor equal to 21 - magnitude of effect is a good guide. For enchanted items, use the magnitude of the most powerful effect in the item.\nFor magical creatures, 15 - one fifth of the creature's Magic Might is appropriate, so for a creature with a Magic Might of 25, the Ease Factor would be 10.\nSpecialties: auras, magical creatures, enchanted items, active spells. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 66,
+      "Speciality": []
+    }
+  },
+  "da5705db-fcc3-4b32-97b5-16e1894a5bbf": {
+    "Name": "Premonitions*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You intuitively sense whenever something is wrong, or is likely to go wrong soon. This Ability can be called upon by you or the storyguide, as appropriate, whenever there is a chance to avoid danger. Roll Perception + Premonitions against an Ease Factor depending on the situation. The Ease Factor starts at 3 for imminent, mortal peril, and increases as the distance in time increases and the level of danger decreases. Mortal peril a week in the future would have an Ease Factor of 9, while an imminent minor inconvenience would have an Ease Factor of about 15. If you beat the Ease Factor by 3 or more, you also get some sense of the nature of the danger, with more detail if you roll more highly.\nSpecialties: threats to a particular person or group of people, particular kinds of threats. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "33bb0728-c370-4717-bc93-08fa9f281488": {
+    "Name": "Second Sight*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You are able to see through illusionary concealment and disguise, including invisibility, and can also see naturally invisible things such as spirits and the boundaries between regio levels. The Ease Factor to see through illusionary concealment is normally equal to 6 + the magnitude of the might of the creature responsible for the effect, or 6 + the magnitude of a Hermetic spell. In general, this Virtue allows you to see through Hermetic Imaginem concealment, but not other kinds. The Magic Resistance, if any, of the concealed creature does not interfere with your Second Sight. If something is actually transformed, for example by a MuCo spell, you cannot determine the genuine form. The Ease Factor to see a naturally invisible thing is normally 9, and the Ease Factor for seeing regio levels is specified on page 189. All Second Sight rolls are Perception + Second Sight.\nSpecialties: regiones, invisible things, illusory disguises, faeries, ghosts. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "20a6f5fa-5e00-4228-bb27-e9e0f56fd0aa": {
+    "Name": "Sense Holiness & Unholiness*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You are able to feel the presence of good and evil. A Perception + Sense Holiness and Unholiness roll against an Ease Factor of 9 lets you sense holiness or unholiness in a general area; against an Ease Factor of 15, in a person or object. The Ease Factor to detect a demon is 0, but the character must still Penetrate its Magic Resistance (see page 184). If an angel is hiding its divine nature, which is unusual, the Ease Factor is 15, and the character must Penetrate. If the angel is not hiding its divine nature, the roll automatically succeeds. In auras of particularly strong divine or infernal influence, your sensitivity may overwhelm you. This Ability is granted by the Divine realm, not the Magic or Faerie realms, and thus uses the Divine column of the Realm Interaction chart (page 183).\nSpecialties: good or evil. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "e24bb6af-266b-416f-bf2a-d73c9919e940": {
+    "Name": "Shapeshifter*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You may change your shape into that of a mundane animal from the size of a robin (-5) to that of a bear (+2). This requires a few seconds' (one round's) concentration, and a roll of Stamina + Shapeshift against an Ease Factor of 9. Changing back to human form requires the same concentration, and the same roll.\nYou have a limited repertoire of shapes, one for every point you have in the Shapeshift ability. Every time you raise the Ability by one point, you may choose a new shape.\nSpecialties: One of your shapes, particular conditions for the change. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  },
+  "e6749e37-2375-4d09-a159-fc02cad597ff": {
+    "Name": "Wilderness Sense*",
+    "Type": "Ability",
+    "Data": {
+      "Description": "You are mystically attuned to the ways of the wilderness. A Perception + Wilderness Sense roll against an Ease Factor of 9 lets you determine the direction of north, the upcoming weather, or the presence of natural hazards or resources. One roll will only reveal one piece of information.\nSpecialties: direction, weather, hazards, resources. (Supernatural)",
+      "Source": "ArM5",
+      "Page": 67,
+      "Speciality": []
+    }
+  }
+}
