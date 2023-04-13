@@ -1,0 +1,1663 @@
+{
+  "9ca97ec7-b69c-443f-b1b7-57818acaa65f": {
+    "Name": "Affinity With (ability)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "All Study Totals for one Ability are increased by half, as are any experience points you put in that Ability at character creation. You may only take this Virtue once for a given Ability, but may take it again for different Abilities. If you take this Virtue for an Ability, you may exceed the normal age-based cap during character generation (see page 31) by two points for that Ability.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "19c470d6-6323-4e73-9bdf-69a1a86a3b6c": {
+    "Name": "Apt Student",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are particularly good at learning from others. When being taught by someone else, add five to your Advancement Total.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "52882634-3a65-4326-8109-caaf09c12ae1": {
+    "Name": "Arcane Lore",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You may take Arcane Abilities during character generation. Unless you have The Gift, you cannot learn Parma Magica. You get an additional 50 experience points, which must be spent on Arcane Abilities.\nA Gifted character who is not a Hermetic magus and knows Parma Magica must take the Major Story Flaw Enemy: Entire Order of Hermes, as magi are bound by their Oath to slay the character on sight, unless he immediately joins the Order. Such a character cannot be played in a normal saga, as the other player characters have to kill him.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "7877bc06-893c-4b5f-a239-3ae0856ec091": {
+    "Name": "Berserk",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are capable of entering a blinding rage when in combat or frustrating situations. You automatically gain the Personality Trait Angry +2 (or more, at your option). Any time you take a wound or wound an enemy, roll a stress die and add your Angry score. A roll of 9+ means you go berserk. The storyguide can also call for a roll when you are strongly frustrated. You may deliberately try to go berserk. In this case, you only need a 6+ when you take a wound or wound an enemy, or a 9+ if you have not been wounded or caused a wound. While berserk, you get +2 to Attack and Soak scores, but suffer a -2 penalty to Defense. While berserk, you cannot retreat, hesitate to attack, or give quarter. If you are still berserk when there are no enemies present, you attack your friends. You may roll once per round to calm down if you desire, requiring a stress die + Perception - Angry against an Ease Factor of 6. You may learn Martial Abilities at character creation.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "26af2938-2cc1-48b8-9f8f-cf703fbce475": {
+    "Name": "Book Learner",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a talent for comprehending the writings of others. When studying from books, treat them as if they were three Quality levels higher than they actually are.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "0de97d48-cba6-4656-8195-54942035d5d6": {
+    "Name": "Cautious With (ability)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are very careful with a specific Ability, and are less likely to fail spectacularly if you do fail when using it. You roll two fewer botch dice than normal whenever you are required to roll botch dice for that Ability. This may mean that you roll no botch dice. This Virtue may apply to any Ability, even one you cannot learn at character creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b9d9e151-f549-45de-b261-a8b975f8416d": {
+    "Name": "Clear Thinker",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You think logically and rationally. You get a +3 bonus on all rolls to resist lies, confusion, befuddlement, and subterfuge - whether magical or mundane.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9cec55d0-4f0f-432e-b277-2f495a3b96ef": {
+    "Name": "Common Sense",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Whenever you are about to do something  contrary to what is sensible in the game setting,  common sense (the storyguide) alerts you to  the error. This is an excellent Virtue for a  beginning player, as it legitimizes any help the  storyguide may give.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f5c00ccf-82c3-4ccf-8732-244782e9e274": {
+    "Name": "Death Prophecy",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have been blessed or cursed as to your fate. Someone (a magician, a faerie, or other supernatural creature) has put a condition on your death, and until the condition is met, you will not die, though you can be seriously injured. You heal normally, but cannot die as a result of wounds or old age. Unfortunately for you, fate or bad planning can bring about the conditions in unexpected ways. If, for instance, your death condition is to fear only boars, you should be wary of men bearing boars on their coats of arms or of inns named after boars, in addition to the purely mundane creature. This symbolism may not be obvious: a man known as a -pig- in his village might also count as a boar. The storyguide must keep the prophecy in mind and give fair warning of items related to the prophecy. This is a Major Virtue because the character knows he can get away with insane risks; sneaking his prophecy up on him is an unfair way of negating the value of the Virtue. Players may only take this Virtue with the agreement of the storyguide or troupe.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d74ee0fc-316b-455c-ad5f-1a899c332a29": {
+    "Name": "Educated",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have been educated in a grammar school, and may have attended a university or cathedral school. You may purchase Academic Abilities during character generation. During character generation you get an additional 50 experience points, which must be spent on Latin and Artes Liberales.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4ed95db6-d976-4de7-9272-ff6a4f08a6e4": {
+    "Name": "Enduring Constitution",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You can withstand pain and fatigue. Decrease the penalties for reduced Fatigue levels by one point, and reduce your total penalty from wounds by one point (but not below zero). You also get +3 on rolls to resist pain.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "74a5834e-edf8-4a9e-9ae8-ece630ae880d": {
+    "Name": "Famous",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a good Reputation of level 4. Choose any reputation you like (it need not be justified), and one type.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "49aff26a-9f3d-4221-9c35-412d4840c665": {
+    "Name": "Free Expression",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have the imagination and creativity needed to compose a new ballad or to paint an original picture, and have the potential to be a great artist. You get a +3 bonus on all rolls to create a new work of art.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "eb1b4829-9f23-44a7-9066-945d3154bee3": {
+    "Name": "Ghostly Warder",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "A ghost watches over you. It might be a grandparent, a childhood friend, or anyone else who cares for you enough to stay around after death. The ghost is invisible and silent to all but you and those with Second Sight (see page 67). It can see and hear what is going on around you and makes an excellent spy, since it can leave your presence once per day for up to half an hour. However, death does not leave people in their normal state of mind, so the ghost probably has some quirks that make it less than dependable - it might even encourage you to join it on the other side. The ghost has 300 experience points in various Abilities that it can use to advise you, and ghosts may take any Abilities. See page 194 for an example of a  ghostly warder.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "03d5fdd5-08eb-437b-8505-50dd9d1fb962": {
+    "Name": "Giant Blood",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "The blood of the ancient race of giants flows in your veins. Though you are not as large as your ancestors, you are up to eight feet tall and can weigh as much as 500 pounds. Your Size is +2, so you take wounds in 7-point increments, rather than the normal 5 (see page 171). You also gain +1 to both Strength and Stamina. This bonus may raise your scores in those Characteristics as high as +6. You cannot take this Virtue and Large, Small Frame, or Dwarf.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "04f316a6-aaff-4bce-a61d-e3d8bf267928": {
+    "Name": "Good Teacher",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You can explain new concepts and skills with great facility. Add three to the Quality of any books that you write, and five to the Advancement Total of anyone who studies with you.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "70863878-37a1-4b0d-8815-2b733037aa48": {
+    "Name": "Gossip",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have regular social contacts in the area that provide you with all kinds of information about local social and political goings-on. On a simple roll of 6+, you hear interesting news before almost everyone else. You treat all local Reputations as twice their actual level. With some well-placed words, you may be able to bestow new Reputations (whether deserved or not). You quite likely have a Reputation, too - as a gossip.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "04801270-3022-46d7-a25c-a40e43ffec88": {
+    "Name": "Great (characteristic)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You may raise any Characteristic that already has a score of at least +3 by one point, to no more than +5. Make sure you describe what it is about you that causes that increase (such as sheer bulk, a lean build, or extreme charisma). You may take this Virtue twice for the same Characteristic, and for more than one Characteristic.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e94abdb4-7ba9-4324-93e2-b717a43a0904": {
+    "Name": "Guardian Angel",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have learned to hear the words of a divine watcher who gives you practical and spiritual advice. The angel whispers in your ear and tells you what is best for you spiritually, rather than materially. He approves of violence only when there is a holy reason - often difficult to demonstrate. If you act against the angel-s advice, he may leave you until you correct your ways. The angel has only a limited awareness of your thoughts, but when you speak aloud, he can hear and converse with you. Your guardian angel can also help in two practical ways. First, he can grant you a +5 bonus to Soak. Second, he can grant you a Magic Resistance of 15. This magic resistance is not compatible with a magus-s Parma Magica, or magic resistance from most other sources, but it does add to the magic resistance resulting from Faith Points (see page 189). The angel only grants you these bonuses if you are acting in accordance with God-s will.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0fc9838e-9f6b-440a-aaa9-9eb61773b327": {
+    "Name": "Improved Characteristics",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have an additional three points to spend on buying Characteristics, but you are still limited to a maximum score of +3 in any single Characteristic unless you take the Virtue Great Characteristic. You may take this Virtue multiple times.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d18d78ec-a0b0-4561-bb11-f3bd03d495f9": {
+    "Name": "Inoffensive To Animals (General)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Your Gift does not bother animals, although it still has the normal effects on people. Animals with a Might score might react either way, depending on the animal. As a rule, if the animal reacts positively to The Gift most of the time, it reacts positively to you because you do have The Gift. If it reacts negatively, this Virtue over-rides it. UnGifted characters may take this Virtue if they have the Flaw Magical Air (page 56).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e35a9b2f-7a73-4bc0-aea3-ba6d62e57df1": {
+    "Name": "Inspirational",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are a stirring speaker or a heroic figure, and can urge people to great efforts. You give targets a +3 bonus to rolls for appropriate Personality Traits.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "de53a927-f479-4122-8a2d-6a9ecc1e7bba": {
+    "Name": "Intuition",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a natural sensitivity that allows you to make the right decisions more often than luck can account for. Whenever you are given a choice in which luck plays a major role (such as deciding which of three unexplored paths to follow), you have a good chance of choosing correctly. The storyguide should secretly roll a simple die. On a 6+, your intuition kicks in and you make whatever might be considered the -right- decision. Otherwise, you fail to get any flash of insight and must make the decision without aid.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4c78f0b8-8436-4333-8d00-9b2b2b46bf14": {
+    "Name": "Keen Vision",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You can see farther and more clearly than most. You get a +3 bonus to all rolls involving sight, not including attacks with missile weapons.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c2ab95e0-2fd2-43a4-9bc4-569f93af0467": {
+    "Name": "Large",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Your Size is +1 instead of 0, so you are between six and seven feet tall. This means that the severity of wounds you take increases in six point intervals rather than five point intervals. (See page 171). You cannot take both this Virtue and Giant Blood, Small Frame, or Dwarf.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "16a3970b-4f11-41f9-98ae-7af94c85cf48": {
+    "Name": "Latent Magic Ability",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a magical quality that has not yet manifested itself. You probably do not realize you have this capacity; if you are a magus, your master failed to detect it during your apprenticeship. At the storyguide-s discretion, this quality might appear spontaneously or because of some relevant event (like drinking faerie wine). This is not The Gift, and the latent ability is more limited than that.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "bd9e3f16-fe1c-4256-95ba-fbec64da3b8e": {
+    "Name": "Learn (ability) From Mistakes",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are able to improve a particular Ability through the expedient of repeated failure. The first time in a given game session that you botch a roll or fail by exactly one point, you gain five experience points in the Ability. The roll must have come up naturally in the course of the story. You may take this Virtue several times, once for each Ability chosen.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2f9db6ac-e8e2-4e43-8cc2-44b8cc5ad280": {
+    "Name": "Light Touch",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have especially good hand-eye coordination and great proficiency for using your hands in precise, fast ways. You gain +1 to all rolls involving subtle manipulation of objects (like picking pockets) and roll one less botch die than you normally would in such activities (minimum of one). This bonus does not apply to archery, but does apply to playing musical instruments.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5ac25310-c448-4793-be4b-7045c2dcad38": {
+    "Name": "Lightning Reflexes",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You respond to surprises almost instantly. In fact, your reflexes are sometimes so fast that you don-t have a chance to think about how you are going to respond. Whenever you are surprised or startled, roll a stress die + Quickness. If you get a 3 or better, you respond reflexively. You must tell the storyguide on each occasion what one type of action (attacking, blocking, running, etc.) you would like to respond with. If attacking in response, you gain +9 to your Initiative Total. The storyguide is the final arbiter of what happens (though it is always in the best interests of your immediate self-preservation). You only react to threats that you are not fully aware of, so you don-t get a bonus against an assassin you watch sneak up on you. Note that you do not get a choice about whether to react. You could just as easily skewer a friend sneaking up in fun as you would an assassin about to strike. Also note that you must perceive an action to react to it - you can still be easily killed in your sleep. This Virtue gives you no special powers of perception.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e36b71ea-b3e5-4cd2-9363-f1caed23332c": {
+    "Name": "Linguist",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are extremely proficient learning new;languages. All Study Totals for any Language are increased by a quarter, as any experience points you put;into any language at character generation. Both Living;and Dead languages are augmented with this Virtue.",
+      "Source": "HoH:TL",
+      "Page": 25
+    }
+  },
+  "37709ccb-86e8-4e72-923a-9320889e3bae": {
+    "Name": "Long-winded",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You can last longer when exerting yourself than most, and gain +3 on all your Fatigue rolls. This bonus does not apply to casting spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5050a98c-dad0-46aa-a128-91f9766777dd": {
+    "Name": "Luck",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You perform well in situations where luck is more of a factor than skill or talent. You get +1 to +3 (storyguide-s discretion) on rolls in such situations, depending upon how much luck is involved. You do well at games of chance, but may be labeled a cheater if you play them too often.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "eab58156-e2a0-41b7-b5f7-39b670facd6b": {
+    "Name": "Perfect Balance",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are skilled at keeping your balance, especially on narrow ledges or tightropes. Add +6 to any roll to avoid falling or tripping.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a1593d10-3b61-420a-9c18-e928eaa1cdd1": {
+    "Name": "Piercing Gaze",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "By staring intently at people you make them feel uneasy, as if you are peering into their souls. Those with ulterior motives, uneasy consciences, or lying tongues must make rolls against an appropriate Personality Trait, Guile, or whatever the storyguide deems appropriate, to remain calm. Furthermore, you gain a +3 to rolls involving intimidation. Faeries and demons are unfazed by your power.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "cddc2506-987f-408a-b35f-adcde3c9a6e4": {
+    "Name": "Privileged Upbringing",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You grew up in an environment where you had access to teachers and free time for study. You have an additional 50 experience points, which may be spent on General, Academic, or Martial Abilities. You may not, however, buy Academic or Martial Abilities with your normal pool of experience points unless you have another Virtue or Flaw permitting that. The most common reason for this Virtue is that your family was wealthy while you were a child, but if you are wealthy now, you should take the Wealthy Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "146efbf3-5dc3-4878-bef8-2ef60cea4c18": {
+    "Name": "Protection",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are under the aegis of a powerful person, usually a noble or high-ranking Church official (though other options are possible, if the storyguide approves). Those who know of your favored status treat you carefully; those who do not often pay the price. You have a Reputation (good or bad, your choice) of level 3, which could be higher if your protector is particularly great or well-known.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "41f6a671-2a87-45b6-a53e-bd91c346716a": {
+    "Name": "Puissant (ability)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You are particularly adept with one Ability, and add 2 to its value whenever you use it. Note that you do not, in general, use an Ability when learning it, teaching it, or writing about it. You may only take this Virtue once for a given Ability, but may take it more than once for different Abilities.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "636f6f76-624a-4c19-a12a-73d83dc9f8b2": {
+    "Name": "Rapid Convalescence",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Your body can heal quickly. You get a +3 bonus on all rolls to recover from wounds.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2b558a1f-5e1a-4794-af4e-c15707e16cea": {
+    "Name": "Relic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You own a holy relic, such as the finger bone of a saint, with one Faith point in it. This can be built into any other item you possess (a sword, for instance).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "48e0144b-d28c-4671-9770-fe5b236562a4": {
+    "Name": "Reserves Of Strength",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Once per day, when in need, you can perform an incredible feat of strength. For the duration of the action, add +3 to your effective Strength score. Afterwards, though, you must make two Fatigue rolls.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a0356e2e-d660-4417-a132-aceaf40d72ec": {
+    "Name": "Self-confident",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have firm confidence in your own abilities, and have a Confidence Score of two. You also start with five Confidence Points, rather than the usual three. (See page 19 for Confidence rules.)",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "9b6e4c45-25d7-48bd-aa04-41300bf20425": {
+    "Name": "Social Contacts",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have a broad range of acquaintances in a specific social circle (specified when this Virtue is purchased), accumulated over years of travel and socializing. Almost everywhere you go, you meet someone you know, or can get in touch with someone who can help you. Whenever you are somewhere new, you can contact someone on a simple Presence roll against an Ease Factor of 6. The storyguide may modify this target number upward for very small areas or areas where it is extremely unlikely that you would know someone. You may purchase this Virtue more than once, each time specifying a different social group.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "dd322f3f-135b-426a-a0a9-b674e9710d98": {
+    "Name": "Strong Faerie Blood",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "The blood of the fay is strong in you. Perhaps one of your parents was actually a faerie, or maybe you were conceived or born in a place of great faerie power. This ancestry grants you several abilities. First, you have natural longevity. You start making aging rolls at the age of fifty, rather than the normal 35, and get -3 to Aging Rolls, cumulative with any other bonuses. Second, you have faerie eyes. This gives you the Virtue Second Sight (see page 48) at no cost, and you can see normally in darkness or semi-darkness, such as in deep woods or at night. Your eyes look mostly normal, but are an unusual and vivid color. Third, you may learn Faerie Lore during character generation. Finally, you get the benefits of a particular type of fay heritage, as given in the Virtue Faerie Blood (page 42). Your specific fay heritage is clearly visible. Choose one physical quirk, such as small horns, literally blue blood, or eyes without irises and pupils, appropriate to the faeries from which you are descended. You may not have both Faerie Blood and Strong Faerie Blood. This is a Supernatural Virtue, and you cannot lose it when being trained as a magus (see page 106). If your master cannot preserve the ability, you cannot be trained.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "db93c4a8-aeb3-4d2d-9015-8e0fcf3b92ef": {
+    "Name": "Strong-willed",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You cannot easily be coerced into activities, beliefs, or feelings. You get +3 on any roll which may require strength of will.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "08d79347-d5da-4fe1-82ca-ff396d6bb075": {
+    "Name": "Student Of (realm)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have been trained in the mystical aspects of one of the four realms of power (Divine, Faerie, Infernal, or Magic), and you have a +2 bonus on all uses of the appropriate Lore. You may take that Lore at character generation even if you cannot learn other Arcane Abilities. You may take this Virtue multiple times, for a different realm each time. You may not take Student of (Realm) and Puissant Ability for the same Lore.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1c210481-dc10-43a5-89c1-f51da1f4f6bd": {
+    "Name": "Temporal Influence",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "Through blood or a position of trust, you enjoy some political weight in society. You have the ear of a leader and may yourself lead common folk at times, if they respect your position. The more influence you have, the more responsibility, and the harder it is to work unopposed with magi. Grogs may not take this Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "524eb073-84c5-49c7-a209-9cda606461ed": {
+    "Name": "Tough",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You can take physical punishment better than most people. You get a +3 bonus on your Soak score.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0f885cad-7696-409c-bea5-aee7e89ec259": {
+    "Name": "Troupe Upbringing",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You were raised among a group of entertainers, spending much of your childhood traveling from town to town. Rolls involving Abilities in a selected area (which you should have approved by the storyguide) receive a +2 modifier. Examples might include tumbling and acrobatics, knife throwing and juggling, or storytelling and acting.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a454224f-8a8c-4083-8f83-24124f89045a": {
+    "Name": "True Faith",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "Through piety and holy devotion you have faith that can move mountains. You have one Faith point and can gain more. For more about Faith points, see page 189.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2ab0f531-cc1a-4610-9106-b9199b364719": {
+    "Name": "Unaffected by the Gift",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "The character is not affected by the;negative effects of The Gift or Magical Air;in others. Even a Blatant Gift does not especially;bother the character.",
+      "Source": "RoP:M",
+      "Page": 47
+    }
+  },
+  "d77a6c65-0af9-4aa3-8915-299fa2471463": {
+    "Name": "Venus's Blessing",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "People are often attracted to you. You get +3 on Communication and Presence rolls with sexually compatible characters in appropriate situations. At times you can put this to good use. At other times it-s an annoyance.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ce8b4dca-4e91-4757-b780-69c41ccea828": {
+    "Name": "Warrior",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have been trained to fight, and may have spent some time campaigning, perhaps on one of the Crusades. You may acquire Martial Abilities during character creation, and gain an additional 50 experience points which must be spent on Martial Abilities.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d793183c-d332-4651-9ad8-8cab8cdd3f8c": {
+    "Name": "Ways Of The (land)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You have a deep understanding of a type of terrain, feeling more natural and at home there than anywhere else. Examples include Ways of the Forest, Ways of the Mountain, Ways of the Steppe or Ways of the Town. You get a +3 bonus to all rolls, including combat, that directly involve that area and its inhabitants; mundane, magical, or faerie. In addition, you roll one fewer botch die than normal (which may mean you roll no botch dice) in rolls that pertain to your area of understanding. You are not normally molested by animals of the terrain, and though particularly vicious creatures may still attack you, at least they-ll accord you proper respect. (For Ways of the Town, this still applies to town animals, of which there are plenty in the medieval world, rather than people. The +3 bonus does apply to people.) You may choose this Virtue multiple times, for different types of terrain.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f776996e-32eb-4f5f-acaf-4c2ab008b51b": {
+    "Name": "Wealthy",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Major",
+      "Description": "You are a rich member of your class. You may spend three seasons per year on study or adventuring, as you can pay people to look after your interests, and these seasons are genuinely free. Exactly how wealthy you are depends on your social class; a noble would have at least a dozen servants, including some bodyguards, while a wealthy townsman would have a good house and maybe three servants. Whatever your class, you are wealthy enough to afford goods generally associated with a higher class, and thus risk being labeled a vulgar social climber. Wealthy characters may live at a covenant, but they are not supported by the covenant. As all Hermetic magi are supported by their covenant, no magi may take this Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "dcc8e403-fdef-4d97-a4b8-67582454d0a2": {
+    "Name": "Well-traveled",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Minor",
+      "Description": "You have journeyed extensively in this part of the world and find it easy to get along with people throughout the area. You have fifty bonus experience points to spend on living languages, Area Lores, and Bargain, Carouse, Charm, Etiquette, Folk Ken, or Guile.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5cc28124-add0-4b5b-b8f5-ae9e60880fc0": {
+    "Name": "Adept Laboratory Student",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You digest the instruction of others quite easily. You get a +6 bonus to Lab Totals when working from the lab texts of others, including when reinventing spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5edb0173-5915-49f1-9c2a-ff67e4b5aa5f": {
+    "Name": "Affinity With (art)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your Study Totals for one Hermetic Art are increased by one half, rounded up. At character creation, any experience points you put into that Art are also increased by one half (rounded up), and you may exceed the normal recommended limits. You may take this Virtue twice, for two different Arts.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "29627f9a-26b8-4f1f-8173-97e130970c7f": {
+    "Name": "Cautious Sorcerer",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are very careful with magic, and are less likely to fail spectacularly if you do fail. You roll three fewer botch dice when casting spells (whether ritual, formulaic, or spontaneous), and when working in the laboratory. This Virtue may not reduce the number of botch dice rolled below one. However, its effects are applied before any other effects which reduce botch dice, such as spell mastery (see page 86), and they may reduce the number of botch dice to zero.",
+      "Source": "ArM5",
+      "Page": 40
+    }
+  },
+  "0ccb94f5-dde4-46fe-b942-8d04f1036286": {
+    "Name": "Cyclic Magic (positive)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic is attuned to some cycle of nature (solar, lunar, or seasonal, for example) and as such, is more potent at specific times. At those times, you receive a +3 bonus to all spell rolls. The bonus also applies to Lab Totals if the positive part of the cycle covers the whole season. The cycle of your magic must be regular and approved by the storyguide. Furthermore, the length of time when the bonus applies must be equal to the amount of time when it does not.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7f7a9a0a-97ff-4752-a7a3-674fa684d505": {
+    "Name": "Deft Form",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are particularly skilled with one Form. You suffer no penalty to the Casting Total casting spells in that Form when using non-standard voicings/gestures (see page 83), including using no voice or gestures because you are in a non-human form. Voice Range spells still have a Range based on how loudly you are speaking.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "1d6beab5-f012-4b18-92aa-6b2f93e949ad": {
+    "Name": "Diedne Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic lineage and traditions are from the druids and the vanquished former house of Diedne, making you especially skilled with spontaneous magic. When you cast a spontaneous spell without expending fatigue, you may choose to divide by five or by two. If you choose to divide by five, you need not roll a stress die, and cannot botch, just as normal. If you choose to divide by two, you must roll a stress die, and may botch.\nWhen you expend fatigue on casting a spontaneous spell, the lowest applicable Art is doubled before the whole total is divided by two. You still roll a stress die, and may botch.\nYou must keep your lineage hidden from the Order, giving you a Major Story Flaw &mdash; Dark Secret is an obvious choice, but you may choose a different one with troupe approval. This is in addition to your normal allowance of Flaws, and does not grant you any points with which to buy Virtues.",
+      "Source": "ArM5",
+      "Page": 41
+    }
+  },
+  "dea3310b-8a28-4fc1-aa98-5d22def84d84": {
+    "Name": "Elemental Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You have been trained in the ability to manipulate raw elemental Forms (Aquam, Auram, Ignem, and Terram), and view them as a connected whole rather than four separate Arts. Whenever you gain experience from a source dedicated to one of these Arts, you gain half the Source Quality in experience points in each of the other three Arts. For example, if you studied Ignem from a book with a Source Quality of 13, you would gain 7 experience points in each of Aquam, Auram, and Terram. (This would not change if, for example, you also had Book Learner or Affinity with Ignem.)\nIn addition, if a spell with one of these Forms as its primary Form has another element as a requisite, you use the primary Form to calculate totals, even if the requisite is lower.",
+      "Source": "ArM5",
+      "Page": 41
+    }
+  },
+  "d06560ef-66b9-4a94-ab9a-b0767cd11e48": {
+    "Name": "Enduring Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "The effects of your spells tend to last longer than usual (though Concentration, Momentary, and Ring spells remain just that). The storyguide secretly rolls a simple die; the number rolled is a multiple to the spell-s normal duration. This is usually, but not always, a good thing. This Virtue does not affect the duration of Ritual spells.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6c281ff9-75af-4a79-b737-1d0774aac391": {
+    "Name": "Faerie Blood",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "Somewhere in your ancestry there is a faerie, and this relation gives you an intuitive grasp of the motivations and personalities of those mystical folk. Faeries are more comfortable around you than around other humans, and given time, may even forget the mortal blood in your veins. You are resistant to aging, and get -1 to all aging rolls. Type of Faerie Blood (pick one, or create a similar one): Dwarf Blood: You are descended from the master craftsmen of the fay, and get a +1 bonus to any total including a Craft Ability. Goblin Blood: Your ancestors were the sneaky inhabitants of the shadows underground, and you get a +1 bonus on all totals involving stealth. Satyr Blood: The satyrs are notoriously lecherous. You get a +1 bonus to Communication and Presence totals when dealing with sexually compatible characters. Sidhe Blood: You are descended from one of the noble fay who rule the lands of Summer and sunlight. Because of the striking and unusual qualities of your nature add +1 to your Presence, but not to more than +3. Many mortals may consider you fascinating or alluring. Undine Blood: The undines are the faeries of the water, and you get a +2 bonus to any action taken underwater, which will partially offset any penalty applied. Characters with Faerie Blood can learn Faerie Lore at character generation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "77784ff5-1f83-4e32-b11f-6ff666bc386b": {
+    "Name": "Faerie Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have been initiated into the Outer Mystery of Faerie Magic (see page 92), and thus are a member of House Merinita. Note that all Merinita magi gain this Virtue for free at character generation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "65a78397-cbec-4460-8ada-ce7a712a09b1": {
+    "Name": "Fast Caster",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic takes less time to perform than that of other magi. You gain +3 to Initiative to cast spells in combat.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "bebcbfd5-d56e-4a28-a2c2-4f4658690e16": {
+    "Name": "Flawless Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You automatically master every spell that you learn. All your spells start with a score of 1 in the corresponding Ability. You may choose a different special ability for every spell you have. Further, all experience points you put into Spell Mastery Abilities are doubled.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "572d16cc-d731-4d21-9bd6-712840f1b152": {
+    "Name": "Flexible Formulaic Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You can vary the effects of formulaic spells to a slight degree, while still getting the benefits of casting known magic. You may raise or lower the casting level of the spell by five to raise or lower one (only) of Range, Duration, and Target by one step, as long as this does not violate any of the normal limits on formulaic magic. Casting success, fatigue loss, and Penetration are all calculated based on the casting level of the spell. You cannot manipulate Ritual magic in this way.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4c6670f6-9ff3-4f7a-93b7-56315381b63f": {
+    "Name": "Free Study",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are better at figuring things out for yourself than you are at poring over books. Add +3 to rolls when studying from raw vis.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "06f116fa-3630-4ca2-93cb-a67f3398a16c": {
+    "Name": "Gentle Gift",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Unlike other magi, whose Magical nature disturbs normal people and animals, your Gift is subtle and quiet. You don-t suffer the usual penalties when interacting with people and animals.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "64a02517-7e8b-4ce1-8ed0-2230964ec3cc": {
+    "Name": "Harnessed Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have great control over your spells. You are able to cancel any of your spells simply by concentrating. You can even cancel the magic in magic items which you created. The act of canceling your magic should be treated as if you were casting a spell for timing and concentration purposes. If you are distracted and fail a Concentration roll, another attempt may be made in a later round. Spells and magic items can be canceled out over any distance, but once they have been canceled, you must recast a spell or reinvest a power in a magic item to start the effect again. The drawback is that when you die, all of your spells and magic items sputter out.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "15b7d354-1957-45b2-91d8-25b08f72c167": {
+    "Name": "Heartbeast",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have been initiated into the Outer Mystery of the Heartbeast (see page 91), and thus are a member of House Bjornaer. Note that all Bjornaer magi gain this Virtue for free at character creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3bee1b44-3fa7-4332-be21-655136629660": {
+    "Name": "Hermetic Prestige",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Because of something in your background, other magi look up to you even if you haven-t earned their respect. Some envy you, and most will certainly expect more from you than from others. You gain a Reputation of level 3 within the Order.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "17b084dc-5967-4f0b-9a80-9381ade26970": {
+    "Name": "Inoffensive To Animals (Hermetic)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your Gift does not bother animals, although it still has the normal effects on people. Animals with a Might score might react either way, depending on the animal. As a rule, if the animal reacts positively to The Gift most of the time, it reacts positively to you because you do have The Gift. If it reacts negatively, this Virtue over-rides it. UnGifted characters may take this Virtue if they have the Flaw Magical Air (page 56).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "4278bed6-7c98-48be-88e2-1be77b449028": {
+    "Name": "Inventive Genius",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Invention comes naturally to you. You get +3 to your Lab Total if you are not using a Laboratory Text. If you experiment, you get +6.",
+      "Source": "ArM5",
+      "Page": 44
+    }
+  },
+  "378064c2-48a6-4de5-acfb-139b2c02c61e": {
+    "Name": "Life Boost",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You may boost your formulaic or Ritual spell casting totals by expending additional Fatigue levels. Each Fatigue level gives you an additional bonus of +5 on the roll, which can yield very impressive Penetration totals. You may burn more Fatigue levels than you possess. If you do, you must Soak damage, without the help of armor. The Damage total is 5 for every additional Fatigue level spent, plus a stress die. Thus, if you spend three additional levels, you must Soak a damage of 15 + stress die, with your Soak (no armor) + stress die. Fatigue levels spent in this way are spent regardless of the success or failure of the casting roll, and any wounds taken are similarly taken even if you fail to cast the spell. You can kill yourself doing this. The total number of Fatigue levels to be used must be committed before the casting roll is made.",
+      "Source": "ArM5",
+      "Page": 44
+    }
+  },
+  "96fe1839-74cc-4f7b-b475-6d29e8b5b29b": {
+    "Name": "Life-linked Spontaneous Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You can do more with spontaneous magic than most magi at the cost of your own life energy. When you decide to use this ability in casting a spontaneous spell, you declare the level of effect you wish to produce before rolling. This level may include a number of levels of penetration (see page 82). For example, you can choose to cast a level 10 effect at level 20, to give a penetration of 10 plus your Penetration score. Roll to cast a fatiguing spontaneous spell. If your result is higher than the level you declared, you spend only one Fatigue level as usual. If your result is less than the level you declared, you must expend one additional Fatigue level per five points (or fraction thereof) by which you missed the target level. If you run out of Fatigue levels, you take a wound. The number of levels still needed for the spell is treated as the amount by which a damage total exceeds your soak, and you take the corresponding wound. You can kill yourself this way. A maga with this Virtue may still cast fatiguing spontaneous spells normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "cd4b9e86-812c-4bae-87eb-a186647ecaa5": {
+    "Name": "Magical Memory",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your memory has been developed to remember magical rather than mundane things. You need not keep laboratory texts (see page 101) of your creations to get the benefit of a Lab Text when reproducing them. If you have created an effect by following another magus-s lab text once, you may get the same benefit in future without needing to have the text available.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "27d762be-86b8-41d4-98d8-9f3feb33a9e6": {
+    "Name": "Major Magical Focus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Your magic is much more potent in a fairly limited area, such as weather, necromancy, birds, or emotions. This area should be smaller than a single Art, but may be spread over several Arts - necromancy, for example, covers both Corpus and Mentem effects. You cannot be focused on laboratory activities, although a focus does apply to laboratory activities. When you cast a spell or generate a Lab Total within your focus, add the lowest applicable Art score twice. If a spell has requisites, the lowest applicable score may be one of the requisites, rather than one of the primary Arts. Thus, if a magus with a focus on birds was cast ing a spell to turn a bird into pure flame, MuAn (Ig), with Muto 14, An 18, and Ig 10, his final total would be 34 + other modifiers: 14 from Muto, and 20 from adding Ignem twice. If he was casting a spell to turn a bird into another sort of bird, MuAn with no requisites, his total would be 46 + other modifiers, 18 from Animal and 28 from adding Muto twice. A character can have only one Magical Focus, either major or minor, regardless of the source of the focus.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "96192750-eda7-4d03-9be7-9f74bf4056cd": {
+    "Name": "Mastered Spells",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have fifty experience points to spend on mastering spells that you know. (See page 86 for rules on mastering spells.) You may take this Virtue if you also have Flawless Magic, to give you more experience points to spend on mastering your spells. You may take this Virtue multiple times.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f0d0a6dc-e230-4615-b692-21e630121a4f": {
+    "Name": "Mercurian Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Your magical lineage and traditions are;from the Roman priests of Mercury, which predate;the Order of Hermes, making you especially;skilled with Ritual Magic and magic used;in conjunction with others. In addition to your;standard spell allocation, you also know;Wizard&rsquo;s Vigil at a level equal to the highest level of Ritual spell that you know,;and should you invent or learn a Ritual spell of;higher level, you automatically invent a;Wizard&rsquo;s Vigil spell of the same level, without needing to spend extra time.\nWhen casting a spell using Wizard&rsquo;s;Vigil, you may add your Mastery score;(page 86) in the spell being cast and your;Mastery score in Wizard&rsquo;s Vigil or other spells, such as Wizard's Communion, with the same function to the effective level of the Wizard&rsquo;s Vigil.\nFinally, any Ritual spells which you cast;have only half the usual vis requirement. If;cast as part of a Wizard&rsquo;s Vigil, all the participants;need to have this Virtue to gain this;benefit.\nYour concentration in Ritual magic has a;downside, however &mdash; you may only cast;Spontaneous magic using the rules for;Ceremonial Casting (page 83).",
+      "Source": "ArM5",
+      "Page": 46
+    }
+  },
+  "0f1c8530-0559-40ef-a417-8eb8fd3cd5b8": {
+    "Name": "Method Caster",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are excellent at formulaic spells, as you have perfected a consistent and precise method for casting them. You gain a +3 bonus to any formulaic spell you cast. However, if you vary at all from your precise method (by altering your gestures or voicing), you do not get this bonus.\nThis bonus also applies to Ritual spells.",
+      "Source": "ArM5",
+      "Page": 46
+    }
+  },
+  "bef4d0c2-8d9c-4442-82bb-02220e151e04": {
+    "Name": "Mutantum Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Voc&ecirc; &eacute; descendente da linhagem Mutantum e pode, portanto, inventar f&oacute;rmulas de feiti&ccedil;os e itens m&aacute;gicos que tiram vantagem de Boosting, Harnessing e Tethering. Voc&ecirc; tamb&eacute;m pode pegar a virtude da Tamed Magic, e metade de seus feiti&ccedil;os iniciais podem ser vers&otilde;es &ldquo;domesticadas&rdquo; de feiti&ccedil;os comuns. A maioria dos personagens com Mutantum Magic pertencem &agrave; Casa Mercere e se consideram Mutantes, e todos eles devem ser descendentes de sangue do Fundador ou de um de seus ancestrais.\n;\nMutantum Magic;&eacute; uma forma especial de metam&aacute;gica encontrada principalmente na;Casa Mercere. Uma base s&oacute;lida na filosofia m&aacute;gica de sua linhagem e sua afinidade natural com a mudan&ccedil;a permite aos;Mutantes;inventar feiti&ccedil;os que t&ecirc;m um poder incomum sobre a magia, alterando-a de maneiras espec&iacute;ficas.;Mutantes;podem usar esta metam&aacute;gica ao lan&ccedil;ar feiti&ccedil;os formul&aacute;icos projetados para tirar vantagem disso, ou investindo itens m&aacute;gicos com os efeitos apropriados. Eles tamb&eacute;m podem escrever ou ensinar os feiti&ccedil;os resultantes de uma maneira que outros Mutantes possam entender e aprender. Essas mudan&ccedil;as incluem:\nBoosting:;Os;Mutantes;podem gastar Vis enquanto lan&ccedil;am um feiti&ccedil;o amplificado ou ativam um item ampliado para aumentar o Alcance, a Dura&ccedil;&atilde;o ou o Alvo em uma magnitude para cada pe&atilde;o. Por exemplo, um feiti&ccedil;o com dura&ccedil;&atilde;o de Sun poderia durar um ano gastando dois pe&otilde;es de Vis. Este Vis &eacute; gasto antes do lan&ccedil;amento do dado e aumenta o n&uacute;mero de dados se uma falha cr&iacute;tica ocorrer. Os Mutantes imaginam esse processo como &ldquo;alimentar&rdquo; a magia, usando Vis para torn&aacute;-la maior e mais forte. N&atilde;o &eacute; poss&iacute;vel aumentar a Dura&ccedil;&atilde;o para Year ou Alvo para Boundary, a menos que o feiti&ccedil;o seja um Ritual.\nHarnessing: Os feiti&ccedil;os normalmente duram e terminam, mas os efeitos arreados s&atilde;o colocados para funcionar como animais domesticados e podem ser liberados de seu servi&ccedil;o quando necess&aacute;rio. Eles terminam prematuramente simplesmente pelo lan&ccedil;ador concentrando-se neles; isso leva quase o mesmo tempo e concentra&ccedil;&atilde;o que lan&ccedil;ar um feiti&ccedil;o e pode ser feito a qualquer dist&acirc;ncia. Se distra&iacute;do durante este processo, o lan&ccedil;ador pode sempre tentar novamente.\nTethering: &ldquo;amarras&rdquo; m&aacute;gicas permitem ao lan&ccedil;ador dar as r&eacute;deas de seus feiti&ccedil;os a outros, ou amarr&aacute;-los a um objeto inanimado. O controle pode ser passado para outra pessoa dentro do alcance do lan&ccedil;ador, que pode tratar o efeito como se ele ou ela fosse o lan&ccedil;ador; ou para qualquer coisa que possa conter o feiti&ccedil;o como um item carregado, lan&ccedil;ando-o automaticamente quando um alvo apropriado chega ao alcance. Uma corda dura apenas enquanto durar o efeito que ela controla, e feiti&ccedil;os de Ritual n&atilde;o podem ser amarrados.\n;",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "e0f19198-ec85-4ea1-ae2a-fbf528ddab33": {
+    "Name": "Mythic Blood",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "You are a blood descendant of either a wizard of legend (possibly one of the Twelve Founders, or some other ancient and powerful sorcerer) or a supernatural being (such as a dragon).\nYour potent Gift means that you do not lose Fatigue levels if your Casting Total falls short of the level of a formulaic spell by ten points or less, although you do lose Fatigue if the spell fails completely. You must expend Fatigue normally to cast spontaneous magic, and if you fail to cast a formulaic spell you lose the normal number of Fatigue levels. When casting Ritual spells, lose three fewer Fatigue levels than normal. This means that you lose no Fatigue levels if you succeed or fail by ten points or less.\nAdditionally, you may choose one special magic feat which you can invoke at will and cancel at will, as often as you like. Invoking this feat takes as long as fast-casting a mastered formulaic spell (see page 87), and requires the same level of concentration. The effect should be designed as a non-Ritual Hermetic effect, with a level + Penetration limited as below. The Penetration of the effect is not modified by the magus's Penetration Ability score, and cannot be negative, so that the highest possible level of the effect is 30.\nTODO\nThis Virtue includes a Minor Magical Focus in an area related to your legendary ancestor and a hereditary Minor Personality Flaw (both at no extra cost). Mythic Blood is not particularly uncommon in the Order of Hermes, so this Virtue does not grant any Reputation.",
+      "Source": "ArM5",
+      "Page": 47
+    }
+  },
+  "4858ed68-c96f-4bda-b651-2367791cd775": {
+    "Name": "Personal Vis Source",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have exclusive access to a supply of raw vis. Determine the amount and type with the help of your troupe; the yield should be about one tenth as much as the player covenant expects to gather per year at the beginning of the saga. The yield of your source does not normally change over the course of time, even if the covenant uncovers new sources.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d7488cb0-a276-4d37-9fb4-7731552ba6b4": {
+    "Name": "Puissant (art)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You add 3 to the value of one Art whenever you use it. This means all totals in which the score of the Art is part of the total. It does not apply to Study Totals. You may take this Virtue twice, for two different Arts. If a spell has requisites, include the bonus from Puissant Art with that Art when calculating which Art is higher. If the Puissant Art is higher, the bonus does not apply to the requisite.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "935dbada-06e5-4168-9dbb-1eee6ddfba44": {
+    "Name": "Quiet Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You can cast spells using only a soft voice at no penalty, and at only a -5 penalty if you do not speak at all. You gain no benefits from using your voice normally but gain the normal benefit for using a booming voice. The range of Voice Range spells is determined normally, based on how loud your voice is. You may take this Virtue twice, and eliminate the penalty altogether.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "6fdd7bed-f284-4bcc-ac28-716b9b24e456": {
+    "Name": "Secondary Insight",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Your method of magical study is especially versatile. When studying one of the magical Techniques from a book, a teacher, or raw vis, you also gain a single experience point in any 4 Forms of your choosing. When studying one of the magical Forms, you also gain a single experience point in any 2 separate Techniques of your choosing. You may not put more than one bonus experience point into a single Art. This Virtue is especially suitable for generalist magi.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "50f453ce-1ce0-4e55-ac7a-32fa0de29f26": {
+    "Name": "Side Effect",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic has some incidental feature that is generally useful, though occasionally annoying. The intensity of the side effect increases with the level of the spell. Examples include a commanding presence when casting that translates into a temporary +1 Presence bonus for a short time after casting, or a calm state of mind derived from casting which allows a bonus on Concentration rolls for a short time after casting.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "90cd5aac-91aa-496c-a8d3-95e74e5047d5": {
+    "Name": "Skilled Parens",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your parens was more powerful, and a better teacher, than is common. You gain an additional 60 experience points and 30 spell levels during apprenticeship. This Virtue has no effect on your study after apprenticeship, but you still have a close relationship with a powerful magus.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b20370af-3435-4459-b471-226c8a9864e9": {
+    "Name": "Special Circumstances",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You are able to perform magic better in certain uncommon situations (such as during a storm or while touching the target), gaining a +3 bonus to your rolls to cast or resist spells. You may take this Virtue more than once, but you only gain a +3 bonus even if more than one set of circumstances applies.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c3f1e628-b8b2-43ff-aa62-3d3a9a955b71": {
+    "Name": "Study Bonus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "When given the opportunity to study an Art from books or raw vis in the presence of the Form or Technique, your surroundings give you new insights into your studies. Add two to die rolls to study from vis, or two to the Quality of any text you study from. Your current Art score determines the magnitude of the surroundings you require to get the bonus. See the table for some guidelines.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "025c11bb-f767-48ef-b0e1-63a408a0db95": {
+    "Name": "Subtle Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You may cast spells without using gestures at no penalty. You gain no benefits from using normal gestures but gain the normal benefit for exaggerated gestures.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "33ae9b86-7cff-4a79-8cc5-9c20b5ab6419": {
+    "Name": "The Enigma",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have been initiated into the Outer Mystery of The Enigma (see page 92), and thus are a member of House Criamon. Note that all Criamon magi get this Virtue free at character creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3ee20bc3-15fa-45e1-a1d9-604d29b4f09a": {
+    "Name": "Twilight Mastery",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "Sempre que voc&ecirc; sofre o Crep&uacute;sculo do Mago, voc&ecirc; pode escolher os efeitos do Crep&uacute;sculo, ao inv&eacute;s de t&ecirc;-lo imposto a voc&ecirc; pelo Narrador. Se voc&ecirc; falhar em controlar o Crep&uacute;sculo, voc&ecirc; ainda ganha um efeito ruim, mas voc&ecirc; pode escolher entre as op&ccedil;&otilde;es em ArM5, p&aacute;gina 89. Al&eacute;m disso, voc&ecirc; pode induzir Distor&ccedil;&atilde;o em qualquer ser que voc&ecirc; toque; uma vez por dia, voc&ecirc; pode conceder a algu&eacute;m 2 pontos de Distor&ccedil;&atilde;o. Este efeito tem uma Penetra&ccedil;&atilde;o de +5 e, se usado em um mago Herm&eacute;tico, necessita de um teste para o Crep&uacute;sculo da maneira usual.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "fd6ca5d8-13b6-42e6-9b18-528fa71ce34a": {
+    "Name": "Verditius Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "You have been initiated into the Outer Mystery of Verditius Magic (see page 93), and thus are a member of House Verditius. Note that all Verditius magi gain this Virtue for free at character creation.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ce603c86-fb3e-4dab-9455-6dd050381185": {
+    "Name": "Gift of Tongues",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Minor",
+      "Description": "Allows;the character to understand and speak;any language as long as she communicates;directly with someone else who is;fluent in that language. Others who hear;the character&rsquo;s words and who understand;that language can understand what;the character is saying. The character;cannot carry on a conversation in multiple;languages, but can act as a translator;for two or more people who do not;have this virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c82273b8-dbdd-4801-a145-97a90037f5b7": {
+    "Name": "Animae Magic",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Major",
+      "Description": "TODO",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "811f9d62-d235-44ba-974c-13c5cd4b2f9e": {
+    "Name": "Baccalaureus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "The character has completed a three-year;program at a university to receive a baccalarius artium (Bachelor of Arts degree). He;is typically between 16 and 19 years old, and;has 90 experience points that he may spend;on Latin and Artes Liberales &mdash; 30 experience;points per finished year of studies. His;future decisions are varied once he gains his;degree: he can extend his university career,;teaching extraordinary lectures as he works;toward his magister in artibus degree; teach;in a cathedral or secular school; become a;private tutor for a noble family; or find work;in ecclesiastical or secular circles. The character;has an Academic Reputation of 1.\nThis Virtue is compatible with the Hermetic;Magus, Mendicant Friar, and Priest;Virtues.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8545de96-3eeb-418f-a09f-9155284b3ae4": {
+    "Name": "Clerk",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You are a member of the literate class and are either a professional scribe, accountant, lawyer, student, or functionary. Due to your training, you may take Academic Abilities during character generation. If you are male, you may be in minor orders (acolyte, exorcist, lector, or door-keeper), in which case you may marry and still benefit from being a member of the clergy and as such subject to canon rather than secular law (see page 205). Male characters may also be sub-deacons or deacons, the lesser two holy orders, in which case they would normally be expected to be unmarried. However, if they were already married, and promise complete sexual abstinence, they may still be ordained to these orders. A man may not marry after ordination to holy orders. Those in holy orders are also subject to canon, rather than secular, law. The Wealthy Virtue and Poor Flaw affect you normally. This Virtue is available to male and female characters.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0a02ec52-a948-4c9d-84cb-b5d2631f11e4": {
+    "Name": "Covenfolk",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You are a member of the covenant staff, and may have lived there all your life. You are supported by the covenant, and so your standard of living is determined by the covenant-s resources rather than your own. You may not take the Wealthy Major Virtue or the Poor Major Flaw.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ddce76ba-dbf1-4f22-91ff-3bd92daeb1a9": {
+    "Name": "Craftsman",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You live by making and selling goods. You are probably a free resident of a town, but you may be from a rural area. The Wealthy Major Virtue and Poor Major Flaw affect you normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7662dad4-4306-477c-937a-da6018c062cc": {
+    "Name": "Custos",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You are an employee of a covenant, but you have high status within the walls. You may be a grog, or a specialist, or a manager. You may take one group of restricted Abilities during character generation, either Martial, Academic, or Arcane Abilities. If you choose Martial or Arcane Abilities, you may still learn to speak Latin, although you cannot read or write it. As a covenant employee, your wealth is determined by the covenant-s prosperity, and you may not take the Wealthy Virtue or Poor Flaw. This Virtue is available to male and female characters. This Virtue may also apply to employees of other institutions, such as a noble household or a monastery.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f4c4265f-262b-48f6-aae8-53adce7b84a2": {
+    "Name": "Failed Apprentice",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You were once apprenticed to a mage, but something kept you from completing your studies. Perhaps your Gift was incomplete or some grievous mishap robbed you of it altogether. You may still work for your former master or for the covenant in some other capacity. Magi welcome you and have compassion for you - those who are given to such emotions, anyway. You may learn Academic and Arcane Abilities during character creation, and you are familiar with the lives of magi. You may not have The Gift, but if your Gift was not completely destroyed, you may have some Supernatural Abilities.\nThe Wealthy Virtue and Poor Flaw affect you normally. This Virtue is available to male and female characters.",
+      "Source": "ArM5",
+      "Page": 42
+    }
+  },
+  "12c87f6b-337c-4b0d-87a8-ce26c318d949": {
+    "Name": "Gentleman/woman",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You are a minor member (possibly illegitimate) of a noble family. You do not stand to inherit from your relatives, but are still treated as one of their own and may be addressed as -Lord- or -Lady.- You probably reside near the covenant with your relatives. Although you do not want for anything, you have no vast wealth of your own. You may occasionally ask your family to buy expensive equipment for you, but you will need a convincing rationale. You are expected to wait on your relations much of the time or you will lose the benefits of family (though you will keep your social standing if you can otherwise maintain your normal lifestyle). The Wealthy Virtue and Poor Flaw affect you normally. This Virtue is available to male and female characters.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ef5a211e-0db5-4d13-98f0-caa8c4cb899c": {
+    "Name": "Hermetic Magus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You are a member of the Order of Hermes. All magi must take this as their Social Status, and only magi may take it.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "cd912d53-4257-45cc-b6e3-3b5a8c922a66": {
+    "Name": "Knight",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You are a knight, a member of the noble classes and one of the elite warriors of Europe. Unless you are Poor, you may have high quality weapons and armor, and a horse. Typical armaments for a mid-13th century knight are lance, sword, heater shield, a complete mail suit, and a warhorse. You may take Martial Abilities during character generation. The Wealthy Virtue and Poor Flaw affect you normally. This Virtue is only available to male characters, and is compatible with the Landed Noble Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b83392d2-4c7e-4db5-a71e-3784eebb4fdf": {
+    "Name": "Landed Noble",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "You owe fealty and service to a higher noble, and control land, serfs, and men-atarms. You have half a dozen servants at your manor house, including a couple of bodyguards. Your servants should be controlled by the rest of the troupe. You have sworn an Oath of Fealty, and so must balance this Virtue with that Flaw. You get the normal points for Oath of Fealty. You are wealthier than most characters, but have no additional free time. You have the power to enforce the law within your fief, but you may not impose the death penalty, nor may you mutilate criminals. Floggings and fines are the normal penalties you impose. If you are Poor, your fief is either very small, or in a poor area for farming with few other resources. You must spend every season managing it, or it may collapse completely, leaving you effectively landless. You are no wealthier than most average characters, and you have only a couple of servants. Wealthy Landed Nobles control more than one fief, and have bailiffs or stewards for each, so that they do not need to devote any time to looking after their lands. You are significantly richer than most Wealthy characters, and could afford to build a small castle or a large chapel within a cathedral. You have around fifty servants, including a significant number of warriors. This Status Virtue is compatible with the Knight Minor Status Virtue, but unlike that Virtue it-s available to male and female characters.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f6be4e80-dced-400e-931d-409d7689c6b3": {
+    "Name": "Magical Champion",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "Only characters designed using the rules;for Magic Character Creation may take this;Virtue.\nA small group of individuals considers;the character to be their particular representative,;by virtue of its magical nature. They;might be the grogs at the covenant, or all the;animals in a single pack, or all the magical;trees in a particular forest. These beings give;the character special respect, and so others;typically recognize and deal with the character;as the leader of the group. Outside of this;group, the character does not command any;special respect because of its magical nature; if it looks human it will be treated like a person,;otherwise it will probably be perceived;as either a dumb beast or a monster.\nThis Virtue may be combined with other;Social Status Virtues and Flaws that are appropriate to the character&rsquo;s form.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "fedd2912-5310-4e5b-8d2f-a95c6b3e6c3f": {
+    "Name": "Magical Master",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "Only characters designed using the rules;for Magic Character Creation may take this;Virtue.\nThe character is recognized as a higher;power by a relatively large group, and this;status depends on its magical nature. This;group might be everyone in a particular village;or covenant, or all the animals in a single;forest, or all of the trees of a particular variety;in Mythic Europe. There is something;about the character&rsquo;s powers or physical appearance;that allows members of the group;to easily recognize the character. Members;of this special group generally defer to the;character, and perhaps even worship or venerate;it depending on their sophistication;and beliefs. Outside of this community, the;character does not command any special respect;;if it looks human it will be treated like;a person, otherwise it will probably be perceived;as either a dumb beast or a monster.\nThis Virtue may be combined with other;Social Status Virtues and Flaws that are appropriate;to the character&rsquo;s form.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "070f63fc-785f-49b3-93fb-cef35264c547": {
+    "Name": "Magister In Artibus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "You have incepted Master of Arts in one of the universities of Europe (Paris, Bologna, Oxford, Cambridge, Montpellier, Arezzo or Salamanca) and completed your two years- regency of compulsory teaching. You are entitled to be addressed as Magister, are subject only to canon law, and may teach anywhere in Europe. You are at least (25 - Int) years old, and must have scores of at least 5 in Latin and Artes Liberales. You have, however, spent eight years in a university, and gain an additional 30 experience points in each of those years, for a total of 240 additional experience points over and above your allowance based on age. You may buy Academic Abilities during character generation, and must spend your additional experience points on Academic Abilities or Teaching. You must spend two seasons teaching to maintain yourself and your reputation as a dependable instructor. These two seasons are spread between September and June, so you are genuinely free in the summer. If you take the Poor flaw, you are still genuinely free in the summer. If you take the Wealthy virtue, you can maintain your reputation with a single season-s teaching. This Virtue is only available to male characters, and is compatible with the Hermetic Magus, Mendicant Friar, and Priest Virtues.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3be571f1-8e68-424d-a655-31941cdfd36e": {
+    "Name": "Mendicant Friar",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You are a follower of St. Francis or St. Dominic, going among the rich and poor, spreading the word of God and giving comfort to the sick, homeless, hungry, or dying. You are sworn to serve the Church for the rest of your life, but your wandering habits are considered suspect by the local bishop and parish clergy, and you lack political influence within the organization. Like all clerics, however, you are only subject to canon law. Due to your training, you may take Academic Abilities during character generation. If you wish, you may be an ordained priest and may officiate at marriages, baptisms, funerals, and the Mass, though the parish clergy may resent your interfering on their -turf.- You do not need to take the Priest Virtue in addition to this one if you do want to be ordained. You have sworn vows of poverty, chastity, and obedience, which together constitute a Major Story Flaw (Monastic Vows, see page 56) which you must take if you take this Virtue (this Flaw balances other Virtues as normal). You may not take the Wealthy Virtue or Poor Flaw. This Virtue is only available to male characters, and is compatible with the Magister in Artibus Major Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "bcd46c11-dcde-4570-9064-02660b253489": {
+    "Name": "Mercenary Captain",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You lead a small company of mercenaries (5 to 10), for hire to the highest bidder. You are much like a knight-errant, only without the prestige. During your travels you have gained great wealth - and squandered it - several times over. You may take Martial Abilities during character generation. If you are Poor, you lead only a couple of other mercenaries, but you and they may have armor and weapons available to normal characters. If you are Wealthy you lead about twenty mercenaries, and can delegate some of the work to sergeants. This Virtue is available to male and female characters.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ff052048-304d-4722-b405-6c60030524a2": {
+    "Name": "Merchant",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You live from the buying and selling of goods. You may be a peddler, if you are relatively poor, a shopkeeper, or a traveling merchant. The Wealthy Major Virtue and Poor Major Flaw affect you normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "c2fce029-b6c1-4ce1-bac3-d9c7d913aeae": {
+    "Name": "Peasant",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You live by working the land. You may control quite a lot of land and hire people to work it, if you are wealthy, or be one of the people who is hired, if you are poor. You are free, rather than a serf. The Wealthy Major Virtue and Poor Major Flaw affect you normally.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d5aa330c-a0f2-47d9-b0d4-9b2324638a86": {
+    "Name": "Priest",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You have been ordained a priest, which means that you can carry out the sacraments of the Mass, Penance, and Extreme Unction. By your words, you can cause the Son of God to manifest in bread and wine. As a priest you come under the protection of canon law, meaning that you cannot be prosecuted by secular authorities. You are accorded considerable respect due to your position, and few people are willing to insult you. You may be a parish priest. If you are, you cannot take the Poor Flaw. Your normal duties involve hearing confession, preaching to your flock, and ministering to their spiritual needs. If you are Wealthy, your parish is rich enough to pay for a curate to do some of the work for you, and you may be a pluralist, holding the benefices of several parishes. Reform-minded churchmen do not approve of pluralism. If you are not a parish priest, the Wealthy Virtue and Poor Flaw affect you normally. You may be employed as a curate to a parish priest, or a chaplain to a wealthy individual, or in any other capacity requiring education. You may purchase Academic Abilities during character generation. You must take the Minor Personality Flaw Vow as one of your normal Flaws, for your vow of celibacy. This Virtue is only available to male characters, and is compatible with the Magister in Artibus Major Virtue.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a779b8f9-1ac7-4468-8f47-e444a3dd44c6": {
+    "Name": "Redcap",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Major",
+      "Description": "Although you do not have The Gift and cannot work Hermetic magic, you are a full member of the Order of Hermes and of House Mercere (see page 12). There are Gifted members of House Mercere, but they do not take this Virtue, taking the Hermetic Magus Social Status (page 43) instead. You deliver messages for the Order, and you possess a number of enchanted devices to help you do this. A newly-Gauntleted Redcap has enchanted devices with fifty levels of effect, including modifications to the level due to factors such as the number of uses per day (see -Magical Enchantments,- page 95, for details). These levels are invariably split between two or more effects useful for delivering messages. New Redcaps are never given items capable of killing, wounding, or ensorcelling large numbers of mundanes; the risk of abuse bringing trouble on the Order is too great. These will be upgraded and replaced in return for good service, on average an extra two levels per year. You are trained in a similar manner to magi, and may take Academic, Arcane, and Martial Abilities during character generation. You have spent fifteen years as an apprentice, and gained a total of 300 experience points in those fifteen years. (See -Detailed Character Creation,- page 28.) In addition, you have the Well Traveled Virtue at no cost. When you start to age, a magus with a Lab Total of at least fifty will devise a Longevity Ritual (see page 101) for you free of charge, if you wish. If you make suitable contacts in the course of the saga, this ritual may be devised by a more powerful magus. You are supported by your covenant, so you cannot take the Wealthy Virtue or Poor Flaw. You may not take The Gift. You must spend two seasons per year delivering messages for the Order. Your other two seasons are, however, genuinely free, and you may do whatever you wish. This Virtue is available to male and female characters. Redcaps created some years past Gauntlet get improved enchanted devices, as described above, and, if applicable, a Longevity Ritual.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "637def01-25bd-475d-ac5d-389a69e1bee3": {
+    "Name": "Wanderer",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Free",
+      "Description": "You are not tied to any community, and survive by doing casual work of some sort. The Wealthy Major Virtue and Poor Major Flaw affect you normally, although if you are Wealthy you are supported by someone or some institution. Your supporter does not question your activities in any way, however.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8b99b3fa-01d3-440a-9268-9d997dc7ddd9": {
+    "Name": "Wise One",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Social",
+      "Impact": "Minor",
+      "Description": "You belong to a broad class that includes mystics, seers, healers, and the like. You are probably magical, and will probably want to purchase a Virtue that gives you some sort of supernatural ability. You are well regarded in the community, although your presence may cause fear as well as awe or respect. If you lack such good standing, though, you are most likely a wanderer or an outcast. You may take either Arcane or Academic Abilities, but not both, at character creation. The Wealthy Virtue and Poor Flaw affect you normally. This Virtue is available to male and female characters.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "8b9771a6-0cdb-4115-ad21-f9cb63f2828b": {
+    "Name": "Magic Animal",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "The character is a magical animal, either;a perfect example of its species that is generally;known as a Beast of Virtue, or else some;other sort of magical being born in an animal;shape. It is designed using the Magical;Animal rules for Magic Character Creation,;above, which gives it a Magic Might Score;and other advantages over mundane creatures.;It must also deal with the innate limitations;of an animal form, such as having no;hands. Subtract the character&rsquo;s natural Size;from its starting Might Score.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "3a7d707b-cce0-4fdb-a67d-2377454c2694": {
+    "Name": "The Gift",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Special",
+      "Impact": "Special",
+      "Description": "You have the ability to work magic. See -The Gift- on page 36 for full details.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5535ee7a-9da4-4235-b6a9-7bba12b3bb88": {
+    "Name": "Animal Ken",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You can communicate with animals as if they were human beings. Choosing this Virtue confers the Ability Animal Ken 1 (page 62).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2f5d561b-37c6-4b5d-93ca-42a7121bcad5": {
+    "Name": "Blood of the Nephilim",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "TODO",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "65bea057-77e3-46b2-b4f2-594f7d5454f6": {
+    "Name": "Dowsing",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You have the ability to find things nearby through the use of a dowsing rod (usually a forked stick) and your own intuitive sense. Choosing this Virtue confers the Ability Dowsing 1 (page 64).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "62a3bfbc-dc51-4f4d-83bc-b8687fa84911": {
+    "Name": "Enchanting Music",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "When you set your mind to it, you can magically induce emotions and beliefs in others with your music. Choosing this Virtue confers the Ability Enchanting Music 1 (page 65).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ac252f75-29d2-435b-89bb-c55479eb2e3c": {
+    "Name": "Entrancement",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You have the power to control another-s will by staring into their eyes and giving them a verbal command. Choosing this Virtue confers the Ability Entrancement 1 (page 65).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "d5f47204-1aeb-4144-9507-0fc400355b1f": {
+    "Name": "Greater Immunity",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You are completely immune to one hazard which is both common and potentially deadly. For example, you might be immune to fire or to iron (and only iron) weapons. You may not take immunity to aging - see the Unaging Supernatural Minor Virtue (page 50) instead. This immunity applies to mundane and magical versions of the thing. If you are immune to fire, you are also immune to magically created fire.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "740c9c00-2133-459d-9dd0-d38decef1f19": {
+    "Name": "Greater Purifying Touch",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You can, with a touch and the expenditure of a Fatigue level, cure a single serious disease. This disease should be either life-threatening or seriously disabling, and should be one from which people do not normally recover by themselves. You must choose the disease that you can cure when you take this Virtue, and you can only cure that disease. You can only choose a disease, not other types of injury or misfortune. See page 180 for more information on diseases.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "7e8328c8-f33f-4eb2-8c5c-675aef909f7d": {
+    "Name": "Imbued with the Spirit of (Form)",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "O mago absorveu alguns dos poderes de um elemental ou outro objeto m&aacute;gico (talvez por consumi-lo). Este ato contamina o mago, de modo que qualquer ser com um Poder M&aacute;gico associado &agrave; Forma desta Virtude pode sentir sua natureza quando estiver por perto. Normalmente, as criaturas fracas ter&atilde;o medo do mago e os poderosos tentar&atilde;o mat&aacute;-lo.\nSempre que lan&ccedil;ar um feiti&ccedil;o ou realizar uma Atividade de Laborat&oacute;rio que requeira Vis da Forma escolhida, o mago pode substituir o Vis por N&iacute;veis de Fadiga de Longo Prazo. Cada n&iacute;vel de fadiga de longo prazo perdido reduz o requisito de Vis do feiti&ccedil;o ou efeito em 1. Ao lan&ccedil;ar um feiti&ccedil;o, os n&iacute;veis de fadiga s&atilde;o perdidos ap&oacute;s o feiti&ccedil;o ser lan&ccedil;ado. Para Atividades de Laborat&oacute;rio, a perda de Fadiga dura pela dura&ccedil;&atilde;o do processo de Laborat&oacute;rio (ou seja, pelo menos uma temporada), e os N&iacute;veis de Fadiga substitu&iacute;dos por Vis n&atilde;o contam para o limite do magi de gastos Vis em uma temporada.\nObserve que estudar Vis n&atilde;o &eacute; uma atividade de Laborat&oacute;rio, ent&atilde;o o mago n&atilde;o pode substituir N&iacute;veis de Fadiga por Vis ao estudar. Por exemplo, um mago lan&ccedil;ando um ritual de Enchantment;of the Scrying Pool requer 6 pe&otilde;es de alguma combina&ccedil;&atilde;o de Intellego e Aquam Vis. Se o mago estiver Imbu&iacute;do com o Esp&iacute;rito de Aquam, ele pode se cansar (perdendo tr&ecirc;s N&iacute;veis de Fadiga de Longo Prazo) e reduzir o requisito de Vis em 3.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "77e45ea9-32d1-4424-adc1-d815cb3c9b70": {
+    "Name": "Lesser Immunity",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You are immune to some hazard which is either rare, or not deadly, or both. See -Greater Immunity,- page 43.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5e532407-6332-4824-a553-1a32b1ff4439": {
+    "Name": "Lesser Purifying Touch",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You can, with a touch and the expenditure of a Fatigue level, heal a specific illness. This illness should be one that people often recover from on their own, or one that is not particularly serious. You can only choose an illness, not an injury or other misfortune. See page 180 for rules on diseases.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5561a78a-ce2d-4a4a-87bd-abde07d9874e": {
+    "Name": "Magic Sensitivity",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You are often able to identify a place or object as magical. However, your sensitivity makes you more susceptible to magical effects: subtract your Magic Sensitivity score from all magic resistance rolls you make. Choosing this Virtue confers the Ability Magic Sensitivity 1 (page 66).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "92d48f20-366d-478b-81d8-39a8fd722894": {
+    "Name": "Magical Blood: Human",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "TODO",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "2c489ab0-1b4d-4cf7-b2f3-83c68b7494f1": {
+    "Name": "Personal Power",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "TODO",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "45218c20-ca0b-4a2d-ad0a-555a069fab47": {
+    "Name": "Premonitions",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You intuitively sense when something is wrong, or is likely to go wrong soon. This Virtue confers the Ability Premonitions 1 (page 67).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "5f055318-2487-41c9-9c79-6258e3bfa0bc": {
+    "Name": "Second Sight",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You are able to see through illusionary concealment and disguise, including invisibility, and can also see naturally invisible things such as spirits and the boundaries between regio levels (see page 189). Choosing this Virtue confers the Ability Second Sight 1 (page 67).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "92fcaa16-c154-4e83-b859-91c84198d6a2": {
+    "Name": "Sense Holiness And Unholiness",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You are able to feel the presence of good and evil. In auras of particularly strong divine or infernal influence, your sensitivity may overwhelm you. Choosing this Virtue confers the Ability Sense Holiness and Unholiness 1 (page 67).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "07813608-77db-4db4-82f5-af6658ab6050": {
+    "Name": "Shapeshifter",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Major",
+      "Description": "You may change your shape into that of one or more mundane animals. Choosing this Virtue confers the Ability Shapeshift 1 (page 67).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "895e9b64-81e5-4f16-93f6-2a7920c50989": {
+    "Name": "Skinchanger",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You have a magical cloak, animal skin or similar item made from an animal. While in physical contact with it, you may transform into the form of the animal represented by the item. The transformation takes one full round, and you retain both intelligence and sentience while in animal form. Clothing and possessions (save the animal item) do not transform, and you may be seen as a transformed human with InAn or InCo, or similar spells. If the item is stolen, the new owner has an Arcane Connection to you, and you may not transform until the item is retrieved. If the item is destroyed, you can make a new one over the course of a season, although the method varies depending on what the item is. Skinchangers may transform into any non-magical animal between Size -5 (robin) and Size +2 (bear). The character has the normal physical characteristics of the animal, except that +3 is added to the character-s Soak score (in animal form only).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "0d4eaf26-985c-4e76-8f9b-3e5583ef7702": {
+    "Name": "Strong Angelic Heritage",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "increase your Divine Might.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "dcb33b60-f302-47a0-ab7c-aa60be000a48": {
+    "Name": "Unaging",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You do not suffer the effects of age. In game terms, your aging points do not decrease your Characteristics, only building up to give you Decrepitude points. If a crisis is not potentially fatal, you suffer no ill effects. You may die from terminal and potentially fatal crises, according to the normal rules. You are not enfeebled when you reach four Decrepitude points, but you die as normal when you reach five. You may choose your apparent age freely, although if you are basically human it should be less than or equal to your actual age.",
+      "Source": "ArM5",
+      "Page": 50
+    }
+  },
+  "e67bc3a9-f48d-41ca-8734-ef1d7fcbf495": {
+    "Name": "Wilderness Sense",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Supernatural",
+      "Impact": "Minor",
+      "Description": "You are mystically attuned to the ways of the wilderness. Choosing this Virtue confers the Ability Wilderness Sense 1 (page 67).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "46b3d9e8-bc45-4581-bfcc-63ad1a5c509d": {
+    "Name": "Minor Magical Focus",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Hermetic",
+      "Impact": "Minor",
+      "Description": "Your magic is particularly attuned to some narrow field, such as self-transformation, birds of prey, or healing. In general, the field should be slightly narrower than a single Technique and Form combination, although it may include restricted areas of several such combinations. Healing, for example, is a part of Creo Corpus, Creo Animal, and possibly Creo Herbam. You cannot be focused on a laboratory activity, such as creating charged items, although a focus does apply to laboratory activities. When you cast a spell or generate a Lab Total within your focus, add the lowest applicable Art score twice, as for a Major Magical Focus (page 45). A magus may only have one Magical Focus, whether major or minor, regardless of the source of the focus.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "b171ae83-0500-4911-8863-c5fa1f8d9c39": {
+    "Name": "Aggressive",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "General",
+      "Impact": "Free",
+      "Description": "Add 1 to Cunning; grants;Brawl 5 (natural weapons).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "a0aa350c-afd9-444c-bfe6-a7274f18aca0": {
+    "Name": "Ferocity",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Minor",
+      "Description": "Like;a magus or companion character, you have;Confidence points. Unlike a human character,;you may use your Confidence Points only in;situations where your natural animal ferocity is;triggered, such as when defending your den or;fighting a natural enemy. Describe a situation;that activates your Confidence score, and take;three points for you to use when those circumstances;are met.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "71be6424-3502-47d7-bdb9-be01db86d3e7": {
+    "Name": "Hardy",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "The creature is used to harsh;conditions; it has a Survival 5 (home terrain);and an extra Fatigue level.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "69d8a963-c845-45d3-ba8a-4d82319ae9cd": {
+    "Name": "Keen Sense of Smell",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "Add 1 to;Perception, +3 to all rolls using the sense;of smell, and +2 to all Hunt rolls.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "aee149ac-4854-4caa-942d-57eeb09590bf": {
+    "Name": "Pack Animal",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "Add 1 to;Communication and grant Leadership 5;(own species).",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "746be5f4-e8a7-443b-836c-697f4364e874": {
+    "Name": "Pursuit Predator",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "The beast actively;hunts for its prey, either tracking its scent;or chasing it down. Grants Hunt 4 (prey);and an extra Fatigue level. The beast&rsquo;s;Specialization for Brawl changes to one of;the beast&rsquo;s natural weapons.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "f3377590-ceef-4567-a347-86bcfa6f8403": {
+    "Name": "Thick Fur",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "Add 1;to Protection; this Quality stacks with;the Tough Virtue and the Tough Hide;Quality.",
+      "Source": "custom",
+      "Page": 0
+    }
+  },
+  "ce8b6e3b-c1b2-420d-9626-5bc5e053b052": {
+    "Name": "Vocal",
+    "Type": "Virtue",
+    "Data": {
+      "Type": "Other",
+      "Impact": "Free",
+      "Description": "The creature can produce;impressive vocalizations, such as a powerful;roar or howl, beautiful birdsong, or;the like. Communication is raised to 0 (if;negative) or increased by 1: gain Music 3.;This Quality may be taken twice for particularly;impressive vocal ability, increasing;Music to 5.",
+      "Source": "custom",
+      "Page": 0
+    }
+  }
+}
