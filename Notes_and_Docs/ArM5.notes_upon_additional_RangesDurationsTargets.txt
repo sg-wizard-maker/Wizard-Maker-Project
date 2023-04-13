@@ -1,0 +1,201 @@
+Additional ArM5 Ranges/Duration/Targets from other books:
+---------------------------------------------------------
+Notes upon Ranges/Durations/Targets beyond those in the ArM5 core book.
+Extended from notes gathered from (Van Silke) and (Smirking Coward) of the ArM5 Discord.
+
+
+-- HoH:MC --
+Sensory Targets (HoH:MC 28)
+    T:Flavor
+	T:Texture
+	T:Scent
+	T:Sound
+	T:Spectacle
+Symbol          (HoH:MC 99)
+    R:Symbol
+	D:Symbol
+	T:Symbol
+Spell Timing    (HoH:MC 100)
+    D:Held
+	D:Midday/Midnight
+	D:Season
+	D:While <condition>  (Ritual allows recurring effects)
+	D:Not <condition>    (Ritual allows recurring effects)
+	D:If <condition>     (Ritual allows recurring effects)
+Perpetuity      (HoH:MC 102)
+    D:Might
+	D:Aura
+	D:Hidden
+
+
+-- HoH:Soc --
+Orphic Magic (HoH:Soc 122)
+    R:Adelphixis
+
+
+-- Legends of Hermes --
+    D:Room +1  (Modified Room duration from "View from the Mannequin", etc (LoH 113))
+
+-- Ancient Magic --
+Canaanite Magic R/D/T (AM 32-34)
+    R:Veil of Death             (AM 32)
+
+Defixio Magic R/D/T (AM 41-53)
+    D:Event <duration> (Ritual) (AM 42-44)
+    R:Unlimited        (Ritual) (AM 45)
+
+Fertility Magic R/D/T (AM 54-64)
+    T:Unborn Child              (AM 55)
+
+Hyperborean Magic R/D/T (AM 103-132)
+    D:19 Years                  (AM 120)
+
+Rune Magic R/D/T (AM 133-143)
+    D:Rune                      (AM 139)
+	T:Inscription               (AM 139)
+
+
+-- Realms of Power --
+Faerie R/D/T (RoP:Fae 122-123)
+    R:Crossroads
+	R:Presence
+	R:Prop
+	R:Symbol
+	--
+	D:Held
+	D:Focus
+	D:While <condition>
+	D:Geas <condition>
+	D:Hour + 1
+	D:Midday/Midnight
+	D:Not <condition>
+	D:Season (Ritual)
+	D:Aura
+	D:Faerie
+	D:Hidden
+	D:If <condition>
+	D:Symbol
+	--
+	T:Medium
+	T:Passion
+	T:Symbol
+
+
+Atlantean Magic R/D/T (RoP:Mag 43)
+    R:Water-way
+	--
+	D:Storm
+	--
+	T:Body-of-water
+
+
+Holy R/D/T (RoP:Div 68 )
+    R:Presence
+	R:Communion
+	--
+	D:Recitation
+	D:Office
+	D:Devotion
+	D:Sabbath
+	D:40 (forty days and forty nights)
+	D:Fast
+	D:Grace
+	--
+	T:Sin
+	T:Faith
+	T:Dominion
+
+
+Infernal R/D/T (RoP:Inf 103)
+    R:Crossroads (variant upon R:Crossroads from RoP:Faerie)
+	--
+	D:Cursed <condition>
+	D:Forsaken
+	--
+	T:Passion
+
+
+-- Hedge Magic: Revised Edition --
+Hermetic Integration of Gruagachan Magic R/D/T
+    R:Improved Voice (HMRE 78)
+
+
+-- The Mysteries: Revised Edition --
+Performance Magic R/D/T (TMRE 29-30)
+    D:Performance (TMRE 30)
+
+Celestial Magic R/D/T (TMRE 48-54)
+    --Astrological Durations-- (TMRE 49)
+	D:Astrological Minute
+	D:Astrological Hour
+	D:Astrological Day
+	D:Astrological Sign
+
+Hermetic Geometry R/D/T (TMRE 93-97)
+	R:Line          (TMRE 94-95)
+	T:Arcane Circle (TMRE 96)
+	T:Arcane Ring   (TMRE 96)
+
+Dream Magic R/D/T (TMRE 102-107)
+    D:Dream (TMRE 103-104)
+	T:Dream (TMRE 104)
+
+Mercurian Magic R/D/T (TMRE 114-117)
+    R:Road         (TMRE 116)
+	R:Road Network (TMRE 116)
+	T:Road         (TMRE 116)
+	T:Road Network (TMRE 116)
+
+
+-- Faith & Flame --
+Mercurian Road Magic R/D/T (F&F 27)
+    R:Via Mercuria (F&F 27)
+	D:Via Mercuria (F&F 27)
+	T:Vai Mercuria (F&F 27)
+
+
+-- Dies Irae --
+    --Post-Lunar R/D/T-- (DI 37)
+    D:The Burning of a Taper
+	D:At the Waking or the Sleeping
+	D:300 Miles
+	D:The Weight of Years
+
+-- Rival Magic --
+Augustan Brotherhood R/D/T (AM 47-74)
+    T:Pentagram    (RM 56)
+	T:City
+
+Muspelli R/D/T (RM 90)
+    D:Decade
+	D:Lifetime
+
+Soquotran Magic (RM 141)
+	R:Scent     (RM 125)
+	--
+    D:Censer    (RM 124-125, 141)
+	D:Regrowth  (RM 125)
+	D:Perpetual (RM 141, 141)
+	--
+	T:Incense   (RM 125)
+	T:Incensed  (RM 125)
+
+
+-- The Cradle & the Crescent --
+Zoroastrian Celestial R/D/T (TC&TC 98)
+    D:Minutes
+	D:Hours
+	D:Days
+	D:Sign
+
+Zoroastrian R/D/T (TC&TC 99)
+    D:Fire
+	--
+	R:Ground
+	--
+	T:Community
+
+
+
+
+--
