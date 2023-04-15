@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMakerTests", ".\WizardMakerTests\WizardMakerTests.csproj", "{61301103-3209-489B-8F36-DE68204BE88E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMakerTests", "WizardMakerTests\WizardMakerTests.csproj", "{61301103-3209-489B-8F36-DE68204BE88E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{B6C7F9C8-87EC-4B1B-9136-ED26D775CE83}"
 EndProject
@@ -11,9 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Tests", "3 - Tests", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Data", "2 - Data", "{16092FAD-171D-4234-BA08-76510173DEF1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker.DataDomain", ".\WizardMaker.DataDomain\WizardMaker.DataDomain.csproj", "{F8EB36FB-C3B0-4034-A0DA-5446D631359F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker.DataDomain", "WizardMaker.DataDomain\WizardMaker.DataDomain.csproj", "{F8EB36FB-C3B0-4034-A0DA-5446D631359F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker", ".\WizardMakerApp\WizardMaker.csproj", "{C63E494D-86F3-4B85-AC17-35E620BC2A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardMaker", "WizardMakerApp\WizardMaker.csproj", "{C63E494D-86F3-4B85-AC17-35E620BC2A24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes_and_Docs", "Notes_and_Docs", "{41796CDB-E2F2-4C17-AEEC-6D8721608ED2}"
+	ProjectSection(SolutionItems) = preProject
+		Notes_and_Docs\ArM5.notes_upon_additional_RangesDurationsTargets.txt = Notes_and_Docs\ArM5.notes_upon_additional_RangesDurationsTargets.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
