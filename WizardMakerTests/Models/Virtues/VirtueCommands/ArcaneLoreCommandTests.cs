@@ -32,7 +32,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
             CommandTestUtilities.AssertXPPoolInitialization(c, ArcaneLoreCommand.ARCANE_LORE_POOL_NAME, 
                 ArcaneLoreCommand.ARCANE_LORE_POOL_DESCRIPTION, ArcaneLoreCommand.ARCANE_LORE_INITIAL_XP);
 
-            // Assert that the AbilityType.Martial is allowed
+            // Assert that the AbilityType.Arcane is allowed
             Assert.IsTrue(c.AllowedAbilityTypes.Where(a => a == AbilityType.Arcane).Any());
 
             // Assert that there were no validation errors

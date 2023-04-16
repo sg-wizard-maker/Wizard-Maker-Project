@@ -22,10 +22,10 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 
         public void Execute(Character c)
         {
-            // Allow access to Martial skills
+            // Allow access to Abilities of the indicated type
             c.AllowedAbilityTypes.Add(AllowedType);
 
-            // Create a martial 50XP pool
+            // Create an XP pool for the indicated type, and specified number of XP
             c.XPPoolList.Add(
                 new CategoryAbilityXpPool(
                     Name, 
