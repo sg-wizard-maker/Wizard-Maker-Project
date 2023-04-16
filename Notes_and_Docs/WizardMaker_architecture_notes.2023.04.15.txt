@@ -30,7 +30,7 @@ Out of Scope, but planned to be implemented later, are concerns such as:
   - Support for managing non-default Laboratories
   - Support for Library management
   - Support for Workshops (per City & Guild)
-  - Support for Formulae (per Arts &* Academe, using Artes Liberales, Medicine, Philosophiae)
+  - Support for Formulae  (per Arts & Academe, using Artes Liberales, Medicine, Philosophiae)
   - Support for Familiars
   - Support for creating characters which are (mundane or Realm-associated) creatures
   ...
