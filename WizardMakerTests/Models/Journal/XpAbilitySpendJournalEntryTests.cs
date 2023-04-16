@@ -24,7 +24,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getTextTest()
+        public void GetTextTest()
         {
             Journalable entry = new XpAbilitySpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
     "Brawl", 5, "Fists");
@@ -33,7 +33,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getDateTest()
+        public void GetDateTest()
         {
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Journalable entry = new XpAbilitySpendJournalEntry(Expected, sy, "Brawl", 5, "Fists");
@@ -104,7 +104,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getIdTest()
+        public void GetIdTest()
         {
             Journalable entry = new XpAbilitySpendJournalEntry(Expected, new SeasonYear(1222, Season.SPRING),
     "Brawl", 5, "Fists");

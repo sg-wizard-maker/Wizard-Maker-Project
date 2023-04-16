@@ -19,7 +19,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getTextTest()
+        public void GetTextTest()
         {
             const string TITLE = "New Entry";
             Journalable entry = new SimpleJournalEntry(TITLE, new SeasonYear(1222, Season.SPRING));
@@ -28,7 +28,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getDateTest()
+        public void GetDateTest()
         {
             const string TITLE = "New Entry";
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
@@ -49,7 +49,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         }
 
         [TestMethod()]
-        public void getIdTest()
+        public void GetIdTest()
         {
             // Test that the IDs actually change when you deserialize a SingleJournalEntry
             Journalable entry = new SimpleJournalEntry("Test Entry", new SeasonYear(1222, Season.SPRING));
