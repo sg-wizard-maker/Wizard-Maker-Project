@@ -134,7 +134,7 @@ to aid discussion:
   
 
 
-How is Data SAved and Loaded?  
+How is Data Saved and Loaded?  
 -----------------------------
 Firstly, we load data from JSON, using the Newtonsoft.Json package.
     https://www.newtonsoft.com/json/help/html/SerializingJSON.htm
