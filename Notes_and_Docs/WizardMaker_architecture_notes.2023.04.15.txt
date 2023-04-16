@@ -1,0 +1,301 @@
+Wizard Maker - Notes on Architecture (2023/04/15)
+------------------------------------
+Some notes on organization of data, data lookup, data loading, and such matters.
+
+
+Current Scope
+-------------
+The current scope for a Minimum Viable Product is thus:
+- Support creation of characters per rules from the ArM5 core book
+  - Create a "grog" character"
+  - Create a "companion" character
+  - Create a "magus" character, ending at end-of-apprenticeship (no "Later Life" years added for magi)
+- Support viewing of these characters
+  - View via (native client) or (web client), or as (exported to plain text) or (print to PDF / export as PDF)
+- Support editing of these characters
+  - Record seasonal activities (including adventures, working seasons, XP-gain activities, at least basic laboratory activities)
+  - Apply gained XP to Abilities and Arts
+  - Add new Spells invented (from scratch, using a Lab Text, via direct Teaching of spells, or via Twilight or other oddity)
+  - Alter other biographical data and descriptions
+- Main implementation offers at least one of
+  - Local "native" client for single-player use
+  - Server and some manner of Web client for multi-player use (likely with only basic/simple model for handling concurrency)
+
+Out of Scope, but planned to be implemented later, are concerns such as:
+  - Support magus chargen including "Later Life" years
+  - Support for shape-shifting characters (with view of alternate-form Characteristics, Abilities, etc)
+  - Support for various (Virtues, Flaws, Abilities, etc) from additional sourcebooks
+  ...
+  - Support for Covenant management
+  - Support for managing non-default Laboratories
+  - Support for Library management
+  - Support for Workshops (per City & Guild)
+  - Support for Formulae (per Arts &* Academe, using Artes Liberales, Medicine, Philosophiae)
+  - Support for Familiars
+  - Support for creating characters which are (mundane or Realm-associated) creatures
+  ...
+  - Support for some manner of VTT integration (such as Roll20 or FoundryVTT, or the app interacting with a Discord server)
+  
+To this end, some planning is being done so that future concerns will 
+fit nicely in the future scope.  If future support for some feature X 
+will require a major effort, the intent is to "punt" and implement 
+something Good Enough For Now, accepting that the cost of some amount 
+of "rewrite" will be paid during another development cycle, rather than Now.
+
+
+What Data is Being Handled?
+---------------------------
+Many kinds of data "assets" are handled, and for the purposes of this 
+planning document, they are divided into categories thusly in order 
+to aid discussion:
+
+- "Archetypal" data defines templates for things
+- "Instance" data defines specific examples of things
+    For example, there exists an Ability named "Parma Magica".
+	Data for this exists in the form of
+	- An ArchAbility object (one) defining the Ability, 
+	  holding data such as (name, descriptive text, and common Specialties)
+	- Some AbilityInstance objects (zero or more) containing 
+	  the particular data values for some character with Parma Magica 
+	  (such as the amount of XP, and the Specialty), 
+	  referring to the ArchAbility for common values stored there.
+
+- "Base" data consists of data common to the RPG game mechanics 
+  and Mythic Europe setting, and is primarily Archetypal in nature.
+  This includes things such as the definitions of
+      (Characteristics, Virtues/Flaws/Qualities, Abilities, Arts, 
+      spells from the ArM5 core book, types of armor and weapons, ...)
+  It is convenient to establish the convention that this is 
+  "always available", since game rule formulae often refer to these.
+  For example, 
+      "Base Magic Resistance = (Parma Magica score x 5) + (Score in the pertinent Form)"
+  For this formula to be implemented and usable, one must have access 
+  to the Ability "Parma Magica" and the "Forms".
+  
+  Note: 
+  Where possible, we prefer to "reify" important things existing in the 
+  game rules (such as formulae) as entities in code (Enums, Classes, objects).
+  This approach is helpful to present such things in the UI, and generally 
+  towards transparency in how things work. This also aids customization,
+  via altering the (JSON) data defining a formula.
+  
+- "Template" data  
+  Base data might also include "Templates" of various sorts, such as
+  - Character Templates      (per ArM5  20-28), 
+  - Sample Childhoods        (per ArM5     31), 
+  - Career Training Packages (per Grogs 68-73),
+  and similar examples.
+  (TBD: Template data may be helpful, or the UI may be sufficiently 
+  easy to use that adding Template support for these things adds effort 
+  without increasing ease. We shall see.)
+  
+- "User" data consists of things created and saved by users, such as
+  (Characters, custom Specialties for Abilities, custom Spells and 
+   Enchantments, Covenants, Libraries, texts such as particular 
+   Summae / Tractati / Lab Texts, ...)
+   Data such as this could be
+   Saved:
+       - Saved as part of "save everything" (all assets in the currently loaded Saga)
+       - Saved individually (save this character to some file, or tree of folders+files)
+       - Saved partially (save particular component(s) individually
+   Loaded:
+       - Loaded as part of "load everything (load all assets in a Saga)
+       - Loaded individually (load this character into the current Saga)
+	   - Loaded partially (load particular component(s) individually into a "scratch space", or attached to a character)
+	   
+- "Third Party" data consists of data for any loadable entity,
+  authored by persons distinct from the Wizard Maker release.
+      (Things which could be described as User data 
+       are not considered to be part of this category.)
+  - Such data may include Archetypal and/or Instance data.
+  - Such data might add to data which would be "Base" 
+    (such as defining a new Virtue, or altering an existing Virtue).
+  - Such data might be new/altered Template data.
+  
+  Wizard Maker undertakes the responsibility to parse and load 
+  assets of this kind, but the responsibility to "play well with others" 
+  belongs to the author of the Third Party data, since they are in 
+  the best position to do so.
+  
+- "Simple" data consists of a single object (or set of objects) that does not 
+  reference other objects also needing to be loaded. 
+  (It might however reference some "Base" data, 
+   or have internal references between its' components.)
+- "Composite" data is data which contains non-trivial other objects, 
+  which are best loaded/saved as distinct assets.
+  For example, a Covenant will contain Laboratories and Characters, 
+  which seem likely to be best serialized as distinct assets.
+  TBD: 
+  Within a Character, it may make sense to serialize the objects for 
+  (Virtues,Flaws,Abilities, etc) as distinct assets, within a tree of 
+  dirs-and-files which describes the Character as a whole.
+  Or, serializing the whole thing as one blob may be super convenient.
+  We shall see.
+  
+
+
+How is Data SAved and Loaded?  
+-----------------------------
+Firstly, we load data from JSON, using the Newtonsoft.Json package.
+    https://www.newtonsoft.com/json/help/html/SerializingJSON.htm
+
+Using an existing parser saves quite a bit of work (and bugs), which lets
+us free up some time and attention to think upon higher-level matters.
+For example, how do we ensure that 
+    given (A,B,C) 
+	where B depends on A, and C depends on B, 
+	things get loaded in a helpful order?	
+	
+Also, consider "composite" data, which could either be 
+"part of the Saga JSON blob" or something separate.
+
+To aid this, here is a brief list of asset types which get loaded/saved.
+
+Base data
+- Characteristics
+- Virtues, Flaws, Qualities (mundane, Magical, etc)
+- Personality Traits (common ones, at least those referenced by other mechanics such Brave used to resist fear)
+- Abilities
+- Hermetic Arts
+
+User data
+- particular characters
+- custom Personality Traits (any outside of the Base data)
+- custom Reputations (seems like most would not belong among Base data)
+- non-base Specialties for Abilities
+- custom spells
+- particular item descriptions 
+      (at least: some particular Summae/Tractati with subject and Level/Quality, 
+	   and Lab Texts referring to some spell at a specific Level)
+- various descriptive texts (as part of bits within a Character, or other objects)
+- (Later, Covenants and Laboratories and Libraries and ...)
+
+Consider the process as a Wizard maker server launches, and loads assets
+    - Load Base data
+	- Load Third Party data (assume none for the moment)
+	- Load User data
+
+A likely structure is:
+    - Overall Saga data exists as (tree of folders-and-files), containing
+      - Some number of Characters (subtree of folders-and-files), containing
+	      - Some number of Personality Traits, and Reputations
+		  - Some amount of (various biographical details and descriptive texts)
+          - Some number of Spells (outside of the set defined in Base data)
+		  ...
+	  - (Future) At least one Covenant (as tree of folders-and-files), containing
+	      - At least one Laboratory per Magus (referenced both by the Character, and by the Covenant)
+		  - Some number of workshops
+		  - One or more Library descriptions, containing
+		      - Various texts of various kinds, with their data
+		  ...
+		  
+For some of these assets, a JSON dump of all details is sensible.
+    (For an AbilityInstance object, the custom text for a novel Specialty 
+	 can simply be dumped as part of that AbilityInstance.)
+For other assets, a lot of data is involved, and various benefits exist to splitting things up.
+This list likely includes:
+	(The Saga, the Characters, the Covenant, the Laboratories, the Libraries, ...)
+
+Option I: One Giant Blob of JSON
+    "SomeSagaNameHere.YYYYMMDD.HHMMSS.saga.JSON"
+	Contains the whole thing in one blob (perhaps omitting references to Base data)
+	
+Option II: Split Things up a Bit
+    folder "saga.SomeSagaNameHere"/
+	    "saga.json"
+		folder "covenants"/
+		    folder "cov.SomeCovenantNameHere"/
+			...
+		folder "characters"/
+		    folder "char.SomeCharacterNameHere"/
+			...
+		folder "spells"/
+		    folder "spell.SomeSpellNameHere"/
+			    "spell.SomeSpellNameHere.json"
+				...
+			...
+		folder "media"/
+		    "SomeTextFile.txt"
+			"SomeImageFileA.gif"
+			"SomeImageFileB.jpg"
+			"SomeImageFileC.png"
+			"SomeSoundFile.mp3"
+			folder "subdir"/
+			    folder "anotherSubdir"/
+				    "SomeAsset.png"
+			
+    When some asset is attached to an entity as a separate file,
+	    (text paragraphs for a book or character description piece,
+	     images for whatever entity, etc)
+	it can be referred to via such as 
+	    { "path" : "media/subdir/anotherSubdir/SomeAsset.png" }
+	for the sake of tidiness, and to aid debugging, hand-editing, 
+	and wrangling this stuff with external tools.
+	
+The rationale to use "Option II: Split Things up a Bit" 
+relates to being able to load and save PART of a Saga
+    (Save character C1   as a distinct file or tree-of-folders-and-files)
+    (Save covenant  Cov1 as a distinct file or tree-of-folders-and-files)
+    (Save     spell S1   as a distinct file or tree-of-folders-and-files)
+    (Save   library L1   as a distinct file or tree-of-folders-and-files)
+
+    (Load character C1 from Saga S1 into Saga S2)
+	(Load spells S1..S22 from Saga S1 into Saga S2)
+as well as (tidiness, aid debugging, aid hand-editing, aid wrangling things with external tools).
+
+
+
+What order do things get Loaded?
+--------------------------------
+Assuming that we use Option II: Split Things up a Bit,
+a reasonable procedure would be something like:
+  
+1 - Load Base data
+  1a - Characteristics
+  1b - Abilities
+  1c - Virtues,Flaws,Qualities
+  ...
+  1n - (Template Data)
+  
+2 - Load ThirdParty data
+  # Categories in same order as seen in Base data, the intent is that 
+  # new elements AND altered elements end up doing the right thing.
+  # In some cases, alterations might want "Merge Loading" to accomplish the desired changes/replacements.
+  ...
+  
+3 - Load User data ("The Saga")
+  3a - Load Saga overall (contains forward references to Covenants, Characters, etc)
+  3b - Load Characters (contains forward references to some Spells, etc
+  3c - Load Spells
+  3d - Load Covenants
+  ...
+  
+  
+How are "forward references" handled?
+-------------------------------------
+For each object type which we desire to have serialized as a distinct asset,
+we arrange to mark apprpriately using the facilities from Newtonsoft.Json
+	https://www.newtonsoft.com/json/help/html/PreserveObjectReferences.htm
+
+
+
+What about "Merge" Loading?
+---------------------------
+Mentioned in passing in the above, is the idea that sometimes one would want 
+to load some asset, and have the result be a MERGE rather than a New Thing.
+
+Examples of this include:
+    - Some kind of authoring/editing action
+	  "Load <good version of spell S1>, replacing <wonky version of spell S1 which I have loaded now>"
+	  "Load <nifty hand-edited descriptions from Thing A into <less complete Thing A which I have loaded now>"
+	  
+	- Loading ThirdParty data, where someone wants to replace 
+	  <SomeAsset> with <SomeAssetVariant>, having specified only 
+	  the bits they want to replace.
+	  
+	- Reconciling different versions of a thing
+	- Repair-type activities, given some kind of mangled file situation
+    
+  
+  ----
+  
