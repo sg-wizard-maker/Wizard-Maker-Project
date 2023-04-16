@@ -18,7 +18,7 @@ namespace WizardMaker.Controls
         private const int COL_SCORE     = 3;
         private const int COL_XP        = 4;
 
-        private const int NUM_COLUMNS = 5;
+        private const int NUM_COLUMNS   = 5;
 
         // TODO: Provide for COL_SCORE and COL_XP being formatted with commas, when needed...
         // TODO: Provide for COL_SCORE and COL_XP being sortable via numeric VALUE, though display is a STRING value...
@@ -31,31 +31,31 @@ namespace WizardMaker.Controls
             //this.ForeColor = Color.Red;  // grid cells text color
             //this.BackgroundColor = Color.Blue;  // color for background of control where grid is not painted
 
-            this.EnableHeadersVisualStyles = false;
+            this.EnableHeadersVisualStyles   = false;
             this.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;  // Disallow manual vertical resize of column headers
-            this.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
-            this.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.ColumnHeadersDefaultCellStyle.BackColor          = Color.LightSteelBlue;
+            this.ColumnHeadersDefaultCellStyle.ForeColor          = Color.Black;
             this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
             this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            this.ColumnHeadersDefaultCellStyle.Font = new Font( this.Font, FontStyle.Bold );
+            this.ColumnHeadersDefaultCellStyle.Font               = new Font( this.Font, FontStyle.Bold );
 
             this.DefaultCellStyle.SelectionForeColor = Color.Black;
             this.DefaultCellStyle.SelectionBackColor = Color.PowderBlue;
 
-            this.Name = "GridForAbilities";
+            this.Name     = "GridForAbilities";
             this.Location = new Point( 350, 101 + 30 );
-            this.Size = new Size( 600, 250 );
+            this.Size     = new Size(  600, 250 );
 
-            this.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.AllowUserToResizeRows = false;
+            this.AutoSizeRowsMode         = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.AllowUserToResizeRows    = false;
             this.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            this.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            this.CellBorderStyle          = DataGridViewCellBorderStyle.Single;
 
-            this.GridColor = Color.Black;
+            this.GridColor         = Color.Black;
             this.RowHeadersVisible = false;
-            this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;  // or DataGridViewSelectionMode.CellSelect
-            this.MultiSelect = false;
-            this.Dock = DockStyle.None;  // or DockStyle.Fill to fill parent
+            this.SelectionMode     = DataGridViewSelectionMode.FullRowSelect;  // or DataGridViewSelectionMode.CellSelect
+            this.MultiSelect       = false;
+            this.Dock              = DockStyle.None;  // or DockStyle.Fill to fill parent
 
 
             //this.ColumnCount = NUM_COLUMNS;

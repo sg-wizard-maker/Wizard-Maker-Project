@@ -12,33 +12,33 @@ namespace WizardMaker.Controls
     public class CharacteristicsGridControl : DataGridView
     {
         const int GRID_CHARACTERISTICS_WIDTH_EXTRA_BOLD = 8;
-        const int GRID_CHARACTERISTICS_WIDTH_NO_BOLD = 333;
-        const int GRID_CHARACTERISTICS_WIDTH_BOLD    = GRID_CHARACTERISTICS_WIDTH_NO_BOLD + (2 * GRID_CHARACTERISTICS_WIDTH_EXTRA_BOLD);
-        const int GRID_CHARACTERISTICS_WIDTH = GRID_CHARACTERISTICS_WIDTH_BOLD;
+        const int GRID_CHARACTERISTICS_WIDTH_NO_BOLD    = 333;
+        const int GRID_CHARACTERISTICS_WIDTH_BOLD       = GRID_CHARACTERISTICS_WIDTH_NO_BOLD + (2 * GRID_CHARACTERISTICS_WIDTH_EXTRA_BOLD);
+        const int GRID_CHARACTERISTICS_WIDTH            = GRID_CHARACTERISTICS_WIDTH_BOLD;
 
         const int GRID_CHARACTERISTICS_HEIGHT_NO_HEADERS   = 91;
         const int GRID_CHARACTERISTICS_HEIGHT_WITH_HEADERS = (GRID_CHARACTERISTICS_HEIGHT_NO_HEADERS + 22);
-        const int GRID_CHARACTERISTICS_HEIGHT = GRID_CHARACTERISTICS_HEIGHT_WITH_HEADERS;
+        const int GRID_CHARACTERISTICS_HEIGHT              = GRID_CHARACTERISTICS_HEIGHT_WITH_HEADERS;
 
         public CharacteristicsGridControl ( int locationX, int locationY, bool hasIntelligence = true, bool showColumnHeaders = true )
         {
             string abilityNameIntOrCunning   = hasIntelligence ? "Intelligence" : "Cunning";
             string abilityAbbrevIntOrCunning = hasIntelligence ? "INT"          : "CUN";
 
-            this.Name = "GridForCharacteristics";
+            this.Name     = "GridForCharacteristics";
             this.Location = new Point( locationX, locationY );
-            this.Size = new Size( GRID_CHARACTERISTICS_WIDTH, GRID_CHARACTERISTICS_HEIGHT );
-            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            this.Size     = new Size( GRID_CHARACTERISTICS_WIDTH, GRID_CHARACTERISTICS_HEIGHT );
+            this.AutoSizeColumnsMode      = DataGridViewAutoSizeColumnsMode.None;
             this.AllowUserToResizeColumns = false;
-            this.AllowUserToResizeRows = false;
+            this.AllowUserToResizeRows    = false;
 
             var headerCellStyleBold = this.ColumnHeadersDefaultCellStyle;
             headerCellStyleBold.Font = new Font(headerCellStyleBold.Font, FontStyle.Bold);
 
             this.ColumnCount = 7;
-            this.ColumnHeadersVisible = showColumnHeaders;  // Adjust GRID_CHARACTERISTICS_WIDTH, GRID_CHARACTERISTICS_HEIGHT based on this...
+            this.ColumnHeadersVisible          = showColumnHeaders;  // Adjust GRID_CHARACTERISTICS_WIDTH, GRID_CHARACTERISTICS_HEIGHT based on this...
             this.ColumnHeadersDefaultCellStyle = headerCellStyleBold;
-            this.RowHeadersVisible = false;
+            this.RowHeadersVisible             = false;
 
             this.Columns[0].Name = "Characteristic";
             this.Columns[1].Name = "Abbr";
@@ -82,9 +82,7 @@ namespace WizardMaker.Controls
             this.Rows.Add( charRow2 );
             this.Rows.Add( charRow3 );
             this.Rows.Add( charRow4 );
-
         }
-
 
     }
 }

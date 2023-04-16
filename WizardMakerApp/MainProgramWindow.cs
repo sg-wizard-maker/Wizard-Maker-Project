@@ -10,11 +10,11 @@ namespace WizardMaker
     //
     public partial class MainProgramWindow : Form
     {
-        private AbilityGridControl GridForAbilities { get; set; }
-        private DataGridView GridForCharacteristics { get; set; }
+        private AbilityGridControl GridForAbilities       { get; set; }
+        private DataGridView       GridForCharacteristics { get; set; }
 
-        private Label TheTextBoxLabel { get; set; }
-        private TextBox TheTextBox { get; set; }
+        private Label   TheTextBoxLabel { get; set; }
+        private TextBox TheTextBox      { get; set; }
 
         //private Label         TheListBoxLabel  { get; set; }
         //private ListBox       TheListBox       { get; set; }
@@ -23,9 +23,9 @@ namespace WizardMaker
 
         private BindingList<AbilityInstance> bindingListOfAbilityInstances = new BindingList<AbilityInstance>();
 
-        public const bool AFF = true;
+        public const bool AFF    = true;
         public const bool NO_AFF = false;
-        public const bool PUI = true;
+        public const bool PUI    = true;
         public const bool NO_PUI = false;
 
         protected void OnTheButtonClicked(object sender, EventArgs ea)
@@ -33,9 +33,9 @@ namespace WizardMaker
             ConsolePrint("TheButton clicked");
 
             int ii = 1;
-            foreach (var a in bindingListOfAbilityInstances)
+            foreach (var aa in bindingListOfAbilityInstances)
             {
-                string str = string.Format("{0} - {1}", ii, a.ToString());
+                string str = string.Format("{0} - {1}", ii, aa.ToString());
                 ConsolePrint(str);
                 ii++;
             }
@@ -66,17 +66,17 @@ namespace WizardMaker
 
             #region GridForAbilities
 
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Brawl, AbilityInstance.CreateID(), 30, "Dodging"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Awareness, AbilityInstance.CreateID(), 15, "At night", NO_AFF, PUI, 2));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Charm, AbilityInstance.CreateID(), 4, "First impressions"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.FolkKen, AbilityInstance.CreateID(), 50, "Motivations", AFF, NO_PUI));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Guile, AbilityInstance.CreateID(), 6, "Not lying"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Brawl,               AbilityInstance.CreateID(),  30, "Dodging"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Awareness,           AbilityInstance.CreateID(),  15, "At night", NO_AFF, PUI, 2));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Charm,               AbilityInstance.CreateID(),   4, "First impressions"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.FolkKen,             AbilityInstance.CreateID(),  50, "Motivations", AFF, NO_PUI));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Guile,               AbilityInstance.CreateID(),   6, "Not lying"));
 
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.LangHighGerman, AbilityInstance.CreateID(), 75, "(dialect)"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.LangLatin, AbilityInstance.CreateID(), 50, "Hermetic usage"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.ArtesLiberales, AbilityInstance.CreateID(), 15, "Astronomy"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.HermeticMagicTheory, AbilityInstance.CreateID(), 5, "Spell research"));
-            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Concentration, AbilityInstance.CreateID(), 140, "Duration", AFF, PUI, 2));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.LangHighGerman,      AbilityInstance.CreateID(),  75, "(dialect)"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.LangLatin,           AbilityInstance.CreateID(),  50, "Hermetic usage"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.ArtesLiberales,      AbilityInstance.CreateID(),  15, "Astronomy"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.HermeticMagicTheory, AbilityInstance.CreateID(),   5, "Spell research"));
+            bindingListOfAbilityInstances.Add(new AbilityInstance(ArchAbility.Concentration,       AbilityInstance.CreateID(), 140, "Duration", AFF, PUI, 2));
 
             this.GridForAbilities.DataSource = bindingListOfAbilityInstances;
 

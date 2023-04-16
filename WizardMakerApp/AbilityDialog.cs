@@ -21,11 +21,11 @@ namespace WizardMaker
         private void abilityListBoxDialog_SelectedIndexChanged(object sender, EventArgs e)
         {
             specialtyComboBox1.Items.Clear();
-            if (abilityListBoxDialog.SelectedItems.Count == 1) {
+            if (abilityListBoxDialog.SelectedItems.Count == 1) 
+            {
                 string a = abilityListBoxDialog.SelectedItems[0].ToString();
                 specialtyComboBox1.Items.AddRange(ArchAbility.LookupCommonAbilities(a).CommonSpecializations.ToArray());
             }
-            
         }
 
         private void AbilityDialog_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace WizardMaker
 
         private void xpUpdown1_ValueChanged(object sender, EventArgs e)
         {
-
+            // empty
         }
     }
 }
