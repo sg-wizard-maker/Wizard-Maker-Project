@@ -8,11 +8,11 @@ namespace WizardMaker.DataDomain.Validation
 {
     public class ValidationMessage
     {
-        public string message { get; private set; }
+        public string Message { get; private set; }
 
         public ValidationMessage(string message)
         {
-            this.message = message;
+            this.Message = message;
         }       
     }
 }

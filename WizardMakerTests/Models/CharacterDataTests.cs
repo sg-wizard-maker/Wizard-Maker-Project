@@ -16,11 +16,11 @@ namespace WizardMaker.DataDomain.Models.Tests
         {
             CharacterManager cm = new(25);
 
-            CharacterData cd = cm.renderCharacterAsCharacterData();    
+            CharacterData cd = cm.RenderCharacterAsCharacterData();    
             Assert.IsNotNull(cd);
 
-            string json = CharacterRenderer.serializeCharacterData(cd);
-            CharacterData cdDeserialized = CharacterRenderer.deserializeCharacterData(json);
+            string json = CharacterRenderer.SerializeCharacterData(cd);
+            CharacterData cdDeserialized = CharacterRenderer.DeserializeCharacterData(json);
 
             Assert.IsNotNull(cdDeserialized);
             Assert.IsTrue(cd.IsSameSpec(cdDeserialized));

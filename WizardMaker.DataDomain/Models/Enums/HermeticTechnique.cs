@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace WizardMaker.DataDomain.Models.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Technique
+    public enum HermeticTechnique
     {
         Cr,
         Re,

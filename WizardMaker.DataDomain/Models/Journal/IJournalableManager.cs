@@ -1,56 +1,53 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 
 namespace WizardMaker.DataDomain.Models
 {
-    // TODO: We can probably get rid of this interface.  It adds a layer of abstraction that we likely do not need.
+    // TODO:
+    // We can probably get rid of this interface.
+    // It adds a layer of abstraction that we likely do not need.
     internal interface IJournalableManager
     {
-        /**
-         * For when the manager is in advancement vs initial character generation.
-         */
-        bool isInCharacterGenerationMode();
+        // For when the manager is in advancement vs initial character generation.
+        bool IsInCharacterGenerationMode();
 
-        void setCharacterGenerationMode(bool isCharacterGenerationMode);
+        void SetCharacterGenerationMode(bool isCharacterGenerationMode);
 
-        SortedSet<Journalable> getJournalables();
+        SortedSet<Journalable> GetJournalables();
 
-        void addJournalable(Journalable journalable);
+        void AddJournalable(Journalable journalable);
 
-        void removeJournalEntry(String id);
+        void RemoveJournalEntry(String id);
     }
 
     public class JournableComparator: IComparer<Journalable>
     {
         public int Compare(Journalable x, Journalable y)
         {
-            if (x.sortOrder() == y.sortOrder()) { 
+            // TODO: Refactor arrow code
+            if (x.SortOrder() == y.SortOrder()) { 
 
-                if (x.getDate().Year == y.getDate().Year)
+                if (x.GetDate().Year == y.GetDate().Year)
                 {
-                    if (x.getDate().season == y.getDate().season)
+                    if (x.GetDate().season == y.GetDate().season)
                     {
-                        if (x.getId() == y.getId())
+                        if (x.GetId() == y.GetId())
                         {
-                            return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
+                            return new CaseInsensitiveComparer().Compare(x.GetText(), y.GetText());
                         }
                         else
                         {
-                            return new CaseInsensitiveComparer().Compare(x.getId(), y.getId());
+                            return new CaseInsensitiveComparer().Compare(x.GetId(), y.GetId());
                         }
                     }
                     else
                     {
-                        return x.getDate().season.CompareTo(y.getDate().season);
+                        return x.GetDate().season.CompareTo(y.GetDate().season);
                     }
 
                 }
-                return x.getDate().Year.CompareTo(y.getDate().Year);
+                return x.GetDate().Year.CompareTo(y.GetDate().Year);
             }
-            return x.sortOrder().CompareTo(y.sortOrder());
+            return x.SortOrder().CompareTo(y.SortOrder());
         }
     }
-
-
 }

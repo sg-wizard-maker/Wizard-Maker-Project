@@ -6,10 +6,9 @@ namespace WizardMaker.DataDomain.Models.Enums
     [JsonConverter(typeof(StringEnumConverter))]
     public enum VFImpact
     {
-        Free = 0,
+        Free    = 0,
         Special = Free,
-
-        Minor = 1,
-        Major = 3,
+        Minor   = 1,
+        Major   = 3,
     }
 }

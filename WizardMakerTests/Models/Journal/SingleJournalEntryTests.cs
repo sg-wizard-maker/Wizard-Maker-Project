@@ -24,7 +24,7 @@ namespace WizardMaker.DataDomain.Models.Tests
             const string TITLE = "New Entry";
             Journalable entry = new SimpleJournalEntry(TITLE, new SeasonYear(1222, Season.SPRING));
             Assert.IsNotNull(entry);
-            Assert.AreEqual(TITLE, entry.getText());
+            Assert.AreEqual(TITLE, entry.GetText());
         }
 
         [TestMethod()]
@@ -34,7 +34,7 @@ namespace WizardMaker.DataDomain.Models.Tests
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
             Journalable entry = new SimpleJournalEntry(TITLE, sy);
             Assert.IsNotNull(entry);
-            Assert.AreEqual(sy, entry.getDate());
+            Assert.AreEqual(sy, entry.GetDate());
         }
 
         [TestMethod()]
@@ -43,7 +43,7 @@ namespace WizardMaker.DataDomain.Models.Tests
             // Execute is currently a no-op, so just pass if you can run the method with no exception.
             const string TITLE = "New Entry";
             SeasonYear sy = new SeasonYear(1222, Season.SPRING);
-            Character dummy = new Character("My name", "My desription", 30);
+            Character dummy = new Character("My name", "My description", 30);
             Journalable entry = new SimpleJournalEntry(TITLE, sy);
             entry.Execute(dummy);
         }
@@ -64,7 +64,7 @@ namespace WizardMaker.DataDomain.Models.Tests
             //  this should not happen due to usage of GetType
             Assert.IsTrue(entry.IsSameSpecs(deserialized));
 
-            Assert.AreNotSame(deserialized.getId(), entry.getId());
+            Assert.AreNotSame(deserialized.GetId(), entry.GetId());
         }
 
         [TestMethod()]

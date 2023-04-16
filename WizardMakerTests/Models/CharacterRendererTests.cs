@@ -27,20 +27,20 @@ namespace WizardMakerTests.Models
             Character c = new("Foo", "Looks like a wealthy foo", STARTING_AGE);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
             AddVirtueJournalEntry addVirtueJournalEntry = new AddVirtueJournalEntry(initSeasonYear, ArchVirtue.NameToArchVirtue["Wealthy"]);
-            c.addJournalable(initEntry);
-            c.addJournalable(addVirtueJournalEntry);
-            c.addJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
+            c.AddJournalable(initEntry);
+            c.AddJournalable(addVirtueJournalEntry);
+            c.AddJournalable(new XpAbilitySpendJournalEntry("Ability spend Brawl", initSeasonYear, "Brawl", 25, "Fists"));
             CharacterRenderer.RenderAllJournalEntries(c);
             int initialXPPoolCount = c.XPPoolList.Count;
-            int initialXPSpend = c.totalRemainingXPWithoutOverdrawn();
-            Assert.AreEqual(1, c.abilities.Count);
-            Assert.AreEqual(1, c.virtues.Count);
+            int initialXPSpend = c.TotalRemainingXPWithoutOverdrawn();
+            Assert.AreEqual(1, c.Abilities.Count);
+            Assert.AreEqual(1, c.Virtues.Count);
 
             // Render again and see that counts do not change
-            Assert.AreEqual(1, c.abilities.Count);
-            Assert.AreEqual(1, c.virtues.Count);
+            Assert.AreEqual(1, c.Abilities.Count);
+            Assert.AreEqual(1, c.Virtues.Count);
             Assert.AreEqual(initialXPPoolCount, c.XPPoolList.Count);
-            Assert.AreEqual(initialXPSpend, c.totalRemainingXPWithoutOverdrawn());
+            Assert.AreEqual(initialXPSpend, c.TotalRemainingXPWithoutOverdrawn());
         }
 
         // We expect the results going in to be the same as coming out.
@@ -52,8 +52,8 @@ namespace WizardMakerTests.Models
         {
             Character c = new ("Foo", "Looks like a foo", 25);
             c.XPPoolList.Add(new BasicXPPool(XP_POOL_NAME, XP_POOL_DESCRIPTION, XP_POOL_INITIAL_XP));
-            CharacterRenderer.addAbility(c, n, xp, s, c.IsInitialCharacterFinished(), "dummyID");
-            CharacterData characterData = CharacterRenderer.renderCharacterAsCharacterData(c);
+            CharacterRenderer.AddAbility(c, n, xp, s, c.IsInitialCharacterFinished(), "dummyID");
+            CharacterData characterData = CharacterRenderer.RenderCharacterAsCharacterData(c);
 
             // Language abillity is added automatically.
             Assert.IsNotNull(characterData);
@@ -66,10 +66,10 @@ namespace WizardMakerTests.Models
 
             foreach (XPPoolData xppool in characterData.XPPools)
             {
-                Assert.AreEqual(XP_POOL_NAME, xppool.name);
-                Assert.AreEqual(XP_POOL_DESCRIPTION, xppool.description);
-                Assert.AreEqual(XP_POOL_INITIAL_XP, xppool.initialXP);
-                Assert.AreEqual(XP_POOL_INITIAL_XP - xp, xppool.remainingXP);
+                Assert.AreEqual(XP_POOL_NAME, xppool.Name);
+                Assert.AreEqual(XP_POOL_DESCRIPTION, xppool.Description);
+                Assert.AreEqual(XP_POOL_INITIAL_XP, xppool.InitialXP);
+                Assert.AreEqual(XP_POOL_INITIAL_XP - xp, xppool.RemainingXP);
             }
         }
 
@@ -83,7 +83,7 @@ namespace WizardMakerTests.Models
             Character c = new("Foo", "Best mage ever.  They really know a lot.", STARTING_AGE);
 
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(STARTING_AGE, ArchAbility.LangEnglish);
-            c.addJournalable(initEntry);
+            c.AddJournalable(initEntry);
 
             Dictionary<string, int> xpSpentMap = new Dictionary<string, int>();
 
@@ -99,7 +99,7 @@ namespace WizardMakerTests.Models
 
                     XpAbilitySpendJournalEntry xpAbilitySpend = new XpAbilitySpendJournalEntry("Spend on " + archAbility.Name, new SeasonYear(1220, Season.SPRING),
                         archAbility.Name, XP_PER_ENTRY + jitter, "Dummy specialty");
-                    c.addJournalable(xpAbilitySpend);
+                    c.AddJournalable(xpAbilitySpend);
 
                     // Track the XP spending as we go.
                     if (xpSpentMap.ContainsKey(archAbility.Name))
@@ -122,10 +122,10 @@ namespace WizardMakerTests.Models
 
             // Render the character as a CharacterData
             CharacterRenderer.RenderAllJournalEntries(c);
-            CharacterData cd = CharacterRenderer.renderCharacterAsCharacterData(c);
+            CharacterData cd = CharacterRenderer.RenderCharacterAsCharacterData(c);
 
             // Serialize the CharacterData
-            string foo = CharacterRenderer.serializeCharacterData(cd);
+            string foo = CharacterRenderer.SerializeCharacterData(cd);
 
             // Stop the timer
             DateTime timeEnd = DateTime.Now;

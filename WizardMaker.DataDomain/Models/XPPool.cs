@@ -1,29 +1,27 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using WizardMaker.DataDomain.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+
 using WizardMaker.DataDomain.Validation;
 
 
-//TODO: Move XP Pools and Journals to their own package.
+// TODO: Move XP Pools and Journals to their own package.
 [assembly: InternalsVisibleTo("WizardMakerTests")]
 namespace WizardMaker.DataDomain.Models
 {
     public class XPPoolComparer : IComparer<XPPool>
     {
-        public int Compare(XPPool x, XPPool y)
+        public int Compare(XPPool xx, XPPool yy)
         {
-            if (x.sortOrder() == y.sortOrder())
+            int result;
+            if (xx.SortOrder() == yy.SortOrder())
             {
-                return new CaseInsensitiveComparer().Compare(x.name,y.name);
+                result = new CaseInsensitiveComparer().Compare(xx.Name, yy.Name);
+                return result;
             }
-            return x.sortOrder().CompareTo(y.sortOrder());  
+            result = xx.SortOrder().CompareTo(yy.SortOrder());
+            return result;
         }
     }
     /*
@@ -32,32 +30,35 @@ namespace WizardMaker.DataDomain.Models
      */
     public abstract class XPPool
     {
-        public string name { get; }
-        public string description { get; }
-        public int initialXP;
-        public int remainingXP { get; set; }
+        public string Name        { get; }
+        public string Description { get; }
+        public int    InitialXP   { get; set; }
+        public int    RemainingXP { get; set; }
 
         public XPPool(string name, string description, int initialXP)
         {
-            this.name = name;
-            this.description = description;
-            this.initialXP = initialXP;
-            this.remainingXP = initialXP;
+            this.Name        = name;
+            this.Description = description;
+            this.InitialXP   = initialXP;
+            this.RemainingXP = initialXP;
         }
 
-        public virtual void reset() { remainingXP = initialXP; }
-
-        public virtual void spendXP(int xp)
+        public virtual void Reset()
         {
-            if (this.remainingXP < xp)
+            RemainingXP = InitialXP; 
+        }
+
+        public virtual void SpendXP(int xp)
+        {
+            if (this.RemainingXP < xp)
             {
-                throw new XPPoolOverdrawnException("XP Pool " + name + " was asked for too many XP: " + xp + " > " + this.remainingXP);
+                throw new XPPoolOverdrawnException("XP Pool " + Name + " was asked for too many XP: " + xp + " > " + this.RemainingXP);
             }
-            this.remainingXP -= xp;
+            this.RemainingXP -= xp;
         }
 
         // TODO: Do we need to be able to serialize and deserialize XP Pools?
-        public static XPPool deserializeJson(string json)
+        public static XPPool? DeserializeJson(string json)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
             {
@@ -65,33 +66,37 @@ namespace WizardMaker.DataDomain.Models
                 MaxDepth = 128
             };
 
-            return (XPPool) JsonConvert.DeserializeObject(json, settings);
+            var result = JsonConvert.DeserializeObject(json, settings) as XPPool;
+            return result;
         }
 
-        public virtual string serializeJson()
+        public virtual string SerializeJson()
         {
-            var settings = new JsonSerializerSettings();
-            settings.TypeNameHandling = TypeNameHandling.All;
-
-            return JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+            var settings = new JsonSerializerSettings()
+            {
+                TypeNameHandling = TypeNameHandling.All
+            };
+            var result = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+            return result;
         }
 
         abstract public bool CanSpendOnAbility(ArchAbility archAbility);
 
-        abstract public int sortOrder();
+        abstract public int SortOrder();
 
-        //TODO: This seems more difficult than it should be.
+        // TODO: This seems more difficult than it should be.
         // TODO: If we do not need to serialize and deserialize XPPools, do we need this method?  It was meant for testing.
-        // This method is only used for testing.  We do not want to override the Equals behavior, becuase we typically do not want two XPPools with the 
-        //  same stats to be considered equal.  
-        public virtual Boolean IsSameSpecs(XPPool other)
+        // This method is only used for testing.
+        // We do not want to override the Equals behavior,
+        // because we typically do not want two XPPools with the same stats to be considered equal.  
+        public virtual bool IsSameSpecs(XPPool other)
         {
             if (other == null) return false;
-            if (this.GetType() != other.GetType()) return false;
-            if (this.name != other.name) return false;
-            if (this.description != other.description) return false;
-            if (!this.remainingXP.Equals(other.remainingXP)) return false;
-            if (this.initialXP != other.initialXP) return false;
+            if (this.GetType()   != other.GetType())         return false;
+            if (this.Name        != other.Name)              return false;
+            if (this.Description != other.Description)       return false;
+            if (!this.RemainingXP.Equals(other.RemainingXP)) return false;
+            if (this.InitialXP   != other.InitialXP)         return false;
             
             return true;
         }
@@ -99,12 +104,12 @@ namespace WizardMaker.DataDomain.Models
 
     /**
      * Basic XP Pool that allows any ability spend.
-     * 
      * This should be used last in sort order, since we want to expend the most versatile sources last.
      */
     public class BasicXPPool : XPPool
     {
-        public BasicXPPool(string name, string description, int initialXP) : base(name, description, initialXP)
+        public BasicXPPool(string name, string description, int initialXP) 
+            : base(name, description, initialXP)
         {
         }
 
@@ -113,41 +118,51 @@ namespace WizardMaker.DataDomain.Models
             return true;
         }
 
-        public override int sortOrder() {
+        public override int SortOrder() {
             return 100;
         }
     }
 
-    /** XP Pool that only allows spending on one category of abilities
-     */
+    // XP Pool that only allows spending on one category of abilities
     public class CategoryAbilityXpPool : XPPool
     {
-        public List<AbilityType> allowedAbilityTypes { get; set; } 
+        public List<AbilityType> AllowedAbilityTypes { get; set; } 
 
-        public CategoryAbilityXpPool(string name, string description, int initialXP, List<AbilityType> allowedAbilityTypes) : base(name, description, initialXP) { 
-            this.allowedAbilityTypes = allowedAbilityTypes;
+        public CategoryAbilityXpPool(string name, string description, int initialXP, List<AbilityType> allowedAbilityTypes) 
+            : base(name, description, initialXP) 
+        { 
+            this.AllowedAbilityTypes = allowedAbilityTypes;
         }
 
         public override bool CanSpendOnAbility(ArchAbility archAbility)
         {
-            if (this.allowedAbilityTypes.Contains(archAbility.Type)) { return true; }
-            else { return false; }
+            if (this.AllowedAbilityTypes.Contains(archAbility.Type)) 
+            {
+                return true; 
+            }
+            return false;
         }
 
-        public override int sortOrder()
+        public override int SortOrder()
         {
             return 10;
         }
 
-        public override Boolean IsSameSpecs(XPPool other)
+        public override bool IsSameSpecs(XPPool other)
         {
-
+            // TODO: What is the intent here?
+            // Param 'other' is XPPool (not specifically CategoryAbilityXpPool),
+            // yet is cast to CategoryAbilityXpPool, which might fail.
+            // Confusion!
             if (!base.IsSameSpecs(other)) return false;
-            CategoryAbilityXpPool o2 = (CategoryAbilityXpPool)other;
-            if (this.allowedAbilityTypes.Count != o2.allowedAbilityTypes.Count) return false;
-            foreach (AbilityType type in allowedAbilityTypes)
+            CategoryAbilityXpPool otherPool = (CategoryAbilityXpPool)other;
+            if (this.AllowedAbilityTypes.Count != otherPool.AllowedAbilityTypes.Count) return false;
+            foreach (AbilityType type in AllowedAbilityTypes)
             {
-                if (o2.allowedAbilityTypes.Where<AbilityType>(archAbilityType => archAbilityType.Name == type.Name).Count() == 0)
+                if (otherPool.AllowedAbilityTypes
+                        .Where<AbilityType>(archAbilityType => archAbilityType.Name == type.Name)
+                        .Count() == 0
+                    )
                 {
                     return false;
                 }
@@ -156,37 +171,48 @@ namespace WizardMaker.DataDomain.Models
         }
 
     }
-    /** This will be spent before ability categories
-     */
+
+    // This will be spent before ability categories
     public class SpecificAbilitiesXpPool : XPPool
     {
-        public List<ArchAbility> allowedAbilities { get; }
+        public List<ArchAbility> AllowedAbilities { get; }
 
-        public SpecificAbilitiesXpPool(string name, string description, int initialXP, List<ArchAbility> allowedAbilities) : base(name, description, initialXP)
+        public SpecificAbilitiesXpPool(string name, string description, int initialXP, List<ArchAbility> allowedAbilities) 
+            : base(name, description, initialXP)
         {
-            this.allowedAbilities = allowedAbilities;
+            this.AllowedAbilities = allowedAbilities;
         }
 
         public override bool CanSpendOnAbility(ArchAbility archAbility)
         {
-            if (this.allowedAbilities.Contains(archAbility)) { return true; }
-            else { return false; }
+            if (this.AllowedAbilities.Contains(archAbility)) 
+            {
+                return true; 
+            }
+            return false;
         }
 
-        public override int sortOrder()
+        public override int SortOrder()
         {
             return 9;
         }
 
-        public override Boolean IsSameSpecs(XPPool other)
+        public override bool IsSameSpecs(XPPool other)
         {
+            // TODO: What is the intent here?
+            // Param 'other' is XPPool (not specifically SpecificAbilitiesXpPool),
+            // yet is cast to SpecificAbilitiesXpPool, which might fail.
+            // Confusion!
             if (!base.IsSameSpecs(other)) return false;
-            SpecificAbilitiesXpPool o2 = (SpecificAbilitiesXpPool)other;
-            if (this.allowedAbilities.Count != o2.allowedAbilities.Count) return false;
-            foreach (ArchAbility a in allowedAbilities)
+            SpecificAbilitiesXpPool otherPool = (SpecificAbilitiesXpPool)other;
+            if (this.AllowedAbilities.Count != otherPool.AllowedAbilities.Count) return false;
+            foreach (ArchAbility a in AllowedAbilities)
             {
                 
-                if (o2.allowedAbilities.Where<ArchAbility>(archAbility => archAbility.Name == a.Name).Count() == 0 )
+                if (otherPool.AllowedAbilities
+                        .Where<ArchAbility>(archAbility => archAbility.Name == a.Name)
+                        .Count() == 0 
+                    )
                 {
                     return false;
                 }
@@ -197,13 +223,16 @@ namespace WizardMaker.DataDomain.Models
 
     public class AllowOverdrawnXpPool : XPPool
     {
-        const string OVERDRAWN_NAME = "Overdraw";
+        const string OVERDRAWN_NAME        = "Overdraw";
         const string OVERDRAWN_DESCRIPTION = "Overdraw experience pool that allows negative remaining XP.  Each character can only have one.";
 
-        //TODO: This should just be a method that shows that it always has enough XP.  Rather than making this a ridiculously high number.
+        // TODO:
+        // This should just be a method that shows that it always has enough XP.
+        // Rather than making this a ridiculously high number.
         const int OVERDRAWN_AMOUNT = int.MaxValue-1;
 
-        public AllowOverdrawnXpPool() : base(OVERDRAWN_NAME, OVERDRAWN_DESCRIPTION, OVERDRAWN_AMOUNT)
+        public AllowOverdrawnXpPool() 
+            : base(OVERDRAWN_NAME, OVERDRAWN_DESCRIPTION, OVERDRAWN_AMOUNT)
         {
         }
 
@@ -212,15 +241,15 @@ namespace WizardMaker.DataDomain.Models
             return true;
         }
 
-        public override int sortOrder()
+        public override int SortOrder()
         {
             return 1000;
         }
 
-        public override void spendXP(int xp)
+        public override void SpendXP(int xp)
         {
             // XP can go negative.
-            this.remainingXP -= xp;
+            this.RemainingXP -= xp;
 
             ValidationLog.AddValidationMessage("Overdrawn by " + xp + " XP.");
         }

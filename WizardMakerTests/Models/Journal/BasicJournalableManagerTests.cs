@@ -28,16 +28,16 @@ namespace WizardMakerTests.Models.Journal
             };
             for (int i = 0; i < seasonYears.Length; i++)
             {
-                journalableManager.addJournalable(new SimpleJournalEntry("Random entry " + i, seasonYears[i]));
+                journalableManager.AddJournalable(new SimpleJournalEntry("Random entry " + i, seasonYears[i]));
             }
-            SortedSet<Journalable> journalables = journalableManager.getJournalables();
+            SortedSet<Journalable> journalables = journalableManager.GetJournalables();
             Assert.AreEqual(seasonYears.Length, journalables.Count);
 
             int[] sortedIndexes = { 0, 4, 1, 3, 2 };
             for (int i = 0; i < sortedIndexes.Length; i++)
             {
                 int index = sortedIndexes[i];
-                Assert.AreEqual(seasonYears[index], journalables.ElementAt(i).getDate());
+                Assert.AreEqual(seasonYears[index], journalables.ElementAt(i).GetDate());
             }
         }
 
@@ -50,19 +50,19 @@ namespace WizardMakerTests.Models.Journal
             for (int i = 0; i < 4; i++)
             {
                 SimpleJournalEntry journalable = new SimpleJournalEntry(TEST_STRING + i, new SeasonYear(1220, Season.SPRING));
-                journalableManager.addJournalable(journalable);
+                journalableManager.AddJournalable(journalable);
                 if (i == 2)
                 {
                     idToRemove = journalable.Id;
                 }
             }
 
-            journalableManager.removeJournalEntry(idToRemove);
+            journalableManager.RemoveJournalEntry(idToRemove);
 
-            Assert.AreEqual(3, journalableManager.getJournalables().Count);
+            Assert.AreEqual(3, journalableManager.GetJournalables().Count);
             for (int i = 0; i < 3; i++)
             {
-                Assert.AreNotEqual(TEST_STRING + "2", journalableManager.getJournalables().ElementAt(i).getText());
+                Assert.AreNotEqual(TEST_STRING + "2", journalableManager.GetJournalables().ElementAt(i).GetText());
             }
 
         }

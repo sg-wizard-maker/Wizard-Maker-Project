@@ -44,7 +44,7 @@ namespace WizardMakerTests.Models.Journal
 
             // Count the childhood language and childhood XP and the later life.
             Assert.AreEqual(NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP + NewCharacterInitJournalEntry.CHILDHOOD_XP +
-                (startingAge - NewCharacterInitJournalEntry.CHILDHOOD_END_AGE) * xpPerSeason, c.totalRemainingXPWithoutOverdrawn());
+                (startingAge - NewCharacterInitJournalEntry.CHILDHOOD_END_AGE) * xpPerSeason, c.TotalRemainingXPWithoutOverdrawn());
         }
 
         [TestMethod()]

@@ -31,15 +31,15 @@ namespace WizardMakerTests
         public void TestBasicXPPoolSimpleSpend()
         {
             XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
-            xpPool.spendXP(50);
-            Assert.IsTrue(xpPool.remainingXP == 50);
+            xpPool.SpendXP(50);
+            Assert.IsTrue(xpPool.RemainingXP == 50);
         }
 
         [TestMethod]
         public void TestBasicXPPoolSimpleFailure()
         {
             XPPool xpPool = new BasicXPPool(XP_POOL_NAME, "description", 100);
-            Assert.ThrowsException<XPPoolOverdrawnException>(() => xpPool.spendXP(150));
+            Assert.ThrowsException<XPPoolOverdrawnException>(() => xpPool.SpendXP(150));
         }
 
         [TestMethod]
@@ -90,10 +90,10 @@ namespace WizardMakerTests
                 xpPool1
             };
 
-            Assert.IsTrue(xPPools.ElementAt(0).name == "Educated Virtue");
-            Assert.IsTrue(xPPools.ElementAt(1).name == "Warrior Virtue");
-            Assert.IsTrue(xPPools.ElementAt(2).name == XP_POOL_NAME);
-            Assert.IsTrue(xPPools.ElementAt(3).remainingXP > 1000000);
+            Assert.IsTrue(xPPools.ElementAt(0).Name == "Educated Virtue");
+            Assert.IsTrue(xPPools.ElementAt(1).Name == "Warrior Virtue");
+            Assert.IsTrue(xPPools.ElementAt(2).Name == XP_POOL_NAME);
+            Assert.IsTrue(xPPools.ElementAt(3).RemainingXP > 1000000);
         }
         [TestMethod]
         public void TestMultipleXPPoolsAbilities()
@@ -101,7 +101,7 @@ namespace WizardMakerTests
             SortedSet <XPPool>  pools = new SortedSet<XPPool>(new XPPoolComparer()) {
                 new SpecificAbilitiesXpPool(CHILDHOOD_LANGUAGE_POOL_NAME, CHILDHOOD_LANGUAGE_DESCRIPTION, CHILDHOOD_LANGUAGE_XP, 
                     new List<ArchAbility>() {ArchAbility.LangEnglish}),
-                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, NewCharacterInitJournalEntry.determineChildhoodAbilities()),
+                new SpecificAbilitiesXpPool(CHILDHOOD_POOL_NAME, CHILDHOOD_DESCRIPTION, CHILDHOOD_XP, NewCharacterInitJournalEntry.DetermineChildhoodAbilities()),
                 new BasicXPPool(LATER_LIFE_POOL_NAME, LATER_LIFE_DESCRIPTION, 75),
                 new AllowOverdrawnXpPool()
             };
@@ -110,17 +110,17 @@ namespace WizardMakerTests
             
             AbilityInstance charm = new AbilityInstance(ArchAbility.Charm, "testID2", 75);
 
-            AbilityXPManager.debitXPPoolsForAbility(english, pools);
-            AbilityXPManager.debitXPPoolsForAbility(charm, pools);
+            AbilityXPManager.DebitXPPoolsForAbility(english, pools);
+            AbilityXPManager.DebitXPPoolsForAbility(charm, pools);
 
             // Childhood language should be 0
-            Assert.IsTrue(pools.ElementAt(0).remainingXP == 0);
+            Assert.IsTrue(pools.ElementAt(0).RemainingXP == 0);
 
             // Childhood skills should be 0 (spent on charm)
-            Assert.IsTrue(pools.ElementAt(1).remainingXP == 0);
+            Assert.IsTrue(pools.ElementAt(1).RemainingXP == 0);
 
             // Later life should be reduced by 30
-            Assert.IsTrue(pools.ElementAt(2).remainingXP == (75-30));
+            Assert.IsTrue(pools.ElementAt(2).RemainingXP == (75-30));
         }
 
 
@@ -156,9 +156,9 @@ namespace WizardMakerTests
         // This test has been disabled, since XPPools being serializable is not necessarily a requirement.
         public void SerializableTest(XPPool pool)
         {
-            string tmp = pool.serializeJson();
+            string tmp = pool.SerializeJson();
 
-            XPPool deserialized = XPPool.deserializeJson(tmp);
+            XPPool deserialized = XPPool.DeserializeJson(tmp);
 
             Assert.IsNotNull(deserialized);
             Assert.IsNotNull(pool);

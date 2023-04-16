@@ -1,67 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WizardMaker.DataDomain.Models;
 
 namespace WizardMaker.DataDomain.Models
 {
-    //TODO: Delete this class unless it shows usefulness.
+    // TODO: Delete this class unless it shows usefulness.
     public class ValidationResult
     {
-        readonly Boolean isValidated;
-        readonly string failureReason;
+        readonly bool   IsValidated;
+        readonly string FailureReason;
 
         public ValidationResult(string failureReason)
         {
-            this.isValidated = false;
-            this.failureReason = failureReason;
+            this.IsValidated   = false;
+            this.FailureReason = failureReason;
         }
 
         public ValidationResult()
         {
-            this.isValidated = true;
-            this.failureReason = "";
+            this.IsValidated   = true;
+            this.FailureReason = "";
         }
     }
+
     public class AbilityXPManager
     {
-        private static void validateSpendXPOnAbility(ArchAbility archAbility, int xp)
+        private static void ValidateSpendXPOnAbility(ArchAbility archAbility, int xp)
         {
-            
+            // Empty?
         }
 
-        public static AbilityInstance createNewAbilityInstance(string ability, int xp, string specialty, string journalID, bool isPuissant, bool isAffinity)
+        public static AbilityInstance CreateNewAbilityInstance(string ability, int xp, string specialty, string journalID, bool isPuissant, bool isAffinity)
         {
             // Create the ability instance
-            ArchAbility archAbility = ArchAbility.lookupCommonAbilities(ability);
-            validateSpendXPOnAbility(archAbility, xp);
+            ArchAbility archAbility = ArchAbility.LookupCommonAbilities(ability);
+            ValidateSpendXPOnAbility(archAbility, xp);
 
-            return new AbilityInstance(archAbility, journalID, xp, specialty, hasPuissance:isPuissant, hasAffinity:isAffinity);
+            var result = new AbilityInstance(archAbility, journalID, xp, specialty, hasPuissance: isPuissant, hasAffinity: isAffinity);
+            return result;
         }
 
-        public static void debitXPPoolsForAbility(AbilityInstance a, int xp, SortedSet<XPPool> XPPoolList)
+        public static void DebitXPPoolsForAbility(AbilityInstance a, int xp, SortedSet<XPPool> XPPoolList)
         {
             int remainingXPToAllocate = xp;
 
             // Allocate the XP cost to the remaining pools.
             foreach (XPPool p in XPPoolList)
             {
-                if (p.CanSpendOnAbility(a.Ability))
+                if (!p.CanSpendOnAbility(a.Ability))
                 {
-                    int allocatedXP = Math.Min(p.remainingXP, remainingXPToAllocate);
+                    continue;
+                }
+                int allocatedXP = Math.Min(p.RemainingXP, remainingXPToAllocate);
 
-                    // Adjust the pool
-                    p.remainingXP -= allocatedXP;
+                // Adjust the pool
+                p.RemainingXP -= allocatedXP;
 
-                    // Track whether we have allocated all of the necessary XP.
-                    remainingXPToAllocate -= allocatedXP;
+                // Track whether we have allocated all of the necessary XP.
+                remainingXPToAllocate -= allocatedXP;
 
-                    if (remainingXPToAllocate == 0)
-                    {
-                        break;
-                    }
+                if (remainingXPToAllocate == 0)
+                {
+                    break;
                 }
             }
 
@@ -70,9 +68,10 @@ namespace WizardMaker.DataDomain.Models
                 throw new ShouldNotBeAbleToGetHereException("Could not allocate XP for the ability " + a.Name + ".  Please send this error to a developer.");
             }
         }
-        public static void debitXPPoolsForAbility(AbilityInstance a, SortedSet<XPPool> XPPoolList)
+
+        public static void DebitXPPoolsForAbility(AbilityInstance a, SortedSet<XPPool> XPPoolList)
         {
-            debitXPPoolsForAbility(a, a.XP, XPPoolList);
+            DebitXPPoolsForAbility(a, a.XP, XPPoolList);
         }
     }
 }

@@ -10,15 +10,18 @@ namespace WizardMaker.DataDomain.Models
         {
         }
 
-        public AbilityNotFoundException(string message) : base(message)
+        public AbilityNotFoundException(string message) 
+            : base(message)
         {
         }
 
-        public AbilityNotFoundException(string message, Exception innerException) : base(message, innerException)
+        public AbilityNotFoundException(string message, Exception innerException) 
+            : base(message, innerException)
         {
         }
 
-        protected AbilityNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected AbilityNotFoundException(SerializationInfo info, StreamingContext context) 
+            : base(info, context)
         {
         }
     }

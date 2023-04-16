@@ -10,15 +10,18 @@ namespace WizardMaker.DataDomain.Models
         {
         }
 
-        public ShouldNotBeAbleToGetHereException(string message) : base(message)
+        public ShouldNotBeAbleToGetHereException(string message) 
+            : base(message)
         {
         }
 
-        public ShouldNotBeAbleToGetHereException(string message, Exception innerException) : base(message, innerException)
+        public ShouldNotBeAbleToGetHereException(string message, Exception innerException) 
+            : base(message, innerException)
         {
         }
 
-        protected ShouldNotBeAbleToGetHereException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected ShouldNotBeAbleToGetHereException(SerializationInfo info, StreamingContext context) 
+            : base(info, context)
         {
         }
     }

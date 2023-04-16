@@ -14,11 +14,11 @@ namespace WizardMaker.DataDomain.Models.Enums
         Structure,
         Bound,
 
-        // intellego spells
-        Taste = Ind,
-        Touch = Part,
-        Smell = Group,
+        // Sensory Targets, primarily for Intellego spells
+        Taste   = Ind,
+        Touch   = Part,
+        Smell   = Group,
         Hearing = Structure,
-        Sight = Bound
+        Sight   = Bound
     }
 }

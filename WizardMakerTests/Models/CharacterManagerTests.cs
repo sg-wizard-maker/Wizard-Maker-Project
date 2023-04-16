@@ -22,17 +22,17 @@ namespace WizardMaker.DataDomain.Models.Tests
         {
             CharacterManager cm = new(25);
 
-            int initialXP = cm.totalRemainingXPWithoutOverdrawn();
+            int initialXP = cm.TotalRemainingXPWithoutOverdrawn();
 
             cm.updateAbilityDuringCreation(n, xp1, s);
             cm.updateAbilityDuringCreation(n, xp2, s);
 
             // We expect that one of the first entry has been overwritten by the second.
             // And since there is two there by default (starting character + starting language), we expect 3.
-            Assert.AreEqual(3, cm.getJournalSize());
+            Assert.AreEqual(3, cm.GetJournalSize());
 
             // Render the character in a way we can easily run our assertions.
-            CharacterData cd = cm.renderCharacterAsCharacterData();
+            CharacterData cd = cm.RenderCharacterAsCharacterData();
             Assert.IsNotNull(cd);
             Assert.AreEqual(2, cd.Abilities.Count);
 
@@ -47,7 +47,7 @@ namespace WizardMaker.DataDomain.Models.Tests
             Assert.AreEqual(1, cd.Abilities.Count(a => a.Name == n));
 
             // Test correct amount of XP was spent.
-            Assert.AreEqual(initialXP - xp2, cm.totalRemainingXPWithoutOverdrawn());
+            Assert.AreEqual(initialXP - xp2, cm.TotalRemainingXPWithoutOverdrawn());
         }
 
         [TestMethod()]
@@ -55,7 +55,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         {
             Character c = new("Foo", "Looks like a foo", 25);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
-            c.addJournalable(initEntry);
+            c.AddJournalable(initEntry);
 
             string tempPath = Path.GetTempFileName();
             CharacterManager.WriteToFile(c, tempPath);
@@ -68,7 +68,7 @@ namespace WizardMaker.DataDomain.Models.Tests
 
             Assert.AreEqual(c.Name, c2.Name);
             Assert.AreEqual(c.Description, c2.Description);
-            Assert.AreEqual(c.abilities.Count, c2.abilities.Count);
+            Assert.AreEqual(c.Abilities.Count, c2.Abilities.Count);
             Assert.AreEqual(c.GetJournal().Count, c2.GetJournal().Count);
             Assert.IsTrue(c.GetJournal().Count > 0);
             for (int i=0; i<c2.GetJournal().Count; i++)

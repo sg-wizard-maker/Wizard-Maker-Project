@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-//using System.Text.Json.Serialization;  // JsonConverterAttribute
-using System.Xml.Serialization;
+using System.ComponentModel;  // various Attributes
 
 namespace WizardMaker.DataDomain.Models
 {
@@ -317,7 +311,7 @@ namespace WizardMaker.DataDomain.Models
         }
 
         // TODO: cache this into a more intelligent lookup.  Ths is a brute force loop.
-        public static ArchAbility lookupCommonAbilities(string ability)
+        public static ArchAbility LookupCommonAbilities(string ability)
         {
             foreach (var a in ArchAbility.AllCommonAbilities)
             {
@@ -328,7 +322,7 @@ namespace WizardMaker.DataDomain.Models
             throw new AbilityNotFoundException(ability + " not supported.");
         }
 
-        public static string[] getCommonAbilities()
+        public static string[] GetCommonAbilities()
         {
             List<string> abilities = new List<string>();
             foreach (var a in ArchAbility.AllCommonAbilities)
@@ -341,7 +335,6 @@ namespace WizardMaker.DataDomain.Models
 
             return abilities.ToArray();
         }
-
     }
 
     public class AbilityInstance
@@ -372,10 +365,10 @@ namespace WizardMaker.DataDomain.Models
 
         public string Name       { get { return this.Ability.Name;              } }
         public int    XP         { get; set; }
-        public int    Score      { get => AbilityXpCosts.ScoreForXP(XP, determineXpCost(Ability)); set => throw new NotImplementedException(); }
+        public int    Score      { get => AbilityXpCosts.ScoreForXP(XP, DetermineXpCost(Ability)); set => throw new NotImplementedException(); }
 
         [DisplayName(" ")]
-        public string AddToScore { get { return this.HasPuissance ? this.PuissantBonus.ToString() : null; } }
+        public string AddToScore { get { return this.HasPuissance ? this.PuissantBonus.ToString() : ""; } }
 
         public string Specialty  { get; set; }
 
@@ -394,11 +387,12 @@ namespace WizardMaker.DataDomain.Models
         public int  PuissantBonus  { get; private set; } = 2;
 
         // Assumption:  Each of these journal entries are ones that spend XP and that no single XP-spending journal entry will involve more than this ability instance (ie, only one ability instance).
-        public List<string> journalIDs { get; private set; }
+        public List<string> JournalIDs { get; private set; }
 
-        public decimal determineXpCost(ArchAbility archAbility)
+        public decimal DetermineXpCost(ArchAbility archAbility)
         {
-            return HasAffinity? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
+            var result = HasAffinity ? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
+            return result;
         }
 
         // TODO:
@@ -408,7 +402,7 @@ namespace WizardMaker.DataDomain.Models
         public AbilityInstance ( ArchAbility ability, string journalID, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
-            decimal xpCost = determineXpCost(ability);
+            decimal xpCost = DetermineXpCost(ability);
 
             this.Ability = ability;
             this.XP      = xp;
@@ -416,7 +410,7 @@ namespace WizardMaker.DataDomain.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.journalIDs = new List<string>() { journalID};
+            this.JournalIDs = new List<string>() { journalID};
         }
 
         public override string ToString ()
@@ -426,18 +420,18 @@ namespace WizardMaker.DataDomain.Models
             return str;
         }
 
-        public void addJournalID(string journalID)
+        public void AddJournalID(string journalID)
         {
-            this.journalIDs.Add(journalID);
+            this.JournalIDs.Add(journalID);
         }
 
         // This is used mostly for testing.  In cases where we do not have an ID from the Jounral Entry.
-        public static string createID()
+        public static string CreateID()
         {
-            Guid myuuid = Guid.NewGuid();
-            return myuuid.ToString();
+            Guid myGuid = Guid.NewGuid();
+            var  result = myGuid.ToString();
+            return result;
         }
-
     }
 
 

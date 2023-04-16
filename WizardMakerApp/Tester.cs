@@ -26,7 +26,7 @@ namespace WizardMaker
         {
             //TODO: Magic number 25.  Make this specifiable by user
             this.characterManager = new CharacterManager(25);
-            this.Text = characterManager.getCharacterName();
+            this.Text = characterManager.GetCharacterName();
             updateCharacterDisplay();
         }
 
@@ -60,7 +60,7 @@ namespace WizardMaker
 
             dataGridView1.Rows.Clear();
 
-            CharacterData c = characterManager.renderCharacterAsCharacterData();
+            CharacterData c = characterManager.RenderCharacterAsCharacterData();
 
             foreach (var a in c.Abilities)
             {
@@ -73,7 +73,7 @@ namespace WizardMaker
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
 
             // Update the XPPools text
-            string xpPoolText = String.Join("\n", c.XPPools.Select(x => x.name + " (Remaining: " + x.remainingXP + ")").ToList());
+            string xpPoolText = String.Join("\n", c.XPPools.Select(x => x.Name + " (Remaining: " + x.RemainingXP + ")").ToList());
             XPPoolsJson.Text = xpPoolText;
         }
 
@@ -101,7 +101,7 @@ namespace WizardMaker
 
         private List<string> retrieveAbilityIdsFromAbilityName(string name)
         {
-            CharacterData c = characterManager.renderCharacterAsCharacterData();
+            CharacterData c = characterManager.RenderCharacterAsCharacterData();
             List<string> result = new List<string>();
             foreach (var a in c.Abilities)
             {

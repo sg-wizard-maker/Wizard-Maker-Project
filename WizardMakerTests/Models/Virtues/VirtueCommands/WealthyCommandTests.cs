@@ -25,13 +25,13 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
             CharacterRenderer.RenderAllJournalEntries(c);
 
             // Assert that the character has 20 XP and that the Later Life XP is updated accordingly.
-            Assert.AreEqual(WealthyCommand.WEALTHY_XP, c.XpPerYear);
+            Assert.AreEqual(WealthyCommand.WEALTHY_ANNUAL_XP, c.XpPerYear);
 
             foreach (XPPool xppool in c.XPPoolList)
             {
-                if (xppool.name.Equals(NewCharacterInitJournalEntry.LATER_LIFE_POOL_NAME))
+                if (xppool.Name.Equals(NewCharacterInitJournalEntry.LATER_LIFE_POOL_NAME))
                 {
-                    Assert.AreEqual((STARTING_AGE - NewCharacterInitJournalEntry.CHILDHOOD_END_AGE) * WealthyCommand.WEALTHY_XP, xppool.initialXP);
+                    Assert.AreEqual((STARTING_AGE - NewCharacterInitJournalEntry.CHILDHOOD_END_AGE) * WealthyCommand.WEALTHY_ANNUAL_XP, xppool.InitialXP);
                 }
             }
         }

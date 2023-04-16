@@ -10,15 +10,18 @@ namespace WizardMaker.DataDomain.Models
         {
         }
 
-        public XPPoolOverdrawnException(string message) : base(message)
+        public XPPoolOverdrawnException(string message) 
+            : base(message)
         {
         }
 
-        public XPPoolOverdrawnException(string message, Exception innerException) : base(message, innerException)
+        public XPPoolOverdrawnException(string message, Exception innerException) 
+            : base(message, innerException)
         {
         }
 
-        protected XPPoolOverdrawnException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected XPPoolOverdrawnException(SerializationInfo info, StreamingContext context) 
+            : base(info, context)
         {
         }
     }

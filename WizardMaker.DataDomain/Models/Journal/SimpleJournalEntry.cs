@@ -1,9 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using WizardMaker.DataDomain.Models;
+﻿using System;
 
 namespace WizardMaker.DataDomain.Models
 {
@@ -24,50 +19,49 @@ namespace WizardMaker.DataDomain.Models
         {
             if (obj == null) return false;
             SeasonYear other = obj as SeasonYear;
-            return this.Year == other.Year && this.season == other.season; 
+            bool result = (this.Year == other.Year) && (this.season == other.season);
+            return result;
         }
     }
 
-    /** Just a note with a season and year attached to it.
-    * Does not actually do anything.
-    */
+    // Just a note with a season and year attached to it.
+    // Does not actually do anything.
     public class SimpleJournalEntry : Journalable
     {
-        public string JournalEntryText { get; set; }
-        public SeasonYear SeasonYear { get; set; }
-        public String Id { get; }
+        public string     JournalEntryText { get; set; }
+        public SeasonYear SeasonYear       { get; set; }
+        public string     Id               { get; }
 
         public SimpleJournalEntry(string journalEntryText, SeasonYear seasonYear)
         {
             JournalEntryText = journalEntryText;
-            SeasonYear = seasonYear;
+            SeasonYear       = seasonYear;
 
-            Guid myuuid = Guid.NewGuid();
-            Id = myuuid.ToString();
-
+            Guid myGuid = Guid.NewGuid();
+            Id = myGuid.ToString();
         }
 
-        public override string getText()
+        public override string GetText()
         {
             return JournalEntryText;
         }
 
-        public override SeasonYear getDate()
+        public override SeasonYear GetDate()
         {
             return SeasonYear;
         }
 
         public override void Execute(Character character)
         {
-            //no-op
+            // no-op
         }
 
         public override void Undo()
         {
-            //no-op
+            // no-op
         }
 
-        public override string getId()
+        public override string GetId()
         {
             return Id;
         }

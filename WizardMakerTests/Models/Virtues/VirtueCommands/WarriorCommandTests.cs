@@ -23,7 +23,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
 
             // If we are going to test Validation, we must reset the ValidationLog.
             //  Otherwise, it will get polluted with validation messages from other tests.
-            ValidationLog.reset();
+            ValidationLog.Reset();
 
             // Create a Warrior character
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
@@ -41,12 +41,12 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
             // Add a martial ability and rerender the character.
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING),
                 "Great Weapon", 25, "Poleaxe");
-            c.addJournalable(xpSpend);
+            c.AddJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);
 
             // Assert that the Warrior XP Pool has been debited appropriately
-            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().remainingXP);
-            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().initialXP);
+            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP - 25, c.XPPoolList.Where(x => x.Name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().RemainingXP);
+            Assert.AreEqual(WarriorCommand.WARRIOR_POOL_INITIAL_XP, c.XPPoolList.Where(x => x.Name.Equals(WarriorCommand.WARRIOR_POOL_NAME)).First().InitialXP);
 
             // Assert that there were no validation errors
             Assert.AreEqual(0, ValidationLog.GetMessages().Count);

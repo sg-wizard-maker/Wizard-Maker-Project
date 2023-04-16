@@ -12,7 +12,7 @@ namespace WizardMaker.DataDomain.Models.Enums
     public enum SpellRange
     {
         Personal = 0,
-        Touch = 1,
+        Touch    = 1,
         Voice,
         Eye = Voice,
         Sight,

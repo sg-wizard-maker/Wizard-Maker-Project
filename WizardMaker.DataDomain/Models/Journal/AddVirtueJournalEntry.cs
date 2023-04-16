@@ -1,55 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WizardMaker.DataDomain.Models.Virtues;
+﻿using WizardMaker.DataDomain.Models.Virtues;
 
 namespace WizardMaker.DataDomain.Models.Journal
 {
     public class AddVirtueJournalEntry : Journalable
     {
-        public SimpleJournalEntry text;
-        public ArchVirtue archVirtue;
+        public SimpleJournalEntry Text;
+        public ArchVirtue         ArchVirtue;
+
         public const string PREFIX = "Added virtue: ";
 
-        // secondary info is for cases where we have multiple virtues, such as Puissant Ability can actually be 
-        //  "Puissant Brawl" or "Puissant Area Lore: England"
+        // Secondary info is for cases where we have multiple virtues, such as:
+        // Puissant Ability can actually be  "Puissant Brawl" or "Puissant Area Lore: England"
         public AddVirtueJournalEntry(SeasonYear sy, ArchVirtue archVirtue)
         {
-            this.text = new SimpleJournalEntry(PREFIX + archVirtue.Name, sy);
-            this.archVirtue = archVirtue;
+            this.Text       = new SimpleJournalEntry(PREFIX + archVirtue.Name, sy);
+            this.ArchVirtue = archVirtue;
         }
 
         public override void Execute(Character character)
         {
-            VirtueInstance virtue = new VirtueInstance(archVirtue, this.getId());
-            character.virtues.Add(virtue);
+            VirtueInstance virtue = new VirtueInstance(ArchVirtue, this.GetId());
+            character.Virtues.Add(virtue);
             virtue.Virtue.CharacterCommand.Execute(character);
-
         }
 
-        public override SeasonYear getDate()
+        public override SeasonYear GetDate()
         {
-            return text.getDate();
+            return Text.GetDate();
         }
 
-        public override string getId()
+        public override string GetId()
         {
-            return text.getId();
+            return Text.GetId();
         }
 
-        public override string getText()
+        public override string GetText()
         {
-            return text.getText();
+            return Text.GetText();
         }
 
-        public bool isMatch(string virtueName)
+        public bool IsMatch(string virtueName)
         {
-            return (PREFIX + archVirtue.Name) == (PREFIX + virtueName);
+            return (PREFIX + ArchVirtue.Name) == (PREFIX + virtueName);
         }
 
-        public override int sortOrder()
+        public override int SortOrder()
         {
             return JournalSortingConstants.ADD_VIRTUE_SORT_ORDER;
         }

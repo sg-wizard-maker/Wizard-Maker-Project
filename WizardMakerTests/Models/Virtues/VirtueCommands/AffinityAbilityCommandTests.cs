@@ -25,14 +25,14 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
 
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 
                 20, "Fist");
-            c.addJournalable(xpSpend);
+            c.AddJournalable(xpSpend);
      
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            Assert.IsTrue(c.abilities.Where(a => a.Name == ABILITY).First().HasAffinity);
+            Assert.IsTrue(c.Abilities.Where(a => a.Name == ABILITY).First().HasAffinity);
 
             // Please note that we still treat the score as if it was 2, not 4.  This is because we need to render it later as "2+2", not "4".
-            Assert.AreEqual(3, c.abilities.Where(a => a.Name == ABILITY).First().Score);
+            Assert.AreEqual(3, c.Abilities.Where(a => a.Name == ABILITY).First().Score);
         }
     }
 }

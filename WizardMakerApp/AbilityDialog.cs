@@ -23,7 +23,7 @@ namespace WizardMaker
             specialtyComboBox1.Items.Clear();
             if (abilityListBoxDialog.SelectedItems.Count == 1) {
                 string a = abilityListBoxDialog.SelectedItems[0].ToString();
-                specialtyComboBox1.Items.AddRange(ArchAbility.lookupCommonAbilities(a).CommonSpecializations.ToArray());
+                specialtyComboBox1.Items.AddRange(ArchAbility.LookupCommonAbilities(a).CommonSpecializations.ToArray());
             }
             
         }
@@ -31,7 +31,7 @@ namespace WizardMaker
         private void AbilityDialog_Load(object sender, EventArgs e)
         {
             // Load the list of Abilities
-            abilityListBoxDialog.Items.AddRange(ArchAbility.getCommonAbilities());
+            abilityListBoxDialog.Items.AddRange(ArchAbility.GetCommonAbilities());
         }
 
         private void button1_Click(object sender, EventArgs e)

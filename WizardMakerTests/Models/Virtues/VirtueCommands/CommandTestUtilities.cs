@@ -16,7 +16,7 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
             // Create a basic character
             Character c = new("Foo", "Looks like a foo", startingAge);
             NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
-            c.addJournalable(initEntry);
+            c.AddJournalable(initEntry);
             return c;
         }
 
@@ -31,7 +31,7 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
             // Note that this is only generating a virtue that is in the same season as the NewCharacterInit journal entry.
             AddVirtueJournalEntry virtueJournalEntry = new AddVirtueJournalEntry(new SeasonYear(sagaStart - startingAge, Season.SPRING),
                 archVirtue);
-            c.addJournalable(virtueJournalEntry);
+            c.AddJournalable(virtueJournalEntry);
 
             Assert.IsTrue(archVirtue.IsImplemented());
 
@@ -45,9 +45,9 @@ namespace WizardMakerTests.Models.Virtues.VirtueCommands
         public static void AssertXPPoolInitialization(Character c, string xpPoolName, string xpPoolDescription, int initialXP)
         {
             // Assert that the XP Pool was created and has the correct amount of XP (initial and remaining)
-            Assert.IsTrue(c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).Any());
-            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).First().remainingXP);
-            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.name.Equals(xpPoolName)).First().initialXP);   
+            Assert.IsTrue(c.XPPoolList.Where(x => x.Name.Equals(xpPoolName)).Any());
+            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.Name.Equals(xpPoolName)).First().RemainingXP);
+            Assert.AreEqual(initialXP, c.XPPoolList.Where(x => x.Name.Equals(xpPoolName)).First().InitialXP);   
         }
     }
 }

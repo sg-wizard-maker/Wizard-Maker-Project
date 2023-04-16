@@ -1,38 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 {
-    /**
-     * this class is a utility class for virtues that grant access to an Ability Type AND an XP pool to spend on abilities
-     *  of that type.  If the virtue is not doing both of those things, then developers should not use this class.
-     */
+    // This class is a utility class for virtues that grant access to
+    // an Ability Type AND an XP pool to spend on abilities of that type.
+    // If the virtue is not doing both of those things, then developers should not use this class.
     internal class GenericAllowAbilityTypeAndXPPoolCommand : ICharacterCommand
     {
-        AbilityType allowedType;
-        string name;
-        string description;
-        int initialXP;
+        AbilityType AllowedType;
+        string      Name;
+        string      Description;
+        int         InitialXP;
 
         public GenericAllowAbilityTypeAndXPPoolCommand(AbilityType allowedType, string name, string description, int initialXP)
         {
-            this.allowedType = allowedType;
-            this.name = name;
-            this.description = description;
-            this.initialXP = initialXP;
+            this.AllowedType = allowedType;
+            this.Name        = name;
+            this.Description = description;
+            this.InitialXP   = initialXP;
         }
 
         public void Execute(Character c)
         {
             // Allow access to Martial skills
-            c.AllowedAbilityTypes.Add(allowedType);
+            c.AllowedAbilityTypes.Add(AllowedType);
 
             // Create a martial 50XP pool
-            c.XPPoolList.Add(new CategoryAbilityXpPool(name, description, initialXP,
-                new List<AbilityType>() { allowedType }));
+            c.XPPoolList.Add(
+                new CategoryAbilityXpPool(
+                    Name, 
+                    Description, 
+                    InitialXP, 
+                    new List<AbilityType>() { AllowedType } 
+                )
+            );
         }
 
         public void Undo()

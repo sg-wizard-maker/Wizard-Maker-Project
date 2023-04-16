@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 {
     public class PuissantAbilityCommand : ICharacterCommand
     {
-        ArchAbility ability;
+        ArchAbility Ability;
         
         public PuissantAbilityCommand(ArchAbility ability)
         {
-            this.ability = ability;
+            this.Ability = ability;
         }
 
         public void Execute(Character c)
         {
-            c.puissantAbilities.Add(ability.Name);
+            c.PuissantAbilities.Add(Ability.Name);
         }
 
         public void Undo()

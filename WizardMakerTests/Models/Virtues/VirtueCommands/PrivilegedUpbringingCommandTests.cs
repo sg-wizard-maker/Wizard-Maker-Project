@@ -18,7 +18,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
         {
             // If we are going to test Validation, we must reset the ValidationLog.
             //  Otherwise, it will get polluted with validation messages from other tests.
-            ValidationLog.reset();
+            ValidationLog.Reset();
 
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(25, "PrivilegedUpbringing", 1220);
             CharacterRenderer.RenderAllJournalEntries(c);
@@ -33,21 +33,21 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
             // Add a martial ability and rerender the character.
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("Test XP Spend Great Weapon", new SeasonYear(1220 - 25, Season.SPRING),
                 "Great Weapon", 25, "Poleaxe");
-            c.addJournalable(xpSpend);
+            c.AddJournalable(xpSpend);
             CharacterRenderer.RenderAllJournalEntries(c);
 
             // Assert that the XP Pool has been debited appropriately
-            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP - 25, c.XPPoolList.Where(x => x.name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().remainingXP);
-            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP, c.XPPoolList.Where(x => x.name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().initialXP);
+            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP - 25, c.XPPoolList.Where(x => x.Name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().RemainingXP);
+            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP, c.XPPoolList.Where(x => x.Name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().InitialXP);
 
             // Now add an academic ability and make sure the XP Pool was debited (make sure to include previous martial ability in test)
             XpAbilitySpendJournalEntry xpSpend2 = new XpAbilitySpendJournalEntry("Test XP Spend Artes Liberales", new SeasonYear(1220 - 25, Season.SPRING),
     "Artes Liberales", 10, "Genomics");
-            c.addJournalable(xpSpend2);
+            c.AddJournalable(xpSpend2);
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP - 25 - 10, c.XPPoolList.Where(x => x.name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().remainingXP);
-            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP, c.XPPoolList.Where(x => x.name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().initialXP);
+            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP - 25 - 10, c.XPPoolList.Where(x => x.Name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().RemainingXP);
+            Assert.AreEqual(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_XP, c.XPPoolList.Where(x => x.Name.Equals(PrivilegedUpbringingCommand.PRIVILEGED_UPBRINGING_XP_POOL_NAME)).First().InitialXP);
 
             // Assert that there were no validation errors
             // TODO: We cannot do that now, since we only rely on the allowed abilities. See issue 10 (https://github.com/sg-wizard-maker/Wizard-Maker-Project/issues/10).  Uncomment when issue is resolved.

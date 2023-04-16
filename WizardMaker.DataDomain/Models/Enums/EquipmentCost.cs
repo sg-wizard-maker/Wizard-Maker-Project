@@ -4,11 +4,11 @@ using Newtonsoft.Json.Converters;
 namespace WizardMaker.DataDomain.Models.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Cost
+    public enum EquipmentCost
     {
         None,
-        Std,
-        Inexp,
-        Exp,
+        Standard,
+        Inexpensive,
+        Expensive,
     }
 }

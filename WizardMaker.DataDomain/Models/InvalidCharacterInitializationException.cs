@@ -10,15 +10,18 @@ namespace WizardMaker.DataDomain.Models
         {
         }
 
-        public InvalidCharacterInitializationException(string message) : base(message)
+        public InvalidCharacterInitializationException(string message) 
+            : base(message)
         {
         }
 
-        public InvalidCharacterInitializationException(string message, Exception innerException) : base(message, innerException)
+        public InvalidCharacterInitializationException(string message, Exception innerException) 
+            : base(message, innerException)
         {
         }
 
-        protected InvalidCharacterInitializationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected InvalidCharacterInitializationException(SerializationInfo info, StreamingContext context) 
+            : base(info, context)
         {
         }
     }

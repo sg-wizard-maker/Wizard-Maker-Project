@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WizardMaker.DataDomain.Models.Virtues
 {
@@ -10,15 +6,13 @@ namespace WizardMaker.DataDomain.Models.Virtues
     {
         public ArchVirtue Virtue { get; private set;}
 
-        /**
-         * Virtues can only have one journal entry that grants.  Unlike arts and abilities
-         * */
+        // Virtues can only have one journal entry that grants.  Unlike arts and abilities
         public string JournalID { get; private set;}
 
         public VirtueInstance(ArchVirtue virtue, string journalID)
         {
             JournalID = journalID;
-            Virtue = virtue;
+            Virtue    = virtue;
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
 
 namespace WizardMaker.DataDomain.Models
 {
@@ -34,7 +29,7 @@ namespace WizardMaker.DataDomain.Models
             this.Name      = name;
             this.Specialty = specialty;
             this.Score     = score;
-            this.XP = currentXp;
+            this.XP        = currentXp;
         }
 
         public override string ToString()

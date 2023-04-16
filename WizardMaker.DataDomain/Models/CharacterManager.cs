@@ -1,10 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using WizardMaker.DataDomain.Models;
+﻿using System.Runtime.CompilerServices;
+
 using WizardMaker.DataDomain.Models.CharacterPersist;
 
 [assembly: InternalsVisibleTo("WizardMakerTests")]
@@ -12,91 +7,110 @@ using WizardMaker.DataDomain.Models.CharacterPersist;
 [assembly: InternalsVisibleTo("WizardMakerTests.Models.Tests")]
 namespace WizardMaker.DataDomain.Models
 {
-    /**
+    /*
      * This class is meant to interface witha front end, be it API calls or a GUI.
      * This happens by adding journal entries and then rendering the Character from the assembled list of journal entries.
-     * */
+     */
     public class CharacterManager
     {
         private Character Character;
 
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
-        public const int SAGA_START_YEAR = 1220;
+        public const int    SAGA_START_YEAR = 1220;
 
         public CharacterManager(int startingAge)
         {
-            //TODO: This needs to be an input, not hardcoded
+            // TODO: This needs to be an input, not hardcoded
             ArchAbility childhoodLanguage = ArchAbility.LangEnglish;
 
             this.Character = new Character("New Character", "", startingAge);
             
-            //TODO: Re-assess whether initializing a journal entry with "this" has a smell.
-            this.Character.addJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, SAGA_START_YEAR));
+            // TODO: Re-assess whether initializing a journal entry with "this" has a smell.
+            this.Character.AddJournalable(new NewCharacterInitJournalEntry(startingAge, childhoodLanguage, SAGA_START_YEAR));
 
-            // TODO: Need a layer that will judge what abilities a character is even allowed to choose at any time (given that virtues and flaws can change this access).
+            // TODO:
+            // Need a layer that will judge what abilities a character is allowed to choose AT ANY TIME
+            // (given that virtues and flaws can change this access).
             updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
             // Last step:  Render the character with all journal entries.
             CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
-        //TODO: Make class to wrap character pools.  This way we can just obtain the pool for childhood, etc, through that interface.  And look at aggregate information.
+        // TODO:
+        // Make class to wrap character pools.
+        // This way we can just obtain the pool for childhood, etc, through that interface.
+        // And look at aggregate information.
       
-        //TODO: Delete this method.  Caller should render the CharacterData and get the name there.
-        public string getCharacterName()
+        // TODO: Delete this method.  Caller should render the CharacterData and get the name there.
+        public string GetCharacterName()
         {
             return Character.Name;
         }
 
-        /**
+        /*
          * Use during character creation, not as part of advancement.
          * 
          * This method can handle a new ability or an existing one.
          */
         public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
-            //TODO: Fix the ordering because the SeasonYear must always be later than the NewCharacterJournalInit
-            XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = new XpAbilitySpendJournalEntry(ABILITY_CREATION_NAME_PREFIX + ability,
-                new SeasonYear(1219, Season.SUMMER), ability, absoluteXp, specialty);
+            // TODO: Fix the ordering because the SeasonYear must always be later than the NewCharacterJournalInit
+            XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = 
+                new XpAbilitySpendJournalEntry(
+                    ABILITY_CREATION_NAME_PREFIX + ability,
+                    new SeasonYear(1219, Season.SUMMER), 
+                    ability, 
+                    absoluteXp, 
+                    specialty
+                );
 
-            Character.addJournalable(xpAbilitySpendJournalEntry);
+            Character.AddJournalable(xpAbilitySpendJournalEntry);
             CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
         public void DeleteJournalEntry(string id)
         {
-            Character.removeJournalable(id);
+            Character.RemoveJournalable(id);
 
             // Render, which will handle the resetting of XP Pools.
             CharacterRenderer.RenderAllJournalEntries(Character);
         }
 
-        public CharacterData renderCharacterAsCharacterData()
+        public CharacterData RenderCharacterAsCharacterData()
         {
-            return CharacterRenderer.renderCharacterAsCharacterData(Character);
+            var result = CharacterRenderer.RenderCharacterAsCharacterData(Character);
+            return result;
         }
 
-        public int getXPPoolCount() { return Character.XPPoolList.Count; }
+        public int GetXPPoolCount() { return Character.XPPoolList.Count; }
 
-        /** This will always return a number >= 0.  This will not include overdrawn
+        /* This will always return a number >= 0.  
+         * This will not include overdrawn.
          * Assumes that the overdrawn pool is the last one on the list.
          */
-        public int totalRemainingXPWithoutOverdrawn()
+        public int TotalRemainingXPWithoutOverdrawn()
         {
-            return Character.totalRemainingXPWithoutOverdrawn();
+            var result = Character.TotalRemainingXPWithoutOverdrawn();
+            return result;
         }
 
-        public int getJournalSize() { return Character.GetJournal().Count; }
+        public int GetJournalSize() 
+        {
+            var result = Character.GetJournal().Count;
+            return result;
+        }
 
         // TODO: A lot more error checking needs to take place here
         // TODO: How would this work for API front end? 
         // Note: This will overwrite any file
         public static void WriteToFile(Character c, string absoluteFilename)
         {
-            FileStream fs = new FileStream(absoluteFilename, FileMode.Create, FileAccess.Write);
+            FileStream   fs = new FileStream(absoluteFilename, FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
             RawCharacter rc = new RawCharacter(c);
-            sw.Write(rc.serializeJson());
+            string  payload = rc.SerializeJson();
+            sw.Write(payload);
             sw.Flush();
             sw.Close();
             fs.Close();
@@ -104,19 +118,25 @@ namespace WizardMaker.DataDomain.Models
 
         public static Character ReadFromFile(string absoluteFilename)
         {
-            FileStream fs = new FileStream(absoluteFilename, FileMode.Open, FileAccess.Read);
+            FileStream   fs = new FileStream(absoluteFilename, FileMode.Open, FileAccess.Read);
             StreamReader sw = new StreamReader(fs);
-            RawCharacter rc = RawCharacter.deserializeJson(sw.ReadToEnd());
+            string     json = sw.ReadToEnd();
+            RawCharacter rc = RawCharacter.deserializeJson(json);
             sw.Close();
             fs.Close();
 
-            return new Character(rc);
+            var result = new Character(rc);
+            return result;
         }
 
-        //TODO:  Do we need this anymore?
+        // TODO: Do we need this anymore?
         public static void RemoveLaterLifeXPPool(Character c)
         {
-            c.XPPoolList.Remove(c.XPPoolList.Where(xppool => xppool.name == NewCharacterInitJournalEntry.LATER_LIFE_POOL_NAME).First());
+            c.XPPoolList.Remove(
+                c.XPPoolList
+                    .Where(xppool => xppool.Name == NewCharacterInitJournalEntry.LATER_LIFE_POOL_NAME)
+                    .First()
+            );
         }
     }
 }

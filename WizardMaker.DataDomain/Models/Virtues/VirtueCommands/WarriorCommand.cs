@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 {
     public class WarriorCommand : ICharacterCommand
     {
-        public static string WARRIOR_POOL_NAME = "Warrior XP Pool";
+        public static string WARRIOR_POOL_NAME        = "Warrior XP Pool";
         public static string WARRIOR_POOL_DESCRIPTION = "XP Pool for Virtue Warrior";
-        public static int WARRIOR_POOL_INITIAL_XP = 50;
+        public static int    WARRIOR_POOL_INITIAL_XP  = 50;
+
         private GenericAllowAbilityTypeAndXPPoolCommand command;
 
         public WarriorCommand()

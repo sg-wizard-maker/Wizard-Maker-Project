@@ -25,14 +25,14 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
 
             XpAbilitySpendJournalEntry xpSpend = new XpAbilitySpendJournalEntry("XP spent on Brawl", new SeasonYear(SAGA_START - STARTING_AGE, Season.SPRING), ABILITY, 15, "Fist");
-            c.addJournalable(xpSpend);
+            c.AddJournalable(xpSpend);
             
             CharacterRenderer.RenderAllJournalEntries(c);
 
-            Assert.IsTrue(c.abilities.Where(a => a.Name == ABILITY).First().HasPuissance);
+            Assert.IsTrue(c.Abilities.Where(a => a.Name == ABILITY).First().HasPuissance);
 
             // Please note that we still treat the score as if it was 2, not 4.  This is because we need to render it later as "2+2", not "4".
-            Assert.AreEqual(2, c.abilities.Where(a => a.Name == ABILITY).First().Score);
+            Assert.AreEqual(2, c.Abilities.Where(a => a.Name == ABILITY).First().Score);
         }
 
         // TODO: Add test where no XP has been spent

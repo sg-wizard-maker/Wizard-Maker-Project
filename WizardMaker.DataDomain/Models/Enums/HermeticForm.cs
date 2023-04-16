@@ -4,7 +4,7 @@ using Newtonsoft.Json.Converters;
 namespace WizardMaker.DataDomain.Models.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Form
+    public enum HermeticForm
     {
         Ig,
         Co,

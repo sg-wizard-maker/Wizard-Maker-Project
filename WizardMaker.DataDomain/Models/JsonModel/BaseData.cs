@@ -3,7 +3,7 @@
     public abstract class BaseData
     {
         public string? Description { get; set; }
-        public string? Source { get; set; }
-        public int Page { get; set; }
+        public string? Source      { get; set; }
+        public int     Page        { get; set; }
     }
 }
