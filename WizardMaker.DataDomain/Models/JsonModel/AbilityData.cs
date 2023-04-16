@@ -2,6 +2,6 @@
 {
     public class AbilityData : BaseData
     {
-        public object[] Speciality { get; set; }
+        public object[] Speciality { get; set; } = new string[0];
     }
 }

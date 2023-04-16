@@ -25,7 +25,7 @@ namespace WizardMaker.DataDomain.Models.CharacterPersist
             return result;
         }
 
-        public static RawCharacter? deserializeJson(string json)
+        public static RawCharacter? DeserializeJson(string json)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
             {

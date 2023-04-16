@@ -4,6 +4,7 @@ namespace WizardMaker.DataDomain.Models.JsonModel
 {
     public class GameObj : Dictionary<string, Root>
     {
+        // Empty
     }
 
     public class Root

@@ -18,7 +18,7 @@ namespace WizardMaker.DataDomain.Models
     /// </summary>
     public static class AbilityCategory
     {
-        public static List<String> Categories = new List<string>();
+        public static List<string> Categories = new List<string>();
 
         public static string Martial      = "Martial Abilities";
         public static string Physical     = "Physical Abilities";

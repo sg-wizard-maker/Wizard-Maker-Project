@@ -24,8 +24,8 @@ namespace WizardMaker.DataDomain.Models.Tests
 
             int initialXP = cm.TotalRemainingXPWithoutOverdrawn();
 
-            cm.updateAbilityDuringCreation(n, xp1, s);
-            cm.updateAbilityDuringCreation(n, xp2, s);
+            cm.UpdateAbilityDuringCreation(n, xp1, s);
+            cm.UpdateAbilityDuringCreation(n, xp2, s);
 
             // We expect that one of the first entry has been overwritten by the second.
             // And since there is two there by default (starting character + starting language), we expect 3.

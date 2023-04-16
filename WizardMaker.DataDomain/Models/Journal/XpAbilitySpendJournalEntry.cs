@@ -53,7 +53,7 @@ namespace WizardMaker.DataDomain.Models
             return Text.GetId();
         }
 
-        public override Boolean IsSameSpecs(Journalable other)
+        public override bool IsSameSpecs(Journalable other)
         {
             if (!base.IsSameSpecs(other)) return false;
             XpAbilitySpendJournalEntry o2 = (XpAbilitySpendJournalEntry)other;

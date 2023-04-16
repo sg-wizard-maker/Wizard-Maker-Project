@@ -31,7 +31,7 @@ namespace WizardMaker.DataDomain.Models
             // TODO:
             // Need a layer that will judge what abilities a character is allowed to choose AT ANY TIME
             // (given that virtues and flaws can change this access).
-            updateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
+            UpdateAbilityDuringCreation(childhoodLanguage.Name, NewCharacterInitJournalEntry.CHILDHOOD_LANGUAGE_XP, "");
 
             // Last step:  Render the character with all journal entries.
             CharacterRenderer.RenderAllJournalEntries(Character);
@@ -53,7 +53,7 @@ namespace WizardMaker.DataDomain.Models
          * 
          * This method can handle a new ability or an existing one.
          */
-        public void updateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
+        public void UpdateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
             // TODO: Fix the ordering because the SeasonYear must always be later than the NewCharacterJournalInit
             XpAbilitySpendJournalEntry xpAbilitySpendJournalEntry = 
@@ -121,7 +121,7 @@ namespace WizardMaker.DataDomain.Models
             FileStream   fs = new FileStream(absoluteFilename, FileMode.Open, FileAccess.Read);
             StreamReader sw = new StreamReader(fs);
             string     json = sw.ReadToEnd();
-            RawCharacter rc = RawCharacter.deserializeJson(json);
+            RawCharacter rc = RawCharacter.DeserializeJson(json);
             sw.Close();
             fs.Close();
 

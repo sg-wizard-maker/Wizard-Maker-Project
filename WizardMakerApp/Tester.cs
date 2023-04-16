@@ -41,7 +41,7 @@ namespace WizardMaker
                 // TODO: Make the abilityDialog attributes non-public
                 if (abilityDialog.abilityListBoxDialog.SelectedItem != null)
                 {
-                    characterManager.updateAbilityDuringCreation(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
+                    characterManager.UpdateAbilityDuringCreation(abilityDialog.abilityListBoxDialog.SelectedItem.ToString(),
                         ((int)abilityDialog.xpUpdown1.Value), abilityDialog.specialtyComboBox1.Text);
                     
                     updateCharacterDisplay();
@@ -122,7 +122,7 @@ namespace WizardMaker
             string ability = getDataGridAbility(rowIndex);
             if (isDataGridXPCell(colIndex))
             {
-                characterManager.updateAbilityDuringCreation(ability, int.Parse(getCellValueAsString(rowIndex, colIndex)), getCellValueAsString(rowIndex, 3));
+                characterManager.UpdateAbilityDuringCreation(ability, int.Parse(getCellValueAsString(rowIndex, colIndex)), getCellValueAsString(rowIndex, 3));
                 updateCharacterDisplay();
             }
         }

@@ -24,10 +24,8 @@ namespace WizardMaker.DataDomain.Models
             return result;
         }
     }
-    /*
-     * This class expects the caller to manage the XP expenditures in a pool and make sure that it is not 
-     *  overdrawn.
-     */
+
+    // This class expects the caller to manage the XP expenditures in a pool and make sure that it is not overdrawn.
     public abstract class XPPool
     {
         public string Name        { get; }

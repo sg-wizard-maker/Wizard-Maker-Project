@@ -4,16 +4,16 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 {
     public class AnimalKenCommand : ICharacterCommand
     {
-        private GenericGrantAbilityCommand command;
+        private GenericGrantAbilityCommand Command;
 
         public AnimalKenCommand()
         {
-            command = new GenericGrantAbilityCommand(ArchAbility.AnimalKen);
+            Command = new GenericGrantAbilityCommand(ArchAbility.AnimalKen);
         }
 
         public void Execute(Character c)
         {
-            command.Execute(c);
+            Command.Execute(c);
         }
 
         public void Undo()
