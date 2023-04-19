@@ -60,11 +60,11 @@ namespace WizardMaker.DataDomain.Models
                 // Based on the intended mode of use, do we prefer (returns-null) or (throws-exception) upon lookup failure?
 
                 // Option I: Return null on lookup failure
-                return default(T);
+                //return default(T);
 
                 // Option II: Throw an exception on lookup failure
-                //string msg = string.Format("Lookup failed: Did not find {0} with canonical name {1}", typeof(T).ToString(), canonName);
-                //throw new ArgumentException(msg);
+                string msg = string.Format("Lookup failed: Did not find {0} with Id {1}", typeof(T).ToString(), id);
+                throw new ArgumentException(msg);
             }
             return result;
         }
@@ -72,7 +72,19 @@ namespace WizardMaker.DataDomain.Models
 
     public interface IObjectForRegistrar
     {
+        /// <summary>
+        /// CanonName: 
+        /// The purpose is to identify the sort of thing in a human-readable manner, 
+        /// potentially across multiple similar objects. Useful to be able to see at a glance in the JSON what a thing is.
+        /// (Example: Two variants of an Ability "Artes Liberales", one being a variant instantiated in another Saga)
+        /// </summary>
         public string CanonName { get; }
+
+        /// <summary>
+        /// Id:
+        /// The purpose is to uniquely identify a __particular__ object, as distinct from other similar objects.
+        /// Since a Guid is not human-readable, this fulfills a different purpose from CanonName.
+        /// </summary>
         public Guid   Id        { get; }
     }
 }
