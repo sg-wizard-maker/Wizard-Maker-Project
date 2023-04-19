@@ -19,10 +19,11 @@ namespace WizardMaker.DataDomain.Models
 
         public string Name      { get; set; }
 
-        public Saga(string name, string canonName)
+        public Saga(string name, string canonName, Guid? existingId = null)
         {
-            this.Name = name;
+            this.Name      = name;
             this.CanonName = canonName;
+            this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
 
             Saga.Registrar.Register(this);
         }

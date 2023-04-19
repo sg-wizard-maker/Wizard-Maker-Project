@@ -22,10 +22,11 @@ namespace WizardMaker.DataDomain.Models
 
         public string Name { get; set; }
 
-        public Covenant(string name, string canonName)
+        public Covenant(string name, string canonName, Guid? existingId = null)
         {
             this.Name      = name;
             this.CanonName = canonName;
+            this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
 
             Covenant.Registrar.Register(this);
         }

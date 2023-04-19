@@ -55,15 +55,24 @@ namespace WizardMaker.DataDomain.Models
 
 
         #region Constructors
+        // TODO:
+        // Consider variant constructors and how they are used.
+        // We need to make sure that if there is an existing Guid (from deserializing a saved asset), it is preserved.
+        // So, parameters to match...
+        // 
+        // It might make more sense to have a very short list of basic parameters,
+        // and for most of the other materials to be filled out via method calls after the ctor (abilities, journal entries, etc)
+
         public Character(RawCharacter rc) 
             : this(rc.Name, rc.Description, new List<AbilityInstance>(), rc.JournalEntries, rc.StartingAge) { }
             
         public Character(string name, string description, int startingAge) 
             : this(name, description, new List<AbilityInstance>(), new List<Journalable>(), startingAge) { }
 
-        public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries, int startingAge)
+        public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries, int startingAge, Guid? existingId = null)
         {
             this.CanonName   = "TODO: PLACEHOLDER (need to change args to include a CanonName): " + name;
+            this.Id          = (existingId != null) ? existingId.Value : Guid.NewGuid();  // TODO: Guid(s) for Character assigned elsewhere need to be changed to use this
             this.Name        = name;
             this.Description = description;
             this.Abilities   = abilities;
