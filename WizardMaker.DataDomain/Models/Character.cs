@@ -9,8 +9,16 @@ namespace WizardMaker.DataDomain.Models
     // We could separate out a character as a set of journal entries (and name, startingAge, and description)
     // from a rendered character (with ability instances and XP Pools).
     // This might simplify the design -- we could probably get rid of CharacterData and only need to serialize the Character.
-    public class Character
+    public class Character :IObjectForRegistrar
     {
+        #region Members related to ObjRegistrar
+        public static ObjRegistrar<Character> Registrar = new();
+
+        public Guid   Id        { get; private set; }
+        public string CanonName { get; private set; }
+        #endregion
+
+        #region Other Properties and Fields
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -43,7 +51,10 @@ namespace WizardMaker.DataDomain.Models
         private IJournalableManager JournalableManager { get; set; }
 
         private SortedSet<Journalable> JournalEntries { get { return JournalableManager.GetJournalables(); } }
+        #endregion
 
+
+        #region Constructors
         public Character(RawCharacter rc) 
             : this(rc.Name, rc.Description, new List<AbilityInstance>(), rc.JournalEntries, rc.StartingAge) { }
             
@@ -52,6 +63,7 @@ namespace WizardMaker.DataDomain.Models
 
         public Character(string name, string description, List<AbilityInstance> abilities, List<Journalable> journalEntries, int startingAge)
         {
+            this.CanonName   = "TODO: PLACEHOLDER (need to change args to include a CanonName): " + name;
             this.Name        = name;
             this.Description = description;
             this.Abilities   = abilities;
@@ -64,8 +76,12 @@ namespace WizardMaker.DataDomain.Models
             this.StartingAge = startingAge;
             this.XPPoolList  = new SortedSet<XPPool>(new XPPoolComparer());
             this.Virtues     = new List<VirtueInstance>();
+
+            Character.Registrar.Register(this);
         }
-        
+        #endregion
+
+        #region Methods (various)
         public void EndCharacterCreation()
         {
             JournalableManager.SetCharacterGenerationMode(false);
@@ -113,5 +129,6 @@ namespace WizardMaker.DataDomain.Models
             if (this.AllowedAbilities.Contains(a)        ) return true;
             return false;
         }
+        #endregion
     }
 }
