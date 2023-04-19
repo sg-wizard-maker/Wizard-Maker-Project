@@ -386,19 +386,17 @@ namespace WizardMaker.DataDomain.Models
         [Browsable(false)]
         public int  PuissantBonus  { get; private set; } = 2;
 
-        // Assumption:  Each of these journal entries are ones that spend XP and that no single XP-spending journal entry will involve more than this ability instance (ie, only one ability instance).
+        // Assumption:
+        // Each of these journal entries are ones that spend XP,
+        // and that no single XP-spending journal entry will involve more than this ability instance
+        // (ie, only one ability instance).
         public List<string> JournalIDs { get; private set; }
-
-        public decimal DetermineXpCost(ArchAbility archAbility)
-        {
-            var result = HasAffinity ? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
-            return result;
-        }
 
         // TODO:
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
 
+        #region Constructors
         public AbilityInstance ( ArchAbility ability, string journalID, int xp = 0, string specialty = "", 
             bool hasAffinity = false, bool hasPuissance = false, int puissantBonus = 2)
         {
@@ -410,8 +408,9 @@ namespace WizardMaker.DataDomain.Models
             this.HasAffinity   = hasAffinity;
             this.HasPuissance  = hasPuissance;
             this.PuissantBonus = puissantBonus;
-            this.JournalIDs = new List<string>() { journalID};
+            this.JournalIDs = new List<string>() { journalID };
         }
+        #endregion
 
         public override string ToString ()
         {
@@ -420,12 +419,19 @@ namespace WizardMaker.DataDomain.Models
             return str;
         }
 
+        public decimal DetermineXpCost(ArchAbility archAbility)
+        {
+            var result = HasAffinity ? AbilityXpCosts.BaseXpCostWithAffinity(archAbility.BaseXpCost) : archAbility.BaseXpCost;
+            return result;
+        }
+
         public void AddJournalID(string journalID)
         {
             this.JournalIDs.Add(journalID);
         }
 
-        // This is used mostly for testing.  In cases where we do not have an ID from the Jounral Entry.
+        // This is used mostly for testing.
+        // In cases where we do not have an ID from the Journal Entry.
         public static string CreateID()
         {
             Guid myGuid = Guid.NewGuid();

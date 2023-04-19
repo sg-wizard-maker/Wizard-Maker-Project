@@ -10,12 +10,15 @@ namespace WizardMaker.DataDomain.Models
      */
     public class CharacterData
     {
+        #region Properties
         public string Name        { get; set; }
         public string Description { get; set; }
 
         public List<AbilityInstanceData> Abilities { get; set; }
         public List<XPPoolData>          XPPools   { get; set; }
+        #endregion
 
+        #region Constructors
         public CharacterData(string name, string description, List<AbilityInstanceData> abilities, List<XPPoolData> xPPools)
         {
             Name        = name;
@@ -23,6 +26,7 @@ namespace WizardMaker.DataDomain.Models
             Abilities   = abilities;
             XPPools     = xPPools;
         }
+        #endregion
 
         public bool IsSameSpec(CharacterData other)
         {
