@@ -8,7 +8,7 @@ using WizardMaker.DataDomain.Models.CharacterPersist;
 namespace WizardMaker.DataDomain.Models
 {
     /*
-     * This class is meant to interface witha front end, be it API calls or a GUI.
+     * This class is meant to interface with a front end, be it API calls or a GUI.
      * This happens by adding journal entries and then rendering the Character from the assembled list of journal entries.
      */
     public class CharacterManager
@@ -18,11 +18,15 @@ namespace WizardMaker.DataDomain.Models
         public const string ABILITY_CREATION_NAME_PREFIX = "Initial: ";
         public const int    SAGA_START_YEAR = 1220;
 
-        public CharacterManager(int startingAge)
+        #region Constructors
+        public CharacterManager(int startingAge, ArchAbility? childhoodLanguage = null)
         {
-            // TODO: This needs to be an input, not hardcoded
-            ArchAbility childhoodLanguage = ArchAbility.LangEnglish;
-
+            if (childhoodLanguage == null)
+            {
+                // Arguably, no Living Language is a more likely default than any other.
+                // Possibly, the parameter should not be optional?
+                childhoodLanguage = ArchAbility.LangEnglish;
+            }
             this.Character = new Character("New Character", "", startingAge);
             
             // TODO: Re-assess whether initializing a journal entry with "this" has a smell.
@@ -36,23 +40,23 @@ namespace WizardMaker.DataDomain.Models
             // Last step:  Render the character with all journal entries.
             CharacterRenderer.RenderAllJournalEntries(Character);
         }
+        #endregion
 
+
+        #region Methods (various)
         // TODO:
         // Make class to wrap character pools.
         // This way we can just obtain the pool for childhood, etc, through that interface.
         // And look at aggregate information.
-      
+
         // TODO: Delete this method.  Caller should render the CharacterData and get the name there.
         public string GetCharacterName()
         {
             return Character.Name;
         }
 
-        /*
-         * Use during character creation, not as part of advancement.
-         * 
-         * This method can handle a new ability or an existing one.
-         */
+        // Use during character creation, not as part of advancement.
+        // This method can handle a new ability or an existing one.
         public void UpdateAbilityDuringCreation(string ability, int absoluteXp, string specialty)
         {
             // TODO: Fix the ordering because the SeasonYear must always be later than the NewCharacterJournalInit
@@ -85,10 +89,9 @@ namespace WizardMaker.DataDomain.Models
 
         public int GetXPPoolCount() { return Character.XPPoolList.Count; }
 
-        /* This will always return a number >= 0.  
-         * This will not include overdrawn.
-         * Assumes that the overdrawn pool is the last one on the list.
-         */
+        // This will always return a number >= 0.  
+        // This will not include overdrawn.
+        // Assumes that the overdrawn pool is the last one on the list.
         public int TotalRemainingXPWithoutOverdrawn()
         {
             var result = Character.TotalRemainingXPWithoutOverdrawn();
@@ -138,5 +141,6 @@ namespace WizardMaker.DataDomain.Models
                     .First()
             );
         }
+        #endregion
     }
 }

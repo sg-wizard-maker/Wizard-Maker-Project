@@ -25,7 +25,7 @@ namespace WizardMaker
         private void Tester_Load(object sender, EventArgs e)
         {
             //TODO: Magic number 25.  Make this specifiable by user
-            this.characterManager = new CharacterManager(25);
+            this.characterManager = new CharacterManager(25, ArchAbility.LangEnglish);
             this.Text = characterManager.GetCharacterName();
             updateCharacterDisplay();
         }

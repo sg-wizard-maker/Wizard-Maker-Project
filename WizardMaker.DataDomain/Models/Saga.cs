@@ -7,6 +7,9 @@ namespace WizardMaker.DataDomain.Models
     /// An object containing all of the materials for an ArM5 Saga, such as (Covenants, Characters, etc).
     /// This includes Archetypal data, such as (ArchAbility, ArchVirtue, ...), 
     /// as one Saga might differ from another in using additional/different materials or house-ruled versions.
+    /// 
+    /// For the current scope, this class will only be minimally developed.
+    /// For future releases, Saga will surely keep track of more entities, and will likely have more information overall.
     /// </summary>
     public class Saga : IObjectForRegistrar
     {

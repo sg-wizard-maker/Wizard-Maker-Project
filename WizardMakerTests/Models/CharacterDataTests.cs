@@ -14,7 +14,7 @@ namespace WizardMaker.DataDomain.Models.Tests
         [TestMethod()]
         public void SimpleCharacterDataSerializationTest()
         {
-            CharacterManager cm = new(25);
+            CharacterManager cm = new(25, ArchAbility.LangEnglish);
 
             CharacterData cd = cm.RenderCharacterAsCharacterData();    
             Assert.IsNotNull(cd);
