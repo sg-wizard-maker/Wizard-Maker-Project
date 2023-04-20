@@ -21,7 +21,9 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             c.AllowedAbilities.Add(GrantedAbility);
 
-            int initialXP = (c.AffinityAbilities.Contains(GrantedAbility.Name) ? 4 : 5);
+            const int XP_FOR_SCORE_1               = 5;
+            const int XP_FOR_SCORE_1_WITH_AFFINITY = 4;  // (5 * 2/3) --> 3.333, rounded up to 4
+            int initialXP = c.AffinityAbilities.Contains(GrantedAbility.Name) ? XP_FOR_SCORE_1_WITH_AFFINITY : XP_FOR_SCORE_1;
 
             c.XPPoolList.Add(
                 new SpecificAbilitiesXpPool(
