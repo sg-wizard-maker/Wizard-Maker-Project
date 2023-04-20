@@ -7,10 +7,15 @@ namespace WizardMaker.DataDomain.Models.Enums
     public enum ObjType
     {
         Ability,
-        Armor,
-        Flaw,
         Virtue,
+        Flaw,
+
         Spell,
-        Weapon
+
+        Armor,
+        Weapon,
+        // Text,
+
+        // ...possible that other entities from ArM5 will belong here...
     }
 }

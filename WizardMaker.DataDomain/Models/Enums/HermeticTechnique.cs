@@ -11,10 +11,18 @@ namespace WizardMaker.DataDomain.Models.Enums
     [JsonConverter(typeof(StringEnumConverter))]
     public enum HermeticTechnique
     {
-        Cr,
-        Re,
-        Pe,
-        Mu,
-        In
+        // Hermetic Techniques
+        Creo,
+        Perdo,
+        Muto,
+        Rego,
+        Intellego,
+
+        // Abbreviations (the JSON from FoundryVTT encodes using the 2-letter codes)
+        Cr = Creo,
+        Re = Rego,
+        Pe = Perdo,
+        Mu = Muto,
+        In = Intellego,
     }
 }

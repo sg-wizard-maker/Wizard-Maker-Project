@@ -9,9 +9,9 @@ namespace WizardMaker.DataDomain.Models.JsonModel
         public List<HermeticTechnique> RequisitesTechnique { get; set; } = new List<HermeticTechnique>();
         public List<HermeticForm>      RequisitesForms     { get; set; } = new List<HermeticForm>();
 
-        public SpellRange    Range    { get; set; }
-        public SpellDuration Duration { get; set; }
-        public SpellTarget   Target   { get; set; }
+        public HermeticSpellRanges    Range    { get; set; }
+        public HermeticSpellDurations Duration { get; set; }
+        public HermeticSpellTargets   Target   { get; set; }
 
         public int SpellLevel    { get; set; }
         public int TargetSize    { get; set; }
