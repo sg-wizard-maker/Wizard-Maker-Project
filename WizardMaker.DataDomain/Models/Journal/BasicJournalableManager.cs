@@ -10,7 +10,7 @@ namespace WizardMaker.DataDomain.Models
         #region Properties and Fields
         private bool IsIsInCharacterGenerationMode = true;
         
-        private SortedSet<Journalable> Journalables = new SortedSet<Journalable>(new JournableComparator());
+        private SortedSet<Journalable> Journalables = new SortedSet<Journalable>(new JournalableComparator());
         #endregion
 
         #region Methods (various)
@@ -56,7 +56,7 @@ namespace WizardMaker.DataDomain.Models
 
         public void RemoveJournalEntry(string id) 
         {
-            SortedSet<Journalable> result = new SortedSet<Journalable>(new JournableComparator());
+            SortedSet<Journalable> result = new SortedSet<Journalable>(new JournalableComparator());
             foreach (Journalable jj in this.Journalables)
             {
                 if (!jj.GetId().Equals(id))

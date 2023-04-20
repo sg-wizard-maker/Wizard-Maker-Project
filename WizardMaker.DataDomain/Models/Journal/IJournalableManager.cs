@@ -19,35 +19,27 @@ namespace WizardMaker.DataDomain.Models
         void RemoveJournalEntry(string id);
     }
 
-    public class JournableComparator: IComparer<Journalable>
+    public class JournalableComparator: IComparer<Journalable>
     {
         public int Compare(Journalable x, Journalable y)
         {
-            // TODO: Refactor arrow code
-            if (x.SortOrder() == y.SortOrder()) { 
-
-                if (x.GetDate().Year == y.GetDate().Year)
-                {
-                    if (x.GetDate().season == y.GetDate().season)
-                    {
-                        if (x.GetId() == y.GetId())
-                        {
-                            return new CaseInsensitiveComparer().Compare(x.GetText(), y.GetText());
-                        }
-                        else
-                        {
-                            return new CaseInsensitiveComparer().Compare(x.GetId(), y.GetId());
-                        }
-                    }
-                    else
-                    {
-                        return x.GetDate().season.CompareTo(y.GetDate().season);
-                    }
-
-                }
+            if (x.SortOrder() != y.SortOrder())
+            {
+                return x.SortOrder().CompareTo(y.SortOrder());
+            }
+            if (x.GetDate().Year != y.GetDate().Year)
+            {
                 return x.GetDate().Year.CompareTo(y.GetDate().Year);
             }
-            return x.SortOrder().CompareTo(y.SortOrder());
+            if (x.GetDate().season != y.GetDate().season)
+            {
+                return x.GetDate().season.CompareTo(y.GetDate().season);
+            }
+            if (x.GetId() == y.GetId())
+            {
+                return new CaseInsensitiveComparer().Compare(x.GetText(), y.GetText());
+            }
+            return new CaseInsensitiveComparer().Compare(x.GetId(), y.GetId());
         }
     }
 }
