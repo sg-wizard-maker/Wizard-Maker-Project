@@ -86,7 +86,7 @@ namespace WizardMaker.DataDomain.Models.Virtues
                     new ArchVirtue(
                         affinityVirtueName, 
                         "Affinity with the ability " + a.Name, 
-                        VirtueType.Hermetic, 
+                        VirtueType.General,
                         VirtueCost.Minor, 
                         new AffinityAbilityCommand(a)
                     );
