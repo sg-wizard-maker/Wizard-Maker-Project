@@ -28,6 +28,32 @@ namespace WizardMaker.DataDomain.Models
         // TODO:
         // Need some additional properties defining the relations to
         // requirements/associations with certain Virtues/Flaws, age categories, etc...
+        //
+        // For example, these V/F grant access to
+        // - Martial:      (Berserk, Knight, Warrior, Mercenary Captain, Branded Criminal, Outlaw, Outlaw Leader)
+        // - Academic:     (Clerk, Educated, Magister in Artibus, Mendicant Friar, Priest)
+        // - Arcane:       (Arcane Lore)
+        // - Supernatural: (each corresponding same-name Virtue, but also cases such as Strong Faerie Blood granting Second Sight)
+        // 
+        // And then there are interesting cases, such as:
+        // - Custos                (grants access to ONE category: Academic, Arcane, Martial)
+        // - Faerie Blood          (Faerie Lore)
+        // - Failed Apprentice     (Academic + Arcane)
+        // - Privileged Upbringing (Academic + Martial) - but only for the +50 XP (excluding the Later Life pool)
+        // - Redcap                (Academic + Arcane + Martial)
+        // - Strong Faerie Blood   (Faerie Lore, plus Second Sight)
+        // - Student of <Realm>    (<Realm> Lore, for the chosen Realm)
+        // - Wise One              (grants access to ONE category: Academic, Arcane)
+        // 
+        // - Ability Block         (REMOVES access to a class of Abilities; scope of class is not precisely defined in rules)
+        // - Covenant Upbringing   (grants access 2 Abilities: Dead Lang: Latin, Org Lore: Order of Hermes)
+        // - Diabolic Past         (Infernal Lore)
+        // - Enfeebled             (unable to learn Martial, or (other skills involving physical exertion) )
+        // - Faerie Friend         (Faerie Lore)
+        // - Faerie Upbringing     (Faerie Lore)
+        // - Feral Upbringing      (alters how Early Life XP can be spent, prevents XP on Langauges)
+        // - Sheltered Upbringing  (may not take Bargain, Charm, Etiquette, Folk Ken, Guile, Intrigue, Leadership)
+        // 
         #endregion
 
         #region Constructors
