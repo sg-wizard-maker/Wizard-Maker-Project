@@ -8,7 +8,7 @@ namespace WizardMaker.DataDomain.Models
     public class BasicJournalableManager : IJournalableManager
     {
         #region Properties and Fields
-        private bool IsIsInCharacterGenerationMode = true;
+        public bool IsChargenMode { get; set; } = true;
         
         private SortedSet<Journalable> Journalables = new SortedSet<Journalable>(new JournalableComparator());
         #endregion
@@ -17,22 +17,21 @@ namespace WizardMaker.DataDomain.Models
         public void AddJournalable(Journalable journalable)
         {
             // If we are in character creation mode, then overwrite this with any existing journal entry.
-            if (this.IsIsInCharacterGenerationMode)
+            if (this.IsChargenMode)
             {
-                List<Journalable> journalEntriesToRemove = new List<Journalable>();
+                List<Journalable> removeThese = new List<Journalable>();
                 // Check if this is in our existing list (matching by text).
                 // If so, remove it (it will get replaced next)
                 foreach (Journalable jj in this.Journalables)
                 {
                     if (jj.GetText() == journalable.GetText())
                     {
-                        journalEntriesToRemove.Add(jj);
+                        removeThese.Add(jj);
                     }
                 }
-
-                foreach (Journalable journalableToRemove in journalEntriesToRemove) 
+                foreach (Journalable jj in removeThese) 
                 {
-                    Journalables.Remove(journalableToRemove); 
+                    Journalables.Remove(jj); 
                 }
             }
             // Add a new one.
@@ -41,17 +40,7 @@ namespace WizardMaker.DataDomain.Models
 
         public SortedSet<Journalable> GetJournalables()
         {
-            return Journalables;
-        }
-
-        public bool IsInCharacterGenerationMode()
-        {
-            return IsIsInCharacterGenerationMode;
-        }
-
-        public void SetCharacterGenerationMode(bool isCharacterGenerationMode)
-        {
-            IsIsInCharacterGenerationMode = isCharacterGenerationMode;
+            return this.Journalables;
         }
 
         public void RemoveJournalEntry(string id) 

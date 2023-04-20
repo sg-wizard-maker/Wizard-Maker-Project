@@ -8,9 +8,7 @@ namespace WizardMaker.DataDomain.Models
     internal interface IJournalableManager
     {
         // For when the manager is in advancement vs initial character generation.
-        bool IsInCharacterGenerationMode();
-
-        void SetCharacterGenerationMode(bool isCharacterGenerationMode);
+        bool IsChargenMode { get; set; }
 
         SortedSet<Journalable> GetJournalables();
 

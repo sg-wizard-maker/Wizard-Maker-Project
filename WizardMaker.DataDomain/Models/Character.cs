@@ -119,12 +119,12 @@ namespace WizardMaker.DataDomain.Models
         #region Methods (various)
         public void EndCharacterCreation()
         {
-            JournalableManager.SetCharacterGenerationMode(false);
+            JournalableManager.IsChargenMode = false;
         }
 
         public bool IsInitialCharacterFinished()
         {
-            return !JournalableManager.IsInCharacterGenerationMode();
+            return !JournalableManager.IsChargenMode;
         }
 
         public void AddJournalable(Journalable journalable)

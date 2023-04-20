@@ -1,23 +1,22 @@
 using Newtonsoft.Json;
 using WizardMaker.DataDomain.Models;
-using WizardMaker.DataDomain.Models;
 
 namespace WizardMakerTests
 {
     [TestClass]
     public class XPPoolTest
     {
-        private const string CHILDHOOD_LANGUAGE_POOL_NAME = "Childhood language XP Pool";
+        private const string CHILDHOOD_LANGUAGE_POOL_NAME   = "Childhood language XP Pool";
         private const string CHILDHOOD_LANGUAGE_DESCRIPTION = "XP granted to starting characters that can be spent on one language";
-        private const int CHILDHOOD_LANGUAGE_XP = 75;
+        private const int    CHILDHOOD_LANGUAGE_XP          = 75;
 
-        private const string CHILDHOOD_POOL_NAME = "Childhood XP Pool";
+        private const string CHILDHOOD_POOL_NAME   = "Childhood XP Pool";
         private const string CHILDHOOD_DESCRIPTION = "XP granted to starting characters that can be spent on childhood skills";
-        private const int CHILDHOOD_XP = 45;
+        private const int    CHILDHOOD_XP         = 45;
 
-        private const string LATER_LIFE_POOL_NAME = "Later life XP Pool";
+        private const string LATER_LIFE_POOL_NAME   = "Later life XP Pool";
         private const string LATER_LIFE_DESCRIPTION = "XP granted to starting characters that can be spent on anything the character can learn.  After age 5.";
-        private const string XP_POOL_NAME = "Test XP Pool";
+        private const string XP_POOL_NAME           = "Test XP Pool";
 
         [TestMethod]
         public void TestBasicXPPool()
