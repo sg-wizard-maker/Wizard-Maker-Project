@@ -23,6 +23,13 @@ namespace WizardMaker.DataDomain.Models.Virtues
         }
         #endregion
 
+        #region Static VirtueType objects
+        // ...Working on a centralized registration+lookup for this and various other classes,
+        // prefiguring some/all of this kind of thing being loaded from JSON,
+        // to the extend that makes sense.
+        // Whatever mechanism is used, will need to serve the needs
+        // of some hard-coded references within the code
+        // to have certain such objects available via a meaningful in-code name...
         public static VirtueType Special      = new VirtueType("Special",      "Special");  // The Gift, also some from other books have this type
         public static VirtueType Hermetic     = new VirtueType("Hermetic",     "Hermetic");
         public static VirtueType Supernatural = new VirtueType("Supernatural", "Supernatural");
@@ -32,6 +39,7 @@ namespace WizardMaker.DataDomain.Models.Virtues
         // There are some twists which complicate that,
         // like Mythic Blood being BOTH Hermetic and Heroic,
         // which may require we re-arrange infrastructure to allow for such things.
+        #endregion
 
         #region Static Constructor
         static VirtueType()
