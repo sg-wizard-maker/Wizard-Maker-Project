@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 
+using WizardMaker.DataDomain.Models.CharacterPersist;
 using WizardMaker.DataDomain.Models.Journal;
 
 namespace WizardMaker.DataDomain.Models
@@ -21,22 +22,15 @@ namespace WizardMaker.DataDomain.Models
 
         public virtual string SerializeJson()
         {
-            var settings = new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.All
-            };
-            var result = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
             return result;
         }
 
         public static Journalable? DeserializeJson(string json)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.All,
-                MaxDepth = 128
-            };
-            var result = JsonConvert.DeserializeObject(json, settings) as Journalable;
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.DeserializeObject(json, settings) as Journalable;
             return result;
         }
 

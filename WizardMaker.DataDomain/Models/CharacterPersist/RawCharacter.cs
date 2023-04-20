@@ -39,22 +39,15 @@ namespace WizardMaker.DataDomain.Models.CharacterPersist
         #region Methods (various)
         public string SerializeJson()
         {
-            var settings = new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.All
-            };
-            var result = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
             return result;
         }
 
         public static RawCharacter? DeserializeJson(string json)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.All,
-                MaxDepth = 128
-            };
-            var result = JsonConvert.DeserializeObject(json, settings) as RawCharacter;
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.DeserializeObject(json, settings) as RawCharacter;
             return result;
         }
         #endregion

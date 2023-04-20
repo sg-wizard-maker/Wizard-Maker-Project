@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 
+using WizardMaker.DataDomain.Models.CharacterPersist;
 using WizardMaker.DataDomain.Validation;
 
 
@@ -58,23 +59,15 @@ namespace WizardMaker.DataDomain.Models
         // TODO: Do we need to be able to serialize and deserialize XP Pools?
         public static XPPool? DeserializeJson(string json)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.All,
-                MaxDepth = 128
-            };
-
-            var result = JsonConvert.DeserializeObject(json, settings) as XPPool;
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.DeserializeObject(json, settings) as XPPool;
             return result;
         }
 
         public virtual string SerializeJson()
         {
-            var settings = new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.All
-            };
-            var result = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
+            var settings = WMJsonSerializerSettings.CommonJsonSerializerSettings;
+            var result   = JsonConvert.SerializeObject(this, Formatting.Indented, settings);
             return result;
         }
 
