@@ -11,6 +11,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
             this.Ability = ability;
         }
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             c.PuissantAbilities.Add(Ability.Name);
@@ -20,5 +21,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

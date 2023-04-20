@@ -15,6 +15,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
             this.GrantedAbility = grantedAbility;
         }
 
+        #region Implementing ICharacterCommand
         // Note: If you delete Animal Ken, you will delete journal entries that change its experience AND add the virtue.
         public void Execute(Character c)
         {
@@ -40,5 +41,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

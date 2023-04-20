@@ -20,6 +20,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
             this.InitialXP   = initialXP;
         }
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             // Allow access to Abilities of the indicated type
@@ -40,5 +41,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

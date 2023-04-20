@@ -34,12 +34,14 @@ namespace WizardMaker.DataDomain.Models
             return result;
         }
 
+        #region Implementing ICharacterCommand
         public abstract void Execute(Character character);
 
         public virtual void Undo()
         {
             throw new NotImplementedException();
         }
+        #endregion
 
         public virtual bool IsSameSpecs(Journalable other)
         {

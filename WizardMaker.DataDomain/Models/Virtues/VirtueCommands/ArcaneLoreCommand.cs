@@ -12,9 +12,15 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
 
         public ArcaneLoreCommand()
         {
-            Command = new GenericAllowAbilityTypeAndXPPoolCommand(AbilityType.Arcane, ARCANE_LORE_POOL_NAME, ARCANE_LORE_POOL_DESCRIPTION, ARCANE_LORE_INITIAL_XP);
+            Command = new GenericAllowAbilityTypeAndXPPoolCommand(
+                AbilityType.Arcane, 
+                ARCANE_LORE_POOL_NAME, 
+                ARCANE_LORE_POOL_DESCRIPTION, 
+                ARCANE_LORE_INITIAL_XP
+            );
         }
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             Command.Execute(c);
@@ -24,5 +30,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

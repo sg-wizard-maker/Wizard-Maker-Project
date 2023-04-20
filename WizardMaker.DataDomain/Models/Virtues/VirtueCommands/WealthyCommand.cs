@@ -6,6 +6,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
     {
         public static int WEALTHY_ANNUAL_XP = 20;
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             // Since this is executed before the XP Pool initialization,
@@ -19,5 +20,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

@@ -11,6 +11,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
             Command = new GenericGrantAbilityCommand(ArchAbility.AnimalKen);
         }
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             Command.Execute(c);
@@ -20,5 +21,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

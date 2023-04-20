@@ -8,6 +8,7 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         public static string PRIVILEGED_UPBRINGING_XP_POOL_DESCRIPTION = "XP Pool from taking the virtue, Privileged Upbringing";
         public static int    PRIVILEGED_UPBRINGING_XP_POOL_XP          = 50;
 
+        #region Implementing ICharacterCommand
         public void Execute(Character c)
         {
             // Create a pool of 50 XP
@@ -28,5 +29,6 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }
