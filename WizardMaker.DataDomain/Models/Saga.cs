@@ -35,7 +35,7 @@ namespace WizardMaker.DataDomain.Models
             Saga.RegistrarSagas.Register(this);
             if (Saga.CurrentSaga == null)
             {
-                Saga.CurrentSaga = this;
+                Saga.SetCurrentSaga(this);
             }
         }
         #endregion

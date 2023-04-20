@@ -1,58 +1,25 @@
-﻿using WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
+﻿using System;
+using System.Collections.Generic;
+using WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
 
 namespace WizardMaker.DataDomain.Models.Virtues
 {
-    public class VirtueType
-    {
-        public static List<VirtueType> Types = new List<VirtueType>();
-
-        #region Properties
-        public string Abbreviation { get; private set; }
-        public string Name         { get; private set; }
-        #endregion
-
-        #region Constructors
-        // This is only public so that it can be available for serialization
-        public VirtueType(string abbrev, string name)
-        {
-            this.Abbreviation = abbrev;
-            this.Name         = name;
-        }
-        #endregion
-
-        public static VirtueType Hermetic     = new VirtueType("Hermetic",     "Hermetic");
-        public static VirtueType Supernatural = new VirtueType("Supernatural", "Supernatural");
-        public static VirtueType Social       = new VirtueType("Social",       "Social");
-        public static VirtueType General      = new VirtueType("General",      "General");
-
-        #region Static Constructor
-        static VirtueType()
-        {
-            Types.Add(Hermetic);
-            Types.Add(General);
-            Types.Add(Social);
-            Types.Add(Supernatural);
-        }
-        #endregion
-    }
-
-    public enum VirtueCost 
-    {
-        FREE  = 0,
-        MINOR = 1,
-        MAJOR = 3, 
-    }
-
     public class ArchVirtue
     {
-        #region Properties and Fields
-        public string            Name;
-        public string            Description;
-        public VirtueType        Type;
-        public VirtueCost        MajorMinor;
-        public ICharacterCommand CharacterCommand { get; private set; }
+        #region Constants
+        public const string PUISSANT_PREFIX = "Puissant ";
+        public const string AFFINITY_PREFIX = "Affinity with ";
         #endregion
 
+        #region Properties
+        public string             Name             { get; private set; }
+        public string             Description      { get; private set; }
+        public VirtueType         Type             { get; private set; }
+        public VirtueCost         MajorMinor       { get; private set; }
+        public ICharacterCommand? CharacterCommand { get; private set; }
+        #endregion
+
+        #region Static Properties
         // Access ArchVirtue instances with this dictionary.
         //   Dev note:  Do not use this dictionary in the instantiation of the VirtueCommands
         public static Dictionary<string, ArchVirtue> NameToArchVirtue = new Dictionary<string, ArchVirtue>();
@@ -64,23 +31,21 @@ namespace WizardMaker.DataDomain.Models.Virtues
         //     - to get (all Minor Virtues that grant a new Ability)
         //     - to get (all Virtues that are "parameterized" such as (Affinity with X, Puissant X, Cautious with X, ...)
         // and so forth...
-
-        public const string PUISSANT_PREFIX = "Puissant ";
-        public const string AFFINITY_PREFIX = "Affinity with ";
+        #endregion
 
         #region Constructors
-        public ArchVirtue(string name, string description, VirtueType type, VirtueCost majorMinor) 
-            : this(name, description, type, majorMinor, null)
+        public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost) 
+            : this(name, description, type, cost, null)
         {
             // Empty
         }
 
-        public ArchVirtue(string name, string description, VirtueType type, VirtueCost majorMinor, ICharacterCommand characterCommand)
+        public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost, ICharacterCommand? characterCommand)
         {
             this.Name             = name;
             this.Type             = type;
             this.Description      = description;
-            this.MajorMinor       = majorMinor;
+            this.MajorMinor       = cost;
             this.CharacterCommand = characterCommand;
         }
         #endregion
@@ -107,179 +72,182 @@ namespace WizardMaker.DataDomain.Models.Virtues
             // Implement puissant abilities as a dictionary to an arch virtue
             foreach (ArchAbility a in ArchAbility.AllCommonAbilities)
             {
-                NameToArchVirtue[PUISSANT_PREFIX + a.Name] = 
+                string puissantVirtueName = PUISSANT_PREFIX + a.Name;
+                string affinityVirtueName = AFFINITY_PREFIX + a.Name;
+                ArchVirtue.NameToArchVirtue[puissantVirtueName] = 
                     new ArchVirtue(
-                        PUISSANT_PREFIX + a.Name, 
+                        puissantVirtueName, 
                         "Puissant in the ability " + a.Name, 
                         VirtueType.General, 
-                        VirtueCost.MINOR, 
+                        VirtueCost.Minor, 
                         new PuissantAbilityCommand(a)
                     );
-                NameToArchVirtue[AFFINITY_PREFIX + a.Name] = 
+                ArchVirtue.NameToArchVirtue[affinityVirtueName] = 
                     new ArchVirtue(
-                        AFFINITY_PREFIX + a.Name, 
+                        affinityVirtueName, 
                         "Affinity with the ability " + a.Name, 
                         VirtueType.Hermetic, 
-                        VirtueCost.MINOR, 
+                        VirtueCost.Minor, 
                         new AffinityAbilityCommand(a)
                     );
             }
-            PopulateVirtueDictionary();
+            ArchVirtue.PopulateVirtueDictionary();
         }
         #endregion
 
         // TODO: Define the keys as constants
 
         #region Individual ArchVirtue Instances
-        private static ArchVirtue TheGift = new ArchVirtue("TheGift", "TheGift", VirtueType.Hermetic, VirtueCost.FREE);
+        private static ArchVirtue TheGift = new ArchVirtue("TheGift", "TheGift", VirtueType.Special, VirtueCost.Free);
 
         // Hermetic Major
-        private static ArchVirtue DiedneMagic                = new ArchVirtue("DiedneMagic",                 "DiedneMagic",                 VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue ElementalMagic             = new ArchVirtue("ElementalMagic",              "ElementalMagic",              VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue FlawlessMagic              = new ArchVirtue("FlawlessMagic",               "FlawlessMagic",               VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue FlexibleFormulaicMagic     = new ArchVirtue("FlexibleFormulaicMagic",      "FlexibleFormulaicMagic",      VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue GentleGift                 = new ArchVirtue("GentleGift",                  "GentleGift",                  VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue LifeLinkedSpontaneousMagic = new ArchVirtue("Life-LinkedSpontaneousMagic", "Life-LinkedSpontaneousMagic", VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue MajorMagicalFocus          = new ArchVirtue("MajorMagicalFocus",           "MajorMagicalFocus",           VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue MercurianMagic             = new ArchVirtue("MercurianMagic",              "MercurianMagic",              VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue MythicBlood                = new ArchVirtue("MythicBlood",                 "MythicBlood",                 VirtueType.Hermetic, VirtueCost.MAJOR);
-        private static ArchVirtue SecondaryInsight           = new ArchVirtue("SecondaryInsight",            "SecondaryInsight",            VirtueType.Hermetic, VirtueCost.MAJOR);
+        private static ArchVirtue DiedneMagic                = new ArchVirtue("DiedneMagic",                 "DiedneMagic",                 VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue ElementalMagic             = new ArchVirtue("ElementalMagic",              "ElementalMagic",              VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue FlawlessMagic              = new ArchVirtue("FlawlessMagic",               "FlawlessMagic",               VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue FlexibleFormulaicMagic     = new ArchVirtue("FlexibleFormulaicMagic",      "FlexibleFormulaicMagic",      VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue GentleGift                 = new ArchVirtue("GentleGift",                  "GentleGift",                  VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue LifeLinkedSpontaneousMagic = new ArchVirtue("Life-LinkedSpontaneousMagic", "Life-LinkedSpontaneousMagic", VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue MajorMagicalFocus          = new ArchVirtue("MajorMagicalFocus",           "MajorMagicalFocus",           VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue MercurianMagic             = new ArchVirtue("MercurianMagic",              "MercurianMagic",              VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue MythicBlood                = new ArchVirtue("MythicBlood",                 "MythicBlood",                 VirtueType.Hermetic, VirtueCost.Major);
+        private static ArchVirtue SecondaryInsight           = new ArchVirtue("SecondaryInsight",            "SecondaryInsight",            VirtueType.Hermetic, VirtueCost.Major);
         
         // Supernatural Major
-        private static ArchVirtue Entrancement          = new ArchVirtue("Entrancement",          "Entrancement",          VirtueType.Supernatural, VirtueCost.MAJOR);
-        private static ArchVirtue GreaterImmunity       = new ArchVirtue("GreaterImmunity",       "GreaterImmunity",       VirtueType.Supernatural, VirtueCost.MAJOR);
-        private static ArchVirtue GreaterPurifyingTouch = new ArchVirtue("GreaterPurifyingTouch", "GreaterPurifyingTouch", VirtueType.Supernatural, VirtueCost.MAJOR);
-        private static ArchVirtue Shapeshifter          = new ArchVirtue("Shapeshifter",          "Shapeshifter",          VirtueType.Supernatural, VirtueCost.MAJOR);
-        private static ArchVirtue StrongFaerieBlood     = new ArchVirtue("StrongFaerieBlood",     "StrongFaerieBlood",     VirtueType.Supernatural, VirtueCost.MAJOR);
+        private static ArchVirtue Entrancement          = new ArchVirtue("Entrancement",          "Entrancement",          VirtueType.Supernatural, VirtueCost.Major);
+        private static ArchVirtue GreaterImmunity       = new ArchVirtue("GreaterImmunity",       "GreaterImmunity",       VirtueType.Supernatural, VirtueCost.Major);
+        private static ArchVirtue GreaterPurifyingTouch = new ArchVirtue("GreaterPurifyingTouch", "GreaterPurifyingTouch", VirtueType.Supernatural, VirtueCost.Major);
+        private static ArchVirtue Shapeshifter          = new ArchVirtue("Shapeshifter",          "Shapeshifter",          VirtueType.Supernatural, VirtueCost.Major);
+        private static ArchVirtue StrongFaerieBlood     = new ArchVirtue("StrongFaerieBlood",     "StrongFaerieBlood",     VirtueType.Supernatural, VirtueCost.Major);
         
         // Social Status Major
-        private static ArchVirtue LandedNoble       = new ArchVirtue("LandedNoble",       "LandedNoble",       VirtueType.Social, VirtueCost.MAJOR);
-        private static ArchVirtue MagisterinArtibus = new ArchVirtue("MagisterinArtibus", "MagisterinArtibus", VirtueType.Social, VirtueCost.MAJOR);
-        private static ArchVirtue Redcap            = new ArchVirtue("Redcap",            "Redcap",            VirtueType.Social, VirtueCost.MAJOR);
+        private static ArchVirtue LandedNoble       = new ArchVirtue("LandedNoble",       "LandedNoble",       VirtueType.SocialStatus, VirtueCost.Major);
+        private static ArchVirtue MagisterinArtibus = new ArchVirtue("MagisterinArtibus", "MagisterinArtibus", VirtueType.SocialStatus, VirtueCost.Major);
+        private static ArchVirtue Redcap            = new ArchVirtue("Redcap",            "Redcap",            VirtueType.SocialStatus, VirtueCost.Major);
         
         // General Major
-        private static ArchVirtue DeathProphecy = new ArchVirtue("DeathProphecy",   "DeathProphecy",   VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue GhostlyWarder = new ArchVirtue("GhostlyWarder",   "GhostlyWarder",   VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue GiantBlood    = new ArchVirtue("GiantBlood",      "GiantBlood",      VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue GuardianAngel = new ArchVirtue("GuardianAngel",   "GuardianAngel",   VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue TrueFaith     = new ArchVirtue("TrueFaith",       "TrueFaith",       VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue WaysoftheLand = new ArchVirtue("Waysofthe(Land)", "Waysofthe(Land)", VirtueType.General, VirtueCost.MAJOR);
-        private static ArchVirtue Wealthy       = new ArchVirtue("Wealthy",         "Wealthy",         VirtueType.General, VirtueCost.MAJOR, new WealthyCommand());
+        private static ArchVirtue DeathProphecy = new ArchVirtue("DeathProphecy",   "DeathProphecy",   VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue GhostlyWarder = new ArchVirtue("GhostlyWarder",   "GhostlyWarder",   VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue GiantBlood    = new ArchVirtue("GiantBlood",      "GiantBlood",      VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue GuardianAngel = new ArchVirtue("GuardianAngel",   "GuardianAngel",   VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue TrueFaith     = new ArchVirtue("TrueFaith",       "TrueFaith",       VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue WaysoftheLand = new ArchVirtue("Waysofthe(Land)", "Waysofthe(Land)", VirtueType.General, VirtueCost.Major);
+        private static ArchVirtue Wealthy       = new ArchVirtue("Wealthy",         "Wealthy",         VirtueType.General, VirtueCost.Major, new WealthyCommand());
         
         // Hermetic Minor
-        private static ArchVirtue AdeptLaboratoryStudent = new ArchVirtue("AdeptLaboratoryStudent", "AdeptLaboratoryStudent", VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue AffinitywithArt        = new ArchVirtue("AffinitywithArt",        "AffinitywithArt",        VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue CautiousSorcerer       = new ArchVirtue("CautiousSorcerer",       "CautiousSorcerer",       VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue CyclicMagicpositive    = new ArchVirtue("CyclicMagic(positive)",  "CyclicMagic(positive)",  VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue DeftForm               = new ArchVirtue("DeftForm",               "DeftForm",               VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue EnduringMagic          = new ArchVirtue("EnduringMagic",          "EnduringMagic",          VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue TheEnigma              = new ArchVirtue("TheEnigma",              "TheEnigma",              VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue FaerieMagic            = new ArchVirtue("FaerieMagic",            "FaerieMagic",            VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue FastCaster             = new ArchVirtue("FastCaster",             "FastCaster",             VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue FreeStudy              = new ArchVirtue("FreeStudy",              "FreeStudy",              VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue HarnessedMagic         = new ArchVirtue("HarnessedMagic",         "HarnessedMagic",         VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue Heartbeast             = new ArchVirtue("Heartbeast",             "Heartbeast",             VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue HermeticPrestige       = new ArchVirtue("HermeticPrestige",       "HermeticPrestige",       VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue InoffensivetoAnimals   = new ArchVirtue("InoffensivetoAnimals",   "InoffensivetoAnimals",   VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue InventiveGenius        = new ArchVirtue("InventiveGenius",        "InventiveGenius",        VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue LifeBoost              = new ArchVirtue("LifeBoost",              "LifeBoost",              VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue MinorMagicalFocus      = new ArchVirtue("MinorMagicalFocus",      "MinorMagicalFocus",      VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue MagicalMemory          = new ArchVirtue("MagicalMemory",          "MagicalMemory",          VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue MasteredSpells         = new ArchVirtue("MasteredSpells",         "MasteredSpells",         VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue MethodCaster           = new ArchVirtue("MethodCaster",           "MethodCaster",           VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue PersonalVisSource      = new ArchVirtue("PersonalVisSource",      "PersonalVisSource",      VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue PuissantArt            = new ArchVirtue("PuissantArt",            "PuissantArt",            VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue QuietMagic             = new ArchVirtue("QuietMagic",             "QuietMagic",             VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue SideEffect             = new ArchVirtue("SideEffect",             "SideEffect",             VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue SkilledParens          = new ArchVirtue("SkilledParens",          "SkilledParens",          VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue SpecialCircumstances   = new ArchVirtue("SpecialCircumstances",   "SpecialCircumstances",   VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue StudyBonus             = new ArchVirtue("StudyBonus",             "StudyBonus",             VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue SubtleMagic            = new ArchVirtue("SubtleMagic",            "SubtleMagic",            VirtueType.Hermetic, VirtueCost.MINOR);
-        private static ArchVirtue VerditiusMagic         = new ArchVirtue("VerditiusMagic",         "VerditiusMagic",         VirtueType.Hermetic, VirtueCost.MINOR);
+        private static ArchVirtue AdeptLaboratoryStudent = new ArchVirtue("AdeptLaboratoryStudent", "AdeptLaboratoryStudent", VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue AffinitywithArt        = new ArchVirtue("AffinitywithArt",        "AffinitywithArt",        VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue CautiousSorcerer       = new ArchVirtue("CautiousSorcerer",       "CautiousSorcerer",       VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue CyclicMagicpositive    = new ArchVirtue("CyclicMagic(positive)",  "CyclicMagic(positive)",  VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue DeftForm               = new ArchVirtue("DeftForm",               "DeftForm",               VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue EnduringMagic          = new ArchVirtue("EnduringMagic",          "EnduringMagic",          VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue TheEnigma              = new ArchVirtue("TheEnigma",              "TheEnigma",              VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue FaerieMagic            = new ArchVirtue("FaerieMagic",            "FaerieMagic",            VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue FastCaster             = new ArchVirtue("FastCaster",             "FastCaster",             VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue FreeStudy              = new ArchVirtue("FreeStudy",              "FreeStudy",              VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue HarnessedMagic         = new ArchVirtue("HarnessedMagic",         "HarnessedMagic",         VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue Heartbeast             = new ArchVirtue("Heartbeast",             "Heartbeast",             VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue HermeticPrestige       = new ArchVirtue("HermeticPrestige",       "HermeticPrestige",       VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue InoffensivetoAnimals   = new ArchVirtue("InoffensivetoAnimals",   "InoffensivetoAnimals",   VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue InventiveGenius        = new ArchVirtue("InventiveGenius",        "InventiveGenius",        VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue LifeBoost              = new ArchVirtue("LifeBoost",              "LifeBoost",              VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue MinorMagicalFocus      = new ArchVirtue("MinorMagicalFocus",      "MinorMagicalFocus",      VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue MagicalMemory          = new ArchVirtue("MagicalMemory",          "MagicalMemory",          VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue MasteredSpells         = new ArchVirtue("MasteredSpells",         "MasteredSpells",         VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue MethodCaster           = new ArchVirtue("MethodCaster",           "MethodCaster",           VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue PersonalVisSource      = new ArchVirtue("PersonalVisSource",      "PersonalVisSource",      VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue PuissantArt            = new ArchVirtue("PuissantArt",            "PuissantArt",            VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue QuietMagic             = new ArchVirtue("QuietMagic",             "QuietMagic",             VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue SideEffect             = new ArchVirtue("SideEffect",             "SideEffect",             VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue SkilledParens          = new ArchVirtue("SkilledParens",          "SkilledParens",          VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue SpecialCircumstances   = new ArchVirtue("SpecialCircumstances",   "SpecialCircumstances",   VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue StudyBonus             = new ArchVirtue("StudyBonus",             "StudyBonus",             VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue SubtleMagic            = new ArchVirtue("SubtleMagic",            "SubtleMagic",            VirtueType.Hermetic, VirtueCost.Minor);
+        private static ArchVirtue VerditiusMagic         = new ArchVirtue("VerditiusMagic",         "VerditiusMagic",         VirtueType.Hermetic, VirtueCost.Minor);
         
         // Supernatural Minor
-        private static ArchVirtue AnimalKen            = new ArchVirtue("AnimalKen",                  "AnimalKen",                  VirtueType.Supernatural, VirtueCost.MINOR, new AnimalKenCommand());
-        private static ArchVirtue Dowsing              = new ArchVirtue("Dowsing",                    "Dowsing",                    VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue EnchantingMusic      = new ArchVirtue("EnchantingMusic",            "EnchantingMusic",            VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue LesserImmunity       = new ArchVirtue("LesserImmunity",             "LesserImmunity",             VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue LesserPurifyingTouch = new ArchVirtue("LesserPurifyingTouch",       "LesserPurifyingTouch",       VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue MagicSensitivity     = new ArchVirtue("MagicSensitivity",           "MagicSensitivity",           VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue Premonitions         = new ArchVirtue("Premonitions",               "Premonitions",               VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue SecondSight          = new ArchVirtue("SecondSight",                "SecondSight",                VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue SenseHolyUnholy      = new ArchVirtue("SenseHolinessandUnholiness", "SenseHolinessandUnholiness", VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue Skinchanger          = new ArchVirtue("Skinchanger",                "Skinchanger",                VirtueType.Supernatural, VirtueCost.MINOR);
-        private static ArchVirtue WildernessSense      = new ArchVirtue("WildernessSense",            "WildernessSense",            VirtueType.Supernatural, VirtueCost.MINOR);
+        private static ArchVirtue AnimalKen            = new ArchVirtue("AnimalKen",                  "AnimalKen",                  VirtueType.Supernatural, VirtueCost.Minor, new AnimalKenCommand());
+        private static ArchVirtue Dowsing              = new ArchVirtue("Dowsing",                    "Dowsing",                    VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue EnchantingMusic      = new ArchVirtue("EnchantingMusic",            "EnchantingMusic",            VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue LesserImmunity       = new ArchVirtue("LesserImmunity",             "LesserImmunity",             VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue LesserPurifyingTouch = new ArchVirtue("LesserPurifyingTouch",       "LesserPurifyingTouch",       VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue MagicSensitivity     = new ArchVirtue("MagicSensitivity",           "MagicSensitivity",           VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue Premonitions         = new ArchVirtue("Premonitions",               "Premonitions",               VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue SecondSight          = new ArchVirtue("SecondSight",                "SecondSight",                VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue SenseHolyUnholy      = new ArchVirtue("SenseHolinessandUnholiness", "SenseHolinessandUnholiness", VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue Skinchanger          = new ArchVirtue("Skinchanger",                "Skinchanger",                VirtueType.Supernatural, VirtueCost.Minor);
+        private static ArchVirtue WildernessSense      = new ArchVirtue("WildernessSense",            "WildernessSense",            VirtueType.Supernatural, VirtueCost.Minor);
         
         // Social Minor
-        private static ArchVirtue Clerk            = new ArchVirtue("Clerk",            "Clerk",            VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue Custos           = new ArchVirtue("Custos",           "Custos",           VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue FailedApprentice = new ArchVirtue("FailedApprentice", "FailedApprentice", VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue Gentlemanwoman   = new ArchVirtue("Gentleman/woman",  "Gentleman/woman",  VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue Knight           = new ArchVirtue("Knight",           "Knight",           VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue MendicantFriar   = new ArchVirtue("MendicantFriar",   "MendicantFriar",   VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue MercenaryCaptain = new ArchVirtue("MercenaryCaptain", "MercenaryCaptain", VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue Priest           = new ArchVirtue("Priest",           "Priest",           VirtueType.Social, VirtueCost.MINOR);
-        private static ArchVirtue WiseOne          = new ArchVirtue("WiseOne",          "WiseOne",          VirtueType.Social, VirtueCost.MINOR);
+        private static ArchVirtue Clerk            = new ArchVirtue("Clerk",            "Clerk",            VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue Custos           = new ArchVirtue("Custos",           "Custos",           VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue FailedApprentice = new ArchVirtue("FailedApprentice", "FailedApprentice", VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue Gentlemanwoman   = new ArchVirtue("Gentleman/woman",  "Gentleman/woman",  VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue Knight           = new ArchVirtue("Knight",           "Knight",           VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue MendicantFriar   = new ArchVirtue("MendicantFriar",   "MendicantFriar",   VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue MercenaryCaptain = new ArchVirtue("MercenaryCaptain", "MercenaryCaptain", VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue Priest           = new ArchVirtue("Priest",           "Priest",           VirtueType.SocialStatus, VirtueCost.Minor);
+        private static ArchVirtue WiseOne          = new ArchVirtue("WiseOne",          "WiseOne",          VirtueType.SocialStatus, VirtueCost.Minor);
         
         // General Minor
-        private static ArchVirtue AffinityWithAbility      = new ArchVirtue("AffinityWithAbility",        "AffinityWithAbility",        VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue AptStudent               = new ArchVirtue("AptStudent",                 "AptStudent",                 VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue ArcaneLore               = new ArchVirtue("ArcaneLore",                 "ArcaneLore",                 VirtueType.General, VirtueCost.MINOR, new ArcaneLoreCommand());
-        private static ArchVirtue Berserk                  = new ArchVirtue("Berserk",                    "Berserk",                    VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue BookLearner              = new ArchVirtue("BookLearner",                "BookLearner",                VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue CautiouswithAbility      = new ArchVirtue("CautiouswithAbility",        "CautiouswithAbility",        VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue ClearThinker             = new ArchVirtue("ClearThinker",               "ClearThinker",               VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue CommonSense              = new ArchVirtue("CommonSense",                "CommonSense",                VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Educated                 = new ArchVirtue("Educated",                   "Educated",                   VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue EnduringConstitution     = new ArchVirtue("EnduringConstitution",       "EnduringConstitution",       VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue FaerieBlood              = new ArchVirtue("FaerieBlood",                "FaerieBlood",                VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Famous                   = new ArchVirtue("Famous",                     "Famous",                     VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue FreeExpression           = new ArchVirtue("FreeExpression",             "FreeExpression",             VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue GoodTeacher              = new ArchVirtue("GoodTeacher",                "GoodTeacher",                VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Gossip                   = new ArchVirtue("Gossip",                     "Gossip",                     VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue GreatCharacteristic      = new ArchVirtue("Great Characteristic",       "Great Characteristic",       VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue ImprovedCharacteristics  = new ArchVirtue("ImprovedCharacteristics",    "ImprovedCharacteristics",    VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Inspirational            = new ArchVirtue("Inspirational",              "Inspirational",              VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Intuition                = new ArchVirtue("Intuition",                  "Intuition",                  VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue KeenVision               = new ArchVirtue("KeenVision",                 "KeenVision",                 VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Large                    = new ArchVirtue("Large",                      "Large",                      VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue LatentMagicalAbility     = new ArchVirtue("LatentMagicalAbility",       "LatentMagicalAbility",       VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue LearnAbilityfromMistakes = new ArchVirtue("Learn(Ability)fromMistakes", "Learn(Ability)fromMistakes", VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue LightTouch               = new ArchVirtue("LightTouch",                 "LightTouch",                 VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue LightningReflexes        = new ArchVirtue("LightningReflexes",          "LightningReflexes",          VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue LongWinded               = new ArchVirtue("Long-Winded",                "Long-Winded",                VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Luck                     = new ArchVirtue("Luck",                       "Luck",                       VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue RapidConvalescence       = new ArchVirtue("RapidConvalescence",         "RapidConvalescence",         VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue PerfectBalance           = new ArchVirtue("PerfectBalance",             "PerfectBalance",             VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue PiercingGaze             = new ArchVirtue("PiercingGaze",               "PiercingGaze",               VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue PrivilegedUpbringing     = new ArchVirtue("PrivilegedUpbringing",       "PrivilegedUpbringing",       VirtueType.General, VirtueCost.MINOR, new PrivilegedUpbringingCommand());
-        private static ArchVirtue Protection               = new ArchVirtue("Protection",                 "Protection",                 VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue PuissantAbility          = new ArchVirtue("PuissantAbility",            "PuissantAbility",            VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Relic                    = new ArchVirtue("Relic",                      "Relic",                      VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue ReservesofStrength       = new ArchVirtue("ReservesofStrength",         "ReservesofStrength",         VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue SelfConfident            = new ArchVirtue("Self-Confident",             "Self-Confident",             VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue SharpEars                = new ArchVirtue("SharpEars",                  "SharpEars",                  VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue SocialContacts           = new ArchVirtue("SocialContacts",             "SocialContacts",             VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue StrongWilled             = new ArchVirtue("Strong-Willed",              "Strong-Willed",              VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue StudentofRealm           = new ArchVirtue("Studentof(Realm)",           "Studentof(Realm)",           VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue TemporalInfluence        = new ArchVirtue("TemporalInfluence",          "TemporalInfluence",          VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Tough                    = new ArchVirtue("Tough",                      "Tough",                      VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue TroupeUpbringing         = new ArchVirtue("TroupeUpbringing",           "TroupeUpbringing",           VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue TrueLovePC               = new ArchVirtue("TrueLove(PC)",               "TrueLove(PC)",               VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Unaging                  = new ArchVirtue("Unaging",                    "Unaging",                    VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue VenusBlessing            = new ArchVirtue("Venus’Blessing",             "Venus’Blessing",             VirtueType.General, VirtueCost.MINOR);
-        private static ArchVirtue Warrior                  = new ArchVirtue("Warrior",                    "Warrior",                    VirtueType.General, VirtueCost.MINOR, new WarriorCommand());
-        private static ArchVirtue WellTraveled             = new ArchVirtue("Well-Traveled",              "Well-Traveled",              VirtueType.General, VirtueCost.MINOR);
+        private static ArchVirtue AffinityWithAbility      = new ArchVirtue("AffinityWithAbility",        "AffinityWithAbility",        VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue AptStudent               = new ArchVirtue("AptStudent",                 "AptStudent",                 VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue ArcaneLore               = new ArchVirtue("ArcaneLore",                 "ArcaneLore",                 VirtueType.General, VirtueCost.Minor, new ArcaneLoreCommand());
+        private static ArchVirtue Berserk                  = new ArchVirtue("Berserk",                    "Berserk",                    VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue BookLearner              = new ArchVirtue("BookLearner",                "BookLearner",                VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue CautiouswithAbility      = new ArchVirtue("CautiouswithAbility",        "CautiouswithAbility",        VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue ClearThinker             = new ArchVirtue("ClearThinker",               "ClearThinker",               VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue CommonSense              = new ArchVirtue("CommonSense",                "CommonSense",                VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Educated                 = new ArchVirtue("Educated",                   "Educated",                   VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue EnduringConstitution     = new ArchVirtue("EnduringConstitution",       "EnduringConstitution",       VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue FaerieBlood              = new ArchVirtue("FaerieBlood",                "FaerieBlood",                VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Famous                   = new ArchVirtue("Famous",                     "Famous",                     VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue FreeExpression           = new ArchVirtue("FreeExpression",             "FreeExpression",             VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue GoodTeacher              = new ArchVirtue("GoodTeacher",                "GoodTeacher",                VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Gossip                   = new ArchVirtue("Gossip",                     "Gossip",                     VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue GreatCharacteristic      = new ArchVirtue("Great Characteristic",       "Great Characteristic",       VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue ImprovedCharacteristics  = new ArchVirtue("ImprovedCharacteristics",    "ImprovedCharacteristics",    VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Inspirational            = new ArchVirtue("Inspirational",              "Inspirational",              VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Intuition                = new ArchVirtue("Intuition",                  "Intuition",                  VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue KeenVision               = new ArchVirtue("KeenVision",                 "KeenVision",                 VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Large                    = new ArchVirtue("Large",                      "Large",                      VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue LatentMagicalAbility     = new ArchVirtue("LatentMagicalAbility",       "LatentMagicalAbility",       VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue LearnAbilityfromMistakes = new ArchVirtue("Learn(Ability)fromMistakes", "Learn(Ability)fromMistakes", VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue LightTouch               = new ArchVirtue("LightTouch",                 "LightTouch",                 VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue LightningReflexes        = new ArchVirtue("LightningReflexes",          "LightningReflexes",          VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue LongWinded               = new ArchVirtue("Long-Winded",                "Long-Winded",                VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Luck                     = new ArchVirtue("Luck",                       "Luck",                       VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue RapidConvalescence       = new ArchVirtue("RapidConvalescence",         "RapidConvalescence",         VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue PerfectBalance           = new ArchVirtue("PerfectBalance",             "PerfectBalance",             VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue PiercingGaze             = new ArchVirtue("PiercingGaze",               "PiercingGaze",               VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue PrivilegedUpbringing     = new ArchVirtue("PrivilegedUpbringing",       "PrivilegedUpbringing",       VirtueType.General, VirtueCost.Minor, new PrivilegedUpbringingCommand());
+        private static ArchVirtue Protection               = new ArchVirtue("Protection",                 "Protection",                 VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue PuissantAbility          = new ArchVirtue("PuissantAbility",            "PuissantAbility",            VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Relic                    = new ArchVirtue("Relic",                      "Relic",                      VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue ReservesofStrength       = new ArchVirtue("ReservesofStrength",         "ReservesofStrength",         VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue SelfConfident            = new ArchVirtue("Self-Confident",             "Self-Confident",             VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue SharpEars                = new ArchVirtue("SharpEars",                  "SharpEars",                  VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue SocialContacts           = new ArchVirtue("SocialContacts",             "SocialContacts",             VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue StrongWilled             = new ArchVirtue("Strong-Willed",              "Strong-Willed",              VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue StudentofRealm           = new ArchVirtue("Studentof(Realm)",           "Studentof(Realm)",           VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue TemporalInfluence        = new ArchVirtue("TemporalInfluence",          "TemporalInfluence",          VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Tough                    = new ArchVirtue("Tough",                      "Tough",                      VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue TroupeUpbringing         = new ArchVirtue("TroupeUpbringing",           "TroupeUpbringing",           VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue TrueLovePC               = new ArchVirtue("TrueLove(PC)",               "TrueLove(PC)",               VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Unaging                  = new ArchVirtue("Unaging",                    "Unaging",                    VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue VenusBlessing            = new ArchVirtue("Venus’Blessing",             "Venus’Blessing",             VirtueType.General, VirtueCost.Minor);
+        private static ArchVirtue Warrior                  = new ArchVirtue("Warrior",                    "Warrior",                    VirtueType.General, VirtueCost.Minor, new WarriorCommand());
+        private static ArchVirtue WellTraveled             = new ArchVirtue("Well-Traveled",              "Well-Traveled",              VirtueType.General, VirtueCost.Minor);
         
         // Social Free
-        private static ArchVirtue Covenfolk     = new ArchVirtue("Covenfolk",     "Covenfolk",     VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue Craftsman     = new ArchVirtue("Craftsman",     "Craftsman",     VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue HermeticMagus = new ArchVirtue("HermeticMagus", "HermeticMagus", VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue Merchant      = new ArchVirtue("Merchant",      "Merchant",      VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue Peasant       = new ArchVirtue("Peasant",       "Peasant",       VirtueType.Social, VirtueCost.FREE);
-        private static ArchVirtue Wanderer      = new ArchVirtue("Wanderer",      "Wanderer",      VirtueType.Social, VirtueCost.FREE);
+        private static ArchVirtue Covenfolk     = new ArchVirtue("Covenfolk",     "Covenfolk",     VirtueType.SocialStatus, VirtueCost.Free);
+        private static ArchVirtue Craftsman     = new ArchVirtue("Craftsman",     "Craftsman",     VirtueType.SocialStatus, VirtueCost.Free);
+        private static ArchVirtue HermeticMagus = new ArchVirtue("HermeticMagus", "HermeticMagus", VirtueType.SocialStatus, VirtueCost.Free);
+        private static ArchVirtue Merchant      = new ArchVirtue("Merchant",      "Merchant",      VirtueType.SocialStatus, VirtueCost.Free);
+        private static ArchVirtue Peasant       = new ArchVirtue("Peasant",       "Peasant",       VirtueType.SocialStatus, VirtueCost.Free);
+        private static ArchVirtue Wanderer      = new ArchVirtue("Wanderer",      "Wanderer",      VirtueType.SocialStatus, VirtueCost.Free);
         #endregion
 
+        #region Static Methods
         private static void PopulateVirtueDictionary()
         {
             #region Populating the NameToArchVirtue Dictionary
@@ -432,6 +400,6 @@ namespace WizardMaker.DataDomain.Models.Virtues
             NameToArchVirtue.Add("Wanderer",      Wanderer);
             #endregion
         }
-
+        #endregion
     }
 }

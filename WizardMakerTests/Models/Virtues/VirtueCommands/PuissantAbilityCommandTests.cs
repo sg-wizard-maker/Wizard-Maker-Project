@@ -16,10 +16,10 @@ namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests
         [TestMethod()]
         public void ExecuteSimpleTest()
         {
-            int STARTING_AGE = 25;
-            string ABILITY = "Brawl";
-            int SAGA_START = 1220;
-            string virtueName = ArchVirtue.PUISSANT_PREFIX + ABILITY;
+            int    STARTING_AGE = 25;
+            string ABILITY      = "Brawl";
+            int    SAGA_START   = 1220;
+            string virtueName   = ArchVirtue.PUISSANT_PREFIX + ABILITY;
 
             // Create a  character
             Character c = CommandTestUtilities.GenerateBasicTestCharacterWithStartingVirtue(STARTING_AGE, virtueName, SAGA_START);
