@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace WizardMaker.DataDomain.Models
+namespace WizardMaker.DataDomain.Models;
+
+public interface ICharacterCommand
 {
-    public interface ICharacterCommand
-    {
-        void Execute(Character c);
-        void Undo();
-    }
+    void Execute(Character c);
+    void Undo();
 }

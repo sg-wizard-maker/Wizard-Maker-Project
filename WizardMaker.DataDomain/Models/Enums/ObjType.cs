@@ -1,21 +1,20 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace WizardMaker.DataDomain.Models.Enums
+namespace WizardMaker.DataDomain.Models.Enums;
+
+[JsonConverter(typeof(StringEnumConverter))]
+public enum ObjType
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ObjType
-    {
-        Ability,
-        Virtue,
-        Flaw,
+    Ability,
+    Virtue,
+    Flaw,
 
-        Spell,
+    Spell,
 
-        Armor,
-        Weapon,
-        // Text,
+    Armor,
+    Weapon,
+    // Text,
 
-        // ...possible that other entities from ArM5 will belong here...
-    }
+    // ...possible that other entities from ArM5 will belong here...
 }

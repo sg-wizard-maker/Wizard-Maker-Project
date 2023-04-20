@@ -1,26 +1,25 @@
 ﻿using System;
 
-namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
+namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
+
+public class AffinityAbilityCommand : ICharacterCommand
 {
-    public class AffinityAbilityCommand : ICharacterCommand
+    ArchAbility Ability;
+
+    public AffinityAbilityCommand(ArchAbility ability)
     {
-        ArchAbility Ability;
-
-        public AffinityAbilityCommand(ArchAbility ability)
-        {
-            this.Ability = ability;
-        }
-
-        #region Implementing ICharacterCommand
-        public void Execute(Character c)
-        {
-            c.AffinityAbilities.Add(Ability.Name);
-        }
-
-        public void Undo()
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
+        this.Ability = ability;
     }
+
+    #region Implementing ICharacterCommand
+    public void Execute(Character c)
+    {
+        c.AffinityAbilities.Add(Ability.Name);
+    }
+
+    public void Undo()
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }

@@ -5,12 +5,10 @@ using WizardMaker.DataDomain.Models.Journal;
 [assembly: InternalsVisibleTo("WizardMakerTests")]
 namespace WizardMaker.DataDomain.Models
 {
-    /**
-     * TODO: Keep an eye that this class may better serve as a list of command instances to execute.
-     * 
-     * First journal entry for most characters.
-     * The order (ie, that this journal entry is first) must be maintained in code.
-     */
+    // TODO: Keep an eye that this class may better serve as a list of command instances to execute.
+    // 
+    // First journal entry for most characters.
+    // The order (ie, that this journal entry is first) must be maintained in code.
     public class NewCharacterInitJournalEntry : Journalable
     {
         private const string CHILDHOOD_LANGUAGE_POOL_NAME   = "Childhood language XP Pool";

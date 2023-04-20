@@ -1,16 +1,15 @@
 ﻿using WizardMaker.DataDomain.Models.Enums;
 
-namespace WizardMaker.DataDomain.Models.JsonModel
-{
-    public class GameObj : Dictionary<string, Root>
-    {
-        // Empty
-    }
+namespace WizardMaker.DataDomain.Models.JsonModel;
 
-    public class Root
-    {
-        public string?  Name { get; set; }
-        public ObjType  Type { get; set; }
-        public BaseData Data { get; set; }
-    }
+public class GameObj : Dictionary<string, Root>
+{
+    // Empty
+}
+
+public class Root
+{
+    public string?  Name { get; set; }
+    public ObjType  Type { get; set; }
+    public BaseData Data { get; set; }
 }

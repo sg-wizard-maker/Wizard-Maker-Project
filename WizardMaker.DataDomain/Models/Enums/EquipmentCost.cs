@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace WizardMaker.DataDomain.Models.Enums
+namespace WizardMaker.DataDomain.Models.Enums;
+
+[JsonConverter(typeof(StringEnumConverter))]
+public enum EquipmentCost
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum EquipmentCost
-    {
-        None,
-        Standard,
-        Inexpensive,
-        Expensive,
-    }
+    None,
+    Standard,
+    Inexpensive,
+    Expensive,
 }
