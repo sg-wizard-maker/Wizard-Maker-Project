@@ -75,7 +75,6 @@ namespace WizardMaker.DataDomain.Models
         private SortedSet<Journalable> JournalEntries { get { return JournalableManager.GetJournalables(); } }
         #endregion
 
-
         #region Constructors
         // TODO:
         // Consider variant constructors and how they are used.

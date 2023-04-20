@@ -4,11 +4,14 @@ namespace WizardMaker.DataDomain.Models.Journal
 {
     public class AddVirtueJournalEntry : Journalable
     {
+        #region Properties and Fields and Constants
         public SimpleJournalEntry Text;
         public ArchVirtue         ArchVirtue;
 
         public const string PREFIX = "Added virtue: ";
+        #endregion
 
+        #region Constructors
         // Secondary info is for cases where we have multiple virtues, such as:
         // Puissant Ability can actually be  "Puissant Brawl" or "Puissant Area Lore: England"
         public AddVirtueJournalEntry(SeasonYear sy, ArchVirtue archVirtue)
@@ -16,7 +19,9 @@ namespace WizardMaker.DataDomain.Models.Journal
             this.Text       = new SimpleJournalEntry(PREFIX + archVirtue.Name, sy);
             this.ArchVirtue = archVirtue;
         }
+        #endregion
 
+        #region Methods (various)
         public override void Execute(Character character)
         {
             VirtueInstance virtue = new VirtueInstance(ArchVirtue, this.GetId());
@@ -48,5 +53,6 @@ namespace WizardMaker.DataDomain.Models.Journal
         {
             return JournalSortingConstants.ADD_VIRTUE_SORT_ORDER;
         }
+        #endregion
     }
 }

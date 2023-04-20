@@ -7,10 +7,13 @@ namespace WizardMaker.DataDomain.Models
     // which would be necessary to support changes when a user selects a virtue or flaw (eg, wealthy)
     public class BasicJournalableManager : IJournalableManager
     {
+        #region Properties and Fields
         private bool IsIsInCharacterGenerationMode = true;
         
         private SortedSet<Journalable> Journalables = new SortedSet<Journalable>(new JournableComparator());
+        #endregion
 
+        #region Methods (various)
         public void AddJournalable(Journalable journalable)
         {
             // If we are in character creation mode, then overwrite this with any existing journal entry.
@@ -84,5 +87,6 @@ namespace WizardMaker.DataDomain.Models
                 );
             }
         }
+        #endregion
     }
 }

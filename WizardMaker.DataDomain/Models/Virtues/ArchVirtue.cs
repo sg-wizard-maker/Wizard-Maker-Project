@@ -6,21 +6,26 @@ namespace WizardMaker.DataDomain.Models.Virtues
     {
         public static List<VirtueType> Types = new List<VirtueType>();
 
+        #region Properties
         public string Abbreviation { get; private set; }
         public string Name         { get; private set; }
+        #endregion
 
+        #region Constructors
         // This is only public so that it can be available for serialization
         public VirtueType(string abbrev, string name)
         {
             this.Abbreviation = abbrev;
             this.Name         = name;
         }
+        #endregion
 
         public static VirtueType Hermetic     = new VirtueType("Hermetic",     "Hermetic");
         public static VirtueType Supernatural = new VirtueType("Supernatural", "Supernatural");
         public static VirtueType Social       = new VirtueType("Social",       "Social");
         public static VirtueType General      = new VirtueType("General",      "General");
 
+        #region Static Constructor
         static VirtueType()
         {
             Types.Add(Hermetic);
@@ -28,6 +33,7 @@ namespace WizardMaker.DataDomain.Models.Virtues
             Types.Add(Social);
             Types.Add(Supernatural);
         }
+        #endregion
     }
 
     public enum VirtueCost 
@@ -39,11 +45,13 @@ namespace WizardMaker.DataDomain.Models.Virtues
 
     public class ArchVirtue
     {
+        #region Properties and Fields
         public string            Name;
         public string            Description;
         public VirtueType        Type;
         public VirtueCost        MajorMinor;
         public ICharacterCommand CharacterCommand { get; private set; }
+        #endregion
 
         // Access ArchVirtue instances with this dictionary.
         //   Dev note:  Do not use this dictionary in the instantiation of the VirtueCommands
@@ -60,6 +68,7 @@ namespace WizardMaker.DataDomain.Models.Virtues
         public const string PUISSANT_PREFIX = "Puissant ";
         public const string AFFINITY_PREFIX = "Affinity with ";
 
+        #region Constructors
         public ArchVirtue(string name, string description, VirtueType type, VirtueCost majorMinor) 
             : this(name, description, type, majorMinor, null)
         {
@@ -74,7 +83,9 @@ namespace WizardMaker.DataDomain.Models.Virtues
             this.MajorMinor       = majorMinor;
             this.CharacterCommand = characterCommand;
         }
+        #endregion
 
+        #region Methods (various)
         // Helps the front end decide if the Virtue has been implemented in the backend.
         // This will help while functionality is still incomplete.
         public bool IsImplemented()
@@ -82,7 +93,9 @@ namespace WizardMaker.DataDomain.Models.Virtues
             bool result = (CharacterCommand != null);
             return result;
         }
+        #endregion
 
+        #region Static Constructor
         // TODO:
         // In future, rather than a hard-coded list, the program will offer the means to declare a new Virtue at runtime.
         // 
@@ -113,6 +126,7 @@ namespace WizardMaker.DataDomain.Models.Virtues
             }
             PopulateVirtueDictionary();
         }
+        #endregion
 
         // TODO: Define the keys as constants
 

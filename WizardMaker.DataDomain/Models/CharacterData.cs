@@ -28,6 +28,7 @@ namespace WizardMaker.DataDomain.Models
         }
         #endregion
 
+        #region Methods (various)
         public bool IsSameSpec(CharacterData other)
         {
             if (other == null) return false;
@@ -44,15 +45,19 @@ namespace WizardMaker.DataDomain.Models
             }
             return true;
         }
+        #endregion
     }
 
     public class XPPoolData
     {
+        #region Properties
         public string Name        { get; }
         public string Description { get; }
         public int    InitialXP   { get; }
         public int    RemainingXP { get; }
+        #endregion
 
+        #region Constructors
         public XPPoolData(string name, string description, int initialXP, int remainingXP)
         {
             this.Name        = name;
@@ -60,10 +65,12 @@ namespace WizardMaker.DataDomain.Models
             this.InitialXP   = initialXP;
             this.RemainingXP = remainingXP;
         }
+        #endregion
     }
 
     public class AbilityInstanceData
     {
+        #region Properties
         public string Category   { get; }
         public string Type       { get; }
         public string TypeAbbrev { get; }
@@ -74,7 +81,9 @@ namespace WizardMaker.DataDomain.Models
         public string Specialty { get; }
 
         public List<string> Id { get; private set; }
+        #endregion
 
+        #region Constructors
         public AbilityInstanceData(string category, string type, string typeAbbrev, string name, int xp, int score, string specialty, List<string> id)
         {
             Category   = category;
@@ -86,7 +95,9 @@ namespace WizardMaker.DataDomain.Models
             Specialty  = specialty;
             Id         = id;
         }
+        #endregion
 
+        #region Methods (various)
         // Note: This includes a check on ID
         public bool IsSameSpec(AbilityInstanceData other)
         {
@@ -105,5 +116,6 @@ namespace WizardMaker.DataDomain.Models
             }
             return true;
         }
+        #endregion
     }
 }

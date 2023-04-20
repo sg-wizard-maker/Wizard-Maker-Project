@@ -42,7 +42,6 @@ namespace WizardMaker.DataDomain.Models
         }
         #endregion
 
-
         #region Methods (various)
         // TODO:
         // Make class to wrap character pools.

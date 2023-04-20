@@ -5,9 +5,12 @@ namespace WizardMaker.DataDomain.Models
     // TODO: Delete this class unless it shows usefulness.
     public class ValidationResult
     {
+        #region Properties and Fields
         readonly bool   IsValidated;
         readonly string FailureReason;
+        #endregion
 
+        #region Constructors
         public ValidationResult(string failureReason)
         {
             this.IsValidated   = false;
@@ -19,8 +22,10 @@ namespace WizardMaker.DataDomain.Models
             this.IsValidated   = true;
             this.FailureReason = "";
         }
+        #endregion
     }
 
+    // Note: Should this be a static class?
     public class AbilityXPManager
     {
         private static void ValidateSpendXPOnAbility(ArchAbility archAbility, int xp)

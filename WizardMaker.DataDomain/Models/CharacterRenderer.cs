@@ -78,6 +78,7 @@ namespace WizardMaker.DataDomain.Models
         {
             return GetCharacterAbilitiesAsList(character).Contains(ability);
         }
+
         private static AbilityInstance RetrieveAbilityInstance(Character character, string ability)
         {
             // TODO:

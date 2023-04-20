@@ -33,6 +33,7 @@ namespace WizardMaker.DataDomain.Models
         public static string AreaLores    = "Area Lores";
         public static string OrgLores     = "Organization Lores";
 
+        #region Static Constructor
         static AbilityCategory ()
         {
             Categories.Add( Martial      );
@@ -48,6 +49,7 @@ namespace WizardMaker.DataDomain.Models
             Categories.Add( AreaLores    );
             Categories.Add( OrgLores     );
         }
+        #endregion
     }
 
     /// <summary>
@@ -64,6 +66,7 @@ namespace WizardMaker.DataDomain.Models
     /// </summary>
     public class AbilityType
     {
+        #region Properties and Fields
         public static List<AbilityType> Types = new List<AbilityType>();
 
         public string Abbreviation { get; private set; }
@@ -71,13 +74,16 @@ namespace WizardMaker.DataDomain.Models
         // TODO:
         // Need some additional properties defining the relations to
         // requirements/associations with certain Virtues/Flaws, age categories, etc...
+        #endregion
 
+        #region Constructors
         // This is only public so that it can be available for serialization
         public AbilityType(string abbrev, string name)
         {
             this.Abbreviation = abbrev;
             this.Name = name;
         }
+        #endregion
 
         public static AbilityType GenChild     = new AbilityType("[Gc]",   "General (child)" );
         public static AbilityType General      = new AbilityType("[G]",    "General"         );
@@ -87,6 +93,7 @@ namespace WizardMaker.DataDomain.Models
         public static AbilityType Supernatural = new AbilityType("[Sup]",  "Supernatural"    );
         public static AbilityType Secret       = new AbilityType("[Sec]",  "Secret"          );
 
+        #region Static Constructor
         static AbilityType()
         {
             Types.Add( GenChild     );
@@ -96,10 +103,12 @@ namespace WizardMaker.DataDomain.Models
             Types.Add( Arcane       );
             Types.Add( Supernatural );
         }
+        #endregion
     }
 
     public class ArchAbility
     {
+        #region Properties
         public string       Category              { get; private set; }
         public AbilityType  Type                  { get; private set; }
         public string       Name                  { get; private set; }
@@ -107,7 +116,9 @@ namespace WizardMaker.DataDomain.Models
         public bool         CannotUseUnskilled    { get; private set; } = false;
         public bool         IsAccelerated         { get; private set; } = false;
         public decimal      BaseXpCost            { get; private set; }
+        #endregion
 
+        #region Constructors
         public ArchAbility ( string category, AbilityType type, string name, List<string> specializations, 
             bool cannotUseUnskilled = false, bool isAccelerated = false )
         {
@@ -119,6 +130,7 @@ namespace WizardMaker.DataDomain.Models
             this.CannotUseUnskilled    = cannotUseUnskilled;
             this.IsAccelerated         = isAccelerated;
         }
+        #endregion
 
         public static List<ArchAbility> AllCommonAbilities = new List<ArchAbility>();
 
@@ -290,6 +302,7 @@ namespace WizardMaker.DataDomain.Models
         // ...
         #endregion
 
+        #region Static Constructor
         static ArchAbility ()
         {
             AllCommonAbilities.AddRange( new List<ArchAbility>() { Brawl, SingleWeapon, GreatWeapon, Bows, Thrown } );
@@ -309,7 +322,9 @@ namespace WizardMaker.DataDomain.Models
             AllCommonAbilities.AddRange( new List<ArchAbility>() { AreaLoreVeryBasic, AreaLoreSomeCountry, AreaLoreSomeTribunal, AreaLoreSecretMagical, AreaLoreSomeCovenant } );
             AllCommonAbilities.AddRange( new List<ArchAbility>() { OrgLoreChurch, OrgLoreOrderOfHermes, OrgLoreVeryBasic, OrgLoreSomeKnightOrder, OrgLoreSomeNobleCourt, OrgLoreSomeCraftGuild } );
         }
+        #endregion
 
+        #region Static Methods (various)
         // TODO: cache this into a more intelligent lookup.  Ths is a brute force loop.
         public static ArchAbility LookupCommonAbilities(string ability)
         {
@@ -335,10 +350,12 @@ namespace WizardMaker.DataDomain.Models
 
             return abilities.ToArray();
         }
+        #endregion
     }
 
     public class AbilityInstance
     {
+        #region Properties
         // To make a public property NOT present in the DataGridView, apply an attribute such as:
         //     [System.ComponentModel.Browsable(false)]
         // 
@@ -395,6 +412,7 @@ namespace WizardMaker.DataDomain.Models
         // TODO:
         // Something more will be needed to represent how Languages
         // get a Puissant-like bonus from a related Language with a higher Score...
+        #endregion
 
         #region Constructors
         public AbilityInstance ( ArchAbility ability, string journalID, int xp = 0, string specialty = "", 
@@ -412,6 +430,7 @@ namespace WizardMaker.DataDomain.Models
         }
         #endregion
 
+        #region Methods (various)
         public override string ToString ()
         {
             string str = string.Format("{0} '{1}' XP={2} / S={3} ({4}) A={5}, P={6}",
@@ -429,7 +448,9 @@ namespace WizardMaker.DataDomain.Models
         {
             this.JournalIDs.Add(journalID);
         }
+        #endregion
 
+        #region Static Methods (various)
         // This is used mostly for testing.
         // In cases where we do not have an ID from the Journal Entry.
         public static string CreateID()
@@ -438,6 +459,7 @@ namespace WizardMaker.DataDomain.Models
             var  result = myGuid.ToString();
             return result;
         }
+        #endregion
     }
 
 
@@ -521,6 +543,7 @@ namespace WizardMaker.DataDomain.Models
         //}
         #endregion
 
+        #region Methods (various)
         public static decimal BaseXpCostWithAffinity(decimal baseXpCost)
         {
             ValidateBaseXpCostValue(baseXpCost);
@@ -554,6 +577,7 @@ namespace WizardMaker.DataDomain.Models
             int result = (int)roundedUp;
             return result;
         }
+        #endregion
 
         #region Argument Validation methods
         public static void ValidateAbilityScoreValue( int score )

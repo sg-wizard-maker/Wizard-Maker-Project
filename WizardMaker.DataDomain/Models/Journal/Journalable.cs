@@ -53,7 +53,9 @@ namespace WizardMaker.DataDomain.Models
             if (this.GetType() != other.GetType())       return false;
             if (this.GetText() != other.GetText())       return false;
             if (!this.GetDate().Equals(other.GetDate())) return false;
-            // Note that we do not check ID, since this is just comparing equality across instances and each instance should have its own ID
+            // Note that we do not check ID,
+            // since this is just comparing equality across instances
+            // and each instance should have its own ID
             return true;
         }
 
