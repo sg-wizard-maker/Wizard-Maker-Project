@@ -1,11 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMaker.DataDomain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WizardMaker.DataDomain.Validation;
+﻿using WizardMaker.DataDomain.Validation;
 
 namespace WizardMaker.DataDomain.Models.Tests;
 

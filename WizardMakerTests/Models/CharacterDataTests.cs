@@ -1,12 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMaker.DataDomain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WizardMaker.DataDomain.Models.Tests;
+﻿namespace WizardMaker.DataDomain.Models.Tests;
 
 [TestClass()]
 public class CharacterDataTests

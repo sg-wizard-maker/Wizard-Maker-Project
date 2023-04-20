@@ -1,13 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WizardMaker.DataDomain.Validation;
+
 using WizardMakerTests.Models.Virtues.VirtueCommands;
-using WizardMaker.DataDomain.Models.Journal;
-using WizardMaker.DataDomain.Validation;
 
 namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands.Tests;
 
