@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace WizardMaker.DataDomain.Models
 {
@@ -14,8 +15,6 @@ namespace WizardMaker.DataDomain.Models
     public class Covenant : IObjectForRegistrar
     {
         #region Members related to ObjRegistrar
-        public static ObjRegistrar<Covenant> Registrar = new();
-
         public Guid   Id        { get; private set; }
         public string CanonName { get; private set; }
         #endregion
@@ -28,7 +27,12 @@ namespace WizardMaker.DataDomain.Models
             this.CanonName = canonName;
             this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
 
-            Covenant.Registrar.Register(this);
+            if (Saga.CurrentSaga == null)
+            {
+                string msg = string.Format("Attempt to register Covenant with no CurrentSaga!");
+                throw new Exception(msg);
+            }
+            Saga.CurrentSaga.RegistrarCovenants.Register(this);
         }
     }
 }

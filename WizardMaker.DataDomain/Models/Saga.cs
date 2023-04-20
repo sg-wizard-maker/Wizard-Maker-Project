@@ -14,7 +14,10 @@ namespace WizardMaker.DataDomain.Models
     public class Saga : IObjectForRegistrar
     {
         #region Members related to ObjRegistrar
-        public static ObjRegistrar<Saga> Registrar = new();
+        public static Saga? CurrentSaga { get; set; }
+        public static ObjRegistrar<Saga>      RegistrarSagas      = new();
+        public        ObjRegistrar<Covenant>  RegistrarCovenants  = new();
+        public        ObjRegistrar<Character> RegistrarCharacters = new();
 
         public Guid   Id        { get; private set; }
         public string CanonName { get; private set; }
@@ -22,13 +25,30 @@ namespace WizardMaker.DataDomain.Models
 
         public string Name      { get; set; }
 
+        #region Constructors
         public Saga(string name, string canonName, Guid? existingId = null)
         {
             this.Name      = name;
             this.CanonName = canonName;
             this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
 
-            Saga.Registrar.Register(this);
+            Saga.RegistrarSagas.Register(this);
+            if (Saga.CurrentSaga == null)
+            {
+                Saga.CurrentSaga = this;
+            }
         }
+        #endregion
+
+        #region Static Methods (various)
+        public static void SetCurrentSaga(Saga currentSaga) 
+        {
+            Saga.CurrentSaga = currentSaga;
+        }
+        #endregion
+
+        #region Methods (various)
+        // ...nothing yet
+        #endregion
     }
 }

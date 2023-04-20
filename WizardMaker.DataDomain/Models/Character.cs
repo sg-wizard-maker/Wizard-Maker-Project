@@ -34,8 +34,6 @@ namespace WizardMaker.DataDomain.Models
     public class Character :IObjectForRegistrar
     {
         #region Members related to ObjRegistrar
-        public static ObjRegistrar<Character> Registrar = new();
-
         public Guid   Id        { get; private set; }
         public string CanonName { get; private set; }
         #endregion
@@ -112,7 +110,14 @@ namespace WizardMaker.DataDomain.Models
             // calling .Register fails, on the second of two intended-as-identical objects which are to be compared.
             // 
             // Therefore, with the line below uncommented, many test failures abound:
-            //Character.Registrar.Register(this);
+
+            //if (Saga.CurrentSaga == null)
+            //{
+            //    string msg = string.Format("Attempt to register Character with no CurrentSaga!");
+            //    throw new Exception(msg);
+            //}
+            //Saga.CurrentSaga.RegistrarCharacters.Register(this);
+
         }
         #endregion
 
