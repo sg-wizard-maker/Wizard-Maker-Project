@@ -19,6 +19,24 @@ public class Saga : IObjectForRegistrar
     public        ObjRegistrar<Covenant>  RegistrarCovenants  = new();
     public        ObjRegistrar<Character> RegistrarCharacters = new();
 
+    // Notes on classes that will / will not (be registered & tracked within Saga, get a Guid for ID):
+    // 
+    // Classes to be (objects registered + objects have ID)
+    // - Saga
+    // - Covenant
+    // - Character
+    // - (in future, classes related to Laboratory, Library, etc)
+    // - classes with Archetypal data (ArchVirtue, ArchAbility, ..., and some related such as VirtueType, ...)
+    // - possibly class for a Journal entire
+    // 
+    // Classes to be (objects NOT registered + objects do NOT have ID)
+    // - (classes which are part of a registered object, such as CharacterData, ...
+    // - Instance data owned/contained by a registered object (VirtueInstance, AbilityInstance, ...)
+    // - (Journal entry class(es))
+    // - ...
+    // - 
+    // - 
+
     public Guid   Id        { get; private set; }
     public string CanonName { get; private set; }
     #endregion
