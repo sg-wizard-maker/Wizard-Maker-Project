@@ -1,85 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace WizardMaker.DataDomain.Models
+namespace WizardMaker.DataDomain.Models;
+
+// This class handles cases where we need intelligence around adding journal entires.  
+// For example, we may want to overwrite journal entries during character creation,
+// which would be necessary to support changes when a user selects a virtue or flaw (eg, wealthy)
+public class BasicJournalableManager : IJournalableManager
 {
-    // This class handles cases where we need intelligence around adding journal entires.  
-    //  For example, we may want to overwrite journal entries during character creation, which would be necessary to support changes 
-    //  when a user selects a virtue or flaw (eg, wealthy)
-    public class BasicJournalableManager : IJournalableManager
+    #region Properties and Fields
+    public bool IsChargenMode { get; set; } = true;
+    
+    private SortedSet<Journalable> Journalables = new SortedSet<Journalable>(new JournalableComparator());
+    #endregion
+
+    #region Methods (various)
+    public void AddJournalable(Journalable journalable)
     {
-        private bool isIsInCharacterGenerationMode = true;
-        
-        private SortedSet<Journalable> journalables = new SortedSet<Journalable>(new JournableComparator());
-
-        public void addJournalable(Journalable journalable)
+        // If we are in character creation mode, then overwrite this with any existing journal entry.
+        if (this.IsChargenMode)
         {
-            // If we are in character creation mode, then overwrite this with any existing journal entry.
-            if (this.isIsInCharacterGenerationMode)
+            List<Journalable> removeThese = new List<Journalable>();
+            // Check if this is in our existing list (matching by text).
+            // If so, remove it (it will get replaced next)
+            foreach (Journalable jj in this.Journalables)
             {
-
-                List<Journalable> journalEntriesToRemove = new List<Journalable>();
-                // Check if this is in our existing list (matching by text).  If so, remove it (it will get replaced next)
-                foreach (Journalable journalable2 in this.journalables)
+                if (jj.GetText() == journalable.GetText())
                 {
-                    if (journalable2.getText() == journalable.getText())
-                    {
-                        journalEntriesToRemove.Add(journalable2);
-                    }
-                }
-
-                foreach (Journalable journalableToRemove in journalEntriesToRemove) { journalables.Remove(journalableToRemove); }
-            }
-            // Add a new one.
-            journalables.Add(journalable);
-        }
-            
-
-        public SortedSet<Journalable> getJournalables()
-        {
-            return journalables;
-        }
-
-        public bool isInCharacterGenerationMode()
-        {
-            return isIsInCharacterGenerationMode;
-        }
-
-        public void setCharacterGenerationMode(bool isCharacterGenerationMode)
-        {
-            isIsInCharacterGenerationMode = isCharacterGenerationMode;
-        }
-
-        public void removeJournalEntry(String id) 
-        {
-            SortedSet<Journalable> result = new SortedSet<Journalable>(new JournableComparator());
-            foreach (Journalable journalable in this.journalables)
-            {
-                if (!journalable.getId().Equals(id))
-                {
-                     result.Add(journalable);
+                    removeThese.Add(jj);
                 }
             }
-            journalables = result;
-        }
-
-        //TODO: Do we need this?  Delete if not.
-        public NewCharacterInitJournalEntry RetrieveCharacterInitJournalEntry()
-        {
-            try
+            foreach (Journalable jj in removeThese) 
             {
-                NewCharacterInitJournalEntry result = (NewCharacterInitJournalEntry)journalables.ElementAt(0);
-                if (result == null)
-                {
-                    throw new InvalidCharacterInitializationException("Attempting to retrieve the character initialization journal entry when it does not exist.");
-                }
-                return result;
-            } catch (InvalidCastException ice)
-            {
-                throw new InvalidCharacterInitializationException("Attempting to retrieve the character initialization journal entry, but found another type instead: " 
-                    + journalables.ElementAt(0).GetType().Name + "(" + ice.Message +")");
+                Journalables.Remove(jj); 
             }
+        }
+        // Add a new one.
+        Journalables.Add(journalable);
+    }
+
+    public SortedSet<Journalable> GetJournalables()
+    {
+        return this.Journalables;
+    }
+
+    public void RemoveJournalEntry(string id) 
+    {
+        SortedSet<Journalable> result = new SortedSet<Journalable>(new JournalableComparator());
+        foreach (Journalable jj in this.Journalables)
+        {
+            if (!jj.GetId().Equals(id))
+            {
+                 result.Add(jj);
+            }
+        }
+        Journalables = result;
+    }
+
+    // TODO: Do we need this?  Delete if not.
+    public NewCharacterInitJournalEntry RetrieveCharacterInitJournalEntry()
+    {
+        try
+        {
+            NewCharacterInitJournalEntry result = (NewCharacterInitJournalEntry)Journalables.ElementAt(0);
+            if (result == null)
+            {
+                throw new InvalidCharacterInitializationException("Attempting to retrieve the character initialization journal entry when it does not exist.");
+            }
+            return result;
+        } 
+        catch (InvalidCastException ice)
+        {
+            throw new InvalidCharacterInitializationException(
+                "Attempting to retrieve the character initialization journal entry, but found another type instead: " 
+                + Journalables.ElementAt(0).GetType().Name + "(" + ice.Message +")"
+            );
         }
     }
+    #endregion
 }

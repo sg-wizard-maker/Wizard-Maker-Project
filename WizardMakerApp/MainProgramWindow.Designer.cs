@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -52,10 +53,10 @@ namespace WizardMaker
 
             #region Probably will remove these:
             this.TheTextBoxLabel = new Label();
-            this.TheTextBox = new TextBox();
+            this.TheTextBox      = new TextBox();
 
             //this.TheListBoxLabel = new Label();
-            //this.TheListBox = new ListBox();
+            //this.TheListBox      = new ListBox();
 
             this.TheButton = new Button();
             //this.TheNumericUpDown = new NumericUpDown();
@@ -66,47 +67,47 @@ namespace WizardMaker
 
             #region Experimenting with other Controls
             //// TheNumericUpDown
-            //this.TheNumericUpDown.Location = new Point( COL2_LEFT, ROW3_TOP );
-            //this.TheNumericUpDown.Minimum = 0;
-            //this.TheNumericUpDown.Maximum = 99;
+            //this.TheNumericUpDown.Location      = new Point( COL2_LEFT, ROW3_TOP );
+            //this.TheNumericUpDown.Minimum       = 0;
+            //this.TheNumericUpDown.Maximum       = 99;
             //this.TheNumericUpDown.DecimalPlaces = 0;
-            //this.TheNumericUpDown.Value = 11;
+            //this.TheNumericUpDown.Value         = 11;
 
             // TheButton
             this.TheButton.Location = new Point( COL1_LEFT, ROW2_TOP );
-            this.TheButton.Name = "TheButton";
-            this.TheButton.Size = new Size( 75, 23 );
+            this.TheButton.Name     = "TheButton";
+            this.TheButton.Size     = new Size( 75, 23 );
             this.TheButton.TabIndex = 0;
-            this.TheButton.Text = "The Button";
+            this.TheButton.Text     = "The Button";
             this.TheButton.UseVisualStyleBackColor = true;
 
             //// TheListBoxLabel and TheListBox
-            //this.TheListBoxLabel.Location = new Point( COL1_LEFT, ROW1_TOP );
+            //this.TheListBoxLabel.Location  = new Point( COL1_LEFT, ROW1_TOP );
             //this.TheListBoxLabel.BackColor = Color.PaleGreen;
-            //this.TheListBoxLabel.Height = LABEL_HEIGHT;
-            //this.TheListBoxLabel.AutoSize = true;
-            //this.TheListBoxLabel.Text = "ListBox for TheListBox.Items.Add()";
+            //this.TheListBoxLabel.Height    = LABEL_HEIGHT;
+            //this.TheListBoxLabel.AutoSize  = true;
+            //this.TheListBoxLabel.Text      = "ListBox for TheListBox.Items.Add()";
 
             //this.TheListBox.FormattingEnabled = true;
-            //this.TheListBox.Location = new Point( COL1_LEFT, ROW1_TOP + LABEL_HEIGHT );
-            //this.TheListBox.Name = "ListBoxForTheListBoxItemsAdd";
-            //this.TheListBox.Size = new Size( 300, 200 );
-            //this.TheListBox.TabIndex = 1;
-            //this.TheListBox.SelectionMode = SelectionMode.MultiExtended;  // Or SelectionMode.One
+            //this.TheListBox.Location          = new Point( COL1_LEFT, ROW1_TOP + LABEL_HEIGHT );
+            //this.TheListBox.Name              = "ListBoxForTheListBoxItemsAdd";
+            //this.TheListBox.Size              = new Size( 300, 200 );
+            //this.TheListBox.TabIndex          = 1;
+            //this.TheListBox.SelectionMode     = SelectionMode.MultiExtended;  // Or SelectionMode.One
             //// Elements added in Form1.cs later...
 
             // TheTextBoxLabel and TheTextBox
-            this.TheTextBoxLabel.Location = new Point( COL1_LEFT, ROW3_TOP );
+            this.TheTextBoxLabel.Location  = new Point( COL1_LEFT, ROW3_TOP );
             this.TheTextBoxLabel.BackColor = Color.PaleGreen;
-            this.TheTextBoxLabel.Height = LABEL_HEIGHT;
-            this.TheTextBoxLabel.AutoSize = true;
-            this.TheTextBoxLabel.Text = "TextBox for ConsolePrint";
+            this.TheTextBoxLabel.Height    = LABEL_HEIGHT;
+            this.TheTextBoxLabel.AutoSize  = true;
+            this.TheTextBoxLabel.Text      = "TextBox for ConsolePrint";
 
-            this.TheTextBox.Location = new Point( COL1_LEFT, ROW3_TOP + LABEL_HEIGHT );
-            this.TheTextBox.Name = "TextBoxForConsole";
-            this.TheTextBox.Size = new Size( 600, 120 );
-            this.TheTextBox.TabIndex = 2;
-            this.TheTextBox.Multiline = true;
+            this.TheTextBox.Location   = new Point( COL1_LEFT, ROW3_TOP + LABEL_HEIGHT );
+            this.TheTextBox.Name       = "TextBoxForConsole";
+            this.TheTextBox.Size       = new Size( 600, 120 );
+            this.TheTextBox.TabIndex   = 2;
+            this.TheTextBox.Multiline  = true;
             this.TheTextBox.ScrollBars = ScrollBars.Vertical;
             // Text appended in Form1.cs via ConsolePrint() method later...
 
@@ -122,8 +123,8 @@ namespace WizardMaker
 
             // mainWindow
             this.AutoScaleDimensions = new SizeF( 6F, 13F );
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size( 1024, 600 );
+            this.AutoScaleMode       = AutoScaleMode.Font;
+            this.ClientSize          = new Size( 1024, 600 );
 
             this.Controls.Add( this.GridForAbilities );
             this.Controls.Add( this.GridForCharacteristics );
@@ -138,4 +139,3 @@ namespace WizardMaker
         #endregion
     }
 }
-

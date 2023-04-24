@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
+namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
+
+public class AnimalKenCommand : ICharacterCommand
 {
-    public class AnimalKenCommand : ICharacterCommand
+    private GenericGrantAbilityCommand Command;
+
+    public AnimalKenCommand()
     {
-        private GenericGrantAbilityCommand command;
-        public AnimalKenCommand()
-        {
-            command = new GenericGrantAbilityCommand(ArchAbility.AnimalKen);
-        }
-
-        public void Execute(Character c)
-        {
-            command.Execute(c);
-        }
-
-        public void Undo()
-        {
-            throw new NotImplementedException();
-        }
+        Command = new GenericGrantAbilityCommand(ArchAbility.AnimalKen);
     }
+
+    #region Implementing ICharacterCommand
+    public void Execute(Character c)
+    {
+        Command.Execute(c);
+    }
+
+    public void Undo()
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }

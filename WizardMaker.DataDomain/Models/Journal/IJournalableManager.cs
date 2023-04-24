@@ -1,56 +1,42 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 
-namespace WizardMaker.DataDomain.Models
+namespace WizardMaker.DataDomain.Models;
+
+// TODO:
+// We can probably get rid of this interface.
+// It adds a layer of abstraction that we likely do not need.
+internal interface IJournalableManager
 {
-    // TODO: We can probably get rid of this interface.  It adds a layer of abstraction that we likely do not need.
-    internal interface IJournalableManager
+    // For when the manager is in advancement vs initial character generation.
+    bool IsChargenMode { get; set; }
+
+    SortedSet<Journalable> GetJournalables();
+
+    void AddJournalable(Journalable journalable);
+
+    void RemoveJournalEntry(string id);
+}
+
+public class JournalableComparator: IComparer<Journalable>
+{
+    public int Compare(Journalable x, Journalable y)
     {
-        /**
-         * For when the manager is in advancement vs initial character generation.
-         */
-        bool isInCharacterGenerationMode();
-
-        void setCharacterGenerationMode(bool isCharacterGenerationMode);
-
-        SortedSet<Journalable> getJournalables();
-
-        void addJournalable(Journalable journalable);
-
-        void removeJournalEntry(String id);
-    }
-
-    public class JournableComparator: IComparer<Journalable>
-    {
-        public int Compare(Journalable x, Journalable y)
+        if (x.SortOrder() != y.SortOrder())
         {
-            if (x.sortOrder() == y.sortOrder()) { 
-
-                if (x.getDate().Year == y.getDate().Year)
-                {
-                    if (x.getDate().season == y.getDate().season)
-                    {
-                        if (x.getId() == y.getId())
-                        {
-                            return new CaseInsensitiveComparer().Compare(x.getText(), y.getText());
-                        }
-                        else
-                        {
-                            return new CaseInsensitiveComparer().Compare(x.getId(), y.getId());
-                        }
-                    }
-                    else
-                    {
-                        return x.getDate().season.CompareTo(y.getDate().season);
-                    }
-
-                }
-                return x.getDate().Year.CompareTo(y.getDate().Year);
-            }
-            return x.sortOrder().CompareTo(y.sortOrder());
+            return x.SortOrder().CompareTo(y.SortOrder());
         }
+        if (x.GetDate().Year != y.GetDate().Year)
+        {
+            return x.GetDate().Year.CompareTo(y.GetDate().Year);
+        }
+        if (x.GetDate().season != y.GetDate().season)
+        {
+            return x.GetDate().season.CompareTo(y.GetDate().season);
+        }
+        if (x.GetId() == y.GetId())
+        {
+            return new CaseInsensitiveComparer().Compare(x.GetText(), y.GetText());
+        }
+        return new CaseInsensitiveComparer().Compare(x.GetId(), y.GetId());
     }
-
-
 }

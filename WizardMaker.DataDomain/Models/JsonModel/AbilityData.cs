@@ -1,7 +1,8 @@
-﻿namespace WizardMaker.DataDomain.Models.JsonModel
+﻿using WizardMaker.DataDomain.Models.Enums;
+
+namespace WizardMaker.DataDomain.Models.JsonModel;
+
+public class AbilityData : BaseData
 {
-    public class AbilityData : BaseData
-    {
-        public object[] Speciality { get; set; }
-    }
+    public object[] Speciality { get; set; } = new string[0];
 }

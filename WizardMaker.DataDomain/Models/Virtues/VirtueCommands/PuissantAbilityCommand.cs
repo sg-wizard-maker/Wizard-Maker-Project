@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands
+namespace WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
+
+public class PuissantAbilityCommand : ICharacterCommand
 {
-    public class PuissantAbilityCommand : ICharacterCommand
+    ArchAbility Ability;
+    
+    public PuissantAbilityCommand(ArchAbility ability)
     {
-        ArchAbility ability;
-        
-        public PuissantAbilityCommand(ArchAbility ability)
-        {
-            this.ability = ability;
-        }
-
-        public void Execute(Character c)
-        {
-            c.puissantAbilities.Add(ability.Name);
-        }
-
-        public void Undo()
-        {
-            throw new NotImplementedException();
-        }
+        this.Ability = ability;
     }
+
+    #region Implementing ICharacterCommand
+    public void Execute(Character c)
+    {
+        c.PuissantAbilities.Add(Ability.Name);
+    }
+
+    public void Undo()
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }

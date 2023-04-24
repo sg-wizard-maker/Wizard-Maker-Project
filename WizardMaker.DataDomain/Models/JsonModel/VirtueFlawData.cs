@@ -1,10 +1,9 @@
 ﻿using WizardMaker.DataDomain.Models.Enums;
 
-namespace WizardMaker.DataDomain.Models.JsonModel
+namespace WizardMaker.DataDomain.Models.JsonModel;
+
+public class VirtueFlawData : BaseData
 {
-    public class VirtueFlawData : BaseData
-    {
-        public Category Type { get; set; }
-        public VFImpact Impact { get; set; }
-    }
+    public VirtueFlawAbilityCategory Type   { get; set; }
+    public VirtueFlawQualityCost     Impact { get; set; }
 }

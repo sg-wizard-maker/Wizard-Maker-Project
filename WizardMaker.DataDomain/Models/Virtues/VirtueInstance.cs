@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WizardMaker.DataDomain.Models.Virtues
+namespace WizardMaker.DataDomain.Models.Virtues;
+
+public class VirtueInstance
 {
-    public class VirtueInstance
+    #region Properties
+    public ArchVirtue Virtue { get; private set; }
+
+    // Virtues can only have one journal entry that grants.  Unlike arts and abilities
+    public string JournalID { get; private set; }
+    #endregion
+
+    #region Constructors
+    public VirtueInstance(ArchVirtue virtue, string journalID)
     {
-        public ArchVirtue Virtue { get; private set;}
-
-        /**
-         * Virtues can only have one journal entry that grants.  Unlike arts and abilities
-         * */
-        public string JournalID { get; private set;}
-
-        public VirtueInstance(ArchVirtue virtue, string journalID)
-        {
-            JournalID = journalID;
-            Virtue = virtue;
-        }
+        JournalID = journalID;
+        Virtue    = virtue;
     }
+    #endregion
 }

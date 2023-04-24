@@ -1,111 +1,119 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace WizardMaker.DataDomain.Models
+namespace WizardMaker.DataDomain.Models;
+
+// This class is meant as a way to have a simple representation of the character for use by front ends.
+// The Character class is used solely by the backend.
+// This class allows us to encapsulate backend data model changes from the front end.
+// The cost is typically that there is more code to handle conversions.
+//
+public class CharacterData
 {
-    /**
-     * This class is meant as a way to have a simple representation of the character for use by front ends.  The Character class is used solely
-     *  by the backend.  This class allows us to encapsulate backend data model changes from the front end.  The cost is typically that there is 
-     *  more code to handle conversions.
-     */
-    public class CharacterData
+    #region Properties
+    public string Name        { get; set; }
+    public string Description { get; set; }
+
+    public List<AbilityInstanceData> Abilities { get; set; }
+    public List<XPPoolData>          XPPools   { get; set; }
+    #endregion
+
+    #region Constructors
+    public CharacterData(string name, string description, List<AbilityInstanceData> abilities, List<XPPoolData> xPPools)
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        Name        = name;
+        Description = description;
+        Abilities   = abilities;
+        XPPools     = xPPools;
+    }
+    #endregion
 
-        public List<AbilityInstanceData> Abilities { get; set; }
-
-        public List<XPPoolData> XPPools { get; set; }
-
-        public CharacterData(string name, string description, List<AbilityInstanceData> abilities, List<XPPoolData> xPPools)
+    #region Methods (various)
+    public bool IsSameSpec(CharacterData other)
+    {
+        if (other == null) return false;
+        if (this.GetType()       != other.GetType())       return false;
+        if (this.Name            != other.Name)            return false;
+        if (this.Description     != other.Description)     return false;
+        if (this.Abilities.Count != other.Abilities.Count) return false;
+        for (int ii = 0; ii < this.Abilities.Count; ii++)
         {
-            Name = name;
-            Description = description;
-            Abilities = abilities;
-            XPPools = xPPools;
-        }
-
-        public bool IsSameSpec(CharacterData other)
-        {
-            if (other == null) return false;
-            if (this.GetType() != other.GetType()) return false;
-            if (this.Name != other.Name) return false;
-            if (this.Description != other.Description) return false;
-            if (this.Abilities.Count != other.Abilities.Count) return false;
-            for (int i = 0; i < this.Abilities.Count; i++)
+            if (!this.Abilities[ii].IsSameSpec(other.Abilities[ii]))
             {
-                if (!this.Abilities[i].IsSameSpec(other.Abilities[i])) return false;
+                return false;
             }
-
-            return true;
         }
+        return true;
     }
+    #endregion
+}
 
-    public class XPPoolData
+public class XPPoolData
+{
+    #region Properties
+    public string Name        { get; }
+    public string Description { get; }
+    public int    InitialXP   { get; }
+    public int    RemainingXP { get; }
+    #endregion
+
+    #region Constructors
+    public XPPoolData(string name, string description, int initialXP, int remainingXP)
     {
-        public string name { get; }
-        public string description { get; }
-        public int initialXP { get; }
-        public int remainingXP { get; }
-
-        public XPPoolData(string name, string description, int initialXP, int remainingXP)
-        {
-            this.name = name;
-            this.description = description;
-            this.initialXP = initialXP;
-            this.remainingXP = remainingXP;
-        }
+        this.Name        = name;
+        this.Description = description;
+        this.InitialXP   = initialXP;
+        this.RemainingXP = remainingXP;
     }
+    #endregion
+}
 
-    public class AbilityInstanceData
+public class AbilityInstanceData
+{
+    #region Properties
+    public string Category   { get; }
+    public string Type       { get; }
+    public string TypeAbbrev { get; }
+
+    public string Name      { get; }
+    public int    XP        { get; }
+    public int    Score     { get; }
+    public string Specialty { get; }
+
+    public List<string> Id { get; private set; }
+    #endregion
+
+    #region Constructors
+    public AbilityInstanceData(string category, string type, string typeAbbrev, string name, int xp, int score, string specialty, List<string> id)
     {
-        public string Category { get; }
-
-        public string Type { get; }
-
-        public string TypeAbbrev { get; }
-
-        public string Name { get; }
-        public int XP { get; }
-        public int Score { get; }
-        public string Specialty { get; }
-
-        public List<string> Id { get; private set; }
-
-        public AbilityInstanceData(string category, string type, string typeAbbrev, string name, int xP, int score, string specialty, List<string> id)
-        {
-            Category = category;
-            Type = type;
-            TypeAbbrev = typeAbbrev;
-            Name = name;
-            XP = xP;
-            Score = score;
-            Specialty = specialty;
-            Id = id;
-        }
-
-        // Note: This includes a check on ID
-        public bool IsSameSpec(AbilityInstanceData other)
-        {
-            if (other == null) return false;
-            if (this.GetType() != other.GetType()) return false;
-            if (this.Name != other.Name) return false;
-            if (this.Category != other.Category) return false;
-            if (this.Type != other.Type) return false;
-            if (this.TypeAbbrev != other.TypeAbbrev) return false;
-            if (this.Score != other.Score) return false;
-            if (this.Specialty != other.Specialty) return false;
-            if (this.XP != other.XP) return false;
-            for (int i = 0; i < Id.Count; i++)
-            {
-                if (!this.Id[i].Equals(other.Id[i])) return false;
-            }
-            return true;
-
-        }
+        Category   = category;
+        Type       = type;
+        TypeAbbrev = typeAbbrev;
+        Name       = name;
+        XP         = xp;
+        Score      = score;
+        Specialty  = specialty;
+        Id         = id;
     }
+    #endregion
+
+    #region Methods (various)
+    // Note: This includes a check on ID
+    public bool IsSameSpec(AbilityInstanceData other)
+    {
+        if (other == null) return false;
+        if (this.GetType()  != other.GetType())  return false;
+        if (this.Name       != other.Name)       return false;
+        if (this.Category   != other.Category)   return false;
+        if (this.Type       != other.Type)       return false;
+        if (this.TypeAbbrev != other.TypeAbbrev) return false;
+        if (this.Score      != other.Score)      return false;
+        if (this.Specialty  != other.Specialty)  return false;
+        if (this.XP         != other.XP)         return false;
+        for (int ii = 0; ii < Id.Count; ii++)
+        {
+            if (!this.Id[ii].Equals(other.Id[ii])) return false;
+        }
+        return true;
+    }
+    #endregion
 }

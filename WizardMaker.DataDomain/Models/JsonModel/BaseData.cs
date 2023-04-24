@@ -1,9 +1,10 @@
-﻿namespace WizardMaker.DataDomain.Models.JsonModel
+﻿using WizardMaker.DataDomain.Models.Enums;
+
+namespace WizardMaker.DataDomain.Models.JsonModel;
+
+public abstract class BaseData
 {
-    public abstract class BaseData
-    {
-        public string? Description { get; set; }
-        public string? Source { get; set; }
-        public int Page { get; set; }
-    }
+    public string? Description { get; set; }
+    public string? Source      { get; set; }
+    public int     Page        { get; set; }
 }
