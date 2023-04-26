@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;  // various Attributes
 
+using WizardMaker.DataDomain.Models.Virtues;
+
 namespace WizardMaker.DataDomain.Models;
 
-public class ArchAbility
+public class ArchAbility : IObjectForRegistrar
 {
+    #region Members related to ObjRegistrar
+    public Guid   Id        { get; private set; }
+    public string CanonName { get; private set; }
+    #endregion
+
     #region Properties
     public string       Category              { get; private set; }
     public AbilityType  Type                  { get; private set; }
@@ -18,15 +25,25 @@ public class ArchAbility
 
     #region Constructors
     public ArchAbility ( string category, AbilityType type, string name, List<string> specializations, 
-        bool cannotUseUnskilled = false, bool isAccelerated = false )
+                         bool cannotUseUnskilled = false, bool isAccelerated = false, Guid? existingGuid = null 
+                        )
     {
-        this.Category = category;
-        this.Type = type;
-        this.Name = name;
+        this.Id        = (existingGuid != null) ? existingGuid.Value : Guid.NewGuid();
+        this.CanonName = ObjRegistrar<ArchVirtue>.MakeCanonName(name);
+        this.Category  = category;
+        this.Type      = type;
+        this.Name      = name;
         this.CommonSpecializations = specializations ?? new List<string>();
         this.BaseXpCost            = isAccelerated ? 1m : 5m;
         this.CannotUseUnskilled    = cannotUseUnskilled;
         this.IsAccelerated         = isAccelerated;
+
+        if (Saga.CurrentSaga == null)
+        {
+            string msg = string.Format("Attempt to register ArchAbility with no CurrentSaga!");
+            throw new Exception(msg);
+        }
+        Saga.CurrentSaga.RegistrarArchAbilities.Register(this);
     }
     #endregion
 

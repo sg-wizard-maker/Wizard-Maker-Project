@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WizardMaker.DataDomain.Models.Virtues;
 
 namespace WizardMaker.DataDomain.Models;
 
@@ -18,6 +19,10 @@ public class Saga : IObjectForRegistrar
     public static ObjRegistrar<Saga>      RegistrarSagas      = new();
     public        ObjRegistrar<Covenant>  RegistrarCovenants  = new();
     public        ObjRegistrar<Character> RegistrarCharacters = new();
+
+    public        ObjRegistrar<ArchVirtue>  RegistrarArchVirtues   = new();
+    public        ObjRegistrar<ArchAbility> RegistrarArchAbilities = new();
+
 
     // Notes on classes that will / will not (be registered & tracked within Saga, get a Guid for ID):
     // 
@@ -44,10 +49,10 @@ public class Saga : IObjectForRegistrar
     public string Name      { get; set; }
 
     #region Constructors
-    public Saga(string name, string canonName, Guid? existingId = null)
+    public Saga(string name, Guid? existingId = null)
     {
         this.Name      = name;
-        this.CanonName = canonName;
+        this.CanonName = ObjRegistrar<Saga>.MakeCanonName(name);
         this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
 
         Saga.RegistrarSagas.Register(this);
@@ -55,6 +60,14 @@ public class Saga : IObjectForRegistrar
         {
             Saga.SetCurrentSaga(this);
         }
+    }
+    #endregion
+
+    #region Static Constructor
+    static Saga()
+    {
+        // A placeholder, until whatever infrastructure (for main program, and for tests) is in place...
+        Saga.CurrentSaga = new Saga("Placeholder Saga Name");
     }
     #endregion
 

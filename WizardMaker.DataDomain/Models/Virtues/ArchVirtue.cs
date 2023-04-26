@@ -4,11 +4,16 @@ using WizardMaker.DataDomain.Models.Virtues.VirtueCommands;
 
 namespace WizardMaker.DataDomain.Models.Virtues;
 
-public class ArchVirtue
+public class ArchVirtue : IObjectForRegistrar
 {
     #region Constants
     public const string PUISSANT_PREFIX = "Puissant ";
     public const string AFFINITY_PREFIX = "Affinity with ";
+    #endregion
+
+    #region Members related to ObjRegistrar
+    public Guid   Id        { get; private set; }
+    public string CanonName { get; private set; }
     #endregion
 
     #region Properties
@@ -34,19 +39,28 @@ public class ArchVirtue
     #endregion
 
     #region Constructors
-    public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost) 
-        : this(name, description, type, cost, null)
+    public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost, ICharacterCommand? characterCommand, Guid? existingGuid = null)
     {
-        // Empty
-    }
-
-    public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost, ICharacterCommand? characterCommand)
-    {
+        this.Id               = (existingGuid != null) ? existingGuid.Value : Guid.NewGuid();
+        this.CanonName        = ObjRegistrar<ArchVirtue>.MakeCanonName(name);
         this.Name             = name;
         this.Type             = type;
         this.Description      = description;
         this.MajorMinor       = cost;
         this.CharacterCommand = characterCommand;
+
+        if (Saga.CurrentSaga == null)
+        {
+            string msg = string.Format("Attempt to register ArchVirtue with no CurrentSaga!");
+            throw new Exception(msg);
+        }
+        Saga.CurrentSaga.RegistrarArchVirtues.Register(this);
+    }
+
+    public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost, Guid? existingGuid = null)
+        : this(name, description, type, cost, null, existingGuid)
+    {
+        // Empty
     }
     #endregion
 

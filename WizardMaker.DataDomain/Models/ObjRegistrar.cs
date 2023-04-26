@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace WizardMaker.DataDomain.Models;
 
 public class ObjRegistrar<T> where T: IObjectForRegistrar
 {
+    #region Fields and Properties
     private Dictionary<string, T> ObjByCanonName = new Dictionary<string, T>();
     private Dictionary<Guid, T>   ObjById        = new Dictionary<Guid, T>();
+    #endregion
 
+    #region Constructors
     public ObjRegistrar()
     {
     }
+    #endregion
 
+    #region Methods (various)
     public void Register(T obj)
     {
+        if (obj == null)
+        {
+            string msg = string.Format("ObjRegistrar.Register(): Got null obj");
+            throw new ArgumentNullException(msg);
+        }
+
         string canonName = obj.CanonName;
         Guid   id        = obj.Id;
 
@@ -82,6 +95,40 @@ public class ObjRegistrar<T> where T: IObjectForRegistrar
         }
         return result;
     }
+    #endregion
+
+    #region Static methods
+    public static string MakeCanonName(string name)
+    {
+        // This should suffice for simple sequences of words: "Artes Liberales" and the like.
+        // However, many strange inputs are possible.
+        // For instance, "Foo! Bar" contains non-word non-whitespace characters (punctuation).
+        // On the bright side, "word character" includes the various European letters with accents the the like...
+        // 
+        // Will need to give this a think, and revisit...
+
+        string trimmed = name.TrimStart().TrimEnd();
+
+        Regex oneOrMoreWords = new Regex(@"^([\S]+)( [\S]+)*$");  // Need to think upon a better approach...
+        Match mm = oneOrMoreWords.Match(trimmed);
+        if (!mm.Success)
+        {
+            string msg = string.Format("Got name without one or more words");
+            throw new ArgumentException(msg);
+        }
+        var words = (from cc in mm.Captures select cc.Value).ToList();
+        
+        var sb = new StringBuilder();
+        foreach (string ww in words)
+        {
+            // The 2nd+ words will start with a space, so we want to get rid of that...
+            sb.Append('_');
+            sb.Append( ww.TrimStart().TrimEnd() );
+        }
+        string result = sb.ToString();
+        return result;
+    }
+    #endregion
 }
 
 public interface IObjectForRegistrar
