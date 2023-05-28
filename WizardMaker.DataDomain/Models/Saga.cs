@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using WizardMaker.DataDomain.Models.Virtues;
 
 namespace WizardMaker.DataDomain.Models;
@@ -14,14 +15,17 @@ namespace WizardMaker.DataDomain.Models;
 /// </summary>
 public class Saga : IObjectForRegistrar
 {
-    #region Members related to ObjRegistrar
-    public static Saga? CurrentSaga { get; set; }
-    public static ObjRegistrar<Saga>      RegistrarSagas      = new();
-    public        ObjRegistrar<Covenant>  RegistrarCovenants  = new();
-    public        ObjRegistrar<Character> RegistrarCharacters = new();
+    #region Static Members related to ObjRegistrar
+    public static Saga?              CurrentSaga { get; set; }
+    public static ObjRegistrar<Saga> RegistrarSagas = new();
+    #endregion
 
-    public        ObjRegistrar<ArchVirtue>  RegistrarArchVirtues   = new();
-    public        ObjRegistrar<ArchAbility> RegistrarArchAbilities = new();
+    #region Members related to ObjRegistrar
+    public ObjRegistrar<Covenant>  RegistrarCovenants  = new();
+    public ObjRegistrar<Character> RegistrarCharacters = new();
+
+    public ObjRegistrar<ArchVirtue>  RegistrarArchVirtues   = new();
+    public ObjRegistrar<ArchAbility> RegistrarArchAbilities = new();
 
 
     // Notes on classes that will / will not (be registered & tracked within Saga, get a Guid for ID):
@@ -48,9 +52,13 @@ public class Saga : IObjectForRegistrar
 
     public string Name      { get; set; }
 
+    static int counter = 0;
+
     #region Constructors
     public Saga(string name, Guid? existingId = null)
     {
+        Saga.counter++;
+        Debug.WriteLine("new Saga() called, name=<" + name + ">, existingId=<" + existingId + ">, counter=" + Saga.counter);
         this.Name      = name;
         this.CanonName = ObjRegistrar<Saga>.MakeCanonName(name);
         this.Id        = (existingId != null) ? existingId.Value : Guid.NewGuid();
@@ -66,15 +74,27 @@ public class Saga : IObjectForRegistrar
     #region Static Constructor
     static Saga()
     {
-        // A placeholder, until whatever infrastructure (for main program, and for tests) is in place...
-        Saga.CurrentSaga = new Saga("Placeholder Saga Name");
+        Saga.CurrentSaga = null;
     }
     #endregion
 
     #region Static Methods (various)
-    public static void SetCurrentSaga(Saga currentSaga) 
+    public static void SetCurrentSaga(Saga? currentSaga) 
     {
         Saga.CurrentSaga = currentSaga;
+    }
+
+    /// <summary>
+    /// Causes all in-memory Saga objects to be de-referenced.
+    /// This is useful for things such as automated tests which are "idempotent", assuming a clear field with each test run.
+    /// </summary>
+    public static void ResetAllSagas(string newSagaName)
+    {
+        Saga.RegistrarSagas = new();
+        Saga ss = new Saga(newSagaName);
+
+        ArchVirtue.RegisterStaticData();
+        ArchAbility.RegisterStaticData();
     }
     #endregion
 

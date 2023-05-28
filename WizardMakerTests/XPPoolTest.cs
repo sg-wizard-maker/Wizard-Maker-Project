@@ -155,6 +155,7 @@ public class XPPoolTest
     // This test has been disabled, since XPPools being serializable is not necessarily a requirement.
     public void SerializableTest(XPPool pool)
     {
+        Saga.ResetAllSagas("Test Saga");
         string tmp = pool.SerializeJson();
 
         XPPool deserialized = XPPool.DeserializeJson(tmp);

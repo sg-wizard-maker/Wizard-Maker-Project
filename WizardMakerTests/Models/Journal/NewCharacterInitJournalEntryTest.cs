@@ -43,6 +43,7 @@ public class NewCharacterInitJournalEntryTest
     [TestMethod()]
     public void SerializableTest()
     {
+        Saga.ResetAllSagas("Test Saga");
         const int startingAge = 25;
 
         Journalable entry = new NewCharacterInitJournalEntry(startingAge, ArchAbility.LangEnglish);

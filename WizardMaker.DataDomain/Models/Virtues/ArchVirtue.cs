@@ -29,6 +29,7 @@ public class ArchVirtue : IObjectForRegistrar
     //   Dev note:  Do not use this dictionary in the instantiation of the VirtueCommands
     public static Dictionary<string, ArchVirtue> NameToArchVirtue = new Dictionary<string, ArchVirtue>();
 
+    private static bool StaticDataSetupComplete = false;
     // Note:
     // It may be useful to have a few other lookup structures, such as for (Social Status Virtues/Flaws) or (Hermetic Virtues), etc.
     // Or possibly using LINQ queries upon one central V/F lookup structure may be handy, for uses such as
@@ -49,12 +50,16 @@ public class ArchVirtue : IObjectForRegistrar
         this.MajorMinor       = cost;
         this.CharacterCommand = characterCommand;
 
-        if (Saga.CurrentSaga == null)
+        if (ArchVirtue.StaticDataSetupComplete)
         {
-            string msg = string.Format("Attempt to register ArchVirtue with no CurrentSaga!");
-            throw new Exception(msg);
+            // No auto-registration is done for static members
+            if (Saga.CurrentSaga == null)
+            {
+                string msg = string.Format("Attempt to register ArchVirtue '{0}' with no CurrentSaga!", this.Name);
+                throw new Exception(msg);
+            }
+            Saga.CurrentSaga.RegistrarArchVirtues.Register(this);
         }
-        Saga.CurrentSaga.RegistrarArchVirtues.Register(this);
     }
 
     public ArchVirtue(string name, string description, VirtueType type, VirtueCost cost, Guid? existingGuid = null)
@@ -88,31 +93,47 @@ public class ArchVirtue : IObjectForRegistrar
         {
             string puissantVirtueName = PUISSANT_PREFIX + a.Name;
             string affinityVirtueName = AFFINITY_PREFIX + a.Name;
-            ArchVirtue.NameToArchVirtue[puissantVirtueName] = 
+            ArchVirtue.NameToArchVirtue[puissantVirtueName] =
                 new ArchVirtue(
-                    puissantVirtueName, 
-                    "Puissant in the ability " + a.Name, 
-                    VirtueType.General, 
-                    VirtueCost.Minor, 
+                    puissantVirtueName,
+                    "Puissant in the ability " + a.Name,
+                    VirtueType.General,
+                    VirtueCost.Minor,
                     new PuissantAbilityCommand(a)
                 );
-            ArchVirtue.NameToArchVirtue[affinityVirtueName] = 
+            ArchVirtue.NameToArchVirtue[affinityVirtueName] =
                 new ArchVirtue(
-                    affinityVirtueName, 
-                    "Affinity with the ability " + a.Name, 
+                    affinityVirtueName,
+                    "Affinity with the ability " + a.Name,
                     VirtueType.General,
-                    VirtueCost.Minor, 
+                    VirtueCost.Minor,
                     new AffinityAbilityCommand(a)
                 );
         }
         ArchVirtue.PopulateVirtueDictionary();
+
+        ArchVirtue.StaticDataSetupComplete = true;
+    }
+
+    public static void RegisterStaticData()
+    {
+        if (Saga.CurrentSaga == null)
+        {
+            string msg = string.Format("Attempt to ArchVirtue.RegisterStaticData() with no CurrentSaga!");
+            throw new Exception(msg);
+        }
+        // Register each ArchVirtue from the static data into the CurrentSaga
+        foreach (var kvp in ArchVirtue.NameToArchVirtue)
+        {
+            Saga.CurrentSaga.RegistrarArchVirtues.Register(kvp.Value);
+        }
     }
     #endregion
 
     // TODO: Define the keys as constants
 
     #region Individual ArchVirtue Instances
-    private static ArchVirtue TheGift = new ArchVirtue("TheGift", "TheGift", VirtueType.Special, VirtueCost.Free);
+    private static ArchVirtue TheGift = new ArchVirtue("The Gift", "The Gift", VirtueType.Special, VirtueCost.Free);
 
     // Hermetic Major
     private static ArchVirtue DiedneMagic                = new ArchVirtue("DiedneMagic",                 "DiedneMagic",                 VirtueType.Hermetic, VirtueCost.Major);

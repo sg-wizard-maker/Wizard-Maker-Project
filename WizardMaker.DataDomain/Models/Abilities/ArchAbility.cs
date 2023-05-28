@@ -38,28 +38,35 @@ public class ArchAbility : IObjectForRegistrar
         this.CannotUseUnskilled    = cannotUseUnskilled;
         this.IsAccelerated         = isAccelerated;
 
-        if (Saga.CurrentSaga == null)
+        if (ArchAbility.StaticDataSetupComplete)
         {
-            string msg = string.Format("Attempt to register ArchAbility with no CurrentSaga!");
-            throw new Exception(msg);
+            // No auto-registration is done for static members
+            if (Saga.CurrentSaga == null)
+            {
+                string msg = string.Format("Attempt to register ArchAbility '{0}' with no CurrentSaga!", this.Name);
+                throw new Exception(msg);
+            }
+            Saga.CurrentSaga.RegistrarArchAbilities.Register(this);
         }
-        Saga.CurrentSaga.RegistrarArchAbilities.Register(this);
     }
     #endregion
 
-    public static List<ArchAbility> AllCommonAbilities = new List<ArchAbility>();
-
-    private const bool  NO_UNSKILLED = true;
+    private const bool NO_UNSKILLED = true;
     private const bool YES_UNSKILLED = false;
+
+    #region Static Properties
+    private static bool StaticDataSetupComplete = false;
+
+    public static List<ArchAbility> AllCommonAbilities = new List<ArchAbility>();
 
     #region Static data for Common Specializations
     private static List<string> emptyListOfSpecialties = new List<string>();
 
-    private static List<string> brawlSpecializations        = new List<string>() { "Dodging", "Punches", "Kicks", "Grapples", "Knives", "Bludgeon" };
+    private static List<string> brawlSpecializations = new List<string>() { "Dodging", "Punches", "Kicks", "Grapples", "Knives", "Bludgeon" };
     private static List<string> singleWeaponSpecializations = new List<string>() { "Axe/Hatchet", "Club/Mace", "Mace and Chain", "Short Spear", "Short Sword", "Long Sword", "Shields" };
-    private static List<string> greatWeaponSpecializations  = new List<string>() { "Cudgel", "Farm implement", "Flail", "Pole Arm", "Pole Axe", "Long Spear", "Great Sword", "Staff", "Warhammer" };
-    private static List<string> bowsSpecializations         = new List<string>() { "Short bow", "Long bow", "Crossbow" };
-    private static List<string> thrownSpecializations       = new List<string>() { "Throwing axe", "Javelin", "Thrown knife", "Sling", "Thrown stone" };
+    private static List<string> greatWeaponSpecializations = new List<string>() { "Cudgel", "Farm implement", "Flail", "Pole Arm", "Pole Axe", "Long Spear", "Great Sword", "Staff", "Warhammer" };
+    private static List<string> bowsSpecializations = new List<string>() { "Short bow", "Long bow", "Crossbow" };
+    private static List<string> thrownSpecializations = new List<string>() { "Throwing axe", "Javelin", "Thrown knife", "Sling", "Thrown stone" };
 
     // ...
     #endregion
@@ -217,25 +224,46 @@ public class ArchAbility : IObjectForRegistrar
     // ...
     #endregion
 
+    #endregion
+
+
     #region Static Constructor
     static ArchAbility ()
     {
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { Brawl, SingleWeapon, GreatWeapon, Bows, Thrown } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { AnimalHandling, Athletics, Awareness, Hunt, Legerdemain, Ride, Stealth, Survival, Swim } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { Bargain, Carouse, Charm, Etiquette, FolkKen, Guile, Intrigue, Music, Leadership, Teaching } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { LangEnglish, LangHighGerman, LangItalian, LangKoineGreek, LangArabic } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { LangLatin, LangAncientGreek, LangHebrew, LangGothic } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { CraftTanner, CraftLeatherworker, CraftCarpenter, CraftWoodcarver, CraftBlacksmith, CraftJeweler, CraftWhitesmith } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { ProfScribe, ProfApothecary, ProfJongleur, ProfReeve, ProfSailor, ProfSteward, ProfTeamster, ProfWasherwoman } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { ArtesLiberales, ArtOfMemory, Chirurgy, Medicine, Philosophiae } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { LawCodeOfHermes, LawCivilAndCanon, LawIslamic } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { TheologyChristian, TheologyJudaic, TheologyIslamic, TheologyPagan } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { AnimalKen, Dowsing, EnchantingMusic, Entrancement, MagicSensitivity, Premonitions, SecondSight, SenseHolyUnholy, Shapeshifter, WildernessSense } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { TheEnigma, HeartBeast, FaerieMagic } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { HermeticMagicTheory, FolkWitchMagicTheory, ParmaMagica, Certamen, Concentration, Finesse, Penetration, Recuperation, Withstanding } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { MagicLore, FaerieLore, DominionLore, InfernalLore } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { AreaLoreVeryBasic, AreaLoreSomeCountry, AreaLoreSomeTribunal, AreaLoreSecretMagical, AreaLoreSomeCovenant } );
-        AllCommonAbilities.AddRange( new List<ArchAbility>() { OrgLoreChurch, OrgLoreOrderOfHermes, OrgLoreVeryBasic, OrgLoreSomeKnightOrder, OrgLoreSomeNobleCourt, OrgLoreSomeCraftGuild } );
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { Brawl, SingleWeapon, GreatWeapon, Bows, Thrown });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { AnimalHandling, Athletics, Awareness, Hunt, Legerdemain, Ride, Stealth, Survival, Swim });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { Bargain, Carouse, Charm, Etiquette, FolkKen, Guile, Intrigue, Music, Leadership, Teaching });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { LangEnglish, LangHighGerman, LangItalian, LangKoineGreek, LangArabic });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { LangLatin, LangAncientGreek, LangHebrew, LangGothic });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { CraftTanner, CraftLeatherworker, CraftCarpenter, CraftWoodcarver, CraftBlacksmith, CraftJeweler, CraftWhitesmith });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { ProfScribe, ProfApothecary, ProfJongleur, ProfReeve, ProfSailor, ProfSteward, ProfTeamster, ProfWasherwoman });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { ArtesLiberales, ArtOfMemory, Chirurgy, Medicine, Philosophiae });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { LawCodeOfHermes, LawCivilAndCanon, LawIslamic });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { TheologyChristian, TheologyJudaic, TheologyIslamic, TheologyPagan });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { AnimalKen, Dowsing, EnchantingMusic, Entrancement, MagicSensitivity, Premonitions, SecondSight, SenseHolyUnholy, Shapeshifter, WildernessSense });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { TheEnigma, HeartBeast, FaerieMagic });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { HermeticMagicTheory, FolkWitchMagicTheory, ParmaMagica, Certamen, Concentration, Finesse, Penetration, Recuperation, Withstanding });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { MagicLore, FaerieLore, DominionLore, InfernalLore });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { AreaLoreVeryBasic, AreaLoreSomeCountry, AreaLoreSomeTribunal, AreaLoreSecretMagical, AreaLoreSomeCovenant });
+        AllCommonAbilities.AddRange(new List<ArchAbility>() { OrgLoreChurch, OrgLoreOrderOfHermes, OrgLoreVeryBasic, OrgLoreSomeKnightOrder, OrgLoreSomeNobleCourt, OrgLoreSomeCraftGuild });
+
+        ArchAbility.StaticDataSetupComplete = true;
+    }
+
+    public static void RegisterStaticData()
+    {
+        if (Saga.CurrentSaga == null)
+        {
+            string msg = string.Format("Attempt to ArchAbility.RegisterStaticData() with no CurrentSaga!");
+            throw new Exception(msg);
+        }
+
+        // Register each ArchAbility in the CurrentSaga
+        foreach (var archAbility in AllCommonAbilities)
+        {
+            if (Saga.CurrentSaga == null) { return; }
+            Saga.CurrentSaga.RegistrarArchAbilities.Register(archAbility);
+        }
     }
     #endregion
 

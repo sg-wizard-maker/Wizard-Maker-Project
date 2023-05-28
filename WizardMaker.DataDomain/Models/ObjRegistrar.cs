@@ -23,7 +23,7 @@ public class ObjRegistrar<T> where T: IObjectForRegistrar
     {
         if (obj == null)
         {
-            string msg = string.Format("ObjRegistrar.Register(): Got null obj");
+            string msg = string.Format("ObjRegistrar.Register({0}): Got null obj", typeof(T).Name);
             throw new ArgumentNullException(msg);
         }
 
@@ -35,15 +35,33 @@ public class ObjRegistrar<T> where T: IObjectForRegistrar
 
         if (alreadyRegisteredById || alreadyRegisteredByCanonName)
         {
-            string msg = string.Format("Register failed: Was already registered by {0}{1}{2}.",
-                alreadyRegisteredById ? "Id" : "",
-                (alreadyRegisteredById && alreadyRegisteredByCanonName) ? " and " : "",
-                alreadyRegisteredByCanonName ? "Canon Name" : ""
-            );
-            throw new ArgumentException(msg);
+            // Do not register a second time...
+
+            // TODO:
+            // Need to look into using such as Newtonsoft.JSON PopulateObject(),
+            // to see whether some scheme can be managed, such that
+            // a de-serialized ArchVirtue can use the existing registered-in-CurrentSaga
+            // ArchVirtue of that name, rather than a new object...
         }
+        //if (alreadyRegisteredById || alreadyRegisteredByCanonName)
+        //{
+        //    string msg = string.Format("Register({0}) failed: <{1}> was already registered by {2}{3}{4}.",
+        //        typeof(T).Name,
+        //        canonName,
+        //        alreadyRegisteredById ? "Id" : "",
+        //        (alreadyRegisteredById && alreadyRegisteredByCanonName) ? " and " : "",
+        //        alreadyRegisteredByCanonName ? "Canon Name" : ""
+        //    );
+        //    throw new ArgumentException(msg);
+        //}
         this.ObjByCanonName[canonName] = obj;
         this.ObjById[id]               = obj;
+    }
+
+    public void Clear()
+    {
+        this.ObjByCanonName = new();
+        this.ObjById        = new();
     }
 
     public IQueryable<T> AllRegisteredObjs()

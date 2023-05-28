@@ -122,7 +122,7 @@ public class CharacterManager
         FileStream   fs = new FileStream(absoluteFilename, FileMode.Open, FileAccess.Read);
         StreamReader sw = new StreamReader(fs);
         string     json = sw.ReadToEnd();
-        RawCharacter rc = RawCharacter.DeserializeJson(json);
+        RawCharacter rc = RawCharacter.DeserializeJson(json);  // Hmmm...we may want to do something more fangled, to avoid calling ctor for many duplicate ArchAbility, ArchVirtue, etc...
         sw.Close();
         fs.Close();
 

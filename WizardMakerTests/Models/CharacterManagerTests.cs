@@ -1,4 +1,6 @@
-﻿namespace WizardMaker.DataDomain.Models.Tests;
+﻿using WizardMaker.DataDomain.Models.Virtues;
+
+namespace WizardMaker.DataDomain.Models.Tests;
 
 [TestClass()]
 public class CharacterManagerTests
@@ -44,12 +46,16 @@ public class CharacterManagerTests
     [TestMethod()]
     public void SimpleRoundTripFileTest()
     {
+        Saga.ResetAllSagas("Test Saga BEFORE");
+
         Character c1 = new("Foo", "Looks like a foo", 25);
         NewCharacterInitJournalEntry initEntry = new NewCharacterInitJournalEntry(25, ArchAbility.LangEnglish);
         c1.AddJournalable(initEntry);
 
         string tempPath = Path.GetTempFileName();
         CharacterManager.WriteToFile(c1, tempPath);
+
+        Saga.ResetAllSagas("Test Saga AFTER");
 
         Character c2 = CharacterManager.ReadFromFile(tempPath);
 
@@ -62,7 +68,7 @@ public class CharacterManagerTests
         Assert.AreEqual(c1.GetJournal().Count, c2.GetJournal().Count);
         Assert.IsTrue(c1.GetJournal().Count > 0);
 
-        for (int i=0; i<c2.GetJournal().Count; i++)
+        for (int i=0; i < c2.GetJournal().Count; i++)
         {
             Assert.IsTrue(c2.GetJournal().ElementAt(i).IsSameSpecs(c1.GetJournal().ElementAt(i)));
         }
