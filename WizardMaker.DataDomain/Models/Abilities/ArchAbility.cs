@@ -62,11 +62,11 @@ public class ArchAbility : IObjectForRegistrar
     #region Static data for Common Specializations
     private static List<string> emptyListOfSpecialties = new List<string>();
 
-    private static List<string> brawlSpecializations = new List<string>() { "Dodging", "Punches", "Kicks", "Grapples", "Knives", "Bludgeon" };
+    private static List<string> brawlSpecializations        = new List<string>() { "Dodging", "Punches", "Kicks", "Grapples", "Knives", "Bludgeon" };
     private static List<string> singleWeaponSpecializations = new List<string>() { "Axe/Hatchet", "Club/Mace", "Mace and Chain", "Short Spear", "Short Sword", "Long Sword", "Shields" };
-    private static List<string> greatWeaponSpecializations = new List<string>() { "Cudgel", "Farm implement", "Flail", "Pole Arm", "Pole Axe", "Long Spear", "Great Sword", "Staff", "Warhammer" };
-    private static List<string> bowsSpecializations = new List<string>() { "Short bow", "Long bow", "Crossbow" };
-    private static List<string> thrownSpecializations = new List<string>() { "Throwing axe", "Javelin", "Thrown knife", "Sling", "Thrown stone" };
+    private static List<string> greatWeaponSpecializations  = new List<string>() { "Cudgel", "Farm implement", "Flail", "Pole Arm", "Pole Axe", "Long Spear", "Great Sword", "Staff", "Warhammer" };
+    private static List<string> bowsSpecializations         = new List<string>() { "Short bow", "Long bow", "Crossbow" };
+    private static List<string> thrownSpecializations       = new List<string>() { "Throwing axe", "Javelin", "Thrown knife", "Sling", "Thrown stone" };
 
     // ...
     #endregion
@@ -269,6 +269,7 @@ public class ArchAbility : IObjectForRegistrar
 
     #region Static Methods (various)
     // TODO: cache this into a more intelligent lookup.  Ths is a brute force loop.
+    // Note: MOST (perhaps ALL) callers of this method, should probably be consulting the CurrentSaga for such a lookup...
     public static ArchAbility LookupCommonAbilities(string ability)
     {
         foreach (var a in ArchAbility.AllCommonAbilities)
@@ -280,6 +281,7 @@ public class ArchAbility : IObjectForRegistrar
         throw new AbilityNotFoundException(ability + " not supported.");
     }
 
+    // Note: MOST (perhaps ALL) callers of this method, should probably be consulting the CurrentSaga for such a lookup...
     public static string[] GetCommonAbilities()
     {
         List<string> abilities = new List<string>();
