@@ -31,7 +31,7 @@ namespace WizardMaker.DataDomain.Models;
 /// and managing such relationships over time via Journal entries will be more complex.
 ///
 /// </summary>
-public class Character :IObjectForRegistrar
+public class Character : IObjectForRegistrar
 {
     #region Members related to ObjRegistrar
     public Guid   Id        { get; private set; }

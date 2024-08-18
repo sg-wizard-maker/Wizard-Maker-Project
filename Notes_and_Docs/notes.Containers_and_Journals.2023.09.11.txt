@@ -1,0 +1,32 @@
+Consider:
+---------
+Saga
+	has Characters -- stored in an ObjRegistrar via Dictionary<Guid,Character>
+    has (various other objects)
+	
+Character  (implementing IHasJournal)
+    has (various kinds of objects) which are Instance, which refer to Archetypal objects
+	    for example, AbilityInstance and AbilityArchetype
+	has a Journal
+	The architecture states that a Character is __primarily__ about the Journal, with "Character at some point in time" being __derived__
+	    How best to represent and accomplish that?
+		
+	class Character {
+		// This class is of a third category beyond Instance and Archetypal, may need to come up with a name for this category... Perhaps "DataContainer" or somesuch...
+	    has minimal identifying information (Guid ID, string Tag) and exists-within-RangeOfTime data (EarliestDate, LastDate)
+	    has Journal (with various entry types describing changes to some data T; or possibly various Journal<T> one for each entry type)
+		has Dictionary<PointInTime, RenderedCharacter>
+	}
+	class RenderedCharacter {
+	    has (various kinds of data), some of which is further nested
+	}
+
+Journal  (possibly Journal<T> and implementing IJournal)
+    Stores entries indicating change (add, remove, alter) for various kinds of data (such as AbilityInstance)
+	    Might be one Journal containing many JournalEntry types; might be multiple Journal<T> for each JournalEntry type...
+	Such data is indexed by something like Dictionary<PointInTime, SomePayloadType> or Dictionary<EnumPayloadType, Dictionary<PointInTime, SomePayloadType> >
+
+
+
+
+----
